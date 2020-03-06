@@ -7,12 +7,18 @@
 //
 
 import UIKit
+import SDWebImage
 
 class CardView: UIView {
     
     var cardViewModel: CardViewModel! {
         didSet {
-            imageView.image = UIImage(named: cardViewModel.imageNames.first ?? "DoggoTest")
+            let imageName = cardViewModel.imageNames.first ?? ""
+            
+            if let url = URL(string: imageName) {
+                imageView.sd_setImage(with: url)
+            }
+            
             descriptionLabel.attributedText = cardViewModel.attributedString
             descriptionLabel.textAlignment = cardViewModel.textAlignment
             
@@ -42,7 +48,7 @@ class CardView: UIView {
         super.init(frame: frame)
         layer.cornerRadius = 10
         clipsToBounds = true
-    
+        
         setupImage()
         setupBarsStackView()
         setupGradientLayer()
@@ -56,7 +62,7 @@ class CardView: UIView {
     }
     
     //MARK: - FilePrivate Methods
-        
+    
     fileprivate func setupLabel() {
         addSubview(descriptionLabel)
         descriptionLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16))
@@ -74,7 +80,7 @@ class CardView: UIView {
     fileprivate func setupGradientLayer() {
         gradientLayer.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         gradientLayer.locations = [0.65, 1.1]
-
+        
         layer.addSublayer(gradientLayer)
     }
     
@@ -85,7 +91,7 @@ class CardView: UIView {
         barsStackView.spacing = 4
         barsStackView.distribution = .fillEqually
     }
-
+    
     fileprivate func handleDragging(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: nil)
         let degrees: CGFloat = translation.x / 20
@@ -96,8 +102,10 @@ class CardView: UIView {
     }
     
     fileprivate func setupImageIndexObserver() {
-        cardViewModel.imageIndexObserver = { [unowned self] (idx, image) in
-            self.imageView.image = image
+        cardViewModel.imageIndexObserver = { [unowned self] (idx, imageURL) in
+            if let imageURL = URL(string: imageURL ?? "") {
+                self.imageView.sd_setImage(with: imageURL)
+            }
             self.barsStackView.arrangedSubviews.forEach({ (v) in
                 v.backgroundColor = self.deselectedViewColor
             })
@@ -141,7 +149,7 @@ class CardView: UIView {
             
             if shouldDismissCard {
                 self.layer.frame = CGRect(x: 600 * translationDirection, y: 0, width: self.frame.width, height: self.frame.height)
-          
+                
             } else {
                 self.transform = .identity
             }

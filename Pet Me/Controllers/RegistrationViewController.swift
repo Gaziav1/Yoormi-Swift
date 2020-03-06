@@ -112,7 +112,6 @@ class RegistrationViewController: UIViewController {
         }
     }
     
-    
     fileprivate func setupScrollView() {
         view.addSubview(scrollView)
         scrollView.fillSuperview()

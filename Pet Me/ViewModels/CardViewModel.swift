@@ -19,13 +19,13 @@ class CardViewModel {
     
     fileprivate var imageIndex = 0 {
         didSet {
-            let imageName = imageNames[imageIndex]
-            let image = UIImage(named: imageName)
-            imageIndexObserver?(imageIndex, image)
+            let imageURL = imageNames[imageIndex]
+            //let image = UIImage(named: imageName)
+            imageIndexObserver?(imageIndex, imageURL)
         }
     }
     
-    var imageIndexObserver: ((Int, UIImage?) -> Void)?
+    var imageIndexObserver: ((Int, String?) -> Void)?
     
     init(imageNames: [String], attributedString: NSAttributedString, textAlignment: NSTextAlignment) {
         self.imageNames = imageNames
