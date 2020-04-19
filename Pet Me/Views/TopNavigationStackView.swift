@@ -25,14 +25,12 @@ class TopNavigationStackView: UIStackView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        _ = [#imageLiteral(resourceName: "app_icon")]
-       
         addArrangedSubview(settingsButton)
         addArrangedSubview(messagesButton)
         
-        heightAnchor.constraint(equalToConstant: 80).isActive = true
+        heightAnchor.constraint(equalToConstant: 45).isActive = true
         distribution = .fillEqually
-        spacing = 100
+        spacing = 250
     }
     
     required init(coder: NSCoder) {

@@ -14,11 +14,22 @@ extension UIColor {
     }
 }
 
+extension UIView {
+    func dropShadow(scale: Bool = true, shadowOffset: CGSize, opacity: Float = 0.2, radius: CGFloat = 2 ) {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor(white: 0, alpha: 0.3).cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = shadowOffset
+        layer.shadowRadius = radius
+        layer.shouldRasterize = true
+        layer.rasterizationScale = scale ? UIScreen.main.scale : 1
+    }
+}
+
 struct AnchoredConstraints {
     var top, leading, bottom, trailing, width, height: NSLayoutConstraint?
 }
 
-// Reference Video: https://youtu.be/iqpAP7s3b-8
 extension UIView {
     
     @discardableResult

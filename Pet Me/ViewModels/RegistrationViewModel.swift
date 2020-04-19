@@ -67,7 +67,7 @@ class RegistrationViewModel {
                 
                 self.bindableIsRegistering.value = false
                 print("URL to download image: ", url?.absoluteString ?? "")
-                let imageURL = url?.absoluteString ?? ""
+                guard let imageURL = url?.absoluteString else { return }
                 self.saveInfoToFirestore(imageURL: imageURL, completion: completion)
             }
         }
@@ -75,7 +75,8 @@ class RegistrationViewModel {
     
     fileprivate func saveInfoToFirestore(imageURL: String, completion: @escaping (Error?) -> Void) {
         guard let uid = Auth.auth().currentUser?.uid else { return }
-        let docData = ["fullName": fullName, "uid": uid, "imageURL1": imageURL]
+        let docData: [String: Any] = ["fullName": fullName, "uid": uid, "imageURLs": [imageURL]] 
+       
         Firestore.firestore().collection("users").document(uid).setData(docData) { (error) in
             if let error = error {
                 print(error.localizedDescription)

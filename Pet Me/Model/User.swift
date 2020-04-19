@@ -13,26 +13,27 @@ struct User: ProducesCardViewModel {
     var age: Int?
     var description: String?
     var imageNames: [String]
-    var uid: String?
+    var uid: String
+    var species: String?
     
     init(dictionary: [String: Any]) {
         self.name = dictionary["fullName"] as? String
-        self.uid = dictionary["uid"] as? String
+        self.uid = dictionary["uid"] as! String
         self.age = dictionary["age"] as? Int
         self.description = dictionary["description"] as? String
         
-        let imageURL1 = dictionary["imageURL1"] as? String ?? ""
-        self.imageNames = [imageURL1]
+        let imageURLs = dictionary["imageURLs"] as? [String]
+        self.imageNames = imageURLs!
      }
     
     func toCardViewModel() -> CardViewModel {
         
-        let attributedText = NSMutableAttributedString(string: name ?? "Мне еще не дали имя", attributes: [.font: UIFont.systemFont(ofSize: 30, weight: .heavy)])
-        attributedText.append(NSAttributedString(string: ", \(age ?? 0)", attributes: [.font: UIFont.systemFont(ofSize: 24, weight: .regular)]))
-        attributedText.append(NSAttributedString(string: "\n\(description ?? "Я очень скромный и стесняюсь рассказывать о себе")", attributes: [.font: UIFont.systemFont(ofSize: 20, weight: .regular)]))
+        let attributedText = NSMutableAttributedString(string: name ?? "Мне еще не дали имя", attributes: [.font: UIFont.systemFont(ofSize: 26, weight: .heavy)])
+        attributedText.append(NSAttributedString(string: ", \(age ?? 0)", attributes: [.font: UIFont.systemFont(ofSize: 22, weight: .regular)]))
+        attributedText.append(NSAttributedString(string: "\n\(description ?? "Я очень скромный и стесняюсь рассказывать о себе")", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .regular)]))
         
         
-        return CardViewModel(imageNames: imageNames, attributedString: attributedText, textAlignment: .left)
+        return CardViewModel(uid: uid, imageNames: imageNames, attributedString: attributedText, textAlignment: .left)
     }
 }
 

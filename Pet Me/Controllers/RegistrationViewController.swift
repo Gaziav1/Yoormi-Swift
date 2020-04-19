@@ -12,7 +12,6 @@ import JGProgressHUD
 
 class RegistrationViewController: UIViewController {
     
-    
     fileprivate let registrationViewModel = RegistrationViewModel()
     
     fileprivate let selectPhotoButton: UIButton = {
@@ -25,6 +24,15 @@ class RegistrationViewController: UIViewController {
         button.layer.cornerRadius = 15
         button.imageView?.contentMode = .scaleAspectFill
         button.clipsToBounds = true
+        return button
+    }()
+    
+    fileprivate let loginButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setTitle("Войти", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 18, weight: .heavy)
+        button.addTarget(self, action: #selector(handleLogin), for: .touchUpInside)
         return button
     }()
     
@@ -86,6 +94,7 @@ class RegistrationViewController: UIViewController {
         setupGradient()
         setupScrollView()
         setDelegates()
+        setupLoginButton()
         setupStackView()
         setupNotificationsObserver()
         bindToRegistrationViewModel()
@@ -110,6 +119,11 @@ class RegistrationViewController: UIViewController {
         } else {
             overallStackView.axis = .vertical
         }
+    }
+    
+    fileprivate func setupLoginButton() {
+        scrollView.addSubview(loginButton)
+        loginButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
     }
     
     fileprivate func setupScrollView() {
@@ -144,8 +158,15 @@ class RegistrationViewController: UIViewController {
         }
     }
     
+    @objc fileprivate func handleLogin() {
+        let loginController = LoginController()
+        loginController.view.backgroundColor = .yellow
+        navigationController?.pushViewController(loginController, animated: true)
+    }
+    
     @objc fileprivate func keyboardWillHide() {
         self.scrollView.contentInset.bottom = 0
+        self.scrollView.verticalScrollIndicatorInsets.bottom = 0
     }
     
     @objc fileprivate func dismissKeyboard() {
@@ -181,11 +202,14 @@ class RegistrationViewController: UIViewController {
         dismissKeyboard()
 
         registrationViewModel.performRegistration { [unowned self] (error) in
-            if let error = error {
-                self.showHUDWithError(error: error)
+            guard error == nil else {
+                self.showHUDWithError(error: error!)
+                return
             }
+            let homeController = HomeViewController()
+            homeController.modalPresentationStyle = .fullScreen
+            self.present(homeController, animated: true)
         }
-        
     }
     
     @objc fileprivate func handleSelectPhoto() {
@@ -265,3 +289,5 @@ extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigat
         dismiss(animated: true)
     }
 }
+
+

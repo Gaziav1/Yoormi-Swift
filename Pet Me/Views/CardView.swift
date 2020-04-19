@@ -9,8 +9,15 @@
 import UIKit
 import SDWebImage
 
-class CardView: UIView {
+protocol CardViewDelegate: class {
+    func didSelectMoreInfoButton(cardViewModel: CardViewModel)
+    func didDislikeUser()
+    func didLikeUser()
     
+}
+
+class CardView: UIView {
+     
     var cardViewModel: CardViewModel! {
         didSet {
             let imageName = cardViewModel.imageNames.first ?? ""
@@ -22,18 +29,28 @@ class CardView: UIView {
             descriptionLabel.attributedText = cardViewModel.attributedString
             descriptionLabel.textAlignment = cardViewModel.textAlignment
             
-            (0..<cardViewModel.imageNames.count).forEach({ _ in
+            
+            for _ in cardViewModel.imageNames {
                 let barView = UIView()
                 barView.layer.cornerRadius = 2
                 barView.clipsToBounds = true
                 barView.backgroundColor = deselectedViewColor
                 barsStackView.addArrangedSubview(barView)
-            })
+            }
+           
             barsStackView.subviews.first?.backgroundColor = .white
             setupImageIndexObserver()
-            
         }
     }
+    
+    weak var delegate: CardViewDelegate?
+    
+    fileprivate let moreInfoButton: UIButton = {
+        let button = UIButton(type: .system)
+        button.setImage(UIImage(named: "info")?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.addTarget(self, action: #selector(handleMoreInfo), for: .touchUpInside)
+        return button
+    }()
     
     fileprivate let deselectedViewColor = UIColor(white: 0, alpha: 0.15)
     fileprivate let barsStackView = UIStackView()
@@ -52,6 +69,7 @@ class CardView: UIView {
         setupImage()
         setupBarsStackView()
         setupGradientLayer()
+        setupInfoButton()
         setupLabel()
         addGestureRecognizer(UIPanGestureRecognizer(target: self, action: #selector(handlePan)))
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTap)))
@@ -63,12 +81,16 @@ class CardView: UIView {
     
     //MARK: - FilePrivate Methods
     
+    fileprivate func setupInfoButton() {
+        addSubview(moreInfoButton)
+        moreInfoButton.anchor(top: nil, leading: nil, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 00, left: 0, bottom: 16, right: 16), size: .init(width: 41, height: 44))
+    }
+    
     fileprivate func setupLabel() {
         addSubview(descriptionLabel)
-        descriptionLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 16))
+        descriptionLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: moreInfoButton.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 5))
         descriptionLabel.textColor = .white
         descriptionLabel.numberOfLines = 0
-        descriptionLabel.font = UIFont.systemFont(ofSize: 34, weight: .heavy)
     }
     
     fileprivate func setupImage() {
@@ -94,7 +116,7 @@ class CardView: UIView {
     
     fileprivate func handleDragging(_ gesture: UIPanGestureRecognizer) {
         let translation = gesture.translation(in: nil)
-        let degrees: CGFloat = translation.x / 20
+        let degrees: CGFloat = translation.x / 15
         let angle = degrees * .pi / 180
         let rotationalTransformation = CGAffineTransform(rotationAngle: angle).translatedBy(x: translation.x, y: translation.y)
         
@@ -140,26 +162,27 @@ class CardView: UIView {
         }
     }
     
+    @objc fileprivate func handleMoreInfo() {
+        delegate?.didSelectMoreInfoButton(cardViewModel: cardViewModel)
+    }
+    
     fileprivate func handleEnded(_ gesture: UIPanGestureRecognizer) {
         
         let translationDirection: CGFloat = gesture.translation(in: nil).x > 0 ? 1 : -1
+    
         let shouldDismissCard = abs(gesture.translation(in: nil).x) > threshold
         
-        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
-            
-            if shouldDismissCard {
-                self.layer.frame = CGRect(x: 600 * translationDirection, y: 0, width: self.frame.width, height: self.frame.height)
-                
-            } else {
+        if shouldDismissCard {
+            translationDirection == 1 ? self.delegate?.didLikeUser() : self.delegate?.didDislikeUser()
+        } else {
+           
+            UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.6, initialSpringVelocity: 0.1, options: .curveEaseOut, animations: {
                 self.transform = .identity
-            }
-        }) { (_) in
-            self.transform = .identity
+            })
             
-            if shouldDismissCard {
-                self.removeFromSuperview()
-            }
         }
+        
+
     }
     
     required init?(coder: NSCoder) {

@@ -12,17 +12,16 @@ class HomeButtonControlsStackView: UIStackView {
     
     let refreshButton = createButton(image: #imageLiteral(resourceName: "refresh_circle"))
     let closeButton = createButton(image: #imageLiteral(resourceName: "dismiss_circle"))
-    let starButton = createButton(image: #imageLiteral(resourceName: "super_like_circle"))
     let likeButton = createButton(image: #imageLiteral(resourceName: "like_circle"))
-    let lightingButton = createButton(image: #imageLiteral(resourceName: "boost_circle"))
-    
+
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        [refreshButton, closeButton, starButton, likeButton, lightingButton].forEach{ addArrangedSubview($0) }
+        [closeButton, likeButton, refreshButton].forEach{ addArrangedSubview($0) }
         
-        heightAnchor.constraint(equalToConstant: 100).isActive = true
+        heightAnchor.constraint(equalToConstant: 65).isActive = true
         distribution = .fillEqually
+        spacing = 100
     }
     
     required init(coder: NSCoder) {
