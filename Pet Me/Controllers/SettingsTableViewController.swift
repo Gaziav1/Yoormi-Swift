@@ -19,7 +19,7 @@ class SettingsTableViewController: UITableViewController {
     
     weak var delegate: LogoutDelegate?
     
-    private var user: User?
+    private var user: AppUser?
     
     fileprivate lazy var image1Button = createButton(selector: #selector(handleSelectPhoto))
     fileprivate lazy var image2Button = createButton(selector: #selector(handleSelectPhoto))
@@ -172,7 +172,7 @@ class SettingsTableViewController: UITableViewController {
             }
             
             guard let dictionary = snapshot?.data() else { return }
-            self.user = User(dictionary: dictionary)
+            self.user = AppUser(dictionary: dictionary)
             self.loadUserPhotos()
             self.tableView.reloadData()
         }

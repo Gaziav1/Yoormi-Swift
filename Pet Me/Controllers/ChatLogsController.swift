@@ -9,23 +9,7 @@
 import UIKit
 import Firebase
 
-struct Message {
-    let text: String
-    let from: String
-    let to: String
-    let time: Timestamp
-    let isMessageFromCurrentUser: Bool
-    
-    init(dict: [String: Any]) {
-        self.text = dict["text"] as? String ?? ""
-        self.from = dict["from"] as? String ?? ""
-        self.time = dict["time"] as? Timestamp ?? Timestamp(date: Date())
-        self.to = dict["to"] as? String ?? ""
-        
-        self.isMessageFromCurrentUser = Auth.auth().currentUser?.uid == self.from
-        
-    }
-}
+
 
 class ChatLogsController: UICollectionViewController {
     
@@ -34,7 +18,7 @@ class ChatLogsController: UICollectionViewController {
     private let navBarHeight = 150
     private var messages = [Message]()
     private let match: Match
-    private var currentUser: User?
+    private var currentUser: AppUser?
     
     lazy var chatLogsBottomView: ChatLogsBottomAccessoryView = {
         let chatView = ChatLogsBottomAccessoryView(frame: .init(x: 0, y: 0, width: view.frame.width, height: 50))
@@ -91,7 +75,7 @@ class ChatLogsController: UICollectionViewController {
                 return
             }
             guard let data = snapshot?.data() else { return }
-            let user = User(dictionary: data)
+            let user = AppUser(dictionary: data)
             self.currentUser = user
         }
     }

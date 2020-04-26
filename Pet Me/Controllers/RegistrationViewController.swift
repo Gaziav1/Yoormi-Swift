@@ -98,7 +98,7 @@ class RegistrationViewController: UIViewController {
         setupStackView()
         setupNotificationsObserver()
         bindToRegistrationViewModel()
-        
+        navigationController?.isNavigationBarHidden = true
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard)))
     }
     
@@ -141,7 +141,7 @@ class RegistrationViewController: UIViewController {
         registrationViewModel.bindableIsFormValid.bind(observer: { [unowned self] isValid in
             guard let isFormValid = isValid else { return }
             self.registerButton.isEnabled = isFormValid ? true : false
-            self.registerButton.backgroundColor = isFormValid ? #colorLiteral(red: 0.5738061338, green: 0.1607824811, blue: 0.361251015, alpha: 1) : .systemGray
+            self.registerButton.backgroundColor = isFormValid ? .appLightGreen : .systemGray
         })
         
         registrationViewModel.bindableImage.bind(observer: { [unowned self] image in
@@ -206,7 +206,7 @@ class RegistrationViewController: UIViewController {
                 self.showHUDWithError(error: error!)
                 return
             }
-            let homeController = HomeViewController()
+            let homeController = CardsViewController()
             homeController.modalPresentationStyle = .fullScreen
             self.present(homeController, animated: true)
         }
@@ -243,8 +243,8 @@ class RegistrationViewController: UIViewController {
     
     fileprivate func setupGradient() {
         
-        let topColor = #colorLiteral(red: 0.3882352941, green: 0.2431372549, blue: 0.3882352941, alpha: 1).cgColor
-        let bottomColor = #colorLiteral(red: 0.1411764706, green: 0.2745098039, blue: 0.4196078431, alpha: 1).cgColor
+        let topColor = UIColor.appLightGreen.cgColor
+        let bottomColor = UIColor.appDarkGreen.cgColor
         gradientLayer.colors = [topColor, bottomColor]
         gradientLayer.locations = [0, 1]
         

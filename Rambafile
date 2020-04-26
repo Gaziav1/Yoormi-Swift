@@ -1,0 +1,25 @@
+### Headers settings
+company: Gaziav Ishakov
+
+### Xcode project settings
+project_name: PetMe
+xcodeproj_path: Pet Me.xcodeproj
+
+### Code generation settings section
+# The main project target name
+project_target: Pet Me
+
+# The file path for new modules
+project_file_path: Pet Me/Classes/Modules
+
+# The Xcode group path to new modules
+project_group_path: Pet Me/Classes/Modules
+
+### Dependencies settings section
+podfile_path: Podfile
+
+### Templates
+templates:
+- {name: rviper_controller}
+- {name: mvvm_controller}
+- {name: swifty_viper}

@@ -12,8 +12,9 @@ target 'Pet Me' do
   pod 'Firebase/Core’
   pod 'SDWebImage'
   pod 'JGProgressHUD' 
-
-
+  pod 'Swinject'
+  pod 'XCGLogger' 
+  pod 'RxCocoa'
   target 'Pet MeTests' do
     inherit! :search_paths
     # Pods for testing

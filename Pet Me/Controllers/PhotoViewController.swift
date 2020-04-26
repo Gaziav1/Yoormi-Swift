@@ -10,7 +10,7 @@ import UIKit
 
 class PhotoViewController: UIViewController {
     
-    let imageView = UIImageView(image: #imageLiteral(resourceName: "DoggoTest"))
+    let imageView = UIImageView(image: Asset.Placeholders.doggoPlaceholder1)
     
     init(image: UIImage) {
         self.imageView.image = image
