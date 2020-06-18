@@ -19,6 +19,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         AppRouter.shared.initialViewController()
         window?.rootViewController = AppRouter.shared.mainController
         window?.makeKeyAndVisible()
+        LogManager.configurateLogs()
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

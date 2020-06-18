@@ -8,7 +8,7 @@
 
 import UIKit
 import Swinject
-import XCGLogger
+
 
 //MARK: RouterDestination
 

@@ -13,7 +13,7 @@ target 'Pet Me' do
   pod 'SDWebImage'
   pod 'JGProgressHUD' 
   pod 'Swinject'
-  pod 'XCGLogger' 
+  pod 'SwiftyBeaver' 
   pod 'RxCocoa'
   target 'Pet MeTests' do
     inherit! :search_paths

@@ -26,7 +26,7 @@ class FirebaseManager: FirebaseManagerProtocol {
         let query = Firestore.firestore().collection("users")
         query.getDocuments { (snapshot, error) in
             if let error = error {
-                log.error("Error occured with users fetching from Firestore - : \(error.localizedDescription)")
+                log.warning("Error occured with users fetching from Firestore - : \(error.localizedDescription)")
                 completion(.failure(error))
                 return
             }
@@ -54,7 +54,7 @@ class FirebaseManager: FirebaseManagerProtocol {
         
         Firestore.firestore().collection("swipes").document(currentUserId).getDocument { (snapshot, error) in
             if let err = error {
-                log.error("Error occured with swipes fetching for user - \(currentUserId)")
+                log.warning("Error occured with swipes fetching for user - \(currentUserId)")
                 completion(.failure(err))
                 return
             }
@@ -83,7 +83,7 @@ class FirebaseManager: FirebaseManagerProtocol {
             if snapshot?.exists == true {
                 Firestore.firestore().collection("swipes").document(currentUserID).updateData(documentData) { (error) in
                     if error != nil {
-                        log.error("Failed to update swipes")
+                        log.warning("Failed to update swipes")
                         completion(error)
                         return
                     }
@@ -100,7 +100,7 @@ class FirebaseManager: FirebaseManagerProtocol {
                 
                 Firestore.firestore().collection("swipes").document(currentUserID).setData(documentData) { (error) in
                     if error != nil {
-                        log.error("Failed to set swipes")
+                        log.warning("Failed to set swipes")
                         completion(error)
                         return
                     }
@@ -121,7 +121,7 @@ class FirebaseManager: FirebaseManagerProtocol {
         
         Firestore.firestore().collection("swipes").document(userID).getDocument { (snapshot, error) in
             if error != nil {
-                log.info("Error occured fetching swipes for user \(userID)")
+                log.warning("Error occured fetching swipes for user \(userID)")
                 return
             }
             

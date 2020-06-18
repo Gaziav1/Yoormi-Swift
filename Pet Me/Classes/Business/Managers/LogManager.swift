@@ -7,32 +7,15 @@
 //
 
 import Foundation
-import XCGLogger
+import SwiftyBeaver
 
-let log = LogManager.configurateLogs()
+let log = SwiftyBeaver.self
 
 class LogManager {
     
-    static func configurateLogs() -> XCGLogger {
-        let log = XCGLogger(identifier: "XCGLogger", includeDefaultDestinations: false)
+    static func configurateLogs() {
+        let console = ConsoleDestination()
         
-        let systemLogDestination = ConsoleDestination(owner: log, identifier: "XCGLogger.console")
-    
-        systemLogDestination.outputLevel = .debug
-        systemLogDestination.showLogIdentifier = false
-        systemLogDestination.showFunctionName = true
-        systemLogDestination.showThreadName = false
-        systemLogDestination.showLevel = true
-        systemLogDestination.showFileName = true
-        systemLogDestination.showLineNumber = true
-        systemLogDestination.showDate = true
-        log.add(destination: systemLogDestination)
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.locale = NSLocale.current
-        dateFormatter.dateFormat = "HH:mm:ss.SSS"
-        log.dateFormatter = dateFormatter
-        
-        return log
+        log.addDestination(console)
     }
 }

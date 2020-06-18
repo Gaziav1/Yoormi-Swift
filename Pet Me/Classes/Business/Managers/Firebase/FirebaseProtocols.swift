@@ -10,9 +10,6 @@ import Foundation
 import Firebase
 
 protocol AuthManager {
-    var uid: String? { get }
-    var isAuthenticated: Bool { get }
-    
     func registerUser(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void)
 }
 
