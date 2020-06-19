@@ -48,7 +48,7 @@ class MatchCell: UICollectionViewCell {
         stack.axis = .vertical
         stack.alignment = .center
         addSubview(stack)
-        stack.fillSuperview()
+        stack.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     required init?(coder: NSCoder) {
@@ -135,7 +135,11 @@ class MessageViewController: UICollectionViewController {
     
     fileprivate func setupTopView() {
         view.addSubview(customNavBar)
-        customNavBar.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: 150))
+        customNavBar.snp.makeConstraints({
+            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(view.safeAreaLayoutGuide)
+            $0.height.equalTo(150)
+        })
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

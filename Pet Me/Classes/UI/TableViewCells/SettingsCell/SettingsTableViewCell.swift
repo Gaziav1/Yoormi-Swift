@@ -20,7 +20,7 @@ class SettingsTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         addSubview(textField)
-        textField.fillSuperview()
+        textField.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     required init?(coder: NSCoder) {

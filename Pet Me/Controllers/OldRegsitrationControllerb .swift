@@ -10,7 +10,7 @@ import UIKit
 import Firebase
 import JGProgressHUD
 
-class RegistrationViewController: UIViewController {
+class OldRegsitrationControllerb: UIViewController {
     
     fileprivate let registrationViewModel = RegistrationViewModel()
     
@@ -123,12 +123,15 @@ class RegistrationViewController: UIViewController {
     
     fileprivate func setupLoginButton() {
         scrollView.addSubview(loginButton)
-        loginButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
+        loginButton.snp.makeConstraints({
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+        })
     }
     
     fileprivate func setupScrollView() {
         view.addSubview(scrollView)
-        scrollView.fillSuperview()
+        scrollView.snp.makeConstraints({ $0.edges.equalToSuperview() })
         scrollView.contentSize = view.frame.size
     }
     
@@ -237,8 +240,10 @@ class RegistrationViewController: UIViewController {
         
         selectPhotoButton.widthAnchor.constraint(equalToConstant: 275).isActive = true
         overallStackView.spacing = 8
-        overallStackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
-        overallStackView.centerYAnchor.constraint(equalTo: scrollView.centerYAnchor).isActive = true
+        overallStackView.snp.makeConstraints({
+            $0.leading.trailing.equalTo(view).inset(50)
+            $0.centerY.equalToSuperview()
+        })
     }
     
     fileprivate func setupGradient() {
@@ -271,14 +276,14 @@ class RegistrationViewController: UIViewController {
 }
 
 // MARK: - UITextFieldDelegate
-extension RegistrationViewController: UITextFieldDelegate {
+extension OldRegsitrationControllerb: UITextFieldDelegate {
     func textFieldDidBeginEditing(_ textField: UITextField) {
         activeTextField = textField
     }
 }
 
 // MARK: - UIImagePickerControllerDelegate, UINavigationControllerDelegate
-extension RegistrationViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+extension OldRegsitrationControllerb: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true)
     }

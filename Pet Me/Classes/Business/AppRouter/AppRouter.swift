@@ -16,6 +16,7 @@ enum RouterDestination {
     case cards
     case settings
     case messages
+    case registration
     
     func constructModule(in factory: Container) -> UIViewController? {
         switch self {
@@ -25,7 +26,8 @@ enum RouterDestination {
             return factory.resolve(UIViewController.self, name: SettingsModuleConfigurator.tag)
         case .messages:
             return factory.resolve(UIViewController.self, name: MessagesModuleConfigurator.tag)
-        
+        case .registration:
+            return factory.resolve(UIViewController.self, name: RegistrationModuleConfigurator.tag)
         }
     }
 }
@@ -54,7 +56,7 @@ class AppRouter: AppRouterProtocol {
     }
     
     func initialViewController() {
-        let controller = RouterDestination.cards.constructModule(in: factory)
+        let controller = RouterDestination.registration.constructModule(in: factory)
         mainController = UINavigationController(rootViewController: controller!)
     }
 }

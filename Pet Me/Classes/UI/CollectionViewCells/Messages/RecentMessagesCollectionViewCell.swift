@@ -72,7 +72,7 @@ class RecentMessagesCollectionViewCell: UICollectionViewCell {
         mainStackView.alignment = .center
         mainStackView.isLayoutMarginsRelativeArrangement = true
         mainStackView.layoutMargins = .init(top: 0, left: 18, bottom: 0, right: 18)
-        mainStackView.fillSuperview()
+        mainStackView.snp.makeConstraints({ $0.edges.equalToSuperview() })
         
     }
     

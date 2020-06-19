@@ -10,6 +10,7 @@ target 'Pet Me' do
   pod 'Firebase/Auth’
   pod 'Firebase/Storage’
   pod 'Firebase/Core’
+  pod 'SnapKit'
   pod 'SDWebImage'
   pod 'JGProgressHUD' 
   pod 'Swinject'

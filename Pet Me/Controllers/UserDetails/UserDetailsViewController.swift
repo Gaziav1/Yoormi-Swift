@@ -71,18 +71,26 @@ class UserDetailsViewController: UIViewController {
         let visualEffectView = UIVisualEffectView(effect: blurEffect)
         
         view.addSubview(visualEffectView)
-        visualEffectView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.topAnchor, trailing: view.trailingAnchor)
+        visualEffectView.snp.makeConstraints({
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        })
     }
     
     fileprivate func setupScrollView() {
         view.addSubview(scrollView)
     
-        scrollView.fillSuperview()
+        scrollView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     fileprivate func setupDismissButton() {
         view.addSubview(dismissButton)
-        dismissButton.anchor(top: swipingView.bottomAnchor, leading: nil, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 10, left: 0, bottom: 0, right: 10), size: CGSize(width: 50, height: 50))
+        
+        dismissButton.snp.makeConstraints({
+            $0.top.equalTo(swipingView.snp.bottom).offset(10)
+            $0.trailing.equalToSuperview().inset(10)
+            $0.size.equalTo(50)
+        })
     }
     
     fileprivate func setupSwipingView() {
@@ -93,7 +101,11 @@ class UserDetailsViewController: UIViewController {
     fileprivate func setupInfoLabel() {
         scrollView.addSubview(infoLabel)
         
-        infoLabel.anchor(top: swipingView.bottomAnchor, leading: view.leadingAnchor, bottom: nil, trailing: dismissButton.leadingAnchor, padding: .init(top: 16, left: 16, bottom: 0, right: 5))
+        infoLabel.snp.makeConstraints({
+            $0.top.equalTo(swipingView.snp.bottom).offset(16)
+            $0.leading.equalTo(view).inset(16)
+            $0.trailing.equalTo(dismissButton.snp.leading).offset(5)
+        })
     }
     
     fileprivate func handleScrollingBehavior() {

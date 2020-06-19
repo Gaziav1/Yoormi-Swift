@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 import JGProgressHUD
 
 class CardsViewController: UIViewController, CardsViewInput {
@@ -50,7 +51,7 @@ class CardsViewController: UIViewController, CardsViewInput {
         cardView.setupCardView(from: user)
         cardView.delegate = self
         cardDeckView.addSubview(cardView)
-        cardView.fillSuperview()
+        cardView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     
@@ -63,7 +64,7 @@ class CardsViewController: UIViewController, CardsViewInput {
         
         view.addSubview(overallStackView)
         overallStackView.translatesAutoresizingMaskIntoConstraints = false
-        overallStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.safeAreaLayoutGuide.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.safeAreaLayoutGuide.trailingAnchor)
+        overallStackView.snp.makeConstraints({ $0.edges.equalTo(view.safeAreaLayoutGuide) })
         overallStackView.isLayoutMarginsRelativeArrangement = true
         overallStackView.layoutMargins = .init(top: 0, left: 5, bottom: 0, right: 5)
     }
@@ -82,10 +83,8 @@ class CardsViewController: UIViewController, CardsViewInput {
         matchView.currentUser = lastFetchedUser
         //matchView.cardUID = cardUID
         view.addSubview(matchView)
-        matchView.fillSuperview()
+        matchView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
-    
-    
     
     fileprivate func performSwipeAnimation(translation: CGFloat, angle: CGFloat) {
         guard let card = cardDeckView.subviews.last else { return }

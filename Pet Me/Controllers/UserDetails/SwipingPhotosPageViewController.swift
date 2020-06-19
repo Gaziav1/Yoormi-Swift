@@ -66,7 +66,12 @@ class SwipingPhotosPageViewController: UIPageViewController {
         barStackView.arrangedSubviews.first?.backgroundColor = .white
         barStackView.spacing = 4
         barStackView.distribution = .fillEqually
-        barStackView.anchor(top: view.safeAreaLayoutGuide.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 8, left: 8, bottom: 0, right: 8), size: .init(width: 0, height: 4))
+        
+        barStackView.snp.makeConstraints({
+            $0.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+            $0.leading.trailing.equalToSuperview().inset(8)
+            $0.height.equalTo(4)
+        })
     }
 }
     //MARK: - UIPageViewControllerDataSource

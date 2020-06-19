@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class ChatLogsCollectionViewCell: UICollectionViewCell {
     
@@ -29,8 +30,6 @@ class ChatLogsCollectionViewCell: UICollectionViewCell {
         }
     }
     
-    var anchoredConstraines: AnchoredConstraints!
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupBubbleContainer()
@@ -43,7 +42,10 @@ class ChatLogsCollectionViewCell: UICollectionViewCell {
     
     private func setupMessageTextView() {
         containerView.addSubview(messageTextView)
-        messageTextView.fillSuperview(padding: .init(top: 4, left: 12, bottom: 4, right: 12))
+        messageTextView.snp.makeConstraints({
+            $0.top.bottom.equalToSuperview().inset(4)
+            $0.leading.trailing.equalToSuperview().inset(12)
+        })
     }
     
     private func setupBubbleContainer() {
@@ -52,25 +54,27 @@ class ChatLogsCollectionViewCell: UICollectionViewCell {
         containerView.clipsToBounds = true
         addSubview(containerView)
         
-        anchoredConstraines = containerView.anchor(top: topAnchor, leading: leadingAnchor, bottom: bottomAnchor, trailing: trailingAnchor)
-        anchoredConstraines.leading?.constant = 20
-        anchoredConstraines.trailing?.constant = -20
-        anchoredConstraines.trailing?.isActive = false
-        
-        containerView.widthAnchor.constraint(lessThanOrEqualToConstant: 270).isActive = true
+        containerView.snp.makeConstraints({
+            $0.width.lessThanOrEqualTo(270)
+        })
     }
     
     fileprivate func setupCurrentUserMessage() {
         containerView.backgroundColor = .appLightGreen
         messageTextView.textColor = .white
-        anchoredConstraines.trailing?.isActive = true
-        anchoredConstraines.leading?.isActive = false
+        
+        containerView.snp.makeConstraints({
+            $0.top.bottom.equalToSuperview()
+            $0.trailing.equalToSuperview().inset(20)
+        })
     }
     
     fileprivate func setupMessageFromOtherUser() {
         containerView.backgroundColor = .systemGray6
         messageTextView.textColor = .black
-        anchoredConstraines.trailing?.isActive = false
-        anchoredConstraines.leading?.isActive = true
+        containerView.snp.makeConstraints({
+            $0.top.bottom.equalToSuperview()
+            $0.leading.equalToSuperview().inset(20)
+        })
     }
 }

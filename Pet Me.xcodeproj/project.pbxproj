@@ -12,6 +12,7 @@
 		066ED0C8722BBC40D8D9E00D /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */; };
 		09F5FC20AF9715CB40DFA26D /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA12CB012B8A2A79EE46D1 /* CardsPresenter.swift */; };
 		0F78B6E5DCE7685472A61E6F /* CardsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0935EEA1B2B7ED7AF43DD66F /* CardsModuleInput.swift */; };
+		1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */; };
 		1975BC25353D55EA62F625D2 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */; };
 		1A1953CF43DEDE2CCBA282F6 /* CardsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F84045A4FC8EB9E88DC4 /* CardsViewOutput.swift */; };
 		1A32631F96618D9F6B7F4E9D /* SettingsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021368F37EB95C8BEA82984 /* SettingsRouterInput.swift */; };
@@ -19,14 +20,20 @@
 		1EA32F7C73B314BFC6A75862 /* SettingsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */; };
 		22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */; };
 		303590832F50AFD838CC38A6 /* CardsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFA01C0F52E858FD798A2 /* CardsRouterInput.swift */; };
+		37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */; };
+		45C3654588AA1069538FFBAB /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */; };
 		527DC4F86C63B39D4D3E4B71 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */; };
+		5A18AF594511100E10E18BC6 /* RegistrationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */; };
 		5B4777ED663CE24FD0ED9E4F /* CardsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D310AB3D9E2C0E8E63F4B96 /* CardsInteractorInput.swift */; };
 		5BF8C29179AD2DC324E5830D /* MessagesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */; };
 		624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06061268F27E49CBA8513BB4 /* CardsRouter.swift */; };
+		66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */; };
 		7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF573CA114C3C23C41CA1BC /* SettingsViewInput.swift */; };
+		822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C948515FE521118933B161 /* RegistrationViewController.swift */; };
 		848E4FE60286C01B833374A3 /* MessagesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C93D468BE2805FE882BAEB /* MessagesViewOutput.swift */; };
 		878CD1B057FC8DBE13F97545 /* MessagesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5668BE001184D5E769751 /* MessagesConfigurator.swift */; };
 		8A4D253C38D1D6073DFDC8EE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B61ACDC9CE74634CDE578D /* SettingsRouter.swift */; };
+		9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */; };
 		97A31DD8C63C5DF1E80DBB07 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727EE2B3337471B9B962221 /* SettingsPresenter.swift */; };
 		A41232788C585BD3C31C250D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */; };
 		A5990DD430B831D161D57D86 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52149797422F03CA114C17BD /* CardsInteractor.swift */; };
@@ -54,7 +61,7 @@
 		A742A9C0241BAF9D006721D7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742A9BF241BAF9D006721D7 /* PhotoViewController.swift */; };
 		A756B1EA24093153004D77B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A756B1E924093153004D77B8 /* GoogleService-Info.plist */; };
 		A75AFA632412952A00F2FA96 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */; };
-		A77021552407E6D6005E6C4A /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021542407E6D6005E6C4A /* RegistrationViewController.swift */; };
+		A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */; };
 		A77021572407EC9C005E6C4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021562407EC9C005E6C4A /* CustomTextField.swift */; };
 		A7E0467123C4D7E400A4C5B5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0467023C4D7E400A4C5B5 /* AppDelegate.swift */; };
 		A7E0467323C4D7E400A4C5B5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0467223C4D7E400A4C5B5 /* SceneDelegate.swift */; };
@@ -76,13 +83,17 @@
 		A7FFBABA24533ABA00CD7B5F /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBAB924533ABA00CD7B5F /* Shadow.swift */; };
 		A7FFBABC24533ACE00CD7B5F /* AutoLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBABB24533ACE00CD7B5F /* AutoLayout.swift */; };
 		A86E9B192C18A19B212B3BAD /* SettingsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC0ECB57B4739D7D185C0D /* SettingsModuleInput.swift */; };
+		B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */; };
 		B28CC714710411A9482C385E /* MessagesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */; };
+		B311DD8E3DE68CF71F873CCF /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */; };
 		B8BAF5BB767DB1F0C0200339 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */; };
 		B9271326341F1522AABE50B7 /* CardsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34889D9D3FBDC2E7EF0374C2 /* CardsViewInput.swift */; };
 		BD7A6821F7ADE7ADE8C0794F /* MessagesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1D9B8E1A8E8295CC39AA2 /* MessagesInteractorInput.swift */; };
+		C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */; };
 		C91AB6CBAD3FF1BFE06B8DA2 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8B87252400B1B5BDA40363 /* MessagesViewController.swift */; };
 		C91DA74B4AF74107E1876E32 /* Pods_Pet_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5ED1D531D5C123DF6824ADE7 /* Pods_Pet_Me.framework */; };
 		CCB249171A6F84FB9F328444 /* Pods_Pet_MeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5ADF44D52DFD0330CB68F1C /* Pods_Pet_MeTests.framework */; };
+		D1D4AA8B07CC603B85EF6F40 /* RegistrationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE10C855BF40BDB75086D9 /* RegistrationConfigurator.swift */; };
 		D8AE8FFA22FDF60CB3937CD3 /* MessagesModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */; };
 		E6DFCB6B42EB05B38B5F3B23 /* CardsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F2C37CB760E7EAF63CBD4 /* CardsInteractorOutput.swift */; };
 		F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */; };
@@ -107,23 +118,30 @@
 		127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
 		1CB1D9B8E1A8E8295CC39AA2 /* MessagesInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorInput.swift; sourceTree = "<group>"; };
 		1D310AB3D9E2C0E8E63F4B96 /* CardsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorInput.swift; sourceTree = "<group>"; };
+		1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouterInput.swift; sourceTree = "<group>"; };
 		23E6F84045A4FC8EB9E88DC4 /* CardsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewOutput.swift; sourceTree = "<group>"; };
 		2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesModuleInput.swift; sourceTree = "<group>"; };
+		31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorOutput.swift; sourceTree = "<group>"; };
+		32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
 		34889D9D3FBDC2E7EF0374C2 /* CardsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewInput.swift; sourceTree = "<group>"; };
 		388EFA01C0F52E858FD798A2 /* CardsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsRouterInput.swift; sourceTree = "<group>"; };
 		3DE3D905B51053F119FCA0C0 /* MessagesRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesRouterInput.swift; sourceTree = "<group>"; };
+		4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		44EC0ECB57B4739D7D185C0D /* SettingsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsModuleInput.swift; sourceTree = "<group>"; };
 		4ECFD61C70FE5325C945B5AA /* Pods-Pet MeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet MeTests.release.xcconfig"; path = "Target Support Files/Pods-Pet MeTests/Pods-Pet MeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
 		50C93D468BE2805FE882BAEB /* MessagesViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesViewOutput.swift; sourceTree = "<group>"; };
 		52149797422F03CA114C17BD /* CardsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
 		55C2F9E10B7F519B330575F7 /* Pods-Pet Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet Me.debug.xcconfig"; path = "Target Support Files/Pods-Pet Me/Pods-Pet Me.debug.xcconfig"; sourceTree = "<group>"; };
+		56C948515FE521118933B161 /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5ED1D531D5C123DF6824ADE7 /* Pods_Pet_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
+		73AE10C855BF40BDB75086D9 /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
 		7B0F2C37CB760E7EAF63CBD4 /* CardsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorOutput.swift; sourceTree = "<group>"; };
 		8021368F37EB95C8BEA82984 /* SettingsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouterInput.swift; sourceTree = "<group>"; };
 		85B61ACDC9CE74634CDE578D /* SettingsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
+		87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
 		8C0AC6CE7BA0D07F1A19B1D6 /* CardsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsConfigurator.swift; sourceTree = "<group>"; };
 		9727EE2B3337471B9B962221 /* SettingsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
@@ -152,7 +170,7 @@
 		A742A9BF241BAF9D006721D7 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
 		A756B1E924093153004D77B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
-		A77021542407E6D6005E6C4A /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OldRegsitrationControllerb .swift"; sourceTree = "<group>"; };
 		A77021562407EC9C005E6C4A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A7E0466D23C4D7E400A4C5B5 /* Pet Me.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pet Me.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E0467023C4D7E400A4C5B5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -183,9 +201,13 @@
 		B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorOutput.swift; sourceTree = "<group>"; };
 		C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesViewInput.swift; sourceTree = "<group>"; };
 		C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
+		CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorInput.swift; sourceTree = "<group>"; };
 		CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
+		CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
+		DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModuleInput.swift; sourceTree = "<group>"; };
 		E5ADF44D52DFD0330CB68F1C /* Pods_Pet_MeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_MeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED344034924CCC22B6978F1C /* Pods-Pet MeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet MeTests.debug.xcconfig"; path = "Target Support Files/Pods-Pet MeTests/Pods-Pet MeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
 		FEF573CA114C3C23C41CA1BC /* SettingsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -228,6 +250,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		14928F27D0BA6E37013D4454 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				73AE10C855BF40BDB75086D9 /* RegistrationConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		1AE926383280A47E18ABB3C9 /* Router */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +288,27 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		1EB2825901E13DCA6CD619D0 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */,
+				CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		27BF8E4702D57CB8B840B6A9 /* Registration */ = {
+			isa = PBXGroup;
+			children = (
+				83F9A95FDD33E9FC4EB692FB /* View */,
+				1EB2825901E13DCA6CD619D0 /* Presenter */,
+				9EC91A29D5CA1D25E66EFAD6 /* Interactor */,
+				4A3E78A9ABD19C08E0B14993 /* Router */,
+				14928F27D0BA6E37013D4454 /* Configurator */,
+			);
+			path = Registration;
+			sourceTree = "<group>";
+		};
 		49F0023AF908FCB1B1353E79 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -266,6 +317,15 @@
 				4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		4A3E78A9ABD19C08E0B14993 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */,
+				4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */,
+			);
+			path = Router;
 			sourceTree = "<group>";
 		};
 		6162EA6C3D76D878D0EE9BE1 /* Cards */ = {
@@ -299,6 +359,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		83F9A95FDD33E9FC4EB692FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */,
+				32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */,
+				56C948515FE521118933B161 /* RegistrationViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		9219FA0031522553402A9C7D /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -307,6 +377,16 @@
 				0C8B87252400B1B5BDA40363 /* MessagesViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		9EC91A29D5CA1D25E66EFAD6 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */,
+				31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */,
+				ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		A742528924052D19002FB8C6 /* Extensions */ = {
@@ -320,7 +400,7 @@
 			isa = PBXGroup;
 			children = (
 				A7E0467423C4D7E400A4C5B5 /* HomeViewController.swift */,
-				A77021542407E6D6005E6C4A /* RegistrationViewController.swift */,
+				A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */,
 				A740A4862418F19900132DED /* LoginController.swift */,
 				A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */,
 				A73830112410FFB200D0195B /* Bindable.swift */,
@@ -349,6 +429,13 @@
 				A742A9BB241A7671006721D7 /* SwipingPhotosPageViewController.swift */,
 			);
 			path = UserDetails;
+			sourceTree = "<group>";
+		};
+		A7CAE88F249CDFF800401C2A /* RegistrationTextField */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = RegistrationTextField;
 			sourceTree = "<group>";
 		};
 		A7E0466423C4D7E400A4C5B5 = {
@@ -467,6 +554,7 @@
 		A7FFBAA524532AD400CD7B5F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A7CAE88F249CDFF800401C2A /* RegistrationTextField */,
 				A7FFBAB2245338EA00CD7B5F /* ChatLogsTopView */,
 				A7FFBAB0245338C700CD7B5F /* CollectionViewCells */,
 				A7FFBAAF245338B400CD7B5F /* ChatLogsBottomAccessoryView */,
@@ -688,6 +776,7 @@
 				6162EA6C3D76D878D0EE9BE1 /* Cards */,
 				1B4B7536F54CAD3309F383C5 /* Settings */,
 				B18EC767FFFC16C707FCDE64 /* Messages */,
+				27BF8E4702D57CB8B840B6A9 /* Registration */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -908,7 +997,7 @@
 				A742A9BC241A7671006721D7 /* SwipingPhotosPageViewController.swift in Sources */,
 				A742A9B9241A38E5006721D7 /* UserDetailsViewController.swift in Sources */,
 				A7381DA5244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift in Sources */,
-				A77021552407E6D6005E6C4A /* RegistrationViewController.swift in Sources */,
+				A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */,
 				A71274E624423C61004F0945 /* MessageViewController.swift in Sources */,
 				A7FFBAB52453394000CD7B5F /* Message.swift in Sources */,
 				A741F5F124179A6E004544AE /* SettingsTableViewCell.swift in Sources */,
@@ -962,6 +1051,17 @@
 				1C26CB93AC1B34778CACDDD2 /* MessagesRouterInput.swift in Sources */,
 				F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */,
 				878CD1B057FC8DBE13F97545 /* MessagesConfigurator.swift in Sources */,
+				C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */,
+				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
+				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
+				1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */,
+				B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */,
+				9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */,
+				5A18AF594511100E10E18BC6 /* RegistrationInteractorOutput.swift in Sources */,
+				45C3654588AA1069538FFBAB /* RegistrationInteractor.swift in Sources */,
+				B311DD8E3DE68CF71F873CCF /* RegistrationRouterInput.swift in Sources */,
+				66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */,
+				D1D4AA8B07CC603B85EF6F40 /* RegistrationConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

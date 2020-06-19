@@ -27,17 +27,20 @@ class SettingsTableViewController: UITableViewController {
     
     fileprivate lazy var header: UIView = {
         let header = UIView()
-        //header.backgroundColor = .systemFill
         header.addSubview(image1Button)
-        image1Button.backgroundColor = .white
-        image2Button.backgroundColor = .white
-        image3Button.backgroundColor = .white
-        image1Button.anchor(top: header.topAnchor, leading: header.leadingAnchor, bottom: header.bottomAnchor, trailing: nil, padding: .init(top: padding, left: padding, bottom: padding, right: 0))
-        image1Button.widthAnchor.constraint(equalTo: header.widthAnchor, multiplier: 0.45).isActive = true
+    
+        image1Button.snp.makeConstraints({
+            $0.top.leading.bottom.equalToSuperview().inset(padding)
+            $0.width.equalToSuperview().multipliedBy(0.45)
+        })
         
         let stackView = UIStackView(arrangedSubviews: [image2Button, image3Button])
         header.addSubview(stackView)
-        stackView.anchor(top: header.topAnchor, leading: image1Button.trailingAnchor, bottom: header.bottomAnchor, trailing: header.trailingAnchor, padding: .init(top: padding, left: padding, bottom: padding, right: padding))
+        
+        stackView.snp.makeConstraints({
+            $0.top.bottom.trailing.equalToSuperview().inset(padding)
+            $0.leading.equalTo(image1Button.snp.trailing).inset(padding)
+        })
         
         stackView.axis = .vertical
         stackView.distribution = .fillEqually
@@ -92,6 +95,7 @@ class SettingsTableViewController: UITableViewController {
         button.setTitle("Select Photo", for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         button.layer.cornerRadius = 8
+        button.backgroundColor = .white
         button.clipsToBounds = true
         button.addTarget(self, action: selector, for: .touchUpInside)
         return button

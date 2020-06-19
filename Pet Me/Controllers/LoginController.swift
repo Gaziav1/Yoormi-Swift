@@ -142,11 +142,17 @@ class LoginController: UIViewController {
     fileprivate func setupLayout() {
         navigationController?.isNavigationBarHidden = true
         view.addSubview(verticalStackView)
-        verticalStackView.anchor(top: nil, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, padding: .init(top: 0, left: 50, bottom: 0, right: 50))
-        verticalStackView.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         
+        verticalStackView.snp.makeConstraints({
+            $0.leading.trailing.equalToSuperview().inset(50)
+            $0.centerY.equalToSuperview()
+        })
+    
         view.addSubview(backToRegisterButton)
-        backToRegisterButton.anchor(top: nil, leading: view.leadingAnchor, bottom: view.safeAreaLayoutGuide.bottomAnchor, trailing: view.trailingAnchor)
+        
+        backToRegisterButton.snp.makeConstraints({
+            $0.leading.bottom.trailing.equalToSuperview()
+        })
     }
 
 }

@@ -85,12 +85,22 @@ class CardView: UIView {
     
     fileprivate func setupInfoButton() {
         addSubview(moreInfoButton)
-        moreInfoButton.anchor(top: nil, leading: nil, bottom: bottomAnchor, trailing: trailingAnchor, padding: .init(top: 00, left: 0, bottom: 16, right: 16), size: .init(width: 41, height: 44))
+        
+        moreInfoButton.snp.makeConstraints({
+            $0.bottom.trailing.equalToSuperview().inset(16)
+            $0.size.equalTo(41)
+        })
+
     }
     
     fileprivate func setupLabel() {
         addSubview(descriptionLabel)
-        descriptionLabel.anchor(top: nil, leading: leadingAnchor, bottom: bottomAnchor, trailing: moreInfoButton.leadingAnchor, padding: UIEdgeInsets(top: 0, left: 16, bottom: 16, right: 5))
+        
+        descriptionLabel.snp.makeConstraints({
+            $0.leading.bottom.equalToSuperview().inset(16)
+            $0.trailing.equalTo(moreInfoButton.snp.leading).offset(5)
+        })
+        
         descriptionLabel.textColor = .white
         descriptionLabel.numberOfLines = 0
     }
@@ -98,7 +108,7 @@ class CardView: UIView {
     fileprivate func setupImage() {
         addSubview(profileImageView)
         profileImageView.contentMode = .scaleAspectFill
-        profileImageView.fillSuperview()
+        profileImageView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     fileprivate func setupGradientLayer() {
@@ -110,7 +120,11 @@ class CardView: UIView {
     
     fileprivate func setupBarsStackView() {
         addSubview(barsStackView)
-        barsStackView.anchor(top: topAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: UIEdgeInsets(top: 8, left: 8, bottom: 0, right: 8), size: .init(width: 0, height: 5))
+        
+        barsStackView.snp.makeConstraints({
+            $0.top.leading.trailing.equalToSuperview().inset(8)
+            $0.height.equalTo(5)
+        })
         
         barsStackView.spacing = 4
         barsStackView.distribution = .fillEqually

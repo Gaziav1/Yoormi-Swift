@@ -129,9 +129,11 @@ class ChatLogsController: UICollectionViewController {
         view.addSubview(topView)
         topView.backButton.addTarget(self, action: #selector(dismissController), for: .touchUpInside)
         topView.dropShadow(shadowOffset: .init(width: 0, height: 4))
-        topView.anchor(top: view.topAnchor, leading: view.leadingAnchor, bottom: nil, trailing: view.trailingAnchor, size: .init(width: 0, height: navBarHeight))
+        topView.snp.makeConstraints( {
+            $0.leading.top.trailing.equalToSuperview()
+            $0.height.equalTo(navBarHeight)
+        })
     }
-    
     
     @objc fileprivate func dismissController() {
         navigationController?.popViewController(animated: true)

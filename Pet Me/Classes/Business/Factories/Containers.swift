@@ -44,6 +44,12 @@ enum Containers {
             return controller
         }
         
+        container.register(UIViewController.self, name: RegistrationModuleConfigurator.tag) { (_) in
+            let registrationConfigurator = RegistrationModuleConfigurator()
+            let controller = registrationConfigurator.configure()
+            return controller
+        }
+        
         return container
     }()
     

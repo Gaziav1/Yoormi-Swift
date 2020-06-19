@@ -67,7 +67,10 @@ class MessagesCollectionViewHeader: UICollectionReusableView {
 
         addSubview(stackView)
         stackView.spacing = 5
-        stackView.fillSuperview(padding: .init(top: 0, left: 0, bottom: 5, right: 0))
+        stackView.snp.makeConstraints({
+            $0.top.trailing.leading.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(5)
+        })
         stackView.axis = .vertical
     }
     

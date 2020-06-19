@@ -37,7 +37,7 @@ class MessagesTopView: UIView {
         stack.axis = .vertical
         
         addSubview(stack)
-        stack.fillSuperview()
+        stack.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     fileprivate func setupImage() {

@@ -69,7 +69,7 @@ class ChatLogsBottomAccessoryView: UIView {
         sendButton.heightAnchor.constraint(equalTo: stackView.heightAnchor, multiplier: 0.5).isActive = true
         messageTextView.widthAnchor.constraint(equalTo: stackView.widthAnchor, multiplier: 0.80).isActive = true
         
-        stackView.fillSuperview()
+        stackView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     @objc fileprivate func keyboardWillHide() {

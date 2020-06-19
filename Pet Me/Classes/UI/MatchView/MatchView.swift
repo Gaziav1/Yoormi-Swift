@@ -115,14 +115,23 @@ class MatchView: UIView {
     fileprivate func setupCurrentUserImage() {
         addSubview(currentUserImageView)
         
-        currentUserImageView.anchor(top: nil, leading: nil, bottom: nil, trailing: centerXAnchor, padding: .init(top: 0, left: 0, bottom: 0, right: 16), size: .init(width: 140, height: 140))
+        currentUserImageView.snp.makeConstraints({
+            $0.trailing.equalTo(snp.centerX).inset(16)
+            $0.size.equalTo(140)
+        })
+        
         currentUserImageView.layer.cornerRadius = 140 / 2
         currentUserImageView.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
     }
     
     fileprivate func setupCardUserImage() {
         addSubview(cardUserImage)
-        cardUserImage.anchor(top: nil, leading: centerXAnchor, bottom: nil, trailing: nil, padding: .init(top: 0, left: 16, bottom: 0, right: 0), size: .init(width: 140, height: 140))
+        
+        cardUserImage.snp.makeConstraints( {
+            $0.leading.equalTo(snp.centerX).inset(16)
+            $0.size.equalTo(140)
+        })
+        
         cardUserImage.layer.cornerRadius = 140 / 2
         cardUserImage.centerYAnchor.constraint(equalTo: centerYAnchor).isActive = true
         
@@ -132,7 +141,7 @@ class MatchView: UIView {
         
         visualView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapDismiss)))
         addSubview(visualView)
-        visualView.fillSuperview()
+        visualView.snp.makeConstraints({ $0.edges.equalToSuperview() })
         self.alpha = 0
         
         UIView.animate(withDuration: 0.5, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1, options: .curveEaseOut, animations: {
@@ -145,7 +154,11 @@ class MatchView: UIView {
     fileprivate func setupSendMessageButton() {
         addSubview(sendMessageButton)
         
-        sendMessageButton.anchor(top: currentUserImageView.bottomAnchor, leading: leadingAnchor, bottom: nil, trailing: trailingAnchor, padding: .init(top: 32, left: 48, bottom: 0, right: 48), size: .init(width: 0, height: 60))
+        sendMessageButton.snp.makeConstraints( {
+            $0.top.equalTo(currentUserImageView.snp.bottom).offset(32)
+            $0.leading.trailing.equalToSuperview().inset(48)
+            $0.height.equalTo(60)
+        })
         
         sendMessageButton.layer.cornerRadius = 60 / 2
     }
@@ -153,7 +166,11 @@ class MatchView: UIView {
     fileprivate func setupDescriptionLabel() {
         addSubview(descriptionLabel)
         
-        descriptionLabel.anchor(top: nil, leading: leadingAnchor, bottom: currentUserImageView.topAnchor, trailing: trailingAnchor, padding: .init(top: 0, left: 0, bottom: 32, right: 0), size: .init(width: 0, height: 50))
+        descriptionLabel.snp.makeConstraints({
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(currentUserImageView.snp.top).offset(32)
+            $0.height.equalTo(50)
+        })
     }
     
     @objc fileprivate func tapDismiss() {

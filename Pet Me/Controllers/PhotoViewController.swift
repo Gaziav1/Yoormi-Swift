@@ -27,6 +27,6 @@ class PhotoViewController: UIViewController {
         super.viewDidLoad()
         view.backgroundColor = .white
         view.addSubview(imageView)
-        imageView.fillSuperview()
+        imageView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
 }
