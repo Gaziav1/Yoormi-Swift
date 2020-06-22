@@ -9,5 +9,5 @@
 import Foundation
 
 protocol RegistrationInteractorInput {
-
+  func authorizateUser(email: String, password: String)
 }

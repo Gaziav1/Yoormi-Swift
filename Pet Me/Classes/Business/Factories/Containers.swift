@@ -46,10 +46,17 @@ enum Containers {
         
         container.register(UIViewController.self, name: RegistrationModuleConfigurator.tag) { (_) in
             let registrationConfigurator = RegistrationModuleConfigurator()
+            registrationConfigurator.firebaseAuthManager = managersContainer.resolve(FirebaseManagerProtocol.self)
             let controller = registrationConfigurator.configure()
             return controller
         }
         
+        container.register(UIViewController.self, name: StartingModuleConfigurator.tag) { (_) in
+            let configurator = StartingModuleConfigurator()
+            let controller = configurator.configure()
+            return controller
+        }
+
         return container
     }()
     
@@ -60,6 +67,7 @@ enum Containers {
             let firebaseManager = FirebaseManager()
             return firebaseManager
         }
+        
         return container
     }()
 }

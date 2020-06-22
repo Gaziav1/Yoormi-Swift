@@ -16,6 +16,8 @@ target 'Pet Me' do
   pod 'Swinject'
   pod 'SwiftyBeaver' 
   pod 'RxCocoa'
+  pod 'GoogleSignIn'
+  pod 'R.swift'
   target 'Pet MeTests' do
     inherit! :search_paths
     # Pods for testing

@@ -9,4 +9,5 @@
 protocol RegistrationViewOutput {
 
     func viewIsReady()
+    func engageAuthorizathion(withEmail email: String, andPassword password: String)
 }
