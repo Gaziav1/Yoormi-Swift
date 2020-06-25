@@ -19,14 +19,14 @@ class TopNavigationStackView: UIStackView {
     
     private let settingsButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "top_left_profile").withRenderingMode(.alwaysOriginal), for: .normal)
+        //button.setImage(#imageLiteral(resourceName: "top_left_profile").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(nil, action: #selector(settingButtonTapped), for: .touchUpInside)
         return button
     }()
     
     private let messagesButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "top_right_messages").withRenderingMode(.alwaysOriginal), for: .normal)
+        //button.setImage(#imageLiteral(resourceName: "top_right_messages").withRenderingMode(.alwaysOriginal), for: .normal)
         button.addTarget(nil, action: #selector(messagesButtonTapped), for: .touchUpInside)
         return button
     }()

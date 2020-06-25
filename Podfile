@@ -18,6 +18,8 @@ target 'Pet Me' do
   pod 'RxCocoa'
   pod 'GoogleSignIn'
   pod 'R.swift'
+  pod 'lottie-ios'	
+
   target 'Pet MeTests' do
     inherit! :search_paths
     # Pods for testing

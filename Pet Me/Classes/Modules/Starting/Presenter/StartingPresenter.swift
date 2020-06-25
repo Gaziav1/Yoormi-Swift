@@ -6,6 +6,8 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
+import UIKit
+
 class StartingPresenter: StartingModuleInput, StartingInteractorOutput {
 
     weak var view: StartingViewInput!
@@ -15,10 +17,15 @@ class StartingPresenter: StartingModuleInput, StartingInteractorOutput {
     
 }
 
+
+//MARK: -StartingViewOutput
 extension StartingPresenter: StartingViewOutput {
     
     func viewIsReady() {
         view.setupInitialState()
     }
     
+    func appleSignInTapped(presentationAnchor: UIWindow) {
+        interactor.initiateSignInWithApple(inAnchor: presentationAnchor)
+    }
 }

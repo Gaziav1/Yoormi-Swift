@@ -14,19 +14,30 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
 
+    var googleSignInManager: GoogleSignInProtocol?
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
-        
+        print("current user UID ----------------------\(Auth.auth().currentUser?.uid)----------------------")
+    
+        googleSignInManager = Containers.managers.container.resolve(GoogleSignInProtocol.self)
         GIDSignIn.sharedInstance()?.delegate = self
-        GIDSignIn.sharedInstance()?.clientID = "730133789778-to7e1jg559qc5elti3dku2lnceo7e8ae.apps.googleusercontent.com"
+        GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         
+        print(GIDSignIn.sharedInstance()?.currentUser)
         return true
     }
     
     
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error?) {
         
+        googleSignInManager?.signInWithGoogleFlow(user: user, error: error)
+    }
+
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        // Perform any operations when the user disconnects from app here.
+        // ...
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {

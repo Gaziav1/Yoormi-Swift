@@ -9,13 +9,20 @@
 import UIKit
 import AuthenticationServices
 import GoogleSignIn
+import Lottie
 
 class StartingViewController: UIViewController, StartingViewInput {
     
     var output: StartingViewOutput!
     
-    private let appleSignInButton = ASAuthorizationAppleIDButton(type: .signIn, style: .black)
-    private let googleSignInButton = CustomSignInButton()
+    private let catAnimationView = AnimationView(name: "CatWaiting")
+    
+    private let appleSignInButton = ASAuthorizationAppleIDButton(type: .continue, style: .black)
+    private let googleSignInButton: CustomSignInButton = {
+        let button = CustomSignInButton(text: "Continue with Google")
+        return button
+    }()
+    
     private let separatorLabel: UILabel = {
         let label = UILabel()
         label.text = "или"
@@ -61,11 +68,22 @@ class StartingViewController: UIViewController, StartingViewInput {
     func setupInitialState() {
         setupLabel()
         setupSignInButtons()
+        setupAnimationView()
         view.backgroundColor = .white
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
     
-    
+    private func setupAnimationView() {
+        view.addSubview(catAnimationView)
+        catAnimationView.snp.makeConstraints({
+            $0.height.equalToSuperview().multipliedBy(0.6)
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(appleSignInButton.snp.top).offset(25)
+        })
+        catAnimationView.loopMode = .loop
+        catAnimationView.animationSpeed = 0.5
+        catAnimationView.play()
+    }
     
     private func setupLabel() {
         view.addSubview(titleLabel)
@@ -100,15 +118,8 @@ class StartingViewController: UIViewController, StartingViewInput {
     }
     
     @objc private func appleButtonTapped() {
-        let provider = ASAuthorizationAppleIDProvider()
-        let request = provider.createRequest()
-        request.requestedScopes = [.fullName, .email]
-        
-        let controller = ASAuthorizationController(authorizationRequests: [request])
-        controller.delegate = self
-        controller.presentationContextProvider = self
-        
-        controller.performRequests()
+        guard let window = view.window else { return }
+        output.appleSignInTapped(presentationAnchor: window)
     }
     
     
@@ -122,30 +133,3 @@ class StartingViewController: UIViewController, StartingViewInput {
     
 }
 
-
-extension StartingViewController: ASAuthorizationControllerDelegate, ASAuthorizationControllerPresentationContextProviding {
-    
-    //MARK: - ASAuthorizationControllerDelegate
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        switch authorization.credential {
-            
-        case let credentials as ASAuthorizationAppleIDCredential:
-            print(credentials.fullName)
-            break
-        default: break
-        }
-    }
-    
-    func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
-        #warning("Handle error")
-    }
-    
-    
-    
-    // MARK: -ASAuthorizationControllerPresentationContextProviding
-    
-    func presentationAnchor(for controller: ASAuthorizationController) -> ASPresentationAnchor {
-        return view.window!
-    }
-}

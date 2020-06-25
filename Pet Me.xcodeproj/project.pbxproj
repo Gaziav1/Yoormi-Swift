@@ -50,6 +50,9 @@
 		A71274EC2444CEB2004F0945 /* ChatLogsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274EB2444CEB2004F0945 /* ChatLogsController.swift */; };
 		A71274EE2444CF44004F0945 /* ChatLogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */; };
 		A71274F02444D3A8004F0945 /* ChatLogsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */; };
+		A71FA81624A0E668009AFC8E /* CatWaiting.json in Resources */ = {isa = PBXBuildFile; fileRef = A71FA81524A0E668009AFC8E /* CatWaiting.json */; };
+		A71FA81824A24886009AFC8E /* SecureNonceGeneratorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */; };
+		A71FA81C24A2504A009AFC8E /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */; };
 		A7381DA5244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */; };
 		A7381DA72447B26A0034A7BF /* MessagesCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7381DA62447B26A0034A7BF /* MessagesCollectionViewHeader.swift */; };
 		A73830122410FFB200D0195B /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73830112410FFB200D0195B /* Bindable.swift */; };
@@ -80,6 +83,9 @@
 		A7E0467D23C4D7E600A4C5B5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A7E0467C23C4D7E600A4C5B5 /* Assets.xcassets */; };
 		A7E0468023C4D7E600A4C5B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E0467E23C4D7E600A4C5B5 /* LaunchScreen.storyboard */; };
 		A7E0468B23C4D7E700A4C5B5 /* Pet_MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0468A23C4D7E700A4C5B5 /* Pet_MeTests.swift */; };
+		A7E0879624A390F3000B0B6A /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */; };
+		A7E087A124A4BB26000B0B6A /* FirebaseFetchingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E087A024A4BB25000B0B6A /* FirebaseFetchingStrategy.swift */; };
+		A7E087A324A4BC98000B0B6A /* FirebaseUsersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E087A224A4BC98000B0B6A /* FirebaseUsersFetcher.swift */; };
 		A7E53892244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E53891244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift */; };
 		A7F3878E2450ADF9009B780E /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3878D2450ADF9009B780E /* Images.swift */; };
 		A7F387902450B97B009B780E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3878F2450B97B009B780E /* Colors.swift */; };
@@ -174,6 +180,9 @@
 		A71274EB2444CEB2004F0945 /* ChatLogsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsController.swift; sourceTree = "<group>"; };
 		A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsTopView.swift; sourceTree = "<group>"; };
+		A71FA81524A0E668009AFC8E /* CatWaiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CatWaiting.json; sourceTree = "<group>"; };
+		A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNonceGeneratorManager.swift; sourceTree = "<group>"; };
+		A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
 		A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsBottomAccessoryView.swift; sourceTree = "<group>"; };
 		A7381DA62447B26A0034A7BF /* MessagesCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewHeader.swift; sourceTree = "<group>"; };
 		A73830112410FFB200D0195B /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
@@ -209,6 +218,9 @@
 		A7E0468623C4D7E700A4C5B5 /* Pet MeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Pet MeTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A7E0468A23C4D7E700A4C5B5 /* Pet_MeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet_MeTests.swift; sourceTree = "<group>"; };
 		A7E0468C23C4D7E700A4C5B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
+		A7E087A024A4BB25000B0B6A /* FirebaseFetchingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFetchingStrategy.swift; sourceTree = "<group>"; };
+		A7E087A224A4BC98000B0B6A /* FirebaseUsersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUsersFetcher.swift; sourceTree = "<group>"; };
 		A7E53891244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7E5668BE001184D5E769751 /* MessagesConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesConfigurator.swift; sourceTree = "<group>"; };
 		A7F3878D2450ADF9009B780E /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -505,6 +517,7 @@
 		A7D2328824A0C0B000C88077 /* Resources  */ = {
 			isa = PBXGroup;
 			children = (
+				A71FA81524A0E668009AFC8E /* CatWaiting.json */,
 				A7D2328924A0C0C800C88077 /* R.generated.swift */,
 				A7E0467C23C4D7E600A4C5B5 /* Assets.xcassets */,
 			);
@@ -558,6 +571,15 @@
 			path = "Pet MeTests";
 			sourceTree = "<group>";
 		};
+		A7E0879F24A4BA3C000B0B6A /* FirebaseStrategies */ = {
+			isa = PBXGroup;
+			children = (
+				A7E087A024A4BB25000B0B6A /* FirebaseFetchingStrategy.swift */,
+				A7E087A224A4BC98000B0B6A /* FirebaseUsersFetcher.swift */,
+			);
+			path = FirebaseStrategies;
+			sourceTree = "<group>";
+		};
 		A7F3878B2450ADDB009B780E /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -593,6 +615,9 @@
 			children = (
 				A7FFBA9B245207C600CD7B5F /* Firebase */,
 				A7FFBAA12452199D00CD7B5F /* LogManager.swift */,
+				A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */,
+				A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */,
+				A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -600,6 +625,7 @@
 		A7FFBA9B245207C600CD7B5F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
+				A7E0879F24A4BA3C000B0B6A /* FirebaseStrategies */,
 				A7FFBA992451FE3200CD7B5F /* FirebaseManager.swift */,
 				A7FFBA9C245207D300CD7B5F /* FirebaseProtocols.swift */,
 			);
@@ -1001,6 +1027,7 @@
 				A7E0468023C4D7E600A4C5B5 /* LaunchScreen.storyboard in Resources */,
 				A7E0467D23C4D7E600A4C5B5 /* Assets.xcassets in Resources */,
 				A756B1EA24093153004D77B8 /* GoogleService-Info.plist in Resources */,
+				A71FA81624A0E668009AFC8E /* CatWaiting.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1122,6 +1149,7 @@
 				A71274E424409D83004F0945 /* GradientButton.swift in Sources */,
 				A742528E24054532002FB8C6 /* CardsBottomStackView.swift in Sources */,
 				A70A8826249CF6BF0094F231 /* UI.swift in Sources */,
+				A71FA81C24A2504A009AFC8E /* AppleSignInManager.swift in Sources */,
 				A7E0467523C4D7E400A4C5B5 /* HomeViewController.swift in Sources */,
 				A7381DA72447B26A0034A7BF /* MessagesCollectionViewHeader.swift in Sources */,
 				A71274F02444D3A8004F0945 /* ChatLogsTopView.swift in Sources */,
@@ -1131,6 +1159,7 @@
 				A7FFBABA24533ABA00CD7B5F /* Shadow.swift in Sources */,
 				A7E53892244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift in Sources */,
 				A73830122410FFB200D0195B /* Bindable.swift in Sources */,
+				A7E0879624A390F3000B0B6A /* GoogleSignInManager.swift in Sources */,
 				A7E0467B23C4D7E400A4C5B5 /* Pet_Me.xcdatamodeld in Sources */,
 				A741A3D2243BB2A300EE0610 /* MatchView.swift in Sources */,
 				A7F387902450B97B009B780E /* Colors.swift in Sources */,
@@ -1153,6 +1182,7 @@
 				A7E0467323C4D7E400A4C5B5 /* SceneDelegate.swift in Sources */,
 				A742529224055C86002FB8C6 /* CardView.swift in Sources */,
 				A71274E824426BEA004F0945 /* MessagesTopView.swift in Sources */,
+				A7E087A124A4BB26000B0B6A /* FirebaseFetchingStrategy.swift in Sources */,
 				A740A4892418F1A200132DED /* LoginViewModel.swift in Sources */,
 				A71274EC2444CEB2004F0945 /* ChatLogsController.swift in Sources */,
 				A71274EE2444CF44004F0945 /* ChatLogsCollectionViewCell.swift in Sources */,
@@ -1199,6 +1229,7 @@
 				C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */,
 				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
 				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
+				A7E087A324A4BC98000B0B6A /* FirebaseUsersFetcher.swift in Sources */,
 				1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */,
 				B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */,
 				9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */,
@@ -1213,6 +1244,7 @@
 				8110E7E27CE8465066C5D93C /* StartingModuleInput.swift in Sources */,
 				B386CBFB3F9D3DD623666F4E /* StartingPresenter.swift in Sources */,
 				39FD94CEBB08F815011B4372 /* StartingInteractorInput.swift in Sources */,
+				A71FA81824A24886009AFC8E /* SecureNonceGeneratorManager.swift in Sources */,
 				8093370F160F9583406D90A9 /* StartingInteractorOutput.swift in Sources */,
 				F91380CDB394196EBC14CACB /* StartingInteractor.swift in Sources */,
 				F6B74EFFF11EAFE5DFA7F17A /* StartingRouterInput.swift in Sources */,

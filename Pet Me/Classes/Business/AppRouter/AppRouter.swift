@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 import Swinject
 
 
@@ -59,7 +60,13 @@ class AppRouter: AppRouterProtocol {
     }
     
     func initialViewController() {
-        let controller = RouterDestination.starting.constructModule(in: factory)
+        var controller: UIViewController?
+        if Auth.auth().currentUser == nil {
+            controller = RouterDestination.starting.constructModule(in: factory)
+        } else {
+            controller = RouterDestination.cards.constructModule(in: factory)
+        }
+        
         mainController = UINavigationController(rootViewController: controller!)
     }
 }

@@ -5,13 +5,10 @@
 //  Created by Gaziav on 22/06/2020.
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
+import UIKit
 
 protocol StartingViewOutput {
 
-    /**
-        @author Gaziav
-        Notify presenter that view is ready
-    */
-
     func viewIsReady()
+    func appleSignInTapped(presentationAnchor: UIWindow)
 }

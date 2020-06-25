@@ -53,6 +53,7 @@ enum Containers {
         
         container.register(UIViewController.self, name: StartingModuleConfigurator.tag) { (_) in
             let configurator = StartingModuleConfigurator()
+            configurator.appleSignInManager = managersContainer.resolve(AppleSignInManagerProtocol.self)
             let controller = configurator.configure()
             return controller
         }
@@ -63,10 +64,29 @@ enum Containers {
     private static let managersContainer: Container = {
         let container = Container()
         
-        container.register(FirebaseManagerProtocol.self) { (_)  in
+        container.register(FirebaseManagerProtocol.self) { (_) in
             let firebaseManager = FirebaseManager()
             return firebaseManager
         }
+        
+        container.register(SecureNonceGeneratorProtocol.self, factory: { (_) in
+            let secureNonceGeneratorManager = SecureNonceGeneratorManager()
+            return secureNonceGeneratorManager
+        })
+        
+        container.register(AppleSignInManagerProtocol.self, factory: { resolver in
+    
+            let firebaseAuth = resolver.resolve(FirebaseManagerProtocol.self)
+            let nonceGenerator = resolver.resolve(SecureNonceGeneratorProtocol.self)
+            let appleSignInManager = AppleSignInManager(nonceGenerator: nonceGenerator!, authManager: firebaseAuth!)
+            return appleSignInManager
+        })
+        
+        container.register(GoogleSignInProtocol.self, factory: { resolver in
+            let firebaseAuth = resolver.resolve(FirebaseManagerProtocol.self)
+            let googleSignInManager = GoogleSignInManager(authManager: firebaseAuth!)
+            return googleSignInManager
+        })
         
         return container
     }()

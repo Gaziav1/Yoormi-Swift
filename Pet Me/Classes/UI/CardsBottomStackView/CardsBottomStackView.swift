@@ -18,9 +18,9 @@ class CardsBottomStackView: UIStackView {
     
     weak var delegate: CardBottomStackViewDelegate?
     
-    private let refreshButton = createButton(image: Asset.Icons.refreshIcon, action: #selector(didTapRefreshButton))
-    private let closeButton = createButton(image: Asset.Icons.dismissIcon, action: #selector(didTapCloseButton))
-    private let likeButton = createButton(image: Asset.Icons.likeIcon, action: #selector(didTapLikeButton))
+    private let refreshButton = createButton(image: R.image.icons.refresh_circle(), action: #selector(didTapRefreshButton))
+    private let closeButton = createButton(image: R.image.icons.close(), action: #selector(didTapCloseButton))
+    private let likeButton = createButton(image: R.image.icons.like_circle(), action: #selector(didTapLikeButton))
 
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -36,9 +36,9 @@ class CardsBottomStackView: UIStackView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    fileprivate static func createButton(image: UIImage, action: Selector) -> UIButton {
+    fileprivate static func createButton(image: UIImage?, action: Selector) -> UIButton {
         let button = UIButton(type: .system)
-        button.setImage(image.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.setImage(image?.withRenderingMode(.alwaysOriginal), for: .normal)
         button.imageView?.contentMode = .scaleAspectFill
         return button
     }

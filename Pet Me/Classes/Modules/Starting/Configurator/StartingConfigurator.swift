@@ -11,9 +11,10 @@ import UIKit
 class StartingModuleConfigurator {
     
     static let tag = "StartingTag"
+    var appleSignInManager: AppleSignInManagerProtocol!
 
     func configure() -> UIViewController {
-
+    
         let router = StartingRouter()
         let viewController = StartingViewController()
         let presenter = StartingPresenter()
@@ -23,7 +24,8 @@ class StartingModuleConfigurator {
 
         let interactor = StartingInteractor()
         interactor.output = presenter
-
+        interactor.appleSignInManager = appleSignInManager
+        
         presenter.interactor = interactor
         viewController.output = presenter
         

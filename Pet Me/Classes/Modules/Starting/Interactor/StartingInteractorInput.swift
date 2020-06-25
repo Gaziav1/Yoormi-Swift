@@ -6,8 +6,8 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
-import Foundation
+import AuthenticationServices
 
 protocol StartingInteractorInput {
-
+    func initiateSignInWithApple(inAnchor anchor: ASPresentationAnchor)
 }
