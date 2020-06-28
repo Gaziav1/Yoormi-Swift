@@ -8,7 +8,7 @@
 
 import UIKit
 
-class StartingPresenter: StartingModuleInput, StartingInteractorOutput {
+class StartingPresenter: StartingModuleInput {
 
     weak var view: StartingViewInput!
     var interactor: StartingInteractorInput!
@@ -28,4 +28,20 @@ extension StartingPresenter: StartingViewOutput {
     func appleSignInTapped(presentationAnchor: UIWindow) {
         interactor.initiateSignInWithApple(inAnchor: presentationAnchor)
     }
+    
+    func googleSignInTapped() {
+        interactor.initiateSignInWithGoogle()
+    }
 }
+
+//MARK: -StartingInteractorOutput
+extension StartingPresenter: StartingInteractorOutput {
+    func signInCompleted() {
+        router.proceedToCards()
+    }
+    
+    func signInError(error: Error) {
+        print("error")
+    }
+}
+

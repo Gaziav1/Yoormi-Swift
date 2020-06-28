@@ -11,6 +11,7 @@ import Firebase
 
 protocol AuthManager {
     func registerUser(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void)
+    func register(throughCredential credential: OAuthCredential, completion: @escaping (Result<User, Error>) -> Void)
 }
 
 protocol StorageManager {
@@ -29,16 +30,33 @@ protocol FirebaseManagerProtocol: AuthManager, StorageManager { }
 
 extension AuthManager {
     func registerUser(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
-        log.info("User registration started")
+        log.verbose("User registration started")
+    
         Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
             guard error == nil else {
-                log.error("Register user error: \(String(describing: error?.localizedDescription))")
+                log.error("Register user error: \(error!.localizedDescription)")
                 completion(.failure(error!))
                 return
             }
     
             completion(.success(result!.user))
-            log.info("User \(result!.user.uid) successfully registrated")
+            log.verbose("User \(result!.user.uid) successfully registrated")
+        }
+    }
+        
+    
+    func register(throughCredential credential: OAuthCredential, completion: @escaping (Result<User, Error>) -> Void) {
+        log.verbose("User registretion through credential initiated")
+        
+        Auth.auth().signIn(with: credential) { (result, error) in
+            guard error == nil else {
+                log.error("Register user error: \(error!.localizedDescription)")
+                completion(.failure(error!))
+                return 
+            }
+            
+            completion(.success(result!.user))
+            log.verbose("User registration through credential succeeded - \(result!.user.uid)")
         }
     }
 }

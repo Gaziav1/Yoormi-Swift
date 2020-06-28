@@ -10,4 +10,5 @@ import AuthenticationServices
 
 protocol StartingInteractorInput {
     func initiateSignInWithApple(inAnchor anchor: ASPresentationAnchor)
+    func initiateSignInWithGoogle()
 }

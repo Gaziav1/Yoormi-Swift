@@ -12,6 +12,7 @@ class StartingModuleConfigurator {
     
     static let tag = "StartingTag"
     var appleSignInManager: AppleSignInManagerProtocol!
+    var googleSignInManager: GoogleSignInProtocol!
 
     func configure() -> UIViewController {
     
@@ -25,6 +26,10 @@ class StartingModuleConfigurator {
         let interactor = StartingInteractor()
         interactor.output = presenter
         interactor.appleSignInManager = appleSignInManager
+        interactor.googleSignInManager = googleSignInManager
+        
+        appleSignInManager.set(delegate: interactor)
+        googleSignInManager.set(delegate: interactor)
         
         presenter.interactor = interactor
         viewController.output = presenter

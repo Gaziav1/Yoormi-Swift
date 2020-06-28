@@ -10,12 +10,18 @@ import Foundation
 import Firebase
 import AuthenticationServices
 
+protocol AppleSignInDelegate: class {
+    func signInCompleted()
+    func signInError(error: Error)
+}
+
 protocol AppleSignInManagerProtocol {
+    func set(delegate: AppleSignInDelegate)
     func startSignInWithAppleFlow(presentationAnchor: ASPresentationAnchor)
 }
 
 class AppleSignInManager: NSObject, AppleSignInManagerProtocol {
-    
+    weak var delegate: AppleSignInDelegate?
     private let secureNonceGenerator: SecureNonceGeneratorProtocol
     private let authorizationManager: AuthManager
     private var currentNonce: String?
@@ -26,6 +32,10 @@ class AppleSignInManager: NSObject, AppleSignInManagerProtocol {
         self.authorizationManager = authManager
     }
     
+    
+    func set(delegate: AppleSignInDelegate) {
+        self.delegate = delegate
+    }
     
     func startSignInWithAppleFlow(presentationAnchor: ASPresentationAnchor) {
         self.presentationAnchor = presentationAnchor
@@ -58,23 +68,20 @@ extension AppleSignInManager: ASAuthorizationControllerDelegate {
                 log.warning("Unable to serialize token string from data: \(appleIDToken.debugDescription)")
                 return
             }
-            // Initialize a Firebase credential.
+          
+            
             let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)
-            // Sign in with Firebase.
-            Auth.auth().signIn(with: credential) { (authResult, error) in
-                if (error != nil) {
-                    log.error("Error occured trying to sign in apple user through firebase - \(error?.localizedDescription)")
-    
-                    // Error. If error.code == .MissingOrInvalidNonce, make sure
-                    // you're sending the SHA256-hashed nonce as a hex string with
-                    // your request to Apple.
-                    return
+         
+            
+            authorizationManager.register(throughCredential: credential) { [unowned self] (result) in
+                switch result {
+                case .success(let user):
+                    self.delegate?.signInCompleted()
+                case .failure(let error):
+                    self.delegate?.signInError(error: error)
                 }
-                log.verbose("Sign in through apple completed successfully")
-                // User is signed in to Firebase with Apple.
-                // ...
             }
         }
     }
@@ -82,6 +89,7 @@ extension AppleSignInManager: ASAuthorizationControllerDelegate {
     func authorizationController(controller: ASAuthorizationController, didCompleteWithError error: Error) {
         // Handle error.
         log.error("Sign in with Apple failed: \(error.localizedDescription)")
+        delegate?.signInError(error: error)
     }
 }
 

@@ -7,5 +7,7 @@
 //
 
 class StartingRouter: StartingRouterInput {
-
+    func proceedToCards() {
+        AppRouter.shared.performTransitionTo(to: .cards)
+    }
 }

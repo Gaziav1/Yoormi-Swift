@@ -10,5 +10,6 @@ import UIKit
 protocol StartingViewOutput {
 
     func viewIsReady()
+    func googleSignInTapped()
     func appleSignInTapped(presentationAnchor: UIWindow)
 }

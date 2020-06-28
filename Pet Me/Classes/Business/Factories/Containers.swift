@@ -54,6 +54,7 @@ enum Containers {
         container.register(UIViewController.self, name: StartingModuleConfigurator.tag) { (_) in
             let configurator = StartingModuleConfigurator()
             configurator.appleSignInManager = managersContainer.resolve(AppleSignInManagerProtocol.self)
+            configurator.googleSignInManager = managersContainer.resolve(GoogleSignInProtocol.self)
             let controller = configurator.configure()
             return controller
         }

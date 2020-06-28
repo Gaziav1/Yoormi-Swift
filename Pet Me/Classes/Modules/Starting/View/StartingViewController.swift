@@ -124,7 +124,7 @@ class StartingViewController: UIViewController, StartingViewInput {
     
     
     @objc private func signInGoogle() {
-        GIDSignIn.sharedInstance().signIn()
+        output.googleSignInTapped()
     }
     
     @objc private func signInWithMail() {

@@ -84,8 +84,6 @@
 		A7E0468023C4D7E600A4C5B5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A7E0467E23C4D7E600A4C5B5 /* LaunchScreen.storyboard */; };
 		A7E0468B23C4D7E700A4C5B5 /* Pet_MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0468A23C4D7E700A4C5B5 /* Pet_MeTests.swift */; };
 		A7E0879624A390F3000B0B6A /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */; };
-		A7E087A124A4BB26000B0B6A /* FirebaseFetchingStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E087A024A4BB25000B0B6A /* FirebaseFetchingStrategy.swift */; };
-		A7E087A324A4BC98000B0B6A /* FirebaseUsersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E087A224A4BC98000B0B6A /* FirebaseUsersFetcher.swift */; };
 		A7E53892244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E53891244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift */; };
 		A7F3878E2450ADF9009B780E /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3878D2450ADF9009B780E /* Images.swift */; };
 		A7F387902450B97B009B780E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3878F2450B97B009B780E /* Colors.swift */; };
@@ -219,8 +217,6 @@
 		A7E0468A23C4D7E700A4C5B5 /* Pet_MeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pet_MeTests.swift; sourceTree = "<group>"; };
 		A7E0468C23C4D7E700A4C5B5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
-		A7E087A024A4BB25000B0B6A /* FirebaseFetchingStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFetchingStrategy.swift; sourceTree = "<group>"; };
-		A7E087A224A4BC98000B0B6A /* FirebaseUsersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUsersFetcher.swift; sourceTree = "<group>"; };
 		A7E53891244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7E5668BE001184D5E769751 /* MessagesConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesConfigurator.swift; sourceTree = "<group>"; };
 		A7F3878D2450ADF9009B780E /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
@@ -571,15 +567,6 @@
 			path = "Pet MeTests";
 			sourceTree = "<group>";
 		};
-		A7E0879F24A4BA3C000B0B6A /* FirebaseStrategies */ = {
-			isa = PBXGroup;
-			children = (
-				A7E087A024A4BB25000B0B6A /* FirebaseFetchingStrategy.swift */,
-				A7E087A224A4BC98000B0B6A /* FirebaseUsersFetcher.swift */,
-			);
-			path = FirebaseStrategies;
-			sourceTree = "<group>";
-		};
 		A7F3878B2450ADDB009B780E /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -625,7 +612,6 @@
 		A7FFBA9B245207C600CD7B5F /* Firebase */ = {
 			isa = PBXGroup;
 			children = (
-				A7E0879F24A4BA3C000B0B6A /* FirebaseStrategies */,
 				A7FFBA992451FE3200CD7B5F /* FirebaseManager.swift */,
 				A7FFBA9C245207D300CD7B5F /* FirebaseProtocols.swift */,
 			);
@@ -1182,7 +1168,6 @@
 				A7E0467323C4D7E400A4C5B5 /* SceneDelegate.swift in Sources */,
 				A742529224055C86002FB8C6 /* CardView.swift in Sources */,
 				A71274E824426BEA004F0945 /* MessagesTopView.swift in Sources */,
-				A7E087A124A4BB26000B0B6A /* FirebaseFetchingStrategy.swift in Sources */,
 				A740A4892418F1A200132DED /* LoginViewModel.swift in Sources */,
 				A71274EC2444CEB2004F0945 /* ChatLogsController.swift in Sources */,
 				A71274EE2444CF44004F0945 /* ChatLogsCollectionViewCell.swift in Sources */,
@@ -1229,7 +1214,6 @@
 				C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */,
 				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
 				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
-				A7E087A324A4BC98000B0B6A /* FirebaseUsersFetcher.swift in Sources */,
 				1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */,
 				B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */,
 				9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */,
