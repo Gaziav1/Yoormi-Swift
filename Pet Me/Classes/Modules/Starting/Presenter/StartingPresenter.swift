@@ -7,13 +7,14 @@
 //
 
 import UIKit
+import GoogleSignIn
 
 class StartingPresenter: StartingModuleInput {
 
     weak var view: StartingViewInput!
     var interactor: StartingInteractorInput!
     var router: StartingRouterInput!
-
+    private var appUser: AppUser?
     
 }
 
@@ -36,9 +37,10 @@ extension StartingPresenter: StartingViewOutput {
 
 //MARK: -StartingInteractorOutput
 extension StartingPresenter: StartingInteractorOutput {
-    func signInCompleted() {
-        router.proceedToCards()
+    func signInCompleted(user: AppUser) {
+        router.proceedToCards(user: user)
     }
+    
     
     func signInError(error: Error) {
         print("error")

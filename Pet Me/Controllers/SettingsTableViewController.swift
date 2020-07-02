@@ -141,28 +141,28 @@ class SettingsTableViewController: UITableViewController {
         let cell = SettingsTableViewCell(style: .default, reuseIdentifier: nil)
         let cellType = CellType(rawValue: indexPath.section)
         
-        switch cellType {
-        case .nameCell:
-            cell.textField.placeholder = "Введите имя питомца"
-            cell.textField.text = user?.name
-            cell.textField.addTarget(self, action: #selector(handleNameChange), for: .editingChanged)
-        case .ageCell:
-            cell.textField.placeholder = "Введите возраст питомца"
-            if let age = user?.age {
-                cell.textField.text = String(age)
-            }
-            cell.textField.addTarget(self, action: #selector(handleAgeChange), for: .editingChanged)
-        case .descriptionCell:
-            cell.textField.placeholder = "Характер, цвет глаз и т.п"
-            cell.textField.text = user?.description
-            cell.textField.addTarget(self, action: #selector(handleDescriptionChange), for: .editingChanged)
-        case .speciesCell:
-            cell.textField.placeholder = "Введите породу питомца (не обязательно)"
-            cell.textField.text = user?.species
-            cell.textField.addTarget(self, action: #selector(handleSpeciesChange), for: .editingChanged)
-        default:
-            ()
-        }
+//        switch cellType {
+//        case .nameCell:
+//            cell.textField.placeholder = "Введите имя питомца"
+//            cell.textField.text = user?.name
+//            cell.textField.addTarget(self, action: #selector(handleNameChange), for: .editingChanged)
+//        case .ageCell:
+//            cell.textField.placeholder = "Введите возраст питомца"
+//            if let age = user?.age {
+//                cell.textField.text = String(age)
+//            }
+//            cell.textField.addTarget(self, action: #selector(handleAgeChange), for: .editingChanged)
+//        case .descriptionCell:
+//            cell.textField.placeholder = "Характер, цвет глаз и т.п"
+//            cell.textField.text = user?.description
+//            cell.textField.addTarget(self, action: #selector(handleDescriptionChange), for: .editingChanged)
+//        case .speciesCell:
+//            cell.textField.placeholder = "Введите породу питомца (не обязательно)"
+//            cell.textField.text = user?.species
+//            cell.textField.addTarget(self, action: #selector(handleSpeciesChange), for: .editingChanged)
+//        default:
+//            ()
+//        }
         
         return cell
     }
@@ -176,7 +176,7 @@ class SettingsTableViewController: UITableViewController {
             }
             
             guard let dictionary = snapshot?.data() else { return }
-            self.user = AppUser(dictionary: dictionary)
+            self.user = AppUser(JSON: dictionary)
             self.loadUserPhotos()
             self.tableView.reloadData()
         }
@@ -184,10 +184,10 @@ class SettingsTableViewController: UITableViewController {
     }
     
     fileprivate func loadUserPhotos() {
-        guard let imageURL = user?.imageNames.first, let url = URL(string: imageURL) else { return }
-        SDWebImageManager.shared.loadImage(with: url, options: .continueInBackground, progress: nil) { [unowned self] (image, _, _, _, _, _) in
-            self.image1Button.setImage(image?.withRenderingMode(.alwaysOriginal), for:  .normal)
-        }
+//        guard let imageURL = user?.imageNames.first, let url = URL(string: imageURL) else { return }
+//        SDWebImageManager.shared.loadImage(with: url, options: .continueInBackground, progress: nil) { [unowned self] (image, _, _, _, _, _) in
+//            self.image1Button.setImage(image?.withRenderingMode(.alwaysOriginal), for:  .normal)
+//        }
     }
     
     @objc fileprivate func handleCancel() {
@@ -205,13 +205,13 @@ class SettingsTableViewController: UITableViewController {
     @objc fileprivate func handleSave() {
         guard let uid = Auth.auth().currentUser?.uid else { return }
         let documentData: [String: Any] = [
-            "uid": uid,
-            "fullName": user?.name,
-            "imageURLs": user?.imageNames,
-            "age": user?.age,
-            "description": user?.description,
-            "species": user?.species
-        ]
+             "uid": uid
+//            "fullName": user?.name,
+//            "imageURLs": user?.imageNames,
+//            "age": user?.age,
+//            "description": user?.description,
+//            "species": user?.species
+            ]
         let hud = JGProgressHUD(style: .dark)
         hud.textLabel.text = "Сохраняем..."
         hud.show(in: view)
@@ -236,15 +236,15 @@ class SettingsTableViewController: UITableViewController {
     }
     
     @objc fileprivate func handleAgeChange(textField: UITextField) {
-        self.user?.age = Int(textField.text ?? "")
+        //self.user?.age = Int(textField.text ?? "")
     }
     
     @objc fileprivate func handleDescriptionChange(textField: UITextField) {
-        self.user?.description = textField.text
+        //self.user?.description = textField.text
     }
     
     @objc fileprivate func handleSpeciesChange(textField: UITextField) {
-        self.user?.species = textField.text
+        //self.user?.species = textField.text
     }
 }
 

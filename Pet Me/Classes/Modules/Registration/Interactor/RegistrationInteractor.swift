@@ -10,7 +10,7 @@ class RegistrationInteractor {
 
     
     weak var output: RegistrationInteractorOutput!
-
+    var firebaseStrategy: FirebaseSrategiesProtocol!
     var firebaseAuthManager: AuthManager!
 }
 

@@ -15,10 +15,10 @@ target 'Pet Me' do
   pod 'JGProgressHUD' 
   pod 'Swinject'
   pod 'SwiftyBeaver' 
-  pod 'RxCocoa'
   pod 'GoogleSignIn'
   pod 'R.swift'
   pod 'lottie-ios'	
+  pod 'ObjectMapper'
 
   target 'Pet MeTests' do
     inherit! :search_paths

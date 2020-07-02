@@ -14,7 +14,7 @@ class MatchView: UIView {
     var currentUser: AppUser! {
         didSet {
             
-            self.currentUserImageView.sd_setImage(with: URL(string: currentUser.imageNames[0]))
+           // self.currentUserImageView.sd_setImage(with: URL(string: currentUser.imageNames[0]))
            
                 
             }
@@ -29,9 +29,9 @@ class MatchView: UIView {
                 }
                 
                 guard let data = snapshot?.data() else { return }
-                let user = AppUser(dictionary: data)
+                let user = AppUser(JSON: data)
                 self.cardUserImage.alpha = 1
-                self.cardUserImage.sd_setImage(with: URL(string: user.imageNames[0]), completed: nil)
+//                self.cardUserImage.sd_setImage(with: URL(string: user.imageNames[0]), completed: nil)
                 
             }
         }

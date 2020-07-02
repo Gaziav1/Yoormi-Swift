@@ -21,31 +21,7 @@ class FirebaseManager: FirebaseManagerProtocol {
     }
     
     func fetchUsers(completion: @escaping (Result<[AppUser], Error>) -> Void) {
-        log.info("Starting users fetching...")
-        
-        let query = Firestore.firestore().collection("users")
-        query.getDocuments { (snapshot, error) in
-            if let error = error {
-                log.warning("Error occured with users fetching from Firestore - : \(error.localizedDescription)")
-                completion(.failure(error))
-                return
-            }
-            
-            log.info("Successfully fetched \(snapshot?.count ?? 0) users from firestore")
-            
-            var appUsersArray = [AppUser]()
-            
-            snapshot?.documents.forEach({ (document) in
-                
-                let user = AppUser(dictionary: document.data())
-                let isCurrentUser = user.uid == self.uid
-                if !isCurrentUser {
-                    appUsersArray.append(user)
-                }
-            })
-            
-            completion(.success(appUsersArray))
-        }
+      
     }
     
     func fetchSwipes(completion: @escaping (Result<[String: Any]?, Error>) -> Void) {
@@ -144,9 +120,9 @@ class FirebaseManager: FirebaseManagerProtocol {
         guard let currentUserID = uid else { return }
         log.info("Saving match between users...")
         
-        Firestore.firestore().collection("matches_messages").document(currentUserID).collection("matches").document(matchedUser.uid).setData(["name": matchedUser.name ?? "No name", "imageURL": matchedUser.imageNames[0], "uid": matchedUser.uid, "date": Timestamp(date: Date())])
-        
-        Firestore.firestore().collection("matches_messages").document(matchedUser.uid).collection("matches").document(currentUserID).setData(["name": currentUser.name ?? "No name", "imageURL": currentUser.imageNames[0], "uid": currentUserID, "date": Timestamp(date: Date())])
+//        Firestore.firestore().collection("matches_messages").document(currentUserID).collection("matches").document(matchedUser.uid).setData(["name": matchedUser.name ?? "No name", "imageURL": matchedUser.imageNames[0], "uid": matchedUser.uid, "date": Timestamp(date: Date())])
+//        
+//        Firestore.firestore().collection("matches_messages").document(matchedUser.uid).collection("matches").document(currentUserID).setData(["name": currentUser.name ?? "No name", "imageURL": currentUser.imageNames[0], "uid": currentUserID, "date": Timestamp(date: Date())])
     }
 }
 

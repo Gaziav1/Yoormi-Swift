@@ -13,6 +13,7 @@ class RegistrationModuleConfigurator {
     static let tag = "RegistrationTag"
  
     var firebaseAuthManager: AuthManager!
+    var firebaseStrategy: FirebaseSrategiesProtocol!
     
     func configure() -> UIViewController {
 
@@ -23,6 +24,7 @@ class RegistrationModuleConfigurator {
         presenter.router = router
 
         let interactor = RegistrationInteractor()
+        interactor.firebaseStrategy = firebaseStrategy
         interactor.firebaseAuthManager = firebaseAuthManager
         interactor.output = presenter
 

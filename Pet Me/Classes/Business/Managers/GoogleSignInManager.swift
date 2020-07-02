@@ -11,7 +11,7 @@ import Firebase
 import GoogleSignIn
 
 protocol GoogleSignInDelegate: class {
-    func signInSuccess()
+    func signInSuccess(user: AppUser?)
     func signInFailure(error: Error)
 }
 
@@ -46,19 +46,27 @@ class GoogleSignInManager: NSObject, GoogleSignInProtocol, GIDSignInDelegate {
             delegate?.signInFailure(error: error)
             return
         }
-        
+     
         guard let authentication = user?.authentication else { return }
+       
         let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken,
                                                        accessToken: authentication.accessToken)
-        
+      
         Auth.auth().signIn(with: credential) { [unowned self] (result, error) in
             guard error == nil else {
                 log.error("Google sign in firebase error - \(error!.localizedDescription)")
                 return
             }
             
+            let imageURL = user?.profile.imageURL(withDimension: .max)?.absoluteString
+                   
+            var currentUser = AppUser(JSON: [:])
+            currentUser?.imageURL = imageURL
+            currentUser?.uid = result?.user.uid
+            currentUser?.name = result?.user.displayName
+            
             log.verbose("Google sign in firebase successfully")
-            self.delegate?.signInSuccess()
+            self.delegate?.signInSuccess(user: currentUser)
         }
     }
     

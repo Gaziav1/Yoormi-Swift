@@ -14,7 +14,7 @@ import Swinject
 //MARK: RouterDestination
 
 enum RouterDestination {
-    case cards
+    case cards(AppUser?)
     case settings
     case messages
     case registration
@@ -22,8 +22,8 @@ enum RouterDestination {
     
     func constructModule(in factory: Container) -> UIViewController? {
         switch self {
-        case .cards:
-            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag)
+        case .cards(let user):
+            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag, argument: user)
         case .settings:
             return factory.resolve(UIViewController.self, name: SettingsModuleConfigurator.tag)
         case .messages:
@@ -64,7 +64,7 @@ class AppRouter: AppRouterProtocol {
         if Auth.auth().currentUser == nil {
             controller = RouterDestination.starting.constructModule(in: factory)
         } else {
-            controller = RouterDestination.cards.constructModule(in: factory)
+            controller = RouterDestination.cards(nil).constructModule(in: factory)
         }
         
         mainController = UINavigationController(rootViewController: controller!)

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol StartingRouterInput {
-    func proceedToCards()
+    func proceedToCards(user: AppUser)
 }

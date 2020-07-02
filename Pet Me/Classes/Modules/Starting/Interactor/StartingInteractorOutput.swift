@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import GoogleSignIn
 
 protocol StartingInteractorOutput: class {
-    func signInCompleted()
+    func signInCompleted(user: AppUser)
     func signInError(error: Error)
 }

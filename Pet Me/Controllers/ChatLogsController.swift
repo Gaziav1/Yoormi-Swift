@@ -9,8 +9,6 @@
 import UIKit
 import Firebase
 
-
-
 class ChatLogsController: UICollectionViewController {
     
     private var listener: ListenerRegistration?
@@ -75,8 +73,8 @@ class ChatLogsController: UICollectionViewController {
                 return
             }
             guard let data = snapshot?.data() else { return }
-            let user = AppUser(dictionary: data)
-            self.currentUser = user
+//            let user = AppUser(dictionary: data)
+//            self.currentUser = user
         }
     }
     
@@ -100,10 +98,10 @@ class ChatLogsController: UICollectionViewController {
         let data: [String: Any] = ["text": text, "name": match.name, "imageURL": match.profileImageURL, "timeStamp": timeStamp, "uid": match.uid]
         
         Firestore.firestore().collection("matches_messages").document(currentUserID).collection("recent_messages").document(match.uid).setData(data)
-        
-        let currentUserData: [String: Any] = ["text": text, "name": currentUser?.name, "imageURL": currentUser?.imageNames[0], "timeStamp": timeStamp, "uid": currentUserID]
-        
-        Firestore.firestore().collection("matches_messages").document(match.uid).collection("recent_messages").document(currentUserID).setData(currentUserData)
+////
+////        let currentUserData: [String: Any] = ["text": text, "name": currentUser?.name, "imageURL": currentUser?.imageNames[0], "timeStamp": timeStamp, "uid": currentUserID]
+//        
+//        Firestore.firestore().collection("matches_messages").document(match.uid).collection("recent_messages").document(currentUserID).setData(currentUserData)
     }
     
     

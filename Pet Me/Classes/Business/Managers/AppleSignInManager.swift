@@ -70,6 +70,10 @@ extension AppleSignInManager: ASAuthorizationControllerDelegate {
             }
           
             
+            
+            
+            
+            
             let credential = OAuthProvider.credential(withProviderID: "apple.com",
                                                       idToken: idTokenString,
                                                       rawNonce: nonce)

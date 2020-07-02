@@ -61,6 +61,8 @@
 		A740A4892418F1A200132DED /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A740A4882418F1A200132DED /* LoginViewModel.swift */; };
 		A741A3D2243BB2A300EE0610 /* MatchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741A3D1243BB2A300EE0610 /* MatchView.swift */; };
 		A741F5F124179A6E004544AE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741F5F024179A6E004544AE /* SettingsTableViewCell.swift */; };
+		A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7421A0924ABB11900E2EAF5 /* FirebaseFetchProtocol.swift */; };
+		A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7421A0D24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift */; };
 		A742528E24054532002FB8C6 /* CardsBottomStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742528D24054532002FB8C6 /* CardsBottomStackView.swift */; };
 		A742529024054CF8002FB8C6 /* TopNavigationStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742528F24054CF8002FB8C6 /* TopNavigationStackView.swift */; };
 		A742529224055C86002FB8C6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742529124055C86002FB8C6 /* CardView.swift */; };
@@ -189,6 +191,8 @@
 		A740A4882418F1A200132DED /* LoginViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		A741A3D1243BB2A300EE0610 /* MatchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchView.swift; sourceTree = "<group>"; };
 		A741F5F024179A6E004544AE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
+		A7421A0924ABB11900E2EAF5 /* FirebaseFetchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFetchProtocol.swift; sourceTree = "<group>"; };
+		A7421A0D24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUsersFetcher.swift; sourceTree = "<group>"; };
 		A742528D24054532002FB8C6 /* CardsBottomStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsBottomStackView.swift; sourceTree = "<group>"; };
 		A742528F24054CF8002FB8C6 /* TopNavigationStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopNavigationStackView.swift; sourceTree = "<group>"; };
 		A742529124055C86002FB8C6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
@@ -567,6 +571,15 @@
 			path = "Pet MeTests";
 			sourceTree = "<group>";
 		};
+		A7E78D4724ABAE7E00DF3DF7 /* FirebaseFetchStrategies */ = {
+			isa = PBXGroup;
+			children = (
+				A7421A0924ABB11900E2EAF5 /* FirebaseFetchProtocol.swift */,
+				A7421A0D24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift */,
+			);
+			path = FirebaseFetchStrategies;
+			sourceTree = "<group>";
+		};
 		A7F3878B2450ADDB009B780E /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -600,6 +613,7 @@
 		A7FFBA982451FE2100CD7B5F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				A7E78D4724ABAE7E00DF3DF7 /* FirebaseFetchStrategies */,
 				A7FFBA9B245207C600CD7B5F /* Firebase */,
 				A7FFBAA12452199D00CD7B5F /* LogManager.swift */,
 				A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */,
@@ -1214,6 +1228,8 @@
 				C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */,
 				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
 				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
+				A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */,
+				A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */,
 				1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */,
 				B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */,
 				9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */,

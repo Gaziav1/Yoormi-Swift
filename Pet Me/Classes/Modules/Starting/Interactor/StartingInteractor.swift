@@ -6,11 +6,13 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 import AuthenticationServices
+import Firebase
 import GoogleSignIn
 
 class StartingInteractor {
-
+    
     weak var output: StartingInteractorOutput!
+    var firebaseStrategy: FirebaseSrategiesProtocol!
     var appleSignInManager: AppleSignInManagerProtocol!
     var googleSignInManager: GoogleSignInProtocol!
 }
@@ -29,7 +31,7 @@ extension StartingInteractor: StartingInteractorInput {
 //MARK: -AppleSignInDelegate
 extension StartingInteractor: AppleSignInDelegate {
     func signInCompleted() {
-        output.signInCompleted()
+        output.signInCompleted(user: AppUser(JSON: [:])!)
     }
     
     func signInError(error: Error) {
@@ -39,8 +41,20 @@ extension StartingInteractor: AppleSignInDelegate {
 
 //MARK: -GoogleSignInDelegate
 extension StartingInteractor: GoogleSignInDelegate {
-    func signInSuccess() {
-        output.signInCompleted()
+    func signInSuccess(user: AppUser?) {
+        guard let user = user else {
+            log.info("Current user == nil")
+            return
+        }
+        
+        firebaseStrategy.uploadData(data: user) { (error) in
+            guard error == nil else {
+                log.warning("Error occured saving current user to firestore")
+                return
+            }
+        }
+        
+        output.signInCompleted(user: user)
     }
     
     func signInFailure(error: Error) {

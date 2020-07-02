@@ -14,8 +14,16 @@ class CardsPresenter: CardsModuleInput, CardsViewOutput, CardsInteractorOutput {
     var interactor: CardsInteractorInput!
     var router: CardsRouterInput!
     
+    private var user: AppUser?
+    
     private var usersData = [String: AppUser]()
     private var swipedUsers: [String: Any]?
+    
+    
+    init(user: AppUser?) {
+        self.user = user
+    }
+    
     
     //MARK: CardsInteractorOutput
     

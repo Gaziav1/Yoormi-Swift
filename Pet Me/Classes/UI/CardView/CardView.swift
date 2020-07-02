@@ -70,14 +70,14 @@ class CardView: UIView {
     }
     
     func setupCardView(from user: AppUser) {
-        let attributedText = NSMutableAttributedString(string: user.name ?? "Без имени", attributes: [.font: UIFont.systemFont(ofSize: 26, weight: .heavy)])
-        attributedText.append(NSAttributedString(string: ", \(user.age ?? 0)", attributes: [.font: UIFont.systemFont(ofSize: 22, weight: .regular)]))
-        attributedText.append(NSAttributedString(string: "\n\(String(describing: user.description))", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .regular)]))
-        
+    let attributedText = NSMutableAttributedString(string: user.name ?? "Без имени", attributes: [.font: UIFont.systemFont(ofSize: 26, weight: .heavy)])
+//        attributedText.append(NSAttributedString(string: ", \(user.age ?? 0)", attributes: [.font: UIFont.systemFont(ofSize: 22, weight: .regular)]))
+//        attributedText.append(NSAttributedString(string: "\n\(String(describing: user.description))", attributes: [.font: UIFont.systemFont(ofSize: 18, weight: .regular)]))
+//
         descriptionLabel.attributedText = attributedText
         descriptionLabel.textAlignment = .left
         
-        imageNames = user.imageNames
+       // imageNames = user.imageNames
         uid = user.uid
     }
     

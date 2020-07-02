@@ -25,8 +25,8 @@ enum Containers {
     private static let viewControllersContainer: Container = {
         let container = Container()
         
-        container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_) in
-            let cardConfigurator = CardsModuleConfigurator()
+        container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_, user: AppUser?) in
+            let cardConfigurator = CardsModuleConfigurator(user: user)
             cardConfigurator.firebaseManager = managersContainer.resolve(FirebaseManagerProtocol.self)
             let controller = cardConfigurator.configure()
             return controller
@@ -55,10 +55,22 @@ enum Containers {
             let configurator = StartingModuleConfigurator()
             configurator.appleSignInManager = managersContainer.resolve(AppleSignInManagerProtocol.self)
             configurator.googleSignInManager = managersContainer.resolve(GoogleSignInProtocol.self)
+            configurator.firebaseStrategy = strategiesContainer.resolve(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag)
             let controller = configurator.configure()
             return controller
         }
 
+        return container
+    }()
+    
+    private static let strategiesContainer: Container = {
+        let container = Container()
+        
+        container.register(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag) { (_)  in
+            let strategy = FirebaseUsersFetcher()
+            return strategy
+        }
+        
         return container
     }()
     
