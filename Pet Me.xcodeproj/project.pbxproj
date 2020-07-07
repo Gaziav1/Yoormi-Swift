@@ -19,15 +19,19 @@
 		1C26CB93AC1B34778CACDDD2 /* MessagesRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3D905B51053F119FCA0C0 /* MessagesRouterInput.swift */; };
 		1EA32F7C73B314BFC6A75862 /* SettingsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */; };
 		22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */; };
+		2CFB388F0C03E2077281D3D8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A2516A27F92F90528D80E /* SideMenuViewController.swift */; };
 		303590832F50AFD838CC38A6 /* CardsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFA01C0F52E858FD798A2 /* CardsRouterInput.swift */; };
 		37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */; };
 		39FD94CEBB08F815011B4372 /* StartingInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9796513A935641B0237689 /* StartingInteractorInput.swift */; };
+		40141CF77B85933B209CCDA4 /* SideMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14567CC044E32BBC76BAAE /* SideMenuRouter.swift */; };
 		45C3654588AA1069538FFBAB /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */; };
+		47B7D3F44F555983ECB12EF3 /* SideMenuViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */; };
 		527DC4F86C63B39D4D3E4B71 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */; };
 		5977A04D629CEBC24B99FE31 /* StartingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F87A30FB45C50266CBDDD2 /* StartingViewOutput.swift */; };
 		5A18AF594511100E10E18BC6 /* RegistrationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */; };
 		5B4777ED663CE24FD0ED9E4F /* CardsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D310AB3D9E2C0E8E63F4B96 /* CardsInteractorInput.swift */; };
 		5BF8C29179AD2DC324E5830D /* MessagesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */; };
+		5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */; };
 		624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06061268F27E49CBA8513BB4 /* CardsRouter.swift */; };
 		66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */; };
 		7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF573CA114C3C23C41CA1BC /* SettingsViewInput.swift */; };
@@ -38,6 +42,7 @@
 		878CD1B057FC8DBE13F97545 /* MessagesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5668BE001184D5E769751 /* MessagesConfigurator.swift */; };
 		8A4D253C38D1D6073DFDC8EE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B61ACDC9CE74634CDE578D /* SettingsRouter.swift */; };
 		8C5312721E68369592998531 /* StartingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA865775CA38048B13D6BB1D /* StartingRouter.swift */; };
+		8C571CD65CBA7D104961E533 /* SideMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */; };
 		9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */; };
 		97A31DD8C63C5DF1E80DBB07 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727EE2B3337471B9B962221 /* SettingsPresenter.swift */; };
 		A41232788C585BD3C31C250D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */; };
@@ -50,6 +55,9 @@
 		A71274EC2444CEB2004F0945 /* ChatLogsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274EB2444CEB2004F0945 /* ChatLogsController.swift */; };
 		A71274EE2444CF44004F0945 /* ChatLogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */; };
 		A71274F02444D3A8004F0945 /* ChatLogsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */; };
+		A71F31B824B0D76A001832C0 /* ContainerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F31B724B0D76A001832C0 /* ContainerViewController.swift */; };
+		A71F31C224B0FD51001832C0 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */; };
+		A71F31C824B0FE26001832C0 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F31C724B0FE26001832C0 /* ReusableView.swift */; };
 		A71FA81624A0E668009AFC8E /* CatWaiting.json in Resources */ = {isa = PBXBuildFile; fileRef = A71FA81524A0E668009AFC8E /* CatWaiting.json */; };
 		A71FA81824A24886009AFC8E /* SecureNonceGeneratorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */; };
 		A71FA81C24A2504A009AFC8E /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */; };
@@ -75,6 +83,7 @@
 		A75AFA632412952A00F2FA96 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */; };
 		A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */; };
 		A77021572407EC9C005E6C4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021562407EC9C005E6C4A /* CustomTextField.swift */; };
+		A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCB71524B3895000BA2291 /* SideMenuItem.swift */; };
 		A7D23281249E578600C88077 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D23280249E578600C88077 /* LoginView.swift */; };
 		A7D2328624A0BBBC00C88077 /* CustomSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */; };
 		A7D2328A24A0C0C800C88077 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328924A0C0C800C88077 /* R.generated.swift */; };
@@ -98,12 +107,14 @@
 		A7FFBAB72453396A00CD7B5F /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBAB62453396A00CD7B5F /* Match.swift */; };
 		A7FFBABA24533ABA00CD7B5F /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBAB924533ABA00CD7B5F /* Shadow.swift */; };
 		A86E9B192C18A19B212B3BAD /* SettingsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC0ECB57B4739D7D185C0D /* SettingsModuleInput.swift */; };
+		AF444B1E5D2F2BAABEB57025 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AED5FD7D3C7D0D872A439 /* SideMenuPresenter.swift */; };
 		B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */; };
 		B28CC714710411A9482C385E /* MessagesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */; };
 		B311DD8E3DE68CF71F873CCF /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */; };
 		B386CBFB3F9D3DD623666F4E /* StartingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787152A7CD3D0207AAD6035 /* StartingPresenter.swift */; };
 		B8BAF5BB767DB1F0C0200339 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */; };
 		B9271326341F1522AABE50B7 /* CardsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34889D9D3FBDC2E7EF0374C2 /* CardsViewInput.swift */; };
+		BBE0B585E834001D6A68C2EB /* SideMenuInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */; };
 		BD7A6821F7ADE7ADE8C0794F /* MessagesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1D9B8E1A8E8295CC39AA2 /* MessagesInteractorInput.swift */; };
 		C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */; };
 		C91AB6CBAD3FF1BFE06B8DA2 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8B87252400B1B5BDA40363 /* MessagesViewController.swift */; };
@@ -113,12 +124,16 @@
 		D4F3BE1EAD1180AFE58AB7D8 /* StartingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456F8F1008338CFFEE51955 /* StartingConfigurator.swift */; };
 		D7D94228785E40ABA067D695 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C1930DDD277A53C436F80 /* StartingViewController.swift */; };
 		D8AE8FFA22FDF60CB3937CD3 /* MessagesModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */; };
+		DC1C68E40DA17EE2B898A482 /* SideMenuModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7DC67D6FEAC1B0C7739C0 /* SideMenuModuleInput.swift */; };
+		E049CE6A7521E11B4126C1B8 /* SideMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF85EACF4D2739A2B200421 /* SideMenuInteractor.swift */; };
 		E6DFCB6B42EB05B38B5F3B23 /* CardsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F2C37CB760E7EAF63CBD4 /* CardsInteractorOutput.swift */; };
+		EEA454753AE711FBABC04390 /* SideMenuRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */; };
 		F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */; };
 		F5E419DDD5A5965BF5C660FC /* CardsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0AC6CE7BA0D07F1A19B1D6 /* CardsConfigurator.swift */; };
 		F6B74EFFF11EAFE5DFA7F17A /* StartingRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6DD1FFEED03BE30F6C02A /* StartingRouterInput.swift */; };
 		F91380CDB394196EBC14CACB /* StartingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279D42EA7429D98785FCE3C /* StartingInteractor.swift */; };
 		F9B690933EF418B561921B58 /* StartingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8B1D5C27117E69E1BD6A2 /* StartingViewInput.swift */; };
+		FDFD5FBFE66E55139048291A /* SideMenuViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE97253A1E797FF9578C71F /* SideMenuViewOutput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,13 +151,17 @@
 		0935EEA1B2B7ED7AF43DD66F /* CardsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsModuleInput.swift; sourceTree = "<group>"; };
 		09DA38970644FB16D92B55CA /* CardsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		0C8B87252400B1B5BDA40363 /* MessagesViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		0EE97253A1E797FF9578C71F /* SideMenuViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewOutput.swift; sourceTree = "<group>"; };
 		127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
 		1787152A7CD3D0207AAD6035 /* StartingPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingPresenter.swift; sourceTree = "<group>"; };
 		1CB1D9B8E1A8E8295CC39AA2 /* MessagesInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorInput.swift; sourceTree = "<group>"; };
 		1D310AB3D9E2C0E8E63F4B96 /* CardsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorInput.swift; sourceTree = "<group>"; };
 		1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouterInput.swift; sourceTree = "<group>"; };
+		224A2516A27F92F90528D80E /* SideMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		23E6F84045A4FC8EB9E88DC4 /* CardsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewOutput.swift; sourceTree = "<group>"; };
 		2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuConfigurator.swift; sourceTree = "<group>"; };
+		28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewInput.swift; sourceTree = "<group>"; };
 		2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesModuleInput.swift; sourceTree = "<group>"; };
 		31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorOutput.swift; sourceTree = "<group>"; };
 		32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
@@ -160,9 +179,11 @@
 		55F87A30FB45C50266CBDDD2 /* StartingViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingViewOutput.swift; sourceTree = "<group>"; };
 		56C948515FE521118933B161 /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		5ED1D531D5C123DF6824ADE7 /* Pods_Pet_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorOutput.swift; sourceTree = "<group>"; };
 		6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
 		73AE10C855BF40BDB75086D9 /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
 		7B0F2C37CB760E7EAF63CBD4 /* CardsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorOutput.swift; sourceTree = "<group>"; };
+		7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorInput.swift; sourceTree = "<group>"; };
 		8021368F37EB95C8BEA82984 /* SettingsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouterInput.swift; sourceTree = "<group>"; };
 		85B61ACDC9CE74634CDE578D /* SettingsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
@@ -180,6 +201,9 @@
 		A71274EB2444CEB2004F0945 /* ChatLogsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsController.swift; sourceTree = "<group>"; };
 		A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsTopView.swift; sourceTree = "<group>"; };
+		A71F31B724B0D76A001832C0 /* ContainerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerViewController.swift; sourceTree = "<group>"; };
+		A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
+		A71F31C724B0FE26001832C0 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		A71FA81524A0E668009AFC8E /* CatWaiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CatWaiting.json; sourceTree = "<group>"; };
 		A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNonceGeneratorManager.swift; sourceTree = "<group>"; };
 		A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
@@ -205,6 +229,7 @@
 		A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OldRegsitrationControllerb .swift"; sourceTree = "<group>"; };
 		A77021562407EC9C005E6C4A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A7BCB71524B3895000BA2291 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
 		A7D23280249E578600C88077 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A7D23282249F9B0300C88077 /* Pet Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pet Me.entitlements"; sourceTree = "<group>"; };
 		A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignInButton.swift; sourceTree = "<group>"; };
@@ -237,6 +262,8 @@
 		B17BE4D601C35CBF20A90706 /* Pods-Pet Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet Me.release.xcconfig"; path = "Target Support Files/Pods-Pet Me/Pods-Pet Me.release.xcconfig"; sourceTree = "<group>"; };
 		B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorOutput.swift; sourceTree = "<group>"; };
 		B98C1930DDD277A53C436F80 /* StartingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
+		BAF85EACF4D2739A2B200421 /* SideMenuInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractor.swift; sourceTree = "<group>"; };
+		BF14567CC044E32BBC76BAAE /* SideMenuRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuRouter.swift; sourceTree = "<group>"; };
 		BFAEE956A1AFBF264BAA94CA /* StartingInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingInteractorOutput.swift; sourceTree = "<group>"; };
 		C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesViewInput.swift; sourceTree = "<group>"; };
 		C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
@@ -246,10 +273,13 @@
 		CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
 		CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		D279D42EA7429D98785FCE3C /* StartingInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingInteractor.swift; sourceTree = "<group>"; };
+		D2A7DC67D6FEAC1B0C7739C0 /* SideMenuModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuModuleInput.swift; sourceTree = "<group>"; };
 		D456F8F1008338CFFEE51955 /* StartingConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingConfigurator.swift; sourceTree = "<group>"; };
 		DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModuleInput.swift; sourceTree = "<group>"; };
+		DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuRouterInput.swift; sourceTree = "<group>"; };
 		E5ADF44D52DFD0330CB68F1C /* Pods_Pet_MeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_MeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED344034924CCC22B6978F1C /* Pods-Pet MeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet MeTests.debug.xcconfig"; path = "Target Support Files/Pods-Pet MeTests/Pods-Pet MeTests.debug.xcconfig"; sourceTree = "<group>"; };
+		ED8AED5FD7D3C7D0D872A439 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
 		ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
 		FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
 		FEF573CA114C3C23C41CA1BC /* SettingsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
@@ -381,6 +411,23 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		590F35B39DB2D47767227158 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
+		5C1210B9664CA4688121B67B /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */,
+				BF14567CC044E32BBC76BAAE /* SideMenuRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		5DFBAA4F723EBFE07F5F798D /* Presenter */ = {
 			isa = PBXGroup;
 			children = (
@@ -433,6 +480,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		82FD2673BE456714B80512D4 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				D2A7DC67D6FEAC1B0C7739C0 /* SideMenuModuleInput.swift */,
+				ED8AED5FD7D3C7D0D872A439 /* SideMenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
 		83F9A95FDD33E9FC4EB692FB /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -441,6 +497,28 @@
 				56C948515FE521118933B161 /* RegistrationViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		8418DC73F8E7D2150A511EE1 /* SideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				C42F08CB2403367A82E6D7E1 /* View */,
+				82FD2673BE456714B80512D4 /* Presenter */,
+				84C66239AC53A04C6DB32C09 /* Interactor */,
+				5C1210B9664CA4688121B67B /* Router */,
+				590F35B39DB2D47767227158 /* Configurator */,
+			);
+			path = SideMenu;
+			sourceTree = "<group>";
+		};
+		84C66239AC53A04C6DB32C09 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */,
+				62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */,
+				BAF85EACF4D2739A2B200421 /* SideMenuInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		9219FA0031522553402A9C7D /* View */ = {
@@ -461,6 +539,14 @@
 				ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */,
 			);
 			path = Interactor;
+			sourceTree = "<group>";
+		};
+		A71F31C024B0FD39001832C0 /* SideMenuCells */ = {
+			isa = PBXGroup;
+			children = (
+				A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */,
+			);
+			path = SideMenuCells;
 			sourceTree = "<group>";
 		};
 		A7425296240698D7002FB8C6 /* Controllers */ = {
@@ -646,6 +732,7 @@
 				A742529324068C4E002FB8C6 /* AppUser.swift */,
 				A7FFBAB42453394000CD7B5F /* Message.swift */,
 				A7FFBAB62453396A00CD7B5F /* Match.swift */,
+				A7BCB71524B3895000BA2291 /* SideMenuItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -706,6 +793,7 @@
 		A7FFBAAA24532C5900CD7B5F /* TableViewCells */ = {
 			isa = PBXGroup;
 			children = (
+				A71F31C024B0FD39001832C0 /* SideMenuCells */,
 				A7FFBAAB24532CAA00CD7B5F /* SettingsCell */,
 			);
 			path = TableViewCells;
@@ -790,6 +878,7 @@
 			children = (
 				A7FFBAB924533ABA00CD7B5F /* Shadow.swift */,
 				A70A8825249CF6BF0094F231 /* UI.swift */,
+				A71F31C724B0FE26001832C0 /* ReusableView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -841,6 +930,16 @@
 				9727EE2B3337471B9B962221 /* SettingsPresenter.swift */,
 			);
 			path = Presenter;
+			sourceTree = "<group>";
+		};
+		C42F08CB2403367A82E6D7E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */,
+				0EE97253A1E797FF9578C71F /* SideMenuViewOutput.swift */,
+				224A2516A27F92F90528D80E /* SideMenuViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		C5B97BDBA4F52F955DF46471 /* Classes */ = {
@@ -906,6 +1005,8 @@
 				B18EC767FFFC16C707FCDE64 /* Messages */,
 				27BF8E4702D57CB8B840B6A9 /* Registration */,
 				6AD44EC2C8D7FE758CA5F445 /* Starting */,
+				8418DC73F8E7D2150A511EE1 /* SideMenu */,
+				A71F31B724B0D76A001832C0 /* ContainerViewController.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1202,6 +1303,7 @@
 				F5E419DDD5A5965BF5C660FC /* CardsConfigurator.swift in Sources */,
 				7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */,
 				527DC4F86C63B39D4D3E4B71 /* SettingsViewOutput.swift in Sources */,
+				A71F31C224B0FD51001832C0 /* SideMenuTableViewCell.swift in Sources */,
 				A41232788C585BD3C31C250D /* SettingsViewController.swift in Sources */,
 				A86E9B192C18A19B212B3BAD /* SettingsModuleInput.swift in Sources */,
 				97A31DD8C63C5DF1E80DBB07 /* SettingsPresenter.swift in Sources */,
@@ -1219,6 +1321,7 @@
 				C91AB6CBAD3FF1BFE06B8DA2 /* MessagesViewController.swift in Sources */,
 				D8AE8FFA22FDF60CB3937CD3 /* MessagesModuleInput.swift in Sources */,
 				034DE086EB2E0274E5406FD6 /* MessagesPresenter.swift in Sources */,
+				A71F31B824B0D76A001832C0 /* ContainerViewController.swift in Sources */,
 				BD7A6821F7ADE7ADE8C0794F /* MessagesInteractorInput.swift in Sources */,
 				5BF8C29179AD2DC324E5830D /* MessagesInteractorOutput.swift in Sources */,
 				22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */,
@@ -1229,6 +1332,7 @@
 				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
 				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
 				A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */,
+				A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */,
 				A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */,
 				1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */,
 				B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */,
@@ -1246,10 +1350,22 @@
 				39FD94CEBB08F815011B4372 /* StartingInteractorInput.swift in Sources */,
 				A71FA81824A24886009AFC8E /* SecureNonceGeneratorManager.swift in Sources */,
 				8093370F160F9583406D90A9 /* StartingInteractorOutput.swift in Sources */,
+				A71F31C824B0FE26001832C0 /* ReusableView.swift in Sources */,
 				F91380CDB394196EBC14CACB /* StartingInteractor.swift in Sources */,
 				F6B74EFFF11EAFE5DFA7F17A /* StartingRouterInput.swift in Sources */,
 				8C5312721E68369592998531 /* StartingRouter.swift in Sources */,
 				D4F3BE1EAD1180AFE58AB7D8 /* StartingConfigurator.swift in Sources */,
+				47B7D3F44F555983ECB12EF3 /* SideMenuViewInput.swift in Sources */,
+				FDFD5FBFE66E55139048291A /* SideMenuViewOutput.swift in Sources */,
+				2CFB388F0C03E2077281D3D8 /* SideMenuViewController.swift in Sources */,
+				DC1C68E40DA17EE2B898A482 /* SideMenuModuleInput.swift in Sources */,
+				AF444B1E5D2F2BAABEB57025 /* SideMenuPresenter.swift in Sources */,
+				5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */,
+				BBE0B585E834001D6A68C2EB /* SideMenuInteractorOutput.swift in Sources */,
+				E049CE6A7521E11B4126C1B8 /* SideMenuInteractor.swift in Sources */,
+				EEA454753AE711FBABC04390 /* SideMenuRouterInput.swift in Sources */,
+				40141CF77B85933B209CCDA4 /* SideMenuRouter.swift in Sources */,
+				8C571CD65CBA7D104961E533 /* SideMenuConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

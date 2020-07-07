@@ -107,10 +107,23 @@ struct R: Rswift.Validatable {
 
   /// This `R.color` struct is generated, and contains static references to 0 colors.
   struct color {
-    /// This `R.color.appColors` struct is generated, and contains static references to 1 colors.
+    /// This `R.color.appColors` struct is generated, and contains static references to 3 colors.
     struct appColors {
+      /// Color `Background`.
+      static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Background")
       /// Color `ControlSelection`.
       static let controlSelection = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/ControlSelection")
+      /// Color `Label`.
+      static let label = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Label")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "Background", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func background(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.appColors.background, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIColor(named: "ControlSelection", bundle: ..., traitCollection: ...)`
@@ -118,6 +131,15 @@ struct R: Rswift.Validatable {
       @available(iOS 11.0, *)
       static func controlSelection(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
         return UIKit.UIColor(resource: R.color.appColors.controlSelection, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "Label", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func label(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.appColors.label, compatibleWith: traitCollection)
       }
       #endif
 
@@ -160,40 +182,14 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.image` struct is generated, and contains static references to 3 images.
+  /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// Image `ADTest`.
-    static let adTest = Rswift.ImageResource(bundle: R.hostingBundle, name: "ADTest")
-    /// Image `DoggoTest2`.
-    static let doggoTest2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "DoggoTest2")
-    /// Image `DoggoTest`.
-    static let doggoTest = Rswift.ImageResource(bundle: R.hostingBundle, name: "DoggoTest")
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "ADTest", bundle: ..., traitCollection: ...)`
-    static func adTest(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.adTest, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "DoggoTest", bundle: ..., traitCollection: ...)`
-    static func doggoTest(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.doggoTest, compatibleWith: traitCollection)
-    }
-    #endif
-
-    #if os(iOS) || os(tvOS)
-    /// `UIImage(named: "DoggoTest2", bundle: ..., traitCollection: ...)`
-    static func doggoTest2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-      return UIKit.UIImage(resource: R.image.doggoTest2, compatibleWith: traitCollection)
-    }
-    #endif
-
-    /// This `R.image.icons` struct is generated, and contains static references to 11 images.
+    /// This `R.image.icons` struct is generated, and contains static references to 13 images.
     struct icons {
       /// Image `Email`.
       static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/Email")
+      /// Image `adoption`.
+      static let adoption = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/adoption")
       /// Image `cat`.
       static let cat = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/cat")
       /// Image `close`.
@@ -204,6 +200,8 @@ struct R: Rswift.Validatable {
       static let dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/dog")
       /// Image `google`.
       static let google = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/google")
+      /// Image `hambMenu`.
+      static let hambMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/hambMenu")
       /// Image `info`.
       static let info = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/info")
       /// Image `like_circle`.
@@ -219,6 +217,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "Email", bundle: ..., traitCollection: ...)`
       static func email(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.email, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "adoption", bundle: ..., traitCollection: ...)`
+      static func adoption(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.adoption, compatibleWith: traitCollection)
       }
       #endif
 
@@ -258,6 +263,13 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "hambMenu", bundle: ..., traitCollection: ...)`
+      static func hambMenu(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.hambMenu, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "info", bundle: ..., traitCollection: ...)`
       static func info(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.info, compatibleWith: traitCollection)
@@ -289,6 +301,39 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "top_right_messages", bundle: ..., traitCollection: ...)`
       static func top_right_messages(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.top_right_messages, compatibleWith: traitCollection)
+      }
+      #endif
+
+      fileprivate init() {}
+    }
+
+    /// This `R.image.images` struct is generated, and contains static references to 3 images.
+    struct images {
+      /// Image `AvatarTest`.
+      static let avatarTest = Rswift.ImageResource(bundle: R.hostingBundle, name: "Images/AvatarTest")
+      /// Image `DoggoTest2`.
+      static let doggoTest2 = Rswift.ImageResource(bundle: R.hostingBundle, name: "Images/DoggoTest2")
+      /// Image `DoggoTest`.
+      static let doggoTest = Rswift.ImageResource(bundle: R.hostingBundle, name: "Images/DoggoTest")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "AvatarTest", bundle: ..., traitCollection: ...)`
+      static func avatarTest(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.images.avatarTest, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "DoggoTest", bundle: ..., traitCollection: ...)`
+      static func doggoTest(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.images.doggoTest, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "DoggoTest2", bundle: ..., traitCollection: ...)`
+      static func doggoTest2(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.images.doggoTest2, compatibleWith: traitCollection)
       }
       #endif
 

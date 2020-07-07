@@ -5,17 +5,18 @@
       "scale" : "1x"
     },
     {
+      "filename" : "iconfinder_menu_5925630 (1).png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
+      "filename" : "iconfinder_menu_5925630.png",
       "idiom" : "universal",
-      "filename" : "0001901480345.jpeg",
       "scale" : "3x"
     }
   ],
   "info" : {
-    "version" : 1,
-    "author" : "xcode"
+    "author" : "xcode",
+    "version" : 1
   }
 }

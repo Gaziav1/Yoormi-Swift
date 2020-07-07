@@ -59,6 +59,12 @@ enum Containers {
             let controller = configurator.configure()
             return controller
         }
+        
+        container.register(UIViewController.self, name: SideMenuModuleConfigurator.tag) { (_) in
+            let configurator = SideMenuModuleConfigurator()
+            let controller = configurator.configure()
+            return controller
+        }
 
         return container
     }()

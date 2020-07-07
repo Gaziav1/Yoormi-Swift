@@ -25,7 +25,6 @@ class CustomSignInButton: UIView {
     let titleLabel = UILabel()
     let icon = UIImageView(image: R.image.icons.google())
     
-    
     init(text: String = "Sign in with Google", icon: UIImage? = R.image.icons.google()) {
         super.init(frame: .zero)
         backgroundColor = .systemGray6

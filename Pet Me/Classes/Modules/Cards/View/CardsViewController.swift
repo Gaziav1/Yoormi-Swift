@@ -17,7 +17,7 @@ class CardsViewController: UIViewController, CardsViewInput {
     private let topStackView = TopNavigationStackView()
     private let cardDeckView = UIView()
     private let bottomControls = CardsBottomStackView()
-    
+    private let hambMenu = UIImageView(image: R.image.icons.hambMenu())
     private var lastFetchedUser: AppUser?
     private var swipedUsersId = [String: Any]()
     private var hud = JGProgressHUD(style: .dark)
@@ -59,7 +59,10 @@ class CardsViewController: UIViewController, CardsViewInput {
     //MARK: - Private methods
     
     fileprivate func setupStackViews() {
-        let overallStackView = UIStackView(arrangedSubviews: [topStackView, cardDeckView, bottomControls])
+    
+        hambMenu.contentMode = .scaleAspectFit
+        hambMenu.snp.makeConstraints({ $0.height.equalTo(40)})
+        let overallStackView = UIStackView(arrangedSubviews: [hambMenu, cardDeckView, bottomControls])
         overallStackView.axis = .vertical
         
         view.addSubview(overallStackView)
