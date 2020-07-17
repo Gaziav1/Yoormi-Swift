@@ -52,7 +52,12 @@ class AppRouter: AppRouterProtocol {
     var factory: Container = Containers.viewControllers.container
     private(set) var mainController = UINavigationController()
     
-    private init() {}
+    init(application: UIApplication, flow: FlowController?, factory: Container) {
+        self.application = application
+        self.flow = flow
+        self.factory = factory
+    }
+
     
     func performTransitionTo(to destination: RouterDestination) {
         guard let constructedController = destination.constructModule(in: factory) else {
