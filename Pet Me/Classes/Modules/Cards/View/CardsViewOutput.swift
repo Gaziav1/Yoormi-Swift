@@ -16,6 +16,7 @@ protocol CardsViewOutput {
     func viewIsReady()
     func proceedToSettings()
     func proceedToMessages()
+    func didTapMenuButton()
     func saveDislike(userID: String)
     func saveLike(userID: String)
 }

@@ -7,5 +7,5 @@
 //
 
 class MessagesRouter: MessagesRouterInput {
-
+    var appRouter: AppRouterProtocol!
 }

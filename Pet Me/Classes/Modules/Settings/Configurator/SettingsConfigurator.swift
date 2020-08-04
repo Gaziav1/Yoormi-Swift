@@ -11,13 +11,15 @@ import UIKit
 class SettingsModuleConfigurator {
 
     static let tag = "SettingsTag"
+    var appRouter: AppRouterProtocol!
     
     func configure() -> UIViewController {
 
         let router = SettingsRouter()
         let viewController = SettingsViewController()
         let presenter = SettingsPresenter()
-        
+            
+        router.appRouter = appRouter
         presenter.view = viewController
         presenter.router = router
 

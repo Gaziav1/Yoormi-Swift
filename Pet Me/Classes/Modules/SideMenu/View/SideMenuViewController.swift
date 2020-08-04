@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-
 class SideMenuViewController: UIViewController {
     
     var output: SideMenuViewOutput!
@@ -59,17 +57,27 @@ class SideMenuViewController: UIViewController {
     private func setupAvatar() {
 
         let stackView = UIStackView(arrangedSubviews: [avatarImage, nameLabel])
+        
+        stackView.isLayoutMarginsRelativeArrangement = true
+        stackView.layoutMargins = .init(top: 0, left: 20, bottom: 0, right: 0)
+        
         stackView.snp.makeConstraints({ $0.height.equalTo(65)})
-        let overallStack = UIStackView(arrangedSubviews: [stackView, optionsTableView])
+        
+        let fillerView = UIView()
+        fillerView.snp.makeConstraints({ $0.height.equalTo(65) })
+        
+        
+        let overallStack = UIStackView(arrangedSubviews: [stackView, fillerView, optionsTableView])
         overallStack.axis = .vertical
         stackView.spacing = 10
         overallStack.spacing = 10
         
         view.addSubview(overallStack)
-        
+                
         overallStack.snp.makeConstraints({
-            $0.edges.equalTo(view.safeAreaLayoutGuide).inset(20)
-            
+            $0.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
+            $0.trailing.equalToSuperview().inset(5)
+            $0.width.equalTo(265)
         })
     }
 }
@@ -100,7 +108,7 @@ extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 75
+        return 60
     }
     
 }

@@ -7,5 +7,5 @@
 //
 
 class RegistrationRouter: RegistrationRouterInput {
-
+    var appRouter: AppRouterProtocol!
 }

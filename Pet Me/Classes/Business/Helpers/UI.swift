@@ -47,3 +47,11 @@ extension String {
        return testPhone.evaluate(with: self)
     }
 }
+
+extension UIView {
+    
+    func addFlexWidthAndHeigt() {
+        self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+    }
+    
+}

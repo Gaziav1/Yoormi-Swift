@@ -7,11 +7,18 @@
 //
 
 class CardsRouter: CardsRouterInput {
+    
+    var appRouter: AppRouterProtocol!
+    
     func openMessages() {
-        AppRouter.shared.performTransitionTo(to: .messages)
+        appRouter.performTransitionTo(to: .messages)
     }
     
     func openSettings() {
-        AppRouter.shared.performTransitionTo(to: .settings)
+        appRouter.performTransitionTo(to: .settings)
+    }
+    
+    func openSideMenu() {
+        appRouter.openSideMenu()
     }
 }

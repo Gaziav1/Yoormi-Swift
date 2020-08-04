@@ -7,5 +7,5 @@
 //
 
 class SettingsRouter: SettingsRouterInput {
-
+    var appRouter: AppRouterProtocol!
 }

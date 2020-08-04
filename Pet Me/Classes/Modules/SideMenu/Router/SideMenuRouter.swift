@@ -7,5 +7,5 @@
 //
 
 class SideMenuRouter: SideMenuRouterInput {
-
+    var appRouter: AppRouterProtocol!
 }

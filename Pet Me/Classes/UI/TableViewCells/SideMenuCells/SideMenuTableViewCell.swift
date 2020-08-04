@@ -21,7 +21,7 @@ class SideMenuTableViewCell: UITableViewCell {
         let label = UILabel()
         label.text = "Найти питомца"
         label.textColor = R.color.appColors.label()
-        label.font = .systemFont(ofSize: 23, weight: .medium)
+        label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()
     
@@ -38,7 +38,7 @@ class SideMenuTableViewCell: UITableViewCell {
     
     func setup(withItem item: SideMenuItems) {
         title.text = item.title
-        let configuration = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 23, weight: .light), scale: .medium)
+        let configuration = UIImage.SymbolConfiguration(font: .systemFont(ofSize: 20, weight: .light), scale: .medium)
         icon.image = UIImage(systemName: item.icon, withConfiguration: configuration)
     }
     
@@ -47,14 +47,14 @@ class SideMenuTableViewCell: UITableViewCell {
         addSubview(icon)
         icon.snp.makeConstraints({
             $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().inset(10)
+            $0.leading.equalToSuperview().inset(20)
         })
         
         addSubview(title)
         
         title.snp.makeConstraints({
-            $0.leading.equalTo(icon.snp.trailing).offset(20)
-            $0.bottom.equalTo(icon)
+            $0.leading.equalTo(icon.snp.trailing).offset(15)
+            $0.centerY.equalTo(icon)
         })
     }
 

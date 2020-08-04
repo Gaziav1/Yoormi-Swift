@@ -12,11 +12,15 @@ class SideMenuModuleConfigurator {
 
     static let tag = "SideMenu"
     
+    var appRouter: AppRouterProtocol!
+    
     func configure() -> UIViewController {
 
         let router = SideMenuRouter()
         let viewController = SideMenuViewController()
         let presenter = SideMenuPresenter()
+        
+        router.appRouter = appRouter
         presenter.view = viewController
         presenter.router = router
 

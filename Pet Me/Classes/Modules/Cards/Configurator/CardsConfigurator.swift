@@ -13,9 +13,10 @@ class CardsModuleConfigurator {
     static let tag = "CardTag"
     
     var firebaseManager: FirebaseManagerProtocol!
+    var appRouter: AppRouterProtocol!
     
     private var user: AppUser?
-    
+
     init(user: AppUser?) {
         self.user = user
     }
@@ -25,6 +26,8 @@ class CardsModuleConfigurator {
         let router = CardsRouter()
         let viewController = CardsViewController()
         let presenter = CardsPresenter(user: user)
+        
+        router.appRouter = appRouter
         presenter.view = viewController
         presenter.router = router
         

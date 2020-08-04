@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import RxSwift
 import Swinject
 
 
@@ -21,20 +22,36 @@ enum RouterDestination {
     case registration
     case starting
     
-    func constructModule(in factory: Container) -> UIViewController? {
+    func constructModule(in factory: Container, flow: FlowController? = nil) -> UIViewController? {
         switch self {
         case .sideMenu:
-            return factory.resolve(UIViewController.self, name: SideMenuModuleConfigurator.tag)
+            return factory.resolve(UIViewController.self, name: SideMenuModuleConfigurator.tag, argument: flow)
         case .cards(let user):
-            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag, argument: user)
+            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag, arguments: user, flow)
         case .settings:
-            return factory.resolve(UIViewController.self, name: SettingsModuleConfigurator.tag)
+            return factory.resolve(UIViewController.self, name: SettingsModuleConfigurator.tag, argument: flow)
         case .messages:
-            return factory.resolve(UIViewController.self, name: MessagesModuleConfigurator.tag)
+            return factory.resolve(UIViewController.self, name: MessagesModuleConfigurator.tag, argument: flow)
         case .registration:
-            return factory.resolve(UIViewController.self, name: RegistrationModuleConfigurator.tag)
+            return factory.resolve(UIViewController.self, name: RegistrationModuleConfigurator.tag, argument: flow)
         case .starting:
-            return factory.resolve(UIViewController.self, name: StartingModuleConfigurator.tag)
+            return factory.resolve(UIViewController.self, name: StartingModuleConfigurator.tag, argument: flow)
+        }
+    }
+    
+    var isPresent: Bool {
+        switch self {
+        default:
+            return false
+        }
+    }
+    
+    var shouldContainSideMenu: Bool {
+        switch self {
+        case .cards(_), .settings, .messages:
+            return true
+        default:
+            return false
         }
     }
 }
@@ -43,36 +60,81 @@ enum RouterDestination {
 
 protocol AppRouterProtocol {
     func performTransitionTo(to destination: RouterDestination)
+    func dropAll(to destination: RouterDestination)
+    func openSideMenu()
 }
 
 class AppRouter: AppRouterProtocol {
-    #warning("Временное решение")
-    static let shared = AppRouter()
+  
     
-    var factory: Container = Containers.viewControllers.container
-    private(set) var mainController = UINavigationController()
+    let factory: Container
+    let flow: FlowController?
+    let application: UIApplication
+    
+    fileprivate let disposeBag = DisposeBag()
     
     init(application: UIApplication, flow: FlowController?, factory: Container) {
-        //test
         self.application = application
         self.flow = flow
         self.factory = factory
     }
-
+    
+    
+    func createModule(for destination: RouterDestination) -> UIViewController {
+        guard let currentFlow = flow, let controller = destination.constructModule(in: factory, flow: currentFlow) else {
+            fatalError("Current flow not found")
+        }
+        
+        return controller
+    }
+    
+    
+    func createFlow(for destination: RouterDestination) -> NavigationFlowController {
+        return NavigationFlowController(root: destination, factory: factory)
+    }
     
     func performTransitionTo(to destination: RouterDestination) {
-        guard let constructedController = destination.constructModule(in: factory) else {
+        guard let currentFlow = flow else {
             log.warning("Cant receive controller for transition")
             return
         }
-        mainController.pushViewController(constructedController, animated: true)
+        currentFlow.performTransition(to: destination, animated: true).subscribe().disposed(by: disposeBag)
     }
     
-    func initialViewController() {
-        var controller: UIViewController?
-
-        controller = RouterDestination.sideMenu.constructModule(in: factory)
+    func dropAll(to destination: RouterDestination) {
+        let newFlow: FlowController
         
-        mainController = UINavigationController(rootViewController: controller!)
+        if destination.shouldContainSideMenu {
+            newFlow = SideMenuFlowController(factory: factory, routerDestination: destination)
+        } else {
+            newFlow = NavigationFlowController(root: destination, factory: factory)
+        }
+        
+        if let window = application.windows.first {
+            window.rootViewController = newFlow.rootViewController
+        }
+      }
+    
+    func openSideMenu() {
+        flow?.openSideMenu()
     }
+      
+    
+    
+//    func openSideMenu() {
+////        if #available(iOS 13.0, *) {
+////            guard let sceneDelegate = SceneDelegate.shared else { return }
+////            guard let sideMenuFlow = sceneDelegate.rootFlowController else {
+////                log.warning("can't receive flow controller for transition")
+////                return
+////            }
+////            sideMenuFlow.openSideMenu()
+////        } else {
+////            guard let sideMenuFlow = dataSource?.flowControllerForTransition() as? SideMenuFlowController else {
+////                log.warning("can't receive flow controller for transition")
+////                return
+////            }
+////            sideMenuFlow.openSideMenu()
+//        }
+    
 }

@@ -9,7 +9,7 @@
 import Foundation
 
 class CardsPresenter: CardsModuleInput, CardsViewOutput, CardsInteractorOutput {
- 
+    
     weak var view: CardsViewInput!
     var interactor: CardsInteractorInput!
     var router: CardsRouterInput!
@@ -87,6 +87,10 @@ class CardsPresenter: CardsModuleInput, CardsViewOutput, CardsInteractorOutput {
     
     func proceedToMessages() {
         router.openMessages()
+    }
+    
+    func didTapMenuButton() {
+        router.openSideMenu()
     }
 }
 

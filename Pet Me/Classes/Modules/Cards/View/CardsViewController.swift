@@ -8,16 +8,19 @@
 
 import UIKit
 import SnapKit
+import RxCocoa
+import RxSwift
 import JGProgressHUD
 
 class CardsViewController: UIViewController, CardsViewInput {
     
     var output: CardsViewOutput!
+    private let disposeBag = DisposeBag()
     
     private let topStackView = TopNavigationStackView()
     private let cardDeckView = UIView()
     private let bottomControls = CardsBottomStackView()
-    private let hambMenu = UIImageView(image: R.image.icons.hambMenu())
+    
     private var lastFetchedUser: AppUser?
     private var swipedUsersId = [String: Any]()
     private var hud = JGProgressHUD(style: .dark)
@@ -31,7 +34,7 @@ class CardsViewController: UIViewController, CardsViewInput {
     
     // MARK: CardsViewInput
     func setupInitialState() {
-        navigationController?.navigationBar.isHidden = true
+        setupNavigationBar()
         view.backgroundColor = .white
         setupStackViews()
         showHUD(text: "Идет загрузка")
@@ -58,11 +61,22 @@ class CardsViewController: UIViewController, CardsViewInput {
     
     //MARK: - Private methods
     
-    fileprivate func setupStackViews() {
+    private func setupNavigationBar() {
+        
+        let hambMenuImage = R.image.icons.hambMenu()?.withRenderingMode(.alwaysOriginal)
+        let rightBarButtonItem = UIBarButtonItem(image: hambMenuImage, style: .plain, target: self, action: nil)
+        
+        rightBarButtonItem.rx.tap.subscribe { [unowned self] (_) in
+            self.output.didTapMenuButton()
+        }.disposed(by: disposeBag)
     
-        hambMenu.contentMode = .scaleAspectFit
-        hambMenu.snp.makeConstraints({ $0.height.equalTo(40)})
-        let overallStackView = UIStackView(arrangedSubviews: [hambMenu, cardDeckView, bottomControls])
+        navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationController?.navigationBar.backgroundColor = .clear
+    }
+    
+    fileprivate func setupStackViews() {
+        
+        let overallStackView = UIStackView(arrangedSubviews: [cardDeckView, bottomControls])
         overallStackView.axis = .vertical
         
         view.addSubview(overallStackView)

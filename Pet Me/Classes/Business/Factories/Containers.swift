@@ -25,34 +25,44 @@ enum Containers {
     private static let viewControllersContainer: Container = {
         let container = Container()
         
-        container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_, user: AppUser?) in
+        container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_, user: AppUser?, flow: FlowController?) in
             let cardConfigurator = CardsModuleConfigurator(user: user)
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            cardConfigurator.appRouter = appRouter
             cardConfigurator.firebaseManager = managersContainer.resolve(FirebaseManagerProtocol.self)
             let controller = cardConfigurator.configure()
             return controller
         }
         
-        container.register(UIViewController.self, name: SettingsModuleConfigurator.tag) { (_) in
+        container.register(UIViewController.self, name: SettingsModuleConfigurator.tag) { (_, flow: FlowController?) in
             let settingsConfigurator = SettingsModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            settingsConfigurator.appRouter = appRouter
             let controller = settingsConfigurator.configure()
             return controller
         }
         
-        container.register(UIViewController.self, name: MessagesModuleConfigurator.tag) { (_) in
+        container.register(UIViewController.self, name: MessagesModuleConfigurator.tag) { (_, flow: FlowController?) in
             let messagesConfigurator = MessagesModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            messagesConfigurator.appRouter = appRouter
             let controller = messagesConfigurator.configure()
             return controller
         }
         
-        container.register(UIViewController.self, name: RegistrationModuleConfigurator.tag) { (_) in
+        container.register(UIViewController.self, name: RegistrationModuleConfigurator.tag) { (_, flow: FlowController?) in
             let registrationConfigurator = RegistrationModuleConfigurator()
             registrationConfigurator.firebaseAuthManager = managersContainer.resolve(FirebaseManagerProtocol.self)
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            registrationConfigurator.appRouter = appRouter
             let controller = registrationConfigurator.configure()
             return controller
         }
         
-        container.register(UIViewController.self, name: StartingModuleConfigurator.tag) { (_) in
+        container.register(UIViewController.self, name: StartingModuleConfigurator.tag) { (_, flow: FlowController?) in
             let configurator = StartingModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            configurator.appRouter = appRouter
             configurator.appleSignInManager = managersContainer.resolve(AppleSignInManagerProtocol.self)
             configurator.googleSignInManager = managersContainer.resolve(GoogleSignInProtocol.self)
             configurator.firebaseStrategy = strategiesContainer.resolve(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag)
@@ -60,8 +70,10 @@ enum Containers {
             return controller
         }
         
-        container.register(UIViewController.self, name: SideMenuModuleConfigurator.tag) { (_) in
+        container.register(UIViewController.self, name: SideMenuModuleConfigurator.tag) { (_, flow: FlowController?) in
             let configurator = SideMenuModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            configurator.appRouter = appRouter
             let controller = configurator.configure()
             return controller
         }
@@ -82,6 +94,19 @@ enum Containers {
     
     private static let managersContainer: Container = {
         let container = Container()
+        
+        container.register(UIApplication.self, factory: { _ in UIApplication.shared })
+        
+        container.register(LaunchManagerProtocol.self) { (_) in
+            let launchManager = LaunchManager(factory: viewControllersContainer)
+            return launchManager
+        }
+        
+        container.register(AppRouterProtocol.self, factory: { (_, flow: FlowController?) in
+            let application = container.resolve(UIApplication.self)
+            let appRouter = AppRouter(application: application!, flow: flow, factory: viewControllersContainer)
+            return appRouter
+        })
         
         container.register(FirebaseManagerProtocol.self) { (_) in
             let firebaseManager = FirebaseManager()

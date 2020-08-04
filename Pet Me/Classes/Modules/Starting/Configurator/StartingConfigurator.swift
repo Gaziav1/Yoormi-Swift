@@ -14,13 +14,14 @@ class StartingModuleConfigurator {
     var appleSignInManager: AppleSignInManagerProtocol!
     var firebaseStrategy: FirebaseSrategiesProtocol!
     var googleSignInManager: GoogleSignInProtocol!
+    var appRouter: AppRouterProtocol!
 
     func configure() -> UIViewController {
     
         let router = StartingRouter()
         let viewController = StartingViewController()
         let presenter = StartingPresenter()
-       
+        router.appRouter = appRouter
         presenter.view = viewController
         presenter.router = router
 

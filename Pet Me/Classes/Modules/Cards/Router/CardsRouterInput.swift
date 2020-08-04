@@ -11,4 +11,5 @@ import Foundation
 protocol CardsRouterInput {
     func openSettings()
     func openMessages()
+    func openSideMenu()
 }

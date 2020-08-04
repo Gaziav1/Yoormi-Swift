@@ -14,12 +14,15 @@ class RegistrationModuleConfigurator {
  
     var firebaseAuthManager: AuthManager!
     var firebaseStrategy: FirebaseSrategiesProtocol!
+    var appRouter: AppRouterProtocol!
     
     func configure() -> UIViewController {
 
         let router = RegistrationRouter()
         let controller = RegistrationViewController()
         let presenter = RegistrationPresenter()
+        
+        router.appRouter = appRouter
         presenter.view = controller
         presenter.router = router
 

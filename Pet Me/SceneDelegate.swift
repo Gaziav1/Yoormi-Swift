@@ -16,10 +16,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         window = UIWindow(frame: windowScene.coordinateSpace.bounds)
         window?.windowScene = windowScene
-        AppRouter.shared.initialViewController()
-        window?.rootViewController = AppRouter.shared.mainController
         window?.makeKeyAndVisible()
         LogManager.configurateLogs()
+        guard let launchManager = Containers.managers.container.resolve(LaunchManagerProtocol.self) else { fatalError("Cant resolve launch manager") }
+        launchManager.instantiateRootController(in: window!, options: [ : ])
+            .subscribe(onNext: { element in
+                
+            })
     }
     
     func sceneDidDisconnect(_ scene: UIScene) {

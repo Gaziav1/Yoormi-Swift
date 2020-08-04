@@ -19,6 +19,8 @@ target 'Pet Me' do
   pod 'R.swift'
   pod 'lottie-ios'	
   pod 'ObjectMapper'
+  pod 'RxSwift'
+  pod 'RxCocoa'
 
   target 'Pet MeTests' do
     inherit! :search_paths
