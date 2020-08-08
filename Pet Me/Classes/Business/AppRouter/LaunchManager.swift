@@ -29,11 +29,13 @@ class LaunchManager: LaunchManagerProtocol {
             
             let flowController: FlowController
             
-            if Auth.auth().currentUser != nil {
-                flowController = NavigationFlowController(root: .cards(nil), factory: self.factory)
-            } else {
-                flowController = SideMenuFlowController(factory: self.factory, routerDestination: .cards(nil))
-            }
+//            if Auth.auth().currentUser != nil {
+//                flowController = NavigationFlowController(root: .cards(nil), factory: self.factory)
+//            } else {
+//                flowController = NavigationFlowController(root: .starting, factory: self.factory)
+//            }
+            
+            flowController = SideMenuFlowController(factory: self.factory, routerDestination: .cards(nil))
             
             observer.onNext(flowController)
             

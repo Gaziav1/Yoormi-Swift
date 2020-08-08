@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 import RxCocoa
 import RxSwift
-import JGProgressHUD
 
 class CardsViewController: UIViewController, CardsViewInput {
     
@@ -23,7 +22,7 @@ class CardsViewController: UIViewController, CardsViewInput {
     
     private var lastFetchedUser: AppUser?
     private var swipedUsersId = [String: Any]()
-    private var hud = JGProgressHUD(style: .dark)
+
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -37,17 +36,8 @@ class CardsViewController: UIViewController, CardsViewInput {
         setupNavigationBar()
         view.backgroundColor = .white
         setupStackViews()
-        showHUD(text: "Идет загрузка")
     }
-    
-    func showHUD(text: String) {
-        hud.textLabel.text = text
-        hud.show(in: view)
-    }
-    
-    func hideHUD() {
-        hud.dismiss()
-    }
+  
     
     func createCardView(from user: AppUser) {
         let cardView = CardView()

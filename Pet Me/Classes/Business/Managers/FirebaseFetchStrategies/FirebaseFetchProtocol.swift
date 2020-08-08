@@ -10,5 +10,5 @@ import ObjectMapper
 
 protocol FirebaseSrategiesProtocol {
     func fetchData(completion: @escaping (Result<[Mappable], Error>) -> Void)
-    func uploadData(data: Mappable, completion: @escaping (Error?) -> Void)
+    func uploadData(data: [String: Any], completion: @escaping (Error?) -> Void)
 }

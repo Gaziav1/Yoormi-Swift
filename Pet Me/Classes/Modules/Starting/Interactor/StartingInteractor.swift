@@ -47,12 +47,12 @@ extension StartingInteractor: GoogleSignInDelegate {
             return
         }
         
-        firebaseStrategy.uploadData(data: user) { (error) in
-            guard error == nil else {
-                log.warning("Error occured saving current user to firestore")
-                return
-            }
-        }
+//        firebaseStrategy.uploadData(data: user) { (error) in
+//            guard error == nil else {
+//                log.warning("Error occured saving current user to firestore")
+//                return
+//            }
+//        }
         
         output.signInCompleted(user: user)
     }

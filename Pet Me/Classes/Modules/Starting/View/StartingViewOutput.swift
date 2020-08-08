@@ -11,5 +11,6 @@ protocol StartingViewOutput {
 
     func viewIsReady()
     func googleSignInTapped()
+    func signInWithEmailTapped()
     func appleSignInTapped(presentationAnchor: UIWindow)
 }

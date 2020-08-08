@@ -10,6 +10,8 @@ import UIKit
 import AuthenticationServices
 import GoogleSignIn
 import Lottie
+import RxCocoa
+import RxSwift
 
 class StartingViewController: UIViewController, StartingViewInput {
     
@@ -31,7 +33,7 @@ class StartingViewController: UIViewController, StartingViewInput {
         return label
     }()
     
-    private let signInWithEmail: CustomSignInButton = {
+    @objc private let signInWithEmail: CustomSignInButton = {
         let button = CustomSignInButton(text: "Sign in with Email", icon: R.image.icons.email())
         button.backgroundColor = R.color.appColors.controlSelection()
         button.titleLabel.textColor = .white
@@ -113,8 +115,8 @@ class StartingViewController: UIViewController, StartingViewInput {
             $0.leading.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(205)
         })
-        
-        
+      
+        signInWithEmail.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(signInWithMail)))
     }
     
     @objc private func appleButtonTapped() {
@@ -128,7 +130,7 @@ class StartingViewController: UIViewController, StartingViewInput {
     }
     
     @objc private func signInWithMail() {
-        
+        output.signInWithEmailTapped()
     }
     
 }

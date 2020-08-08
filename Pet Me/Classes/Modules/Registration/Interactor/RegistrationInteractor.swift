@@ -21,13 +21,18 @@ extension RegistrationInteractor: RegistrationInteractorInput {
         firebaseAuthManager.registerUser(email: email, password: password) { [unowned self] (result) in
             
             switch result {
-            case .success(_):
+            case .success(let user):
                 self.output.registrationSuccess()
+                let userData: [String: Any] = ["uid": user.uid,
+                                "name": "",
+                                "imageURL": ""]
+                self.firebaseStrategy.uploadData(data: userData) { (error) in
+                    print(error?.localizedDescription)
+                }
             case .failure(_):
                 self.output.registrationFailure()
             }
             
         }
     }
-    
 }

@@ -10,18 +10,18 @@ import ObjectMapper
 import Firebase
 
 class FirebaseUsersFetcher: FirebaseSrategiesProtocol {
-    
+
     static let tag = "UsersFetcher"
     
-    func uploadData(data: Mappable, completion: @escaping (Error?) -> Void) {
-        let json = data.toJSON()
+    
+    func uploadData(data: [String: Any], completion: @escaping (Error?) -> Void) {
         
-        guard let uid = json["uid"] as? String else {
+        guard let uid = data["uid"] as? String else {
             log.verbose("Wrong data format")
             return
         }
         
-        Firestore.firestore().collection("users").document(uid).setData(json) { (error) in
+        Firestore.firestore().collection("users").document(uid).setData(data) { (error) in
             if let error = error {
                 log.warning("Error occured saving data to database - \(error.localizedDescription)")
                 completion(error)

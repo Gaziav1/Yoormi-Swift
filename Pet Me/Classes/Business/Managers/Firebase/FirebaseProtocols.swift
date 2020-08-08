@@ -32,7 +32,8 @@ extension AuthManager {
     func registerUser(email: String, password: String, completion: @escaping (Result<User, Error>) -> Void) {
         log.verbose("User registration started")
     
-        Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+            
+        Auth.auth().createUser(withEmail: email, password: password) { (result, error) in
             guard error == nil else {
                 log.error("Register user error: \(error!.localizedDescription)")
                 completion(.failure(error!))

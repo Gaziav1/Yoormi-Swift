@@ -13,4 +13,8 @@ class StartingRouter: StartingRouterInput {
     func proceedToCards(user: AppUser) {
         appRouter.performTransitionTo(to: .cards(user))
     }
+    
+    func proceedToRegistration() {
+        appRouter.performTransitionTo(to: .registration)
+    }
 }

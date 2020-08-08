@@ -14,7 +14,17 @@ class SideMenu: UIViewController {
     private let contentViewContainer = UIView()
     private let menuViewContainer = UIView()
     private var visible = false
-    private var contentViewInPortraitOffsetCenterX: Float = 80.0
+    private var contentViewInPortraitOffsetCenterX: CGFloat = 80.0
+    private let visualEffectView: UIVisualEffectView = {
+        let blur = UIBlurEffect(style: .systemThinMaterial)
+        let visualEffectView = UIVisualEffectView(effect: blur)
+        visualEffectView.alpha = 0
+        visualEffectView.isHidden = true
+        return visualEffectView
+    }()
+    private lazy var dismissGesture: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dimissMenu))
+    private lazy var panDismissGesture: UIPanGestureRecognizer = UIPanGestureRecognizer(target: self, action: #selector(panDraggingAction))
+    
     
     //MARK: - Public properties
     
@@ -66,6 +76,8 @@ class SideMenu: UIViewController {
         
         view.addSubview(menuViewContainer)
         view.addSubview(contentViewContainer)
+        contentViewContainer.addSubview(visualEffectView)
+        visualEffectView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
     
@@ -74,7 +86,7 @@ class SideMenu: UIViewController {
         if let controller = targetViewController {
             addChild(controller)
             controller.view.frame = view.bounds
-            controller.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+            controller.view.addFlexWidthAndHeigt()
             targetView.addSubview(controller.view)
             controller.didMove(toParent: self)
         }
@@ -86,34 +98,96 @@ class SideMenu: UIViewController {
         targetViewController.removeFromParent()
     }
     
-  //MARK: - Present / Hide Menu ViewControllers
+    //MARK: - Present / Hide Menu ViewControllers
     
     func _presentRightMenuViewController() {
         showRightMenuViewController()
     }
     
     private func showRightMenuViewController() {
-    
+        visualEffectView.isHidden = false
+        
         if let rightController = rightMenuVC {
             //showmenuviewcontroller
             
             UIView.animate(withDuration: 0.35, animations: { [unowned self] in
                 self.animateMenuViewController()
-            },
-            completion: { [weak self] _ in
+                },
+                completion: { [weak self] _ in
                 self?.animateMenuViewControllerCompletion(menuViewController: rightController)
             })
         }
     }
     
     private func animateMenuViewController() {
-        contentViewContainer.center = CGPoint(x:  CGFloat(-contentViewInPortraitOffsetCenterX), y: contentViewContainer.center.y)
+        contentViewContainer.transform = .identity
+        contentViewContainer.frame = .init(x: -(view.center.x + contentViewInPortraitOffsetCenterX), y: view.frame.origin.y, width: view.frame.width, height: view.frame.height)
+        visualEffectView.alpha = 1
     }
     
-    private func animateMenuViewControllerCompletion(menuViewController: UIViewController) {
+    private func animateMenuViewControllerCompletion(menuViewController: UIViewController? = nil) {
         
-        visible = true
+        visible.toggle()
+        
+        if visible {
+            visualEffectView.addGestureRecognizer(dismissGesture)
+            view.addGestureRecognizer(panDismissGesture)
+        } else {
+            visualEffectView.isHidden = true
+            visualEffectView.removeGestureRecognizer(dismissGesture)
+            view.removeGestureRecognizer(panDismissGesture)
+        }
+        
         //rightMenuVC?.endAppearanceTransition()
         view.isUserInteractionEnabled = true
+        
+    }
+    
+    
+    //MARK: - Actions
+    
+    @objc private func dimissMenu() {
+        view.isUserInteractionEnabled = false
+        UIView.animate(withDuration: 0.35, animations: { [unowned self] in
+            self.contentViewContainer.frame = self.view.frame
+            self.visualEffectView.alpha = 0
+            
+            }, completion: { [weak self] _ in
+                self?.animateMenuViewControllerCompletion()
+                
+        })
+    }
+    
+    
+    @objc private func panDraggingAction(_ pan: UIPanGestureRecognizer) {
+        
+        switch pan.state {
+        case .changed:
+           
+            contentViewContainer.transform = CGAffineTransform(translationX: pan.translation(in: view).x, y: menuViewContainer.frame.origin.y)
+            
+            if pan.translation(in: view).x > 0 {
+                
+                let percentage = (pan.view!.center.x*100.0 / self.view.center.x)/100.0
+
+                    let alpha = percentage >= 1.0 ? (1.0 - (percentage-1.0)) : percentage
+
+                    visualEffectView.alpha = alpha
+            }
+
+        case .ended:
+            
+            
+            if pan.translation(in: view).x > 145 {
+                dimissMenu()
+            } else {
+                UIView.animate(withDuration: 0.2) { [unowned self] in
+                    self.contentViewContainer.transform = .identity
+                }
+            }
+            
+        default:
+            ()
+        }
     }
 }

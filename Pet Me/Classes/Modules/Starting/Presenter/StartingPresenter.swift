@@ -21,6 +21,10 @@ class StartingPresenter: StartingModuleInput {
 
 //MARK: -StartingViewOutput
 extension StartingPresenter: StartingViewOutput {
+    func signInWithEmailTapped() {
+        router.proceedToRegistration()
+    }
+    
     
     func viewIsReady() {
         view.setupInitialState()
@@ -40,7 +44,6 @@ extension StartingPresenter: StartingInteractorOutput {
     func signInCompleted(user: AppUser) {
         router.proceedToCards(user: user)
     }
-    
     
     func signInError(error: Error) {
         print("error")

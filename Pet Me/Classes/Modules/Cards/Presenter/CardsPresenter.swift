@@ -28,7 +28,7 @@ class CardsPresenter: CardsModuleInput, CardsViewOutput, CardsInteractorOutput {
     //MARK: CardsInteractorOutput
     
     func fetchSwipesFailure() {
-        view.hideHUD()
+       // view.hideHUD()
         #warning("Необходимо обработать ошибку")
     }
     
@@ -38,7 +38,7 @@ class CardsPresenter: CardsModuleInput, CardsViewOutput, CardsInteractorOutput {
     }
     
     func fetchUsersFailure() {
-        view.hideHUD()
+       // view.hideHUD()
         #warning("Необходимо обработать ошибку")
     }
     
@@ -51,7 +51,6 @@ class CardsPresenter: CardsModuleInput, CardsViewOutput, CardsInteractorOutput {
                 view.createCardView(from: appUser)
             }
         }
-        view.hideHUD()
     }
     
     func matchBetweenUsersExists(currentUserID: String, matchedUserID: String) {

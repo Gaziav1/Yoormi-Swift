@@ -53,6 +53,7 @@ enum Containers {
         container.register(UIViewController.self, name: RegistrationModuleConfigurator.tag) { (_, flow: FlowController?) in
             let registrationConfigurator = RegistrationModuleConfigurator()
             registrationConfigurator.firebaseAuthManager = managersContainer.resolve(FirebaseManagerProtocol.self)
+            registrationConfigurator.firebaseStrategy = strategiesContainer.resolve(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag)
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             registrationConfigurator.appRouter = appRouter
             let controller = registrationConfigurator.configure()

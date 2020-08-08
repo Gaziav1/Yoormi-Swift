@@ -14,7 +14,6 @@ protocol CardsViewInput: class {
     */
 
     func setupInitialState()
-    func hideHUD()
     func handleLike()
     func handleDislike()
     func createCardView(from: AppUser)

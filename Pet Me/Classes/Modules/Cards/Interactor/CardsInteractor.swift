@@ -17,6 +17,8 @@ class CardsInteractor: CardsInteractorInput {
     
     
     func fetchSwipes() {
+        
+        
         firebaseManager.fetchSwipes { (result) in
             switch result {
             case .failure(_):

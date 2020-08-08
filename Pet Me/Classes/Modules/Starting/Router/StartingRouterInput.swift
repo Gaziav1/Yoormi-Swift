@@ -10,4 +10,5 @@ import Foundation
 
 protocol StartingRouterInput {
     func proceedToCards(user: AppUser)
+    func proceedToRegistration()
 }

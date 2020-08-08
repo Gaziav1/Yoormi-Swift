@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		0121A96D027443144A5054E3 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DA38970644FB16D92B55CA /* CardsViewController.swift */; };
+		01D0D9AAD85AF12462979256 /* AdoptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D2F8A1765918BE7CB03BF /* AdoptionViewController.swift */; };
+		0212FC0A43A6638AFAC6EB1F /* AdoptionInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE6FAABDBBDDCA5B59602AE /* AdoptionInteractorOutput.swift */; };
 		034DE086EB2E0274E5406FD6 /* MessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBFCBC52D156BD0AD62792 /* MessagesPresenter.swift */; };
 		066ED0C8722BBC40D8D9E00D /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */; };
 		09F5FC20AF9715CB40DFA26D /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA12CB012B8A2A79EE46D1 /* CardsPresenter.swift */; };
@@ -21,20 +23,26 @@
 		22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */; };
 		2CFB388F0C03E2077281D3D8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A2516A27F92F90528D80E /* SideMenuViewController.swift */; };
 		303590832F50AFD838CC38A6 /* CardsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFA01C0F52E858FD798A2 /* CardsRouterInput.swift */; };
+		35B4CCB5D8855A58A4B7C9BE /* AdoptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C498CEDB64C0474DDD7725 /* AdoptionRouter.swift */; };
 		37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */; };
 		39FD94CEBB08F815011B4372 /* StartingInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9796513A935641B0237689 /* StartingInteractorInput.swift */; };
 		40141CF77B85933B209CCDA4 /* SideMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14567CC044E32BBC76BAAE /* SideMenuRouter.swift */; };
+		452279345F1202F653C7E93C /* AdoptionInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA696775DCC42DAB7412683B /* AdoptionInteractorInput.swift */; };
 		45C3654588AA1069538FFBAB /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */; };
 		47B7D3F44F555983ECB12EF3 /* SideMenuViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */; };
+		49D2CF6C26FD00BABA1A32F7 /* AdoptionModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CB0499001441968DF450D /* AdoptionModuleInput.swift */; };
 		527DC4F86C63B39D4D3E4B71 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */; };
+		589FA99525D6B9DA2E69A892 /* AdoptionViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FA3DC9F357A217CE91014D /* AdoptionViewInput.swift */; };
 		5977A04D629CEBC24B99FE31 /* StartingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F87A30FB45C50266CBDDD2 /* StartingViewOutput.swift */; };
 		5A18AF594511100E10E18BC6 /* RegistrationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */; };
 		5B4777ED663CE24FD0ED9E4F /* CardsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D310AB3D9E2C0E8E63F4B96 /* CardsInteractorInput.swift */; };
 		5BF8C29179AD2DC324E5830D /* MessagesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */; };
+		5DC91A79D356DDC91B253D8D /* AdoptionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A693787C0B4D794715266B /* AdoptionConfigurator.swift */; };
 		5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */; };
 		624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06061268F27E49CBA8513BB4 /* CardsRouter.swift */; };
 		66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */; };
 		7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF573CA114C3C23C41CA1BC /* SettingsViewInput.swift */; };
+		7FDE62D460166E18F9C00C87 /* AdoptionViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675083BC20DF5E0E9894730B /* AdoptionViewOutput.swift */; };
 		8093370F160F9583406D90A9 /* StartingInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFAEE956A1AFBF264BAA94CA /* StartingInteractorOutput.swift */; };
 		8110E7E27CE8465066C5D93C /* StartingModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CBBFFA48B3983846AF410ECF /* StartingModuleInput.swift */; };
 		822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C948515FE521118933B161 /* RegistrationViewController.swift */; };
@@ -45,6 +53,7 @@
 		8C571CD65CBA7D104961E533 /* SideMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */; };
 		9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */; };
 		97A31DD8C63C5DF1E80DBB07 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727EE2B3337471B9B962221 /* SettingsPresenter.swift */; };
+		9F0ABAF3AE7C0A36F2DA2BAA /* AdoptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4158AF0FF55E60704AC8A5A /* AdoptionInteractor.swift */; };
 		A41232788C585BD3C31C250D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */; };
 		A5990DD430B831D161D57D86 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52149797422F03CA114C17BD /* CardsInteractor.swift */; };
 		A70A8826249CF6BF0094F231 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A8825249CF6BF0094F231 /* UI.swift */; };
@@ -111,6 +120,7 @@
 		A7FFBAB72453396A00CD7B5F /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBAB62453396A00CD7B5F /* Match.swift */; };
 		A7FFBABA24533ABA00CD7B5F /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBAB924533ABA00CD7B5F /* Shadow.swift */; };
 		A86E9B192C18A19B212B3BAD /* SettingsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC0ECB57B4739D7D185C0D /* SettingsModuleInput.swift */; };
+		AB79024AE7CA58F4E6578986 /* AdoptionInitializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4CE792183DD63657CD21A2A /* AdoptionInitializer.swift */; };
 		AF444B1E5D2F2BAABEB57025 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AED5FD7D3C7D0D872A439 /* SideMenuPresenter.swift */; };
 		B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */; };
 		B28CC714710411A9482C385E /* MessagesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */; };
@@ -126,6 +136,7 @@
 		CCB249171A6F84FB9F328444 /* Pods_Pet_MeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E5ADF44D52DFD0330CB68F1C /* Pods_Pet_MeTests.framework */; };
 		D1D4AA8B07CC603B85EF6F40 /* RegistrationConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73AE10C855BF40BDB75086D9 /* RegistrationConfigurator.swift */; };
 		D4F3BE1EAD1180AFE58AB7D8 /* StartingConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D456F8F1008338CFFEE51955 /* StartingConfigurator.swift */; };
+		D7CF954FF2277516117EFE95 /* AdoptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30B50FC096414D781555EC /* AdoptionPresenter.swift */; };
 		D7D94228785E40ABA067D695 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C1930DDD277A53C436F80 /* StartingViewController.swift */; };
 		D8AE8FFA22FDF60CB3937CD3 /* MessagesModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */; };
 		DC1C68E40DA17EE2B898A482 /* SideMenuModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7DC67D6FEAC1B0C7739C0 /* SideMenuModuleInput.swift */; };
@@ -138,6 +149,7 @@
 		F91380CDB394196EBC14CACB /* StartingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279D42EA7429D98785FCE3C /* StartingInteractor.swift */; };
 		F9B690933EF418B561921B58 /* StartingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8B1D5C27117E69E1BD6A2 /* StartingViewInput.swift */; };
 		FDFD5FBFE66E55139048291A /* SideMenuViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE97253A1E797FF9578C71F /* SideMenuViewOutput.swift */; };
+		FFA45B2800F64AFFD873AF6D /* AdoptionRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164A164CD8802A38C31557F /* AdoptionRouterInput.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -151,6 +163,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01FA3DC9F357A217CE91014D /* AdoptionViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewInput.swift; sourceTree = "<group>"; };
 		06061268F27E49CBA8513BB4 /* CardsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsRouter.swift; sourceTree = "<group>"; };
 		0935EEA1B2B7ED7AF43DD66F /* CardsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsModuleInput.swift; sourceTree = "<group>"; };
 		09DA38970644FB16D92B55CA /* CardsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
@@ -166,6 +179,7 @@
 		2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuConfigurator.swift; sourceTree = "<group>"; };
 		28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewInput.swift; sourceTree = "<group>"; };
+		2A9D2F8A1765918BE7CB03BF /* AdoptionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewController.swift; sourceTree = "<group>"; };
 		2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesModuleInput.swift; sourceTree = "<group>"; };
 		31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorOutput.swift; sourceTree = "<group>"; };
 		32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
@@ -182,9 +196,12 @@
 		55C2F9E10B7F519B330575F7 /* Pods-Pet Me.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet Me.debug.xcconfig"; path = "Target Support Files/Pods-Pet Me/Pods-Pet Me.debug.xcconfig"; sourceTree = "<group>"; };
 		55F87A30FB45C50266CBDDD2 /* StartingViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingViewOutput.swift; sourceTree = "<group>"; };
 		56C948515FE521118933B161 /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
+		57A693787C0B4D794715266B /* AdoptionConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionConfigurator.swift; sourceTree = "<group>"; };
 		5ED1D531D5C123DF6824ADE7 /* Pods_Pet_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorOutput.swift; sourceTree = "<group>"; };
+		675083BC20DF5E0E9894730B /* AdoptionViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewOutput.swift; sourceTree = "<group>"; };
 		6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
+		6FE6FAABDBBDDCA5B59602AE /* AdoptionInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionInteractorOutput.swift; sourceTree = "<group>"; };
 		73AE10C855BF40BDB75086D9 /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
 		7B0F2C37CB760E7EAF63CBD4 /* CardsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorOutput.swift; sourceTree = "<group>"; };
 		7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorInput.swift; sourceTree = "<group>"; };
@@ -195,6 +212,7 @@
 		8C0AC6CE7BA0D07F1A19B1D6 /* CardsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsConfigurator.swift; sourceTree = "<group>"; };
 		90F6DD1FFEED03BE30F6C02A /* StartingRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingRouterInput.swift; sourceTree = "<group>"; };
 		9727EE2B3337471B9B962221 /* SettingsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		9F30B50FC096414D781555EC /* AdoptionPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionPresenter.swift; sourceTree = "<group>"; };
 		A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		A1FBFCBC52D156BD0AD62792 /* MessagesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
 		A70A8825249CF6BF0094F231 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
@@ -270,10 +288,13 @@
 		B17BE4D601C35CBF20A90706 /* Pods-Pet Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet Me.release.xcconfig"; path = "Target Support Files/Pods-Pet Me/Pods-Pet Me.release.xcconfig"; sourceTree = "<group>"; };
 		B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorOutput.swift; sourceTree = "<group>"; };
 		B98C1930DDD277A53C436F80 /* StartingViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingViewController.swift; sourceTree = "<group>"; };
+		BA696775DCC42DAB7412683B /* AdoptionInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionInteractorInput.swift; sourceTree = "<group>"; };
 		BAF85EACF4D2739A2B200421 /* SideMenuInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractor.swift; sourceTree = "<group>"; };
 		BF14567CC044E32BBC76BAAE /* SideMenuRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuRouter.swift; sourceTree = "<group>"; };
 		BFAEE956A1AFBF264BAA94CA /* StartingInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingInteractorOutput.swift; sourceTree = "<group>"; };
+		C164A164CD8802A38C31557F /* AdoptionRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionRouterInput.swift; sourceTree = "<group>"; };
 		C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesViewInput.swift; sourceTree = "<group>"; };
+		C4158AF0FF55E60704AC8A5A /* AdoptionInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionInteractor.swift; sourceTree = "<group>"; };
 		C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		CA865775CA38048B13D6BB1D /* StartingRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingRouter.swift; sourceTree = "<group>"; };
 		CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorInput.swift; sourceTree = "<group>"; };
@@ -285,7 +306,10 @@
 		D456F8F1008338CFFEE51955 /* StartingConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingConfigurator.swift; sourceTree = "<group>"; };
 		DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModuleInput.swift; sourceTree = "<group>"; };
 		DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuRouterInput.swift; sourceTree = "<group>"; };
+		E4CE792183DD63657CD21A2A /* AdoptionInitializer.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionInitializer.swift; sourceTree = "<group>"; };
 		E5ADF44D52DFD0330CB68F1C /* Pods_Pet_MeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_MeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E86CB0499001441968DF450D /* AdoptionModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionModuleInput.swift; sourceTree = "<group>"; };
+		E9C498CEDB64C0474DDD7725 /* AdoptionRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionRouter.swift; sourceTree = "<group>"; };
 		ED344034924CCC22B6978F1C /* Pods-Pet MeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet MeTests.debug.xcconfig"; path = "Target Support Files/Pods-Pet MeTests/Pods-Pet MeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED8AED5FD7D3C7D0D872A439 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
 		ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
@@ -390,6 +414,17 @@
 			path = Registration;
 			sourceTree = "<group>";
 		};
+		359F3D6EEC7F81F947998A3B /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				BA696775DCC42DAB7412683B /* AdoptionInteractorInput.swift */,
+				6FE6FAABDBBDDCA5B59602AE /* AdoptionInteractorOutput.swift */,
+				C4158AF0FF55E60704AC8A5A /* AdoptionInteractor.swift */,
+			);
+			name = Interactor;
+			path = Interactor;
+			sourceTree = "<group>";
+		};
 		36761B5C7E6F52D1C052136A /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -417,6 +452,16 @@
 				4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		57FFACF9ACE79A895DAF0089 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				E86CB0499001441968DF450D /* AdoptionModuleInput.swift */,
+				9F30B50FC096414D781555EC /* AdoptionPresenter.swift */,
+			);
+			name = Presenter;
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		590F35B39DB2D47767227158 /* Configurator */ = {
@@ -455,6 +500,19 @@
 				C96F29E15B46311FAA2110EF /* Configurator */,
 			);
 			path = Cards;
+			sourceTree = "<group>";
+		};
+		64C4B84256AF28E07F815EEE /* Adoption */ = {
+			isa = PBXGroup;
+			children = (
+				D5BA7CC9BF955B67FF6EC976 /* View */,
+				57FFACF9ACE79A895DAF0089 /* Presenter */,
+				359F3D6EEC7F81F947998A3B /* Interactor */,
+				E716D4C46D71784A26F319FD /* Router */,
+				EDE0EE1A663349C960E2DCCA /* Configurator */,
+			);
+			name = Adoption;
+			path = Adoption;
 			sourceTree = "<group>";
 		};
 		6AD44EC2C8D7FE758CA5F445 /* Starting */ = {
@@ -1016,6 +1074,17 @@
 			path = Router;
 			sourceTree = "<group>";
 		};
+		D5BA7CC9BF955B67FF6EC976 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				01FA3DC9F357A217CE91014D /* AdoptionViewInput.swift */,
+				675083BC20DF5E0E9894730B /* AdoptionViewOutput.swift */,
+				2A9D2F8A1765918BE7CB03BF /* AdoptionViewController.swift */,
+			);
+			name = View;
+			path = View;
+			sourceTree = "<group>";
+		};
 		D6EF92A74C47B16116691EC2 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -1035,8 +1104,19 @@
 				27BF8E4702D57CB8B840B6A9 /* Registration */,
 				6AD44EC2C8D7FE758CA5F445 /* Starting */,
 				8418DC73F8E7D2150A511EE1 /* SideMenu */,
+				64C4B84256AF28E07F815EEE /* Adoption */,
 			);
 			path = Modules;
+			sourceTree = "<group>";
+		};
+		E716D4C46D71784A26F319FD /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				C164A164CD8802A38C31557F /* AdoptionRouterInput.swift */,
+				E9C498CEDB64C0474DDD7725 /* AdoptionRouter.swift */,
+			);
+			name = Router;
+			path = Router;
 			sourceTree = "<group>";
 		};
 		EBF8514172F0CF4FBA009A64 /* Pods */ = {
@@ -1057,6 +1137,16 @@
 				FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		EDE0EE1A663349C960E2DCCA /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				57A693787C0B4D794715266B /* AdoptionConfigurator.swift */,
+				E4CE792183DD63657CD21A2A /* AdoptionInitializer.swift */,
+			);
+			name = Configurator;
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 		F3DC9136D44303A6D5C2E3D9 /* Configurator */ = {
@@ -1261,7 +1351,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1398,6 +1488,18 @@
 				EEA454753AE711FBABC04390 /* SideMenuRouterInput.swift in Sources */,
 				40141CF77B85933B209CCDA4 /* SideMenuRouter.swift in Sources */,
 				8C571CD65CBA7D104961E533 /* SideMenuConfigurator.swift in Sources */,
+				589FA99525D6B9DA2E69A892 /* AdoptionViewInput.swift in Sources */,
+				7FDE62D460166E18F9C00C87 /* AdoptionViewOutput.swift in Sources */,
+				01D0D9AAD85AF12462979256 /* AdoptionViewController.swift in Sources */,
+				49D2CF6C26FD00BABA1A32F7 /* AdoptionModuleInput.swift in Sources */,
+				D7CF954FF2277516117EFE95 /* AdoptionPresenter.swift in Sources */,
+				452279345F1202F653C7E93C /* AdoptionInteractorInput.swift in Sources */,
+				0212FC0A43A6638AFAC6EB1F /* AdoptionInteractorOutput.swift in Sources */,
+				9F0ABAF3AE7C0A36F2DA2BAA /* AdoptionInteractor.swift in Sources */,
+				FFA45B2800F64AFFD873AF6D /* AdoptionRouterInput.swift in Sources */,
+				35B4CCB5D8855A58A4B7C9BE /* AdoptionRouter.swift in Sources */,
+				5DC91A79D356DDC91B253D8D /* AdoptionConfigurator.swift in Sources */,
+				AB79024AE7CA58F4E6578986 /* AdoptionInitializer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
