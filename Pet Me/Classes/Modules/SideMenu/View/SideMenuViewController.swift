@@ -11,13 +11,7 @@ import UIKit
 class SideMenuViewController: UIViewController {
     
     var output: SideMenuViewOutput!
-    
-    private var items = [SideMenuItems]() {
-        didSet {
-            optionsTableView.reloadData()
-        }
-    }
-    
+
     private let optionsTableView: UITableView = {
        let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -41,7 +35,7 @@ class SideMenuViewController: UIViewController {
     private let nameLabel: UILabel = {
         let label = UILabel()
         label.text = "Газияв Исхаков"
-        label.textColor = R.color.appColors.label()
+        label.textColor = R.color.appColors.sideMenuLabel()
         label.font = .systemFont(ofSize: 19, weight: .medium)
         label.numberOfLines = 2
         return label
@@ -85,8 +79,7 @@ class SideMenuViewController: UIViewController {
 // MARK: SideMenuViewInput
 extension SideMenuViewController: SideMenuViewInput {
     
-    func setupInitialState(withItems items: [SideMenuItems]) {
-        self.items = items
+    func setupInitialState() {
         view.backgroundColor = R.color.appColors.background()
         optionsTableView.delegate = self
         optionsTableView.dataSource = self
@@ -98,17 +91,21 @@ extension SideMenuViewController: SideMenuViewInput {
 //MARK: TableViewDelegate & DataSource
 extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return items.count
+        return output.giveData().count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SideMenuTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.setup(withItem: items[indexPath.row])
+        cell.setup(withItem: output.giveData()[indexPath.row])
         return cell
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        output.didSelectRow(at: indexPath.row)
     }
     
 }

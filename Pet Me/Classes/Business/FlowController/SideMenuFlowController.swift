@@ -49,13 +49,16 @@ final class SideMenuFlowController {
 extension SideMenuFlowController: FlowController {
     
     private var sideMenu: SideMenu {
-        return rootViewController as! SideMenu
+        guard let sideMenu = rootViewController as? SideMenu else {
+            fatalError("Wrong root view controller")
+        }
+        return sideMenu
     }
     
     func performTransition(to destination: RouterDestination, animated: Bool) -> FlowControllerResult {
         print("hey")
         
-        return Observable.create({ (observer: AnyObserver<UIViewController?>) in
+        return Observable.create({ (observer) in
             
             
             return Disposables.create()
@@ -64,7 +67,7 @@ extension SideMenuFlowController: FlowController {
     }
     
     func performBackTransition(animated: Bool) -> FlowControllerResult {
-        return Observable.create({ (observer: AnyObserver<UIViewController?>) in
+        return Observable.create({ (observer) in
             
             
             return Disposables.create()
@@ -72,10 +75,13 @@ extension SideMenuFlowController: FlowController {
     }
     
     func presentRoot(destination: RouterDestination) -> FlowControllerResult {
-        return  Observable.create({ (observer: AnyObserver<UIViewController?>) in
-            
-            
-            return Disposables.create()
+        return Observable.create({ [unowned self] (observer) in
+            self.sideMenu.hideMenu()
+           return self.contentFlowController.presentRoot(destination: destination).subscribe(onNext: {
+                observer.onNext($0)
+            }, onCompleted: {
+                observer.onCompleted()
+            })
         })
     }
     

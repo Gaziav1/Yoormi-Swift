@@ -20,7 +20,7 @@ class SideMenuTableViewCell: UITableViewCell {
      private let title: UILabel = {
         let label = UILabel()
         label.text = "Найти питомца"
-        label.textColor = R.color.appColors.label()
+        label.textColor = R.color.appColors.sideMenuLabel()
         label.font = .systemFont(ofSize: 20, weight: .medium)
         return label
     }()

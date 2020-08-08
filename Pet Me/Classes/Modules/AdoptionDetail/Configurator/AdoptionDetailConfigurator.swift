@@ -1,5 +1,5 @@
 //
-//  AdoptionAdoptionConfigurator.swift
+//  AdoptionDetailAdoptionDetailConfigurator.swift
 //  PetMe
 //
 //  Created by Gaziav on 08/08/2020.
@@ -8,29 +8,26 @@
 
 import UIKit
 
-class AdoptionModuleConfigurator {
+class AdoptionDetailModuleConfigurator {
     
-    static let tag = "Adoption"
+    static let tag = "AdoptionDetail"
     
     var appRouter: AppRouterProtocol!
-    
+
     func configure() -> UIViewController {
-        
-        let viewController = AdoptionViewController()
-        let router = AdoptionRouter()
-        let presenter = AdoptionPresenter()
-        
+
+        let router = AdoptionDetailRouter()
+        let viewController = AdoptionDetailViewController()
         router.appRouter = appRouter
         
+        let presenter = AdoptionDetailPresenter()
         presenter.view = viewController
         presenter.router = router
-        
 
-        let interactor = AdoptionInteractor()
+        let interactor = AdoptionDetailInteractor()
         interactor.output = presenter
 
         presenter.interactor = interactor
-       
         viewController.output = presenter
         
         return viewController

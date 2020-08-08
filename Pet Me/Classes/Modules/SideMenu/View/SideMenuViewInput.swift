@@ -8,5 +8,5 @@
 
 protocol SideMenuViewInput: class {
 
-    func setupInitialState(withItems: [SideMenuItems])
+    func setupInitialState()
 }

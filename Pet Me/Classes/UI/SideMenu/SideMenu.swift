@@ -146,7 +146,7 @@ class SideMenu: UIViewController {
     
     //MARK: - Actions
     
-    @objc private func dimissMenu() {
+    func hideMenu() {
         view.isUserInteractionEnabled = false
         UIView.animate(withDuration: 0.35, animations: { [unowned self] in
             self.contentViewContainer.frame = self.view.frame
@@ -156,6 +156,10 @@ class SideMenu: UIViewController {
                 self?.animateMenuViewControllerCompletion()
                 
         })
+    }
+    
+    @objc private func dimissMenu() {
+        hideMenu()
     }
     
     

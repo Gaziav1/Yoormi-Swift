@@ -7,5 +7,10 @@
 //
 
 class SideMenuRouter: SideMenuRouterInput {
+    
     var appRouter: AppRouterProtocol!
+    
+    func performTransition(to destination: RouterDestination) {
+        appRouter.changeSideMenuRoot(to: destination)
+    }
 }

@@ -11,7 +11,7 @@ import SnapKit
 import RxCocoa
 import RxSwift
 
-class CardsViewController: UIViewController, CardsViewInput {
+class CardsViewController: ControllerWithSideMenu, CardsViewInput {
     
     var output: CardsViewOutput!
     private let disposeBag = DisposeBag()
@@ -33,7 +33,7 @@ class CardsViewController: UIViewController, CardsViewInput {
     
     // MARK: CardsViewInput
     func setupInitialState() {
-        setupNavigationBar()
+        //setupNavigationBar()
         view.backgroundColor = .white
         setupStackViews()
     }
@@ -48,22 +48,13 @@ class CardsViewController: UIViewController, CardsViewInput {
     }
     
     
-    
-    //MARK: - Private methods
-    
-    private func setupNavigationBar() {
-        
-        let hambMenuImage = R.image.icons.hambMenu()?.withRenderingMode(.alwaysOriginal)
-        let rightBarButtonItem = UIBarButtonItem(image: hambMenuImage, style: .plain, target: self, action: nil)
-        
-        rightBarButtonItem.rx.tap.subscribe { [unowned self] (_) in
-            self.output.didTapMenuButton()
-        }.disposed(by: disposeBag)
-    
-        navigationItem.rightBarButtonItem = rightBarButtonItem
-        navigationController?.navigationBar.backgroundColor = .clear
+    override func sideMenuAction() {
+        self.output.didTapMenuButton()
     }
     
+    
+    //MARK: - Private methods
+
     fileprivate func setupStackViews() {
         
         let overallStackView = UIStackView(arrangedSubviews: [cardDeckView, bottomControls])

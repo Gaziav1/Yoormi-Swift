@@ -21,6 +21,8 @@ enum RouterDestination {
     case messages
     case registration
     case starting
+    case adoption
+    case adoptionDetail
     
     func constructModule(in factory: Container, flow: FlowController? = nil) -> UIViewController? {
         switch self {
@@ -36,6 +38,11 @@ enum RouterDestination {
             return factory.resolve(UIViewController.self, name: RegistrationModuleConfigurator.tag, argument: flow)
         case .starting:
             return factory.resolve(UIViewController.self, name: StartingModuleConfigurator.tag, argument: flow)
+        case .adoption:
+            return factory.resolve(UIViewController.self, name: AdoptionModuleConfigurator.tag, argument: flow)
+        case .adoptionDetail:
+            return factory.resolve(UIViewController.self, name: AdoptionDetailModuleConfigurator.tag, argument: flow)
+            
         }
     }
     
@@ -62,6 +69,7 @@ protocol AppRouterProtocol {
     func performTransitionTo(to destination: RouterDestination)
     func dropAll(to destination: RouterDestination)
     func openSideMenu()
+    func changeSideMenuRoot(to destination: RouterDestination)
 }
 
 class AppRouter: AppRouterProtocol {
@@ -117,6 +125,10 @@ class AppRouter: AppRouterProtocol {
     
     func openSideMenu() {
         flow?.openSideMenu()
+    }
+    
+    func changeSideMenuRoot(to destination: RouterDestination) {
+        flow?.presentRoot(destination: destination).subscribe().disposed(by: disposeBag)
     }
       
     

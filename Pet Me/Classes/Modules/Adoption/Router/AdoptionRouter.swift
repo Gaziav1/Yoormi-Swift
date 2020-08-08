@@ -8,4 +8,13 @@
 
 class AdoptionRouter: AdoptionRouterInput {
 
+    var appRouter: AppRouterProtocol!
+
+    func presentSideMenu() {
+        appRouter.openSideMenu()
+    }
+    
+    func openDetailAdoption() {
+        appRouter.performTransitionTo(to: .adoptionDetail)
+    }
 }

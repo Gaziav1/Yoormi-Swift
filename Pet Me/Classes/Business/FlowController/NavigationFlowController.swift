@@ -101,7 +101,7 @@ extension NavigationFlowController: FlowController {
                 return Disposables.create()
             }
             observer.onNext(viewController)
-            navigationController.viewControllers = [viewController]
+            navigationController.setViewControllers([viewController], animated: false)
             observer.onCompleted()
             return Disposables.create()
         }

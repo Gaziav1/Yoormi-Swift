@@ -1,22 +1,21 @@
 //
-//  UserDetailsViewController.swift
-//  Pet Me
+//  AdoptionDetailAdoptionDetailViewController.swift
+//  PetMe
 //
-//  Created by Газияв Исхаков on 12.03.2020.
-//  Copyright © 2020 Газияв Исхаков. All rights reserved.
+//  Created by Gaziav on 08/08/2020.
+//  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
 import UIKit
-import SDWebImage
 
-class UserDetailsViewController: UIViewController {
+class AdoptionDetailViewController: UIViewController {
     
-    var cardViewModel: CardViewModel? {
-        didSet {
-            infoLabel.attributedText = cardViewModel?.attributedString
-            swipingPhotosController.cardViewModel = cardViewModel
-            //cardViewModel?.imageNames.forEach({ imageView.sd_setImage(with: URL(string: $0))})
-        }
+    var output: AdoptionDetailViewOutput!
+    
+    // MARK: Life cycle
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        output.viewIsReady()
     }
     
     lazy var swipingView = swipingPhotosController.view!
@@ -47,9 +46,7 @@ class UserDetailsViewController: UIViewController {
     
     fileprivate let heightForSwipingView: CGFloat = 80
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        modalPresentationStyle = .fullScreen
+    func viewDiiodLoad() {
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss)))
         setupScrollView()
         setupSwipingView()
@@ -60,7 +57,7 @@ class UserDetailsViewController: UIViewController {
     
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
-          handleScrollingBehavior()
+        handleScrollingBehavior()
     }
     
     
@@ -79,7 +76,7 @@ class UserDetailsViewController: UIViewController {
     
     fileprivate func setupScrollView() {
         view.addSubview(scrollView)
-    
+        
         scrollView.snp.makeConstraints({ $0.edges.equalToSuperview() })
     }
     
@@ -94,7 +91,7 @@ class UserDetailsViewController: UIViewController {
     }
     
     fileprivate func setupSwipingView() {
-
+        
         scrollView.addSubview(swipingView)
     }
     
@@ -123,3 +120,13 @@ class UserDetailsViewController: UIViewController {
 }
 
 
+
+
+
+// MARK: AdoptionDetailViewInput
+extension AdoptionDetailViewController: AdoptionDetailViewInput {
+    
+    func setupInitialState() {
+        view.backgroundColor = .white
+    }
+}

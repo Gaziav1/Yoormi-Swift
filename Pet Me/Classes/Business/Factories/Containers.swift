@@ -25,6 +25,15 @@ enum Containers {
     private static let viewControllersContainer: Container = {
         let container = Container()
         
+        
+        container.register(UIViewController.self, name: AdoptionDetailModuleConfigurator.tag) { (_, flow: FlowController?) in
+            let configurator = AdoptionDetailModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            configurator.appRouter = appRouter
+            let controller = configurator.configure()
+            return controller
+        }
+        
         container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_, user: AppUser?, flow: FlowController?) in
             let cardConfigurator = CardsModuleConfigurator(user: user)
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
@@ -57,6 +66,14 @@ enum Containers {
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             registrationConfigurator.appRouter = appRouter
             let controller = registrationConfigurator.configure()
+            return controller
+        }
+        
+        container.register(UIViewController.self, name: AdoptionModuleConfigurator.tag) { (_, flow: FlowController?) in
+            let configurator = AdoptionModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument:  flow)
+            configurator.appRouter = appRouter
+            let controller = configurator.configure()
             return controller
         }
         

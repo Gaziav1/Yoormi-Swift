@@ -6,7 +6,7 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
-private enum SideMenuTittles: CaseIterable {
+enum SideMenuTittles: CaseIterable {
     case myAnnouncements
     case findPet
     case findPairToPet
@@ -15,19 +15,27 @@ private enum SideMenuTittles: CaseIterable {
     case profile
 }
 
+
 class SideMenuPresenter: SideMenuModuleInput, SideMenuInteractorOutput {
+    
+    struct SideMenuElement {
+        let sideMenuTitle: SideMenuTittles
+        let sideMenuItem: SideMenuItems
+    }
+    
     
     weak var view: SideMenuViewInput!
     var interactor: SideMenuInteractorInput!
     var router: SideMenuRouterInput!
 
-    private let menuItems: [SideMenuTittles: SideMenuItems] = [
-        .myAnnouncements: SideMenuItems(title: "Мои объявления", icon: "square.stack.3d.down.right"),
-        .findPet: SideMenuItems(title: "Найти питомца", icon: "magnifyingglass") ,
-        .findPairToPet: SideMenuItems(title: "Найти пару питомцу", icon: "suit.heart"),
-        .favorites: SideMenuItems(title: "Избранное", icon: "star"),
-        .messages: SideMenuItems(title: "Сообщения", icon: "bubble.right"),
-        .profile: SideMenuItems(title: "Профиль", icon: "person")
+    private let sideMenuItems: [SideMenuElement] = [
+        SideMenuElement(sideMenuTitle: .myAnnouncements, sideMenuItem: SideMenuItems(title: "Мои объявления", icon: "square.stack.3d.down.right")),
+        SideMenuElement(sideMenuTitle: .findPet, sideMenuItem: SideMenuItems(title: "Найти питомца", icon: "magnifyingglass")),
+        SideMenuElement(sideMenuTitle: .findPairToPet, sideMenuItem: SideMenuItems(title: "Найти пару питомцу", icon: "suit.heart")),
+        SideMenuElement(sideMenuTitle: .favorites, sideMenuItem:  SideMenuItems(title: "Избранное", icon: "star")),
+        SideMenuElement(sideMenuTitle: .messages, sideMenuItem:  SideMenuItems(title: "Сообщения", icon: "bubble.right")),
+        SideMenuElement(sideMenuTitle: .profile, sideMenuItem:  SideMenuItems(title: "Профиль", icon: "person"))
+    
     ]
     
 }
@@ -35,7 +43,29 @@ class SideMenuPresenter: SideMenuModuleInput, SideMenuInteractorOutput {
 //MARK: -SideMenuViewOutput
 extension SideMenuPresenter: SideMenuViewOutput {
     func viewIsReady() {
+        view.setupInitialState()
+    }
+    
+    func giveData() -> [SideMenuItems] {
+        return sideMenuItems.map { $0.sideMenuItem }
+    }
+    
+    func didSelectRow(at index: Int) {
+        let data = sideMenuItems[index].sideMenuTitle
         
-        view.setupInitialState(withItems: SideMenuTittles.allCases.compactMap({ menuItems[$0] }))
+        switch data {
+        case .myAnnouncements:
+            router.performTransition(to: .adoption)
+        case .favorites:
+            router.performTransition(to: .adoption)
+        case .findPet:
+            router.performTransition(to: .adoption)
+        case .messages:
+            router.performTransition(to: .messages)
+        case .profile:
+            router.performTransition(to: .settings)
+        case .findPairToPet:
+            router.performTransition(to: .cards(nil))
+        }
     }
 }
