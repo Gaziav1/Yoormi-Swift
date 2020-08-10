@@ -107,7 +107,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.color` struct is generated, and contains static references to 0 colors.
   struct color {
-    /// This `R.color.appColors` struct is generated, and contains static references to 6 colors.
+    /// This `R.color.appColors` struct is generated, and contains static references to 8 colors.
     struct appColors {
       /// Color `AppMainColor`.
       static let appMainColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/AppMainColor")
@@ -115,8 +115,12 @@ struct R: Rswift.Validatable {
       static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Background")
       /// Color `Border`.
       static let border = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Border")
+      /// Color `ButtonTitleLabel`.
+      static let buttonTitleLabel = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/ButtonTitleLabel")
       /// Color `ControlSelection`.
       static let controlSelection = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/ControlSelection")
+      /// Color `DarkLabel`.
+      static let darkLabel = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/DarkLabel")
       /// Color `Label`.
       static let label = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Label")
       /// Color `SideMenuLabel`.
@@ -150,11 +154,29 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "ButtonTitleLabel", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func buttonTitleLabel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.appColors.buttonTitleLabel, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIColor(named: "ControlSelection", bundle: ..., traitCollection: ...)`
       @available(tvOS 11.0, *)
       @available(iOS 11.0, *)
       static func controlSelection(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
         return UIKit.UIColor(resource: R.color.appColors.controlSelection, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "DarkLabel", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func darkLabel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.appColors.darkLabel, compatibleWith: traitCollection)
       }
       #endif
 
@@ -217,7 +239,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// This `R.image.icons` struct is generated, and contains static references to 17 images.
+    /// This `R.image.icons` struct is generated, and contains static references to 21 images.
     struct icons {
       /// Image `Email`.
       static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/Email")
@@ -243,12 +265,20 @@ struct R: Rswift.Validatable {
       static let google = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/google")
       /// Image `hambMenu`.
       static let hambMenu = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/hambMenu")
+      /// Image `heart_filled`.
+      static let heart_filled = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/heart_filled")
+      /// Image `heart`.
+      static let heart = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/heart")
       /// Image `info`.
       static let info = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/info")
       /// Image `like_circle`.
       static let like_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/like_circle")
+      /// Image `marker`.
+      static let marker = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/marker")
       /// Image `refresh_circle`.
       static let refresh_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/refresh_circle")
+      /// Image `time`.
+      static let time = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/time")
       /// Image `top_left_profile`.
       static let top_left_profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/top_left_profile")
       /// Image `top_right_messages`.
@@ -339,6 +369,20 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "heart", bundle: ..., traitCollection: ...)`
+      static func heart(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.heart, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "heart_filled", bundle: ..., traitCollection: ...)`
+      static func heart_filled(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.heart_filled, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "info", bundle: ..., traitCollection: ...)`
       static func info(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.info, compatibleWith: traitCollection)
@@ -353,9 +397,23 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "marker", bundle: ..., traitCollection: ...)`
+      static func marker(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.marker, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "refresh_circle", bundle: ..., traitCollection: ...)`
       static func refresh_circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.refresh_circle, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "time", bundle: ..., traitCollection: ...)`
+      static func time(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.time, compatibleWith: traitCollection)
       }
       #endif
 

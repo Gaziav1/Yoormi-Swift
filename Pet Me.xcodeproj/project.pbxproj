@@ -93,9 +93,14 @@
 		A742529424068C4E002FB8C6 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742529324068C4E002FB8C6 /* AppUser.swift */; };
 		A742529924069990002FB8C6 /* CardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742529824069990002FB8C6 /* CardViewModel.swift */; };
 		A742A9C0241BAF9D006721D7 /* PhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742A9BF241BAF9D006721D7 /* PhotoViewController.swift */; };
+		A749DB0724E0193700543560 /* AdoptionPhotosSwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749DB0624E0193700543560 /* AdoptionPhotosSwipingController.swift */; };
+		A749DB0A24E03CA100543560 /* AnimalToAdoptInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749DB0924E03CA100543560 /* AnimalToAdoptInformationView.swift */; };
 		A74E6D2124DEAE9A00654699 /* AnimalChoosingControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74E6D2024DEAE9A00654699 /* AnimalChoosingControl.swift */; };
 		A74E6D2324DEB37B00654699 /* ControllerWithSideMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = A74E6D2224DEB37B00654699 /* ControllerWithSideMenu.swift */; };
 		A756B1EA24093153004D77B8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A756B1E924093153004D77B8 /* GoogleService-Info.plist */; };
+		A756C50D24E046FE00545D4B /* AnimalsForAdoptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C50C24E046FE00545D4B /* AnimalsForAdoptionCollectionViewCell.swift */; };
+		A756C51024E0507E00545D4B /* OwnerAdoptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C50F24E0507E00545D4B /* OwnerAdoptionView.swift */; };
+		A756C51324E0629800545D4B /* DetailAdoptionBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C51224E0629800545D4B /* DetailAdoptionBottomView.swift */; };
 		A75AFA632412952A00F2FA96 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */; };
 		A76C9ED224C5DBDC005828F8 /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED124C5DBDC005828F8 /* LaunchManager.swift */; };
 		A76C9ED524C5DC53005828F8 /* FlowControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED424C5DC53005828F8 /* FlowControllerProtocol.swift */; };
@@ -117,8 +122,6 @@
 		A7E0468B23C4D7E700A4C5B5 /* Pet_MeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0468A23C4D7E700A4C5B5 /* Pet_MeTests.swift */; };
 		A7E0879624A390F3000B0B6A /* GoogleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */; };
 		A7E53892244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E53891244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift */; };
-		A7EE906924DED914002420F9 /* AnimalsForAdoptionCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE906824DED914002420F9 /* AnimalsForAdoptionCollectionView.swift */; };
-		A7EE906B24DED942002420F9 /* AnimalsForAdoptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7EE906A24DED942002420F9 /* AnimalsForAdoptionCollectionViewCell.swift */; };
 		A7F3878E2450ADF9009B780E /* Images.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3878D2450ADF9009B780E /* Images.swift */; };
 		A7F387902450B97B009B780E /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7F3878F2450B97B009B780E /* Colors.swift */; };
 		A7FFBA962451F48800CD7B5F /* Containers.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBA952451F48800CD7B5F /* Containers.swift */; };
@@ -262,9 +265,14 @@
 		A742529324068C4E002FB8C6 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		A742529824069990002FB8C6 /* CardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewModel.swift; sourceTree = "<group>"; };
 		A742A9BF241BAF9D006721D7 /* PhotoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoViewController.swift; sourceTree = "<group>"; };
+		A749DB0624E0193700543560 /* AdoptionPhotosSwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionPhotosSwipingController.swift; sourceTree = "<group>"; };
+		A749DB0924E03CA100543560 /* AnimalToAdoptInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalToAdoptInformationView.swift; sourceTree = "<group>"; };
 		A74E6D2024DEAE9A00654699 /* AnimalChoosingControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalChoosingControl.swift; sourceTree = "<group>"; };
 		A74E6D2224DEB37B00654699 /* ControllerWithSideMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerWithSideMenu.swift; sourceTree = "<group>"; };
 		A756B1E924093153004D77B8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		A756C50C24E046FE00545D4B /* AnimalsForAdoptionCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimalsForAdoptionCollectionViewCell.swift; sourceTree = "<group>"; };
+		A756C50F24E0507E00545D4B /* OwnerAdoptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerAdoptionView.swift; sourceTree = "<group>"; };
+		A756C51224E0629800545D4B /* DetailAdoptionBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAdoptionBottomView.swift; sourceTree = "<group>"; };
 		A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
 		A76C9ED124C5DBDC005828F8 /* LaunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
 		A76C9ED424C5DC53005828F8 /* FlowControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerProtocol.swift; sourceTree = "<group>"; };
@@ -292,8 +300,6 @@
 		A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleSignInManager.swift; sourceTree = "<group>"; };
 		A7E53891244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMessagesCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7E5668BE001184D5E769751 /* MessagesConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesConfigurator.swift; sourceTree = "<group>"; };
-		A7EE906824DED914002420F9 /* AnimalsForAdoptionCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsForAdoptionCollectionView.swift; sourceTree = "<group>"; };
-		A7EE906A24DED942002420F9 /* AnimalsForAdoptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalsForAdoptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7F3878D2450ADF9009B780E /* Images.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Images.swift; sourceTree = "<group>"; };
 		A7F3878F2450B97B009B780E /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		A7FFBA952451F48800CD7B5F /* Containers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Containers.swift; sourceTree = "<group>"; };
@@ -719,12 +725,45 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
+		A749DB0424E0190D00543560 /* AdoptionPhotosSwipingController */ = {
+			isa = PBXGroup;
+			children = (
+				A756C50C24E046FE00545D4B /* AnimalsForAdoptionCollectionViewCell.swift */,
+				A749DB0624E0193700543560 /* AdoptionPhotosSwipingController.swift */,
+			);
+			path = AdoptionPhotosSwipingController;
+			sourceTree = "<group>";
+		};
+		A749DB0824E03C8500543560 /* AnimalToAdoptInformationView */ = {
+			isa = PBXGroup;
+			children = (
+				A749DB0924E03CA100543560 /* AnimalToAdoptInformationView.swift */,
+			);
+			path = AnimalToAdoptInformationView;
+			sourceTree = "<group>";
+		};
 		A74E6D1E24DEAE7C00654699 /* AnimalChoosingControl */ = {
 			isa = PBXGroup;
 			children = (
 				A74E6D2024DEAE9A00654699 /* AnimalChoosingControl.swift */,
 			);
 			path = AnimalChoosingControl;
+			sourceTree = "<group>";
+		};
+		A756C50E24E0506C00545D4B /* OwnerAdoptionView */ = {
+			isa = PBXGroup;
+			children = (
+				A756C50F24E0507E00545D4B /* OwnerAdoptionView.swift */,
+			);
+			path = OwnerAdoptionView;
+			sourceTree = "<group>";
+		};
+		A756C51124E0628600545D4B /* DetailAdoptionBottomView */ = {
+			isa = PBXGroup;
+			children = (
+				A756C51224E0629800545D4B /* DetailAdoptionBottomView.swift */,
+			);
+			path = DetailAdoptionBottomView;
 			sourceTree = "<group>";
 		};
 		A76C9ED324C5DC3F005828F8 /* FlowController */ = {
@@ -827,15 +866,6 @@
 			path = FirebaseFetchStrategies;
 			sourceTree = "<group>";
 		};
-		A7EE906724DED8EF002420F9 /* AnimalsForAdoptionCollectionView */ = {
-			isa = PBXGroup;
-			children = (
-				A7EE906824DED914002420F9 /* AnimalsForAdoptionCollectionView.swift */,
-				A7EE906A24DED942002420F9 /* AnimalsForAdoptionCollectionViewCell.swift */,
-			);
-			path = AnimalsForAdoptionCollectionView;
-			sourceTree = "<group>";
-		};
 		A7F3878B2450ADDB009B780E /* Business */ = {
 			isa = PBXGroup;
 			children = (
@@ -912,7 +942,10 @@
 		A7FFBAA524532AD400CD7B5F /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				A7EE906724DED8EF002420F9 /* AnimalsForAdoptionCollectionView */,
+				A756C51124E0628600545D4B /* DetailAdoptionBottomView */,
+				A756C50E24E0506C00545D4B /* OwnerAdoptionView */,
+				A749DB0824E03C8500543560 /* AnimalToAdoptInformationView */,
+				A749DB0424E0190D00543560 /* AdoptionPhotosSwipingController */,
 				A74E6D1E24DEAE7C00654699 /* AnimalChoosingControl */,
 				A7D6F25A24D6F20300624197 /* SideMenu */,
 				A7D2327F249E577500C88077 /* LoginView */,
@@ -1472,6 +1505,7 @@
 				A742529924069990002FB8C6 /* CardViewModel.swift in Sources */,
 				A7381DA5244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift in Sources */,
 				A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */,
+				A756C51024E0507E00545D4B /* OwnerAdoptionView.swift in Sources */,
 				A71274E624423C61004F0945 /* MessageViewController.swift in Sources */,
 				A7FFBAB52453394000CD7B5F /* Message.swift in Sources */,
 				A741F5F124179A6E004544AE /* SettingsTableViewCell.swift in Sources */,
@@ -1497,6 +1531,7 @@
 				0121A96D027443144A5054E3 /* CardsViewController.swift in Sources */,
 				A7FFBA962451F48800CD7B5F /* Containers.swift in Sources */,
 				0F78B6E5DCE7685472A61E6F /* CardsModuleInput.swift in Sources */,
+				A749DB0724E0193700543560 /* AdoptionPhotosSwipingController.swift in Sources */,
 				09F5FC20AF9715CB40DFA26D /* CardsPresenter.swift in Sources */,
 				5B4777ED663CE24FD0ED9E4F /* CardsInteractorInput.swift in Sources */,
 				E6DFCB6B42EB05B38B5F3B23 /* CardsInteractorOutput.swift in Sources */,
@@ -1518,6 +1553,7 @@
 				1975BC25353D55EA62F625D2 /* SettingsInteractor.swift in Sources */,
 				1A32631F96618D9F6B7F4E9D /* SettingsRouterInput.swift in Sources */,
 				8A4D253C38D1D6073DFDC8EE /* SettingsRouter.swift in Sources */,
+				A749DB0A24E03CA100543560 /* AnimalToAdoptInformationView.swift in Sources */,
 				A7FFBAB72453396A00CD7B5F /* Match.swift in Sources */,
 				A7D2328624A0BBBC00C88077 /* CustomSignInButton.swift in Sources */,
 				A7FFBAA22452199D00CD7B5F /* LogManager.swift in Sources */,
@@ -1534,7 +1570,6 @@
 				22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */,
 				1C26CB93AC1B34778CACDDD2 /* MessagesRouterInput.swift in Sources */,
 				F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */,
-				A7EE906924DED914002420F9 /* AnimalsForAdoptionCollectionView.swift in Sources */,
 				878CD1B057FC8DBE13F97545 /* MessagesConfigurator.swift in Sources */,
 				C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */,
 				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
@@ -1542,6 +1577,7 @@
 				A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */,
 				A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */,
 				A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */,
+				A756C51324E0629800545D4B /* DetailAdoptionBottomView.swift in Sources */,
 				1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */,
 				B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */,
 				9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */,
@@ -1574,7 +1610,6 @@
 				E049CE6A7521E11B4126C1B8 /* SideMenuInteractor.swift in Sources */,
 				EEA454753AE711FBABC04390 /* SideMenuRouterInput.swift in Sources */,
 				40141CF77B85933B209CCDA4 /* SideMenuRouter.swift in Sources */,
-				A7EE906B24DED942002420F9 /* AnimalsForAdoptionCollectionViewCell.swift in Sources */,
 				8C571CD65CBA7D104961E533 /* SideMenuConfigurator.swift in Sources */,
 				589FA99525D6B9DA2E69A892 /* AdoptionViewInput.swift in Sources */,
 				7FDE62D460166E18F9C00C87 /* AdoptionViewOutput.swift in Sources */,
@@ -1589,6 +1624,7 @@
 				5DC91A79D356DDC91B253D8D /* AdoptionConfigurator.swift in Sources */,
 				8B46488FC97D714FD8621F0E /* AdoptionDetailViewInput.swift in Sources */,
 				200D85504FDBDFF42D2A4C3F /* AdoptionDetailViewOutput.swift in Sources */,
+				A756C50D24E046FE00545D4B /* AnimalsForAdoptionCollectionViewCell.swift in Sources */,
 				0EAEA30E00D128052C3BEC9E /* AdoptionDetailViewController.swift in Sources */,
 				BC8B576956F510F59290E005 /* AdoptionDetailModuleInput.swift in Sources */,
 				0FC1D92A6BB63DB5D7BBC214 /* AdoptionDetailPresenter.swift in Sources */,

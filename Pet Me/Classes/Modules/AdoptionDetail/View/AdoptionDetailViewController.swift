@@ -7,10 +7,26 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
-class AdoptionDetailViewController: UIViewController {
+class AdoptionDetailViewController: UIViewController, UIScrollViewDelegate {
     
     var output: AdoptionDetailViewOutput!
+    
+    private let adoptionPhotosSwipingController = AdoptionPhotosSwipingController()
+    private let adoptionInfoView = AnimalToAdoptInformationView()
+    private let disposeBag = DisposeBag()
+    private let ownerAdoptionInfoView = OwnerAdoptionView()
+    private let bottomControls = DetailAdoptionBottomView()
+    private let containerView = UIView()
+    private let scrollView: UIScrollView = {
+        let sv = UIScrollView()
+        sv.backgroundColor = .clear
+        // sv.alwaysBounceVertical = true
+        sv.contentInsetAdjustmentBehavior = .never
+        return sv
+    }()
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -18,115 +34,126 @@ class AdoptionDetailViewController: UIViewController {
         output.viewIsReady()
     }
     
-    lazy var swipingView = swipingPhotosController.view!
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+    }
     
-    private let scrollView: UIScrollView = {
-        let sv = UIScrollView()
-        sv.backgroundColor = .white
-        sv.alwaysBounceVertical = true
-        sv.contentInsetAdjustmentBehavior = .never
-        return sv
-    }()
-    
-    let swipingPhotosController = SwipingPhotosPageViewController()
-    
-    let infoLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Gosha, 30\nRapper"
-        label.numberOfLines = 0
-        return label
-    }()
-    
-    let dismissButton: UIButton = {
-        let button = UIButton(type: .system)
-        button.setImage(#imageLiteral(resourceName: "close").withRenderingMode(.alwaysOriginal), for: .normal)
-        button.addTarget(self, action: #selector(handleTapDismiss), for: .touchUpInside)
-        return button
-    }()
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        enableScrollSubscribtion()
+        setupNavBar()
+        setupScrollView()
+        setupContainerView()
+        setupPhotosController()
+        setupAdoptionInfoView()
+        setupBottomControls()
+        setupOwnerAdoptionView()
+        
+    }
     
     fileprivate let heightForSwipingView: CGFloat = 80
-    
-    func viewDiiodLoad() {
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(handleTapDismiss)))
-        setupScrollView()
-        setupSwipingView()
-        setupDismissButton()
-        setupInfoLabel()
-        setupVisualEffectView()
-    }
-    
-    override func viewWillLayoutSubviews() {
-        super.viewWillLayoutSubviews()
-        handleScrollingBehavior()
-    }
     
     
     //MARK: - UI Setup
     
-    fileprivate func setupVisualEffectView() {
-        let blurEffect = UIBlurEffect(style: .regular)
-        let visualEffectView = UIVisualEffectView(effect: blurEffect)
+    private func setupNavBar() {
+        self.navigationController?.navigationBar.backItem?.title = ""
+    }
+    
+    private func setupContainerView() {
+        scrollView.addSubview(containerView)
+        containerView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+            $0.centerX.equalToSuperview()
+            $0.width.equalTo(view)
+            $0.height.greaterThanOrEqualTo(scrollView)
+        })
+        containerView.backgroundColor = .clear
+    }
+    
+    private func setupAdoptionInfoView() {
+        containerView.addSubview(adoptionInfoView)
         
-        view.addSubview(visualEffectView)
-        visualEffectView.snp.makeConstraints({
-            $0.top.leading.trailing.equalToSuperview()
-            $0.bottom.equalTo(view.safeAreaLayoutGuide)
+        adoptionInfoView.snp.makeConstraints({
+            $0.leading.trailing.equalTo(containerView).inset(20)
+            $0.top.equalTo(adoptionPhotosSwipingController.view.snp.bottom).inset(35)
         })
     }
     
-    fileprivate func setupScrollView() {
+    private func setupScrollView() {
         view.addSubview(scrollView)
         
-        scrollView.snp.makeConstraints({ $0.edges.equalToSuperview() })
+        scrollView.snp.makeConstraints { $0.edges.equalToSuperview() }
     }
     
-    fileprivate func setupDismissButton() {
-        view.addSubview(dismissButton)
+    private func setupPhotosController() {
+        containerView.addSubview(adoptionPhotosSwipingController.view)
         
-        dismissButton.snp.makeConstraints({
-            $0.top.equalTo(swipingView.snp.bottom).offset(10)
-            $0.trailing.equalToSuperview().inset(10)
-            $0.size.equalTo(50)
+        defaultContsraintsForPhotos()
+    }
+    
+    private func setupOwnerAdoptionView() {
+        containerView.addSubview(ownerAdoptionInfoView)
+        
+        ownerAdoptionInfoView.snp.makeConstraints({
+            $0.top.equalTo(adoptionInfoView.snp.bottom).offset(20)
+            $0.leading.trailing.equalTo(containerView).inset(10)
+            $0.bottom.equalTo(bottomControls.snp.top).offset(-15)
         })
     }
     
-    fileprivate func setupSwipingView() {
+    private func setupBottomControls() {
+        scrollView.addSubview(bottomControls)
         
-        scrollView.addSubview(swipingView)
-    }
-    
-    fileprivate func setupInfoLabel() {
-        scrollView.addSubview(infoLabel)
-        
-        infoLabel.snp.makeConstraints({
-            $0.top.equalTo(swipingView.snp.bottom).offset(16)
-            $0.leading.equalTo(view).inset(16)
-            $0.trailing.equalTo(dismissButton.snp.leading).offset(5)
+        bottomControls.snp.makeConstraints({
+            $0.centerX.equalTo(containerView)
+            $0.width.equalTo(containerView).multipliedBy(0.90)
+            $0.bottom.greaterThanOrEqualToSuperview().inset(10)
         })
     }
     
-    fileprivate func handleScrollingBehavior() {
-        let y = scrollView.contentOffset.y
-        let width = max(view.frame.width - y , view.frame.width)
-        swipingView.frame = CGRect(x: 0, y: y, width: width, height: width + heightForSwipingView)
-        swipingView.center.x = scrollView.center.x
+    private func enableScrollSubscribtion() {
+        
+        
+        scrollView.rx.didScroll.asObservable().subscribe(onNext: { [unowned self] _ in
+            let y = self.scrollView.contentOffset.y
+            let width = max(self.view.frame.width - y , self.view.frame.width)
+            width > self.view.frame.width ? self.scrollToTopConstraintsForPhotos(width: width, offsetY: y) : self.defaultContsraintsForPhotos()
+            self.view.layoutIfNeeded()
+            print("didScroll")
+        }).disposed(by: disposeBag)
+    
+        
     }
     
-    //MARK: - Objc Actions
-    @objc fileprivate func handleTapDismiss() {
-        self.dismiss(animated: true)
+    private func defaultContsraintsForPhotos() {
+        adoptionPhotosSwipingController.view.snp.remakeConstraints{
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(scrollView)
+            $0.height.equalTo(containerView.snp.width)
+            $0.width.equalToSuperview()
+        }
+    }
+    
+    private func scrollToTopConstraintsForPhotos(width: CGFloat, offsetY y: CGFloat) {
+        adoptionPhotosSwipingController.view.snp.remakeConstraints {
+            $0.centerX.equalToSuperview()
+            $0.top.equalTo(containerView).offset(y)
+            $0.height.equalTo(width)
+            $0.width.equalTo(width)
+        }
     }
     
 }
-
-
-
-
 
 // MARK: AdoptionDetailViewInput
 extension AdoptionDetailViewController: AdoptionDetailViewInput {
     
     func setupInitialState() {
+        
         view.backgroundColor = .white
+       
     }
 }
+

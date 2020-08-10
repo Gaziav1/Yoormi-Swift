@@ -15,9 +15,8 @@ class ControllerWithSideMenu: UIViewController {
         setupNavigationBar()
     }
     
-    
     func sideMenuAction() {
-        fatalError("Every sidemenu controlllers have to override this method")
+        fatalError("Every sidemenu controller have to override this method")
     }
     
     @objc private func rightBarButtonAction() {

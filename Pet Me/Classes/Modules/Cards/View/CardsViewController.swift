@@ -130,9 +130,9 @@ extension CardsViewController: CardViewDelegate {
     }
     
     func didSelectMoreInfoButton() {
-        let vc = UserDetailsViewController()
-        vc.view.backgroundColor = .white
-        present(vc, animated: true)
+//        let vc = UserDetailsViewController()
+//        vc.view.backgroundColor = .white
+//        present(vc, animated: true)
     }
 }
 
