@@ -35,7 +35,6 @@ class SideMenuPresenter: SideMenuModuleInput, SideMenuInteractorOutput {
         SideMenuElement(sideMenuTitle: .favorites, sideMenuItem:  SideMenuItems(title: "Избранное", icon: "star")),
         SideMenuElement(sideMenuTitle: .messages, sideMenuItem:  SideMenuItems(title: "Сообщения", icon: "bubble.right")),
         SideMenuElement(sideMenuTitle: .profile, sideMenuItem:  SideMenuItems(title: "Профиль", icon: "person"))
-    
     ]
     
 }
@@ -55,7 +54,7 @@ extension SideMenuPresenter: SideMenuViewOutput {
         
         switch data {
         case .myAnnouncements:
-            router.performTransition(to: .adoption)
+            router.performTransition(to: .myAds)
         case .favorites:
             router.performTransition(to: .adoption)
         case .findPet:

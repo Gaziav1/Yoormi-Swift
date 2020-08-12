@@ -7,35 +7,46 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		003AD9864B846F62A1F1C6CF /* MyAdsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB66367BD48812C2D8A22DF9 /* MyAdsRouter.swift */; };
 		0121A96D027443144A5054E3 /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DA38970644FB16D92B55CA /* CardsViewController.swift */; };
 		01D0D9AAD85AF12462979256 /* AdoptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A9D2F8A1765918BE7CB03BF /* AdoptionViewController.swift */; };
 		0212FC0A43A6638AFAC6EB1F /* AdoptionInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE6FAABDBBDDCA5B59602AE /* AdoptionInteractorOutput.swift */; };
 		034DE086EB2E0274E5406FD6 /* MessagesPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1FBFCBC52D156BD0AD62792 /* MessagesPresenter.swift */; };
+		04BFA07CC4E605604095F47D /* MyAdsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1519258F15E95CB8C46A2315 /* MyAdsModuleInput.swift */; };
 		066ED0C8722BBC40D8D9E00D /* SettingsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */; };
 		09F5FC20AF9715CB40DFA26D /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8BA12CB012B8A2A79EE46D1 /* CardsPresenter.swift */; };
 		0EAEA30E00D128052C3BEC9E /* AdoptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8538132EB27B5D7942169 /* AdoptionDetailViewController.swift */; };
 		0F78B6E5DCE7685472A61E6F /* CardsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0935EEA1B2B7ED7AF43DD66F /* CardsModuleInput.swift */; };
+		0F968E46456E55108B828741 /* CreateAdInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49CABEB77DA37C771B218 /* CreateAdInteractor.swift */; };
 		0FC1D92A6BB63DB5D7BBC214 /* AdoptionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99AA625F21786B1CF4FF08 /* AdoptionDetailPresenter.swift */; };
+		12A9EDB84A65DB41FDF5E81F /* CreateAdPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBF333718C453A4A73D04EB /* CreateAdPresenter.swift */; };
 		1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */; };
 		1975BC25353D55EA62F625D2 /* SettingsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */; };
 		1A1953CF43DEDE2CCBA282F6 /* CardsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 23E6F84045A4FC8EB9E88DC4 /* CardsViewOutput.swift */; };
 		1A32631F96618D9F6B7F4E9D /* SettingsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8021368F37EB95C8BEA82984 /* SettingsRouterInput.swift */; };
 		1C26CB93AC1B34778CACDDD2 /* MessagesRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DE3D905B51053F119FCA0C0 /* MessagesRouterInput.swift */; };
+		1E524B740B478317C683F8DB /* CreateAdConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C60368BFAA92001FDFB77B8 /* CreateAdConfigurator.swift */; };
 		1EA32F7C73B314BFC6A75862 /* SettingsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */; };
 		200D85504FDBDFF42D2A4C3F /* AdoptionDetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CAF26150470E2A697313 /* AdoptionDetailViewOutput.swift */; };
+		20F854ED476A1DA3677CB207 /* MyAdsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6778F50C1CCF8B6F9EE42BEB /* MyAdsViewInput.swift */; };
 		22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */; };
+		25978C49D560B890F9A7AFAF /* CreateAdViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD4299D35E9B306F436275 /* CreateAdViewOutput.swift */; };
 		265302C5D4B8FEB43F285547 /* AdoptionDetailInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D8D2EC7ED1EA24EF290A9 /* AdoptionDetailInteractorInput.swift */; };
+		2AC3FBF2E6419CDE541F6F39 /* MyAdsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4ADF1A08E64DC2DF05EBB116 /* MyAdsInteractor.swift */; };
 		2CFB388F0C03E2077281D3D8 /* SideMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224A2516A27F92F90528D80E /* SideMenuViewController.swift */; };
 		303590832F50AFD838CC38A6 /* CardsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388EFA01C0F52E858FD798A2 /* CardsRouterInput.swift */; };
 		35B4CCB5D8855A58A4B7C9BE /* AdoptionRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9C498CEDB64C0474DDD7725 /* AdoptionRouter.swift */; };
 		37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */; };
 		39FD94CEBB08F815011B4372 /* StartingInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C9796513A935641B0237689 /* StartingInteractorInput.swift */; };
+		3CD44C7404613256FB3873C1 /* MyAdsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48B765FD42DCB43587A44E07 /* MyAdsViewController.swift */; };
 		40141CF77B85933B209CCDA4 /* SideMenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BF14567CC044E32BBC76BAAE /* SideMenuRouter.swift */; };
 		452279345F1202F653C7E93C /* AdoptionInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA696775DCC42DAB7412683B /* AdoptionInteractorInput.swift */; };
 		45C3654588AA1069538FFBAB /* RegistrationInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */; };
 		47B7D3F44F555983ECB12EF3 /* SideMenuViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */; };
 		49D2CF6C26FD00BABA1A32F7 /* AdoptionModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CB0499001441968DF450D /* AdoptionModuleInput.swift */; };
 		527DC4F86C63B39D4D3E4B71 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */; };
+		551BE460AD4EE42D7CF87127 /* MyAdsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = F448A52E5667965AD1235E62 /* MyAdsInteractorInput.swift */; };
+		555CB49E4957217FEF25A930 /* MyAdsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2F11B628C38E26B453AED /* MyAdsRouterInput.swift */; };
 		589FA99525D6B9DA2E69A892 /* AdoptionViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FA3DC9F357A217CE91014D /* AdoptionViewInput.swift */; };
 		5977A04D629CEBC24B99FE31 /* StartingViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55F87A30FB45C50266CBDDD2 /* StartingViewOutput.swift */; };
 		5A18AF594511100E10E18BC6 /* RegistrationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */; };
@@ -46,6 +57,7 @@
 		5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */; };
 		624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06061268F27E49CBA8513BB4 /* CardsRouter.swift */; };
 		66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */; };
+		7955C57AB780C6175F48C82F /* MyAdsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102899206DCFD91F7B22FD5 /* MyAdsPresenter.swift */; };
 		79AB2A29C90849324D206B56 /* AdoptionDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3F08026D7A3C0D3F5C936 /* AdoptionDetailInteractor.swift */; };
 		7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEF573CA114C3C23C41CA1BC /* SettingsViewInput.swift */; };
 		7FDE62D460166E18F9C00C87 /* AdoptionViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 675083BC20DF5E0E9894730B /* AdoptionViewOutput.swift */; };
@@ -55,6 +67,7 @@
 		848E4FE60286C01B833374A3 /* MessagesViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50C93D468BE2805FE882BAEB /* MessagesViewOutput.swift */; };
 		878CD1B057FC8DBE13F97545 /* MessagesConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7E5668BE001184D5E769751 /* MessagesConfigurator.swift */; };
 		8A4D253C38D1D6073DFDC8EE /* SettingsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85B61ACDC9CE74634CDE578D /* SettingsRouter.swift */; };
+		8A83C3EE5C3CB04FB8D101E7 /* CreateAdViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD59B9D5DE4CC4425E67B511 /* CreateAdViewInput.swift */; };
 		8B46488FC97D714FD8621F0E /* AdoptionDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFE86DA75B33956004B4BC /* AdoptionDetailViewInput.swift */; };
 		8C5312721E68369592998531 /* StartingRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA865775CA38048B13D6BB1D /* StartingRouter.swift */; };
 		8C571CD65CBA7D104961E533 /* SideMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */; };
@@ -77,6 +90,7 @@
 		A71FA81624A0E668009AFC8E /* CatWaiting.json in Resources */ = {isa = PBXBuildFile; fileRef = A71FA81524A0E668009AFC8E /* CatWaiting.json */; };
 		A71FA81824A24886009AFC8E /* SecureNonceGeneratorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */; };
 		A71FA81C24A2504A009AFC8E /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */; };
+		A7332E0E24E2C5C9003F2EEA /* EmptyAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7332E0D24E2C5C9003F2EEA /* EmptyAdsView.swift */; };
 		A7381DA5244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */; };
 		A7381DA72447B26A0034A7BF /* MessagesCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7381DA62447B26A0034A7BF /* MessagesCollectionViewHeader.swift */; };
 		A73830122410FFB200D0195B /* Bindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A73830112410FFB200D0195B /* Bindable.swift */; };
@@ -102,6 +116,9 @@
 		A756C51024E0507E00545D4B /* OwnerAdoptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C50F24E0507E00545D4B /* OwnerAdoptionView.swift */; };
 		A756C51324E0629800545D4B /* DetailAdoptionBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A756C51224E0629800545D4B /* DetailAdoptionBottomView.swift */; };
 		A75AFA632412952A00F2FA96 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */; };
+		A75D207624E2E372007C4883 /* AdsTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D207524E2E372007C4883 /* AdsTextField.swift */; };
+		A75D207C24E2FB0C007C4883 /* AddPhotosCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D207B24E2FB0C007C4883 /* AddPhotosCollectionViewCell.swift */; };
+		A75D207F24E30484007C4883 /* AddPhotosCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75D207E24E30484007C4883 /* AddPhotosCollectionView.swift */; };
 		A76C9ED224C5DBDC005828F8 /* LaunchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED124C5DBDC005828F8 /* LaunchManager.swift */; };
 		A76C9ED524C5DC53005828F8 /* FlowControllerProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED424C5DC53005828F8 /* FlowControllerProtocol.swift */; };
 		A76C9ED724C5F04E005828F8 /* NavigationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */; };
@@ -133,11 +150,15 @@
 		A7FFBAB72453396A00CD7B5F /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBAB62453396A00CD7B5F /* Match.swift */; };
 		A7FFBABA24533ABA00CD7B5F /* Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FFBAB924533ABA00CD7B5F /* Shadow.swift */; };
 		A86E9B192C18A19B212B3BAD /* SettingsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44EC0ECB57B4739D7D185C0D /* SettingsModuleInput.swift */; };
+		AEE8B2DF50674F301CEBCC96 /* MyAdsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3CBC3999F90E96FABB075C0 /* MyAdsViewOutput.swift */; };
 		AF444B1E5D2F2BAABEB57025 /* SideMenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED8AED5FD7D3C7D0D872A439 /* SideMenuPresenter.swift */; };
+		AF755F1B75F22CEBECF3A96C /* MyAdsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F65F80C5BA7E77A7CB1850 /* MyAdsConfigurator.swift */; };
 		B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */; };
 		B28CC714710411A9482C385E /* MessagesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */; };
 		B311DD8E3DE68CF71F873CCF /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */; };
 		B386CBFB3F9D3DD623666F4E /* StartingPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1787152A7CD3D0207AAD6035 /* StartingPresenter.swift */; };
+		B3E21487F15526B3E6072F07 /* CreateAdRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAA9378DDAF45224C6D95F /* CreateAdRouter.swift */; };
+		B8AE9535E512ABD88B6D304B /* CreateAdInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4606BED6387DF39D4FEC000 /* CreateAdInteractorInput.swift */; };
 		B8BAF5BB767DB1F0C0200339 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */; };
 		B9271326341F1522AABE50B7 /* CardsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34889D9D3FBDC2E7EF0374C2 /* CardsViewInput.swift */; };
 		BA521927A68BFBA376E03561 /* AdoptionDetailRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8E945EAB82426F9257E5479 /* AdoptionDetailRouterInput.swift */; };
@@ -154,15 +175,20 @@
 		D7CF954FF2277516117EFE95 /* AdoptionPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9F30B50FC096414D781555EC /* AdoptionPresenter.swift */; };
 		D7D94228785E40ABA067D695 /* StartingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98C1930DDD277A53C436F80 /* StartingViewController.swift */; };
 		D8AE8FFA22FDF60CB3937CD3 /* MessagesModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */; };
+		D9BD67F2556BA9CDADB74A10 /* CreateAdRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2229FBD085F3D5638721E3B /* CreateAdRouterInput.swift */; };
 		DC1C68E40DA17EE2B898A482 /* SideMenuModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2A7DC67D6FEAC1B0C7739C0 /* SideMenuModuleInput.swift */; };
+		DEE909960E8E3FB74E0C6263 /* CreateAdInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3ABC38801850E2A18A090243 /* CreateAdInteractorOutput.swift */; };
 		E049CE6A7521E11B4126C1B8 /* SideMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF85EACF4D2739A2B200421 /* SideMenuInteractor.swift */; };
+		E6CE30C666C46557D15B59D1 /* MyAdsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C359890351B8264E8C5A7F8 /* MyAdsInteractorOutput.swift */; };
 		E6DFCB6B42EB05B38B5F3B23 /* CardsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B0F2C37CB760E7EAF63CBD4 /* CardsInteractorOutput.swift */; };
 		EEA454753AE711FBABC04390 /* SideMenuRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */; };
+		F3E2FB15B94B95FCD6F1D0A5 /* CreateAdModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D396C88FA6B81CDC35816 /* CreateAdModuleInput.swift */; };
 		F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */; };
 		F5E419DDD5A5965BF5C660FC /* CardsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C0AC6CE7BA0D07F1A19B1D6 /* CardsConfigurator.swift */; };
 		F6B74EFFF11EAFE5DFA7F17A /* StartingRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 90F6DD1FFEED03BE30F6C02A /* StartingRouterInput.swift */; };
 		F91380CDB394196EBC14CACB /* StartingInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D279D42EA7429D98785FCE3C /* StartingInteractor.swift */; };
 		F9B690933EF418B561921B58 /* StartingViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE8B1D5C27117E69E1BD6A2 /* StartingViewInput.swift */; };
+		FC1FCAC29556F84D925AE139 /* CreateAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8D79FF891CAA6C902758C /* CreateAdViewController.swift */; };
 		FDFD5FBFE66E55139048291A /* SideMenuViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE97253A1E797FF9578C71F /* SideMenuViewOutput.swift */; };
 		FFA45B2800F64AFFD873AF6D /* AdoptionRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164A164CD8802A38C31557F /* AdoptionRouterInput.swift */; };
 /* End PBXBuildFile section */
@@ -178,6 +204,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		01E8D79FF891CAA6C902758C /* CreateAdViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdViewController.swift; sourceTree = "<group>"; };
 		01FA3DC9F357A217CE91014D /* AdoptionViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewInput.swift; sourceTree = "<group>"; };
 		06061268F27E49CBA8513BB4 /* CardsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsRouter.swift; sourceTree = "<group>"; };
 		0935EEA1B2B7ED7AF43DD66F /* CardsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsModuleInput.swift; sourceTree = "<group>"; };
@@ -186,8 +213,10 @@
 		0EE97253A1E797FF9578C71F /* SideMenuViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewOutput.swift; sourceTree = "<group>"; };
 		127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorOutput.swift; sourceTree = "<group>"; };
 		13AFE86DA75B33956004B4BC /* AdoptionDetailViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailViewInput.swift; sourceTree = "<group>"; };
+		1519258F15E95CB8C46A2315 /* MyAdsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsModuleInput.swift; sourceTree = "<group>"; };
 		16B3F08026D7A3C0D3F5C936 /* AdoptionDetailInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailInteractor.swift; sourceTree = "<group>"; };
 		1787152A7CD3D0207AAD6035 /* StartingPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingPresenter.swift; sourceTree = "<group>"; };
+		1C359890351B8264E8C5A7F8 /* MyAdsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsInteractorOutput.swift; sourceTree = "<group>"; };
 		1CB1D9B8E1A8E8295CC39AA2 /* MessagesInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorInput.swift; sourceTree = "<group>"; };
 		1D310AB3D9E2C0E8E63F4B96 /* CardsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorInput.swift; sourceTree = "<group>"; };
 		1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouterInput.swift; sourceTree = "<group>"; };
@@ -196,16 +225,23 @@
 		2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuConfigurator.swift; sourceTree = "<group>"; };
 		28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewInput.swift; sourceTree = "<group>"; };
+		28F65F80C5BA7E77A7CB1850 /* MyAdsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsConfigurator.swift; sourceTree = "<group>"; };
 		2A9D2F8A1765918BE7CB03BF /* AdoptionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewController.swift; sourceTree = "<group>"; };
 		2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesModuleInput.swift; sourceTree = "<group>"; };
 		31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorOutput.swift; sourceTree = "<group>"; };
 		32BBF2AD7D76914AA5746C38 /* RegistrationViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewOutput.swift; sourceTree = "<group>"; };
 		34889D9D3FBDC2E7EF0374C2 /* CardsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewInput.swift; sourceTree = "<group>"; };
 		388EFA01C0F52E858FD798A2 /* CardsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsRouterInput.swift; sourceTree = "<group>"; };
+		389D396C88FA6B81CDC35816 /* CreateAdModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdModuleInput.swift; sourceTree = "<group>"; };
+		3ABC38801850E2A18A090243 /* CreateAdInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdInteractorOutput.swift; sourceTree = "<group>"; };
 		3C9796513A935641B0237689 /* StartingInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingInteractorInput.swift; sourceTree = "<group>"; };
+		3CBF333718C453A4A73D04EB /* CreateAdPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdPresenter.swift; sourceTree = "<group>"; };
 		3DE3D905B51053F119FCA0C0 /* MessagesRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesRouterInput.swift; sourceTree = "<group>"; };
 		4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
 		44EC0ECB57B4739D7D185C0D /* SettingsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsModuleInput.swift; sourceTree = "<group>"; };
+		48B765FD42DCB43587A44E07 /* MyAdsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsViewController.swift; sourceTree = "<group>"; };
+		4ADF1A08E64DC2DF05EBB116 /* MyAdsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsInteractor.swift; sourceTree = "<group>"; };
+		4C60368BFAA92001FDFB77B8 /* CreateAdConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdConfigurator.swift; sourceTree = "<group>"; };
 		4D82D3E5AB50E72B8F0931FD /* AdoptionDetailConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailConfigurator.swift; sourceTree = "<group>"; };
 		4ECFD61C70FE5325C945B5AA /* Pods-Pet MeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet MeTests.release.xcconfig"; path = "Target Support Files/Pods-Pet MeTests/Pods-Pet MeTests.release.xcconfig"; sourceTree = "<group>"; };
 		4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
@@ -218,6 +254,7 @@
 		5ED1D531D5C123DF6824ADE7 /* Pods_Pet_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorOutput.swift; sourceTree = "<group>"; };
 		675083BC20DF5E0E9894730B /* AdoptionViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewOutput.swift; sourceTree = "<group>"; };
+		6778F50C1CCF8B6F9EE42BEB /* MyAdsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsViewInput.swift; sourceTree = "<group>"; };
 		6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewOutput.swift; sourceTree = "<group>"; };
 		6FE6FAABDBBDDCA5B59602AE /* AdoptionInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionInteractorOutput.swift; sourceTree = "<group>"; };
 		72B20F9B9FAE87853DF19B2D /* AdoptionDetailModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailModuleInput.swift; sourceTree = "<group>"; };
@@ -226,16 +263,21 @@
 		7B0F2C37CB760E7EAF63CBD4 /* CardsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorOutput.swift; sourceTree = "<group>"; };
 		7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorInput.swift; sourceTree = "<group>"; };
 		8021368F37EB95C8BEA82984 /* SettingsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouterInput.swift; sourceTree = "<group>"; };
+		8102899206DCFD91F7B22FD5 /* MyAdsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsPresenter.swift; sourceTree = "<group>"; };
 		85B61ACDC9CE74634CDE578D /* SettingsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
 		893D8D2EC7ED1EA24EF290A9 /* AdoptionDetailInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailInteractorInput.swift; sourceTree = "<group>"; };
+		8BB49CABEB77DA37C771B218 /* CreateAdInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdInteractor.swift; sourceTree = "<group>"; };
 		8BE8B1D5C27117E69E1BD6A2 /* StartingViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingViewInput.swift; sourceTree = "<group>"; };
 		8C0AC6CE7BA0D07F1A19B1D6 /* CardsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsConfigurator.swift; sourceTree = "<group>"; };
 		90F6DD1FFEED03BE30F6C02A /* StartingRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingRouterInput.swift; sourceTree = "<group>"; };
+		94B2F11B628C38E26B453AED /* MyAdsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsRouterInput.swift; sourceTree = "<group>"; };
 		9727EE2B3337471B9B962221 /* SettingsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		9F30B50FC096414D781555EC /* AdoptionPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionPresenter.swift; sourceTree = "<group>"; };
 		A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		A1FBFCBC52D156BD0AD62792 /* MessagesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
+		A2229FBD085F3D5638721E3B /* CreateAdRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdRouterInput.swift; sourceTree = "<group>"; };
+		A3CBC3999F90E96FABB075C0 /* MyAdsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsViewOutput.swift; sourceTree = "<group>"; };
 		A70A8825249CF6BF0094F231 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		A70A8827249CFCED0094F231 /* RegistrationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTextField.swift; sourceTree = "<group>"; };
 		A71274E324409D83004F0945 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
@@ -249,6 +291,7 @@
 		A71FA81524A0E668009AFC8E /* CatWaiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CatWaiting.json; sourceTree = "<group>"; };
 		A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNonceGeneratorManager.swift; sourceTree = "<group>"; };
 		A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
+		A7332E0D24E2C5C9003F2EEA /* EmptyAdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAdsView.swift; sourceTree = "<group>"; };
 		A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsBottomAccessoryView.swift; sourceTree = "<group>"; };
 		A7381DA62447B26A0034A7BF /* MessagesCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewHeader.swift; sourceTree = "<group>"; };
 		A73830112410FFB200D0195B /* Bindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bindable.swift; sourceTree = "<group>"; };
@@ -274,6 +317,9 @@
 		A756C50F24E0507E00545D4B /* OwnerAdoptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OwnerAdoptionView.swift; sourceTree = "<group>"; };
 		A756C51224E0629800545D4B /* DetailAdoptionBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailAdoptionBottomView.swift; sourceTree = "<group>"; };
 		A75AFA622412952A00F2FA96 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewController.swift; sourceTree = "<group>"; };
+		A75D207524E2E372007C4883 /* AdsTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdsTextField.swift; sourceTree = "<group>"; };
+		A75D207B24E2FB0C007C4883 /* AddPhotosCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosCollectionViewCell.swift; sourceTree = "<group>"; };
+		A75D207E24E30484007C4883 /* AddPhotosCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddPhotosCollectionView.swift; sourceTree = "<group>"; };
 		A76C9ED124C5DBDC005828F8 /* LaunchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchManager.swift; sourceTree = "<group>"; };
 		A76C9ED424C5DC53005828F8 /* FlowControllerProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlowControllerProtocol.swift; sourceTree = "<group>"; };
 		A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowController.swift; sourceTree = "<group>"; };
@@ -311,6 +357,7 @@
 		A7FFBAB62453396A00CD7B5F /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		A7FFBAB924533ABA00CD7B5F /* Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Shadow.swift; sourceTree = "<group>"; };
 		A8BA12CB012B8A2A79EE46D1 /* CardsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
+		AD59B9D5DE4CC4425E67B511 /* CreateAdViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdViewInput.swift; sourceTree = "<group>"; };
 		B17BE4D601C35CBF20A90706 /* Pods-Pet Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet Me.release.xcconfig"; path = "Target Support Files/Pods-Pet Me/Pods-Pet Me.release.xcconfig"; sourceTree = "<group>"; };
 		B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorOutput.swift; sourceTree = "<group>"; };
 		B8E945EAB82426F9257E5479 /* AdoptionDetailRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailRouterInput.swift; sourceTree = "<group>"; };
@@ -326,6 +373,7 @@
 		C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
 		CA865775CA38048B13D6BB1D /* StartingRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingRouter.swift; sourceTree = "<group>"; };
 		CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorInput.swift; sourceTree = "<group>"; };
+		CB66367BD48812C2D8A22DF9 /* MyAdsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsRouter.swift; sourceTree = "<group>"; };
 		CBBFFA48B3983846AF410ECF /* StartingModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = StartingModuleInput.swift; sourceTree = "<group>"; };
 		CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
 		CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
@@ -336,13 +384,17 @@
 		DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModuleInput.swift; sourceTree = "<group>"; };
 		DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuRouterInput.swift; sourceTree = "<group>"; };
 		E17B3DA94F94CB860BFE0FD3 /* AdoptionDetailRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailRouter.swift; sourceTree = "<group>"; };
+		E4606BED6387DF39D4FEC000 /* CreateAdInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdInteractorInput.swift; sourceTree = "<group>"; };
 		E5ADF44D52DFD0330CB68F1C /* Pods_Pet_MeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_MeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E86CB0499001441968DF450D /* AdoptionModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionModuleInput.swift; sourceTree = "<group>"; };
+		E8DD4299D35E9B306F436275 /* CreateAdViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdViewOutput.swift; sourceTree = "<group>"; };
 		E9B8538132EB27B5D7942169 /* AdoptionDetailViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailViewController.swift; sourceTree = "<group>"; };
 		E9C498CEDB64C0474DDD7725 /* AdoptionRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionRouter.swift; sourceTree = "<group>"; };
 		ED344034924CCC22B6978F1C /* Pods-Pet MeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet MeTests.debug.xcconfig"; path = "Target Support Files/Pods-Pet MeTests/Pods-Pet MeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		ED8AED5FD7D3C7D0D872A439 /* SideMenuPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuPresenter.swift; sourceTree = "<group>"; };
 		ED9C3C0F845E9F2B7B440917 /* RegistrationInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractor.swift; sourceTree = "<group>"; };
+		F448A52E5667965AD1235E62 /* MyAdsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsInteractorInput.swift; sourceTree = "<group>"; };
+		F4FAA9378DDAF45224C6D95F /* CreateAdRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdRouter.swift; sourceTree = "<group>"; };
 		FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesRouter.swift; sourceTree = "<group>"; };
 		FEF573CA114C3C23C41CA1BC /* SettingsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewInput.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -491,6 +543,28 @@
 			path = Configurator;
 			sourceTree = "<group>";
 		};
+		3CA0E3B0821088D7F0683168 /* CreateAd */ = {
+			isa = PBXGroup;
+			children = (
+				44EC9A7DE17C4C88133ED06B /* View */,
+				C4F73D548C4C5BCFA4F7E6A7 /* Presenter */,
+				7C57CC0CA6FD4F6D9EC6A523 /* Interactor */,
+				A86B678E59402A56A2D58C9C /* Router */,
+				525F62ADAFE916D262DCDF83 /* Configurator */,
+			);
+			path = CreateAd;
+			sourceTree = "<group>";
+		};
+		44EC9A7DE17C4C88133ED06B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				AD59B9D5DE4CC4425E67B511 /* CreateAdViewInput.swift */,
+				E8DD4299D35E9B306F436275 /* CreateAdViewOutput.swift */,
+				01E8D79FF891CAA6C902758C /* CreateAdViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		49F0023AF908FCB1B1353E79 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -508,6 +582,24 @@
 				4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		4B3A2835415C099D2BDDBBE1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				6778F50C1CCF8B6F9EE42BEB /* MyAdsViewInput.swift */,
+				A3CBC3999F90E96FABB075C0 /* MyAdsViewOutput.swift */,
+				48B765FD42DCB43587A44E07 /* MyAdsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		525F62ADAFE916D262DCDF83 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				4C60368BFAA92001FDFB77B8 /* CreateAdConfigurator.swift */,
+			);
+			path = Configurator;
 			sourceTree = "<group>";
 		};
 		5596EFD06BED98F55BCC5C1D /* View */ = {
@@ -567,6 +659,18 @@
 			path = Cards;
 			sourceTree = "<group>";
 		};
+		62417A2D1E3FF8265185E4F0 /* MyAds */ = {
+			isa = PBXGroup;
+			children = (
+				4B3A2835415C099D2BDDBBE1 /* View */,
+				DCC4C15954CF7B9424F1EC81 /* Presenter */,
+				B0524A2417E65CEAA0770D04 /* Interactor */,
+				9E49E3D0C304E44EF9D3B502 /* Router */,
+				E3E57EDF02EAE73530C1D5B1 /* Configurator */,
+			);
+			path = MyAds;
+			sourceTree = "<group>";
+		};
 		64C4B84256AF28E07F815EEE /* Adoption */ = {
 			isa = PBXGroup;
 			children = (
@@ -620,6 +724,16 @@
 				3A02EA06C1F7355ED92B3A22 /* Configurator */,
 			);
 			path = AdoptionDetail;
+			sourceTree = "<group>";
+		};
+		7C57CC0CA6FD4F6D9EC6A523 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				E4606BED6387DF39D4FEC000 /* CreateAdInteractorInput.swift */,
+				3ABC38801850E2A18A090243 /* CreateAdInteractorOutput.swift */,
+				8BB49CABEB77DA37C771B218 /* CreateAdInteractor.swift */,
+			);
+			path = Interactor;
 			sourceTree = "<group>";
 		};
 		82FD2673BE456714B80512D4 /* Presenter */ = {
@@ -682,6 +796,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		9E49E3D0C304E44EF9D3B502 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				94B2F11B628C38E26B453AED /* MyAdsRouterInput.swift */,
+				CB66367BD48812C2D8A22DF9 /* MyAdsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		9EC91A29D5CA1D25E66EFAD6 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -698,6 +821,14 @@
 				A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */,
 			);
 			path = SideMenuCells;
+			sourceTree = "<group>";
+		};
+		A7332E0C24E2C5B6003F2EEA /* EmptyAdsView */ = {
+			isa = PBXGroup;
+			children = (
+				A7332E0D24E2C5C9003F2EEA /* EmptyAdsView.swift */,
+			);
+			path = EmptyAdsView;
 			sourceTree = "<group>";
 		};
 		A7425296240698D7002FB8C6 /* Controllers */ = {
@@ -766,6 +897,23 @@
 			path = DetailAdoptionBottomView;
 			sourceTree = "<group>";
 		};
+		A75D207424E2E363007C4883 /* AdsTextField */ = {
+			isa = PBXGroup;
+			children = (
+				A75D207524E2E372007C4883 /* AdsTextField.swift */,
+			);
+			path = AdsTextField;
+			sourceTree = "<group>";
+		};
+		A75D207824E2FA08007C4883 /* AddPhotosCollection */ = {
+			isa = PBXGroup;
+			children = (
+				A75D207B24E2FB0C007C4883 /* AddPhotosCollectionViewCell.swift */,
+				A75D207E24E30484007C4883 /* AddPhotosCollectionView.swift */,
+			);
+			path = AddPhotosCollection;
+			sourceTree = "<group>";
+		};
 		A76C9ED324C5DC3F005828F8 /* FlowController */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +946,7 @@
 				A71FA81524A0E668009AFC8E /* CatWaiting.json */,
 				A7D2328924A0C0C800C88077 /* R.generated.swift */,
 				A7E0467C23C4D7E600A4C5B5 /* Assets.xcassets */,
+				A7E0467E23C4D7E600A4C5B5 /* LaunchScreen.storyboard */,
 			);
 			path = "Resources ";
 			sourceTree = "<group>";
@@ -840,7 +989,6 @@
 				A7E0467023C4D7E400A4C5B5 /* AppDelegate.swift */,
 				A7E0467223C4D7E400A4C5B5 /* SceneDelegate.swift */,
 				A7D2328824A0C0B000C88077 /* Resources  */,
-				A7E0467E23C4D7E600A4C5B5 /* LaunchScreen.storyboard */,
 				A756B1E924093153004D77B8 /* GoogleService-Info.plist */,
 				A7E0468123C4D7E600A4C5B5 /* Info.plist */,
 				A7E0467923C4D7E400A4C5B5 /* Pet_Me.xcdatamodeld */,
@@ -942,6 +1090,9 @@
 		A7FFBAA524532AD400CD7B5F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A75D207824E2FA08007C4883 /* AddPhotosCollection */,
+				A75D207424E2E363007C4883 /* AdsTextField */,
+				A7332E0C24E2C5B6003F2EEA /* EmptyAdsView */,
 				A756C51124E0628600545D4B /* DetailAdoptionBottomView */,
 				A756C50E24E0506C00545D4B /* OwnerAdoptionView */,
 				A749DB0824E03C8500543560 /* AnimalToAdoptInformationView */,
@@ -1092,12 +1243,31 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		A86B678E59402A56A2D58C9C /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				A2229FBD085F3D5638721E3B /* CreateAdRouterInput.swift */,
+				F4FAA9378DDAF45224C6D95F /* CreateAdRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		A8C54A0EEED1DD70468CE252 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
 				CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */,
 				127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */,
 				C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		B0524A2417E65CEAA0770D04 /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				F448A52E5667965AD1235E62 /* MyAdsInteractorInput.swift */,
+				1C359890351B8264E8C5A7F8 /* MyAdsInteractorOutput.swift */,
+				4ADF1A08E64DC2DF05EBB116 /* MyAdsInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1149,6 +1319,15 @@
 				224A2516A27F92F90528D80E /* SideMenuViewController.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		C4F73D548C4C5BCFA4F7E6A7 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				389D396C88FA6B81CDC35816 /* CreateAdModuleInput.swift */,
+				3CBF333718C453A4A73D04EB /* CreateAdPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		C5B97BDBA4F52F955DF46471 /* Classes */ = {
@@ -1216,6 +1395,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DCC4C15954CF7B9424F1EC81 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				1519258F15E95CB8C46A2315 /* MyAdsModuleInput.swift */,
+				8102899206DCFD91F7B22FD5 /* MyAdsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		E3E57EDF02EAE73530C1D5B1 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				28F65F80C5BA7E77A7CB1850 /* MyAdsConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		E3EF03C251A53088544DC684 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
@@ -1227,6 +1423,8 @@
 				8418DC73F8E7D2150A511EE1 /* SideMenu */,
 				64C4B84256AF28E07F815EEE /* Adoption */,
 				72920AD99A7DEB9A96EF1169 /* AdoptionDetail */,
+				62417A2D1E3FF8265185E4F0 /* MyAds */,
+				3CA0E3B0821088D7F0683168 /* CreateAd */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1539,6 +1737,7 @@
 				A7FFBA9A2451FE3200CD7B5F /* FirebaseManager.swift in Sources */,
 				A5990DD430B831D161D57D86 /* CardsInteractor.swift in Sources */,
 				303590832F50AFD838CC38A6 /* CardsRouterInput.swift in Sources */,
+				A75D207C24E2FB0C007C4883 /* AddPhotosCollectionViewCell.swift in Sources */,
 				624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */,
 				F5E419DDD5A5965BF5C660FC /* CardsConfigurator.swift in Sources */,
 				7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */,
@@ -1632,8 +1831,33 @@
 				C8236A017826CCE5361A2239 /* AdoptionDetailInteractorOutput.swift in Sources */,
 				79AB2A29C90849324D206B56 /* AdoptionDetailInteractor.swift in Sources */,
 				BA521927A68BFBA376E03561 /* AdoptionDetailRouterInput.swift in Sources */,
+				A75D207F24E30484007C4883 /* AddPhotosCollectionView.swift in Sources */,
 				A348A52EF9B827D2AA575B06 /* AdoptionDetailRouter.swift in Sources */,
 				5D7C1B1E104E66497DAD19BB /* AdoptionDetailConfigurator.swift in Sources */,
+				20F854ED476A1DA3677CB207 /* MyAdsViewInput.swift in Sources */,
+				AEE8B2DF50674F301CEBCC96 /* MyAdsViewOutput.swift in Sources */,
+				3CD44C7404613256FB3873C1 /* MyAdsViewController.swift in Sources */,
+				A7332E0E24E2C5C9003F2EEA /* EmptyAdsView.swift in Sources */,
+				04BFA07CC4E605604095F47D /* MyAdsModuleInput.swift in Sources */,
+				7955C57AB780C6175F48C82F /* MyAdsPresenter.swift in Sources */,
+				551BE460AD4EE42D7CF87127 /* MyAdsInteractorInput.swift in Sources */,
+				E6CE30C666C46557D15B59D1 /* MyAdsInteractorOutput.swift in Sources */,
+				2AC3FBF2E6419CDE541F6F39 /* MyAdsInteractor.swift in Sources */,
+				555CB49E4957217FEF25A930 /* MyAdsRouterInput.swift in Sources */,
+				003AD9864B846F62A1F1C6CF /* MyAdsRouter.swift in Sources */,
+				AF755F1B75F22CEBECF3A96C /* MyAdsConfigurator.swift in Sources */,
+				8A83C3EE5C3CB04FB8D101E7 /* CreateAdViewInput.swift in Sources */,
+				25978C49D560B890F9A7AFAF /* CreateAdViewOutput.swift in Sources */,
+				FC1FCAC29556F84D925AE139 /* CreateAdViewController.swift in Sources */,
+				F3E2FB15B94B95FCD6F1D0A5 /* CreateAdModuleInput.swift in Sources */,
+				12A9EDB84A65DB41FDF5E81F /* CreateAdPresenter.swift in Sources */,
+				B8AE9535E512ABD88B6D304B /* CreateAdInteractorInput.swift in Sources */,
+				DEE909960E8E3FB74E0C6263 /* CreateAdInteractorOutput.swift in Sources */,
+				A75D207624E2E372007C4883 /* AdsTextField.swift in Sources */,
+				0F968E46456E55108B828741 /* CreateAdInteractor.swift in Sources */,
+				D9BD67F2556BA9CDADB74A10 /* CreateAdRouterInput.swift in Sources */,
+				B3E21487F15526B3E6072F07 /* CreateAdRouter.swift in Sources */,
+				1E524B740B478317C683F8DB /* CreateAdConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

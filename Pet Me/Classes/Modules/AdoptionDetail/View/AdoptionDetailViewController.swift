@@ -47,9 +47,8 @@ class AdoptionDetailViewController: UIViewController, UIScrollViewDelegate {
         setupContainerView()
         setupPhotosController()
         setupAdoptionInfoView()
-        setupBottomControls()
         setupOwnerAdoptionView()
-        
+        setupBottomControls()
     }
     
     fileprivate let heightForSwipingView: CGFloat = 80
@@ -99,17 +98,17 @@ class AdoptionDetailViewController: UIViewController, UIScrollViewDelegate {
         ownerAdoptionInfoView.snp.makeConstraints({
             $0.top.equalTo(adoptionInfoView.snp.bottom).offset(20)
             $0.leading.trailing.equalTo(containerView).inset(10)
-            $0.bottom.equalTo(bottomControls.snp.top).offset(-15)
+            $0.bottom.lessThanOrEqualToSuperview().inset(75)
         })
     }
     
     private func setupBottomControls() {
-        scrollView.addSubview(bottomControls)
-        
+        containerView.addSubview(bottomControls)
+    
         bottomControls.snp.makeConstraints({
             $0.centerX.equalTo(containerView)
+            $0.top.equalTo(ownerAdoptionInfoView.snp.bottom).offset(10)
             $0.width.equalTo(containerView).multipliedBy(0.90)
-            $0.bottom.greaterThanOrEqualToSuperview().inset(10)
         })
     }
     

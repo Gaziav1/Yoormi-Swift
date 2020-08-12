@@ -53,7 +53,7 @@ class OwnerAdoptionView: UIView {
     
     private let animalDescription: UILabel = {
         let label = UILabel()
-        label.text = "Static Text - это элемент гибкого описания, позволяющий найти заранее известный текст. Текст может состоять из одного слова, а может содержать фразу, состоящую из нескольких слов. Фраза отличается от слова тем, что внутри нее есть хотя бы один пробел, при этом фраза может располагаться на нескольких строках."
+        label.text = "Static Text - это элемент гибкого описания, позволяющий найти заранее известный текст. Текст может состоять из одного слова, а может содержать фразу, состоящую из нескольких слов. Фраза отличается от слова тем, что внутри нее есть хотя бы один пробел, при этом фраза может располагаться на нескольких строках. "
         label.numberOfLines = 0
 
         label.font = .systemFont(ofSize: 15, weight: .regular)
@@ -85,12 +85,11 @@ class OwnerAdoptionView: UIView {
         let overallStack = UIStackView(arrangedSubviews: [topStack, animalDescription])
         overallStack.axis = .vertical
         overallStack.spacing = 15
-        
         overallStack.isLayoutMarginsRelativeArrangement = true
         overallStack.layoutMargins = .init(top: 0, left: 10, bottom: 0, right: 10)
-        
         addSubview(overallStack)
         overallStack.snp.makeConstraints({ $0.edges.equalToSuperview() })
+        
     }
 }
 

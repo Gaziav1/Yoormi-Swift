@@ -34,7 +34,7 @@ class DetailAdoptionBottomView: UIView {
         super.init(frame: frame)
         
         adoptButton.backgroundColor = R.color.appColors.appMainColor()
-        adoptButton.setAttributedTitle(NSAttributedString(string: "Написать хозяину", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .bold), NSAttributedString.Key.foregroundColor: R.color.appColors.buttonTitleLabel() as Any]), for: .normal)
+        adoptButton.setAttributedTitle(NSAttributedString(string: "Написать хозяину", attributes: [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 17, weight: .bold), NSAttributedString.Key.foregroundColor: UIColor.white as Any]), for: .normal)
         setupUI()
          adoptButton.layer.cornerRadius = 23
     }

@@ -115,8 +115,6 @@ struct R: Rswift.Validatable {
       static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Background")
       /// Color `Border`.
       static let border = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Border")
-      /// Color `ButtonTitleLabel`.
-      static let buttonTitleLabel = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/ButtonTitleLabel")
       /// Color `ControlSelection`.
       static let controlSelection = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/ControlSelection")
       /// Color `DarkLabel`.
@@ -125,6 +123,8 @@ struct R: Rswift.Validatable {
       static let label = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Label")
       /// Color `SideMenuLabel`.
       static let sideMenuLabel = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/SideMenuLabel")
+      /// Color `lightBackground`.
+      static let lightBackground = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/lightBackground")
 
       #if os(iOS) || os(tvOS)
       /// `UIColor(named: "AppMainColor", bundle: ..., traitCollection: ...)`
@@ -150,15 +150,6 @@ struct R: Rswift.Validatable {
       @available(iOS 11.0, *)
       static func border(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
         return UIKit.UIColor(resource: R.color.appColors.border, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIColor(named: "ButtonTitleLabel", bundle: ..., traitCollection: ...)`
-      @available(tvOS 11.0, *)
-      @available(iOS 11.0, *)
-      static func buttonTitleLabel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
-        return UIKit.UIColor(resource: R.color.appColors.buttonTitleLabel, compatibleWith: traitCollection)
       }
       #endif
 
@@ -195,6 +186,15 @@ struct R: Rswift.Validatable {
       @available(iOS 11.0, *)
       static func sideMenuLabel(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
         return UIKit.UIColor(resource: R.color.appColors.sideMenuLabel, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "lightBackground", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func lightBackground(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.appColors.lightBackground, compatibleWith: traitCollection)
       }
       #endif
 

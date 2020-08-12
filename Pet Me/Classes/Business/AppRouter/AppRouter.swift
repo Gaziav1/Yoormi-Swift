@@ -23,6 +23,8 @@ enum RouterDestination {
     case starting
     case adoption
     case adoptionDetail
+    case myAds
+    case createAd
     
     func constructModule(in factory: Container, flow: FlowController? = nil) -> UIViewController? {
         switch self {
@@ -42,12 +44,17 @@ enum RouterDestination {
             return factory.resolve(UIViewController.self, name: AdoptionModuleConfigurator.tag, argument: flow)
         case .adoptionDetail:
             return factory.resolve(UIViewController.self, name: AdoptionDetailModuleConfigurator.tag, argument: flow)
-            
+        case .myAds:
+            return factory.resolve(UIViewController.self, name: MyAdsModuleConfigurator.tag, argument: flow)
+        case .createAd:
+            return factory.resolve(UIViewController.self, name: CreateAdModuleConfigurator.tag, argument: flow)
         }
     }
     
     var isPresent: Bool {
         switch self {
+        case .createAd:
+            return true
         default:
             return false
         }

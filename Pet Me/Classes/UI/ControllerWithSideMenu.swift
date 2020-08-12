@@ -28,7 +28,7 @@ class ControllerWithSideMenu: UIViewController {
         let hambMenuImage = R.image.icons.hambMenu()?.withRenderingMode(.alwaysOriginal)
         let rightBarButtonItem = UIBarButtonItem(image: hambMenuImage, style: .plain, target: self, action: #selector(rightBarButtonAction))
         
-        navigationItem.rightBarButtonItem = rightBarButtonItem
+        navigationItem.leftBarButtonItem = rightBarButtonItem
         navigationController?.navigationBar.backgroundColor = .clear
     }
     

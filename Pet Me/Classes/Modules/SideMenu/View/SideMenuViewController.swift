@@ -70,7 +70,7 @@ class SideMenuViewController: UIViewController {
                 
         overallStack.snp.makeConstraints({
             $0.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
-            $0.trailing.equalToSuperview().inset(5)
+            $0.leading.equalToSuperview()
             $0.width.equalTo(265)
         })
     }

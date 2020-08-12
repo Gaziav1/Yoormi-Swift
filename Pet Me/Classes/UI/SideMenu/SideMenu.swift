@@ -121,7 +121,7 @@ class SideMenu: UIViewController {
     
     private func animateMenuViewController() {
         contentViewContainer.transform = .identity
-        contentViewContainer.frame = .init(x: -(view.center.x + contentViewInPortraitOffsetCenterX), y: view.frame.origin.y, width: view.frame.width, height: view.frame.height)
+        contentViewContainer.frame = .init(x: (view.center.x + contentViewInPortraitOffsetCenterX), y: view.frame.origin.y, width: view.frame.width, height: view.frame.height)
         visualEffectView.alpha = 1
     }
     
@@ -168,21 +168,12 @@ class SideMenu: UIViewController {
         switch pan.state {
         case .changed:
            
-            contentViewContainer.transform = CGAffineTransform(translationX: pan.translation(in: view).x, y: menuViewContainer.frame.origin.y)
-            
-            if pan.translation(in: view).x > 0 {
-                
-                let percentage = (pan.view!.center.x*100.0 / self.view.center.x)/100.0
-
-                    let alpha = percentage >= 1.0 ? (1.0 - (percentage-1.0)) : percentage
-
-                    visualEffectView.alpha = alpha
-            }
+        contentViewContainer.transform = CGAffineTransform(translationX: pan.translation(in: view).x, y: menuViewContainer.frame.origin.y)
+        print(pan.translation(in: view).x)
 
         case .ended:
             
-            
-            if pan.translation(in: view).x > 145 {
+            if pan.translation(in: view).x < -145 {
                 dimissMenu()
             } else {
                 UIView.animate(withDuration: 0.2) { [unowned self] in
