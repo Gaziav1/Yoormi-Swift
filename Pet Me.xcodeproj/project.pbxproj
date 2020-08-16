@@ -124,6 +124,12 @@
 		A76C9ED724C5F04E005828F8 /* NavigationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */; };
 		A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */; };
 		A77021572407EC9C005E6C4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021562407EC9C005E6C4A /* CustomTextField.swift */; };
+		A7BA327524E57D5400DC485E /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327424E57D5400DC485E /* CustomImagePicker.swift */; };
+		A7BA327824E5A1D000DC485E /* CreateAdInfoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327724E5A1D000DC485E /* CreateAdInfoCollectionView.swift */; };
+		A7BA327A24E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327924E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift */; };
+		A7BA327F24E5A72C00DC485E /* GenderTypeCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327E24E5A72C00DC485E /* GenderTypeCollectionView.swift */; };
+		A7BA328124E5A74C00DC485E /* GenderTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA328024E5A74C00DC485E /* GenderTypeCollectionViewCell.swift */; };
+		A7BA328624E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA328524E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift */; };
 		A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCB71524B3895000BA2291 /* SideMenuItem.swift */; };
 		A7D23281249E578600C88077 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D23280249E578600C88077 /* LoginView.swift */; };
 		A7D2328624A0BBBC00C88077 /* CustomSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */; };
@@ -325,6 +331,12 @@
 		A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowController.swift; sourceTree = "<group>"; };
 		A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OldRegsitrationControllerb .swift"; sourceTree = "<group>"; };
 		A77021562407EC9C005E6C4A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A7BA327424E57D5400DC485E /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
+		A7BA327724E5A1D000DC485E /* CreateAdInfoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdInfoCollectionView.swift; sourceTree = "<group>"; };
+		A7BA327924E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdInfoCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7BA327E24E5A72C00DC485E /* GenderTypeCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTypeCollectionView.swift; sourceTree = "<group>"; };
+		A7BA328024E5A74C00DC485E /* GenderTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTypeCollectionViewCell.swift; sourceTree = "<group>"; };
+		A7BA328524E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdChooseTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7BCB71524B3895000BA2291 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
 		A7D23280249E578600C88077 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A7D23282249F9B0300C88077 /* Pet Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pet Me.entitlements"; sourceTree = "<group>"; };
@@ -924,6 +936,33 @@
 			path = FlowController;
 			sourceTree = "<group>";
 		};
+		A7BA327324E57D3500DC485E /* CustomImagePicker */ = {
+			isa = PBXGroup;
+			children = (
+				A7BA327424E57D5400DC485E /* CustomImagePicker.swift */,
+			);
+			path = CustomImagePicker;
+			sourceTree = "<group>";
+		};
+		A7BA327624E5A1B500DC485E /* CreateAdInfoCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A7BA327724E5A1D000DC485E /* CreateAdInfoCollectionView.swift */,
+				A7F8955E24E9A1CF00BAC4A0 /* InformationCell */,
+				A7F8955F24E9A1DE00BAC4A0 /* SelectionCell */,
+			);
+			path = CreateAdInfoCollectionView;
+			sourceTree = "<group>";
+		};
+		A7BA327D24E5A70B00DC485E /* GenderTypeCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A7BA327E24E5A72C00DC485E /* GenderTypeCollectionView.swift */,
+				A7BA328024E5A74C00DC485E /* GenderTypeCollectionViewCell.swift */,
+			);
+			path = GenderTypeCollectionView;
+			sourceTree = "<group>";
+		};
 		A7CAE88F249CDFF800401C2A /* RegistrationTextField */ = {
 			isa = PBXGroup;
 			children = (
@@ -1037,6 +1076,22 @@
 			path = Constans;
 			sourceTree = "<group>";
 		};
+		A7F8955E24E9A1CF00BAC4A0 /* InformationCell */ = {
+			isa = PBXGroup;
+			children = (
+				A7BA327924E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift */,
+			);
+			path = InformationCell;
+			sourceTree = "<group>";
+		};
+		A7F8955F24E9A1DE00BAC4A0 /* SelectionCell */ = {
+			isa = PBXGroup;
+			children = (
+				A7BA328524E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift */,
+			);
+			path = SelectionCell;
+			sourceTree = "<group>";
+		};
 		A7FFBA942451F47400CD7B5F /* Factories */ = {
 			isa = PBXGroup;
 			children = (
@@ -1090,6 +1145,9 @@
 		A7FFBAA524532AD400CD7B5F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A7BA327D24E5A70B00DC485E /* GenderTypeCollectionView */,
+				A7BA327624E5A1B500DC485E /* CreateAdInfoCollectionView */,
+				A7BA327324E57D3500DC485E /* CustomImagePicker */,
 				A75D207824E2FA08007C4883 /* AddPhotosCollection */,
 				A75D207424E2E363007C4883 /* AdsTextField */,
 				A7332E0C24E2C5B6003F2EEA /* EmptyAdsView */,
@@ -1720,6 +1778,7 @@
 				A71274E824426BEA004F0945 /* MessagesTopView.swift in Sources */,
 				A740A4892418F1A200132DED /* LoginViewModel.swift in Sources */,
 				A7D6F25C24D6F55F00624197 /* SideMenu.swift in Sources */,
+				A7BA327F24E5A72C00DC485E /* GenderTypeCollectionView.swift in Sources */,
 				A71274EC2444CEB2004F0945 /* ChatLogsController.swift in Sources */,
 				A71274EE2444CF44004F0945 /* ChatLogsCollectionViewCell.swift in Sources */,
 				A70A8828249CFCED0094F231 /* RegistrationTextField.swift in Sources */,
@@ -1741,6 +1800,7 @@
 				624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */,
 				F5E419DDD5A5965BF5C660FC /* CardsConfigurator.swift in Sources */,
 				7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */,
+				A7BA327524E57D5400DC485E /* CustomImagePicker.swift in Sources */,
 				527DC4F86C63B39D4D3E4B71 /* SettingsViewOutput.swift in Sources */,
 				A74E6D2124DEAE9A00654699 /* AnimalChoosingControl.swift in Sources */,
 				A71F31C224B0FD51001832C0 /* SideMenuTableViewCell.swift in Sources */,
@@ -1767,6 +1827,7 @@
 				BD7A6821F7ADE7ADE8C0794F /* MessagesInteractorInput.swift in Sources */,
 				5BF8C29179AD2DC324E5830D /* MessagesInteractorOutput.swift in Sources */,
 				22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */,
+				A7BA328624E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift in Sources */,
 				1C26CB93AC1B34778CACDDD2 /* MessagesRouterInput.swift in Sources */,
 				F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */,
 				878CD1B057FC8DBE13F97545 /* MessagesConfigurator.swift in Sources */,
@@ -1802,6 +1863,7 @@
 				47B7D3F44F555983ECB12EF3 /* SideMenuViewInput.swift in Sources */,
 				FDFD5FBFE66E55139048291A /* SideMenuViewOutput.swift in Sources */,
 				2CFB388F0C03E2077281D3D8 /* SideMenuViewController.swift in Sources */,
+				A7BA327824E5A1D000DC485E /* CreateAdInfoCollectionView.swift in Sources */,
 				DC1C68E40DA17EE2B898A482 /* SideMenuModuleInput.swift in Sources */,
 				AF444B1E5D2F2BAABEB57025 /* SideMenuPresenter.swift in Sources */,
 				5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */,
@@ -1846,12 +1908,14 @@
 				555CB49E4957217FEF25A930 /* MyAdsRouterInput.swift in Sources */,
 				003AD9864B846F62A1F1C6CF /* MyAdsRouter.swift in Sources */,
 				AF755F1B75F22CEBECF3A96C /* MyAdsConfigurator.swift in Sources */,
+				A7BA327A24E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift in Sources */,
 				8A83C3EE5C3CB04FB8D101E7 /* CreateAdViewInput.swift in Sources */,
 				25978C49D560B890F9A7AFAF /* CreateAdViewOutput.swift in Sources */,
 				FC1FCAC29556F84D925AE139 /* CreateAdViewController.swift in Sources */,
 				F3E2FB15B94B95FCD6F1D0A5 /* CreateAdModuleInput.swift in Sources */,
 				12A9EDB84A65DB41FDF5E81F /* CreateAdPresenter.swift in Sources */,
 				B8AE9535E512ABD88B6D304B /* CreateAdInteractorInput.swift in Sources */,
+				A7BA328124E5A74C00DC485E /* GenderTypeCollectionViewCell.swift in Sources */,
 				DEE909960E8E3FB74E0C6263 /* CreateAdInteractorOutput.swift in Sources */,
 				A75D207624E2E372007C4883 /* AdsTextField.swift in Sources */,
 				0F968E46456E55108B828741 /* CreateAdInteractor.swift in Sources */,

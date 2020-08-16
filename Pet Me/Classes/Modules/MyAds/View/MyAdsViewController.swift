@@ -30,8 +30,8 @@ class MyAdsViewController: ControllerWithSideMenu {
     private func setEmptyAdButtonObserver() {
         
         emptyAdsView.tapObserver
-            .subscribe { (_) in
-            
+            .subscribe { [unowned self] (_) in
+                self.output.didTapPlusButton()
         }.disposed(by: disposeBag)
         
     }

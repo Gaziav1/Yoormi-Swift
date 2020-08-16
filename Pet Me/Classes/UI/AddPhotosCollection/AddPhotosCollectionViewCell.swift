@@ -10,8 +10,8 @@ import UIKit
 
 class AddPhotosCollectionViewCell: UICollectionViewCell {
     
-    var imageView: UIImageView? = {
-        let iv = UIImageView(image: R.image.images.doggoTest())
+    var imageView: UIImageView = {
+        let iv = UIImageView()
         iv.contentMode = .scaleAspectFill
         return iv
     }()
@@ -29,6 +29,7 @@ class AddPhotosCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         backgroundColor = R.color.appColors.lightBackground()
+        setupUI()
     }
     
     required init?(coder: NSCoder) {
@@ -42,15 +43,19 @@ class AddPhotosCollectionViewCell: UICollectionViewCell {
             $0.trailing.leading.equalToSuperview()
             $0.centerY.equalToSuperview()
         })
-        
-        if let imageView = imageView {
-            addSubview(imageView)
-            imageView.snp.makeConstraints({ $0.edges.equalToSuperview() })
-        }
-        
+                
         layer.cornerRadius = 10
         clipsToBounds = true
     }
     
+    func setupImage(image: UIImage) {
+        addSubview(imageView)
+        imageView.snp.makeConstraints({ $0.edges.equalToSuperview() })
+        imageView.image = image
+    }
+    
+    func removeImage() {
+        imageView.removeFromSuperview()
+    }
     
 }

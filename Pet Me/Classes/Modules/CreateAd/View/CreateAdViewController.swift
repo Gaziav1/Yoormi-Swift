@@ -20,13 +20,21 @@ class CreateAdViewController: UIViewController {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         let cv = AddPhotosCollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = .clear
+        cv.backgroundColor = UIColor.black.withAlphaComponent(0.1)
         cv.showsHorizontalScrollIndicator = false
         return cv
     }()
     
-    private let imagePickerController: UIImagePickerController = {
-        let imagePC = UIImagePickerController()
+    private let infoCollectionView: CreateAdInfoCollectionView = {
+        let layout = UICollectionViewFlowLayout()
+        let cv = CreateAdInfoCollectionView(frame: .zero, collectionViewLayout: layout)
+        cv.backgroundColor = UIColor.black.withAlphaComponent(0.1)
+        return cv
+    }()
+    
+    private let imagePickerController: CustomImagePicker = {
+        let imagePC = CustomImagePicker()
+        imagePC.imageLimit = 5
         return imagePC
     }()
     
@@ -38,8 +46,6 @@ class CreateAdViewController: UIViewController {
         return label
     }()
     
-    private let customTextField = AdsTextField()
-    
     
     // MARK: Life cycle
     override func viewDidLoad() {
@@ -49,14 +55,18 @@ class CreateAdViewController: UIViewController {
     
     private func createSubscriptions() {
         
-        customTextField.textFieldDidType
-            .subscribe(onNext: {
-                print($0)
+        imagePickerController.choosenImagesObservable.subscribe(onNext: { [unowned self] images in
+            self.addPhotosCollection.setupPhotos(photos: images)
             }).disposed(by: disposeBag)
+        
+//        customTextField.textFieldDidType
+//            .subscribe(onNext: {
+//                print($0)
+//            }).disposed(by: disposeBag)
         
         
         addPhotosCollection.didSelectItem.map { (indexPath) -> Int in
-                return indexPath.row
+            return indexPath.row
         }.subscribe(onNext: { [unowned self] index in
             self.output.didSelectRow(withIndex: index)
         }).disposed(by: disposeBag)
@@ -71,14 +81,16 @@ class CreateAdViewController: UIViewController {
             $0.top.equalToSuperview().inset(20)
         })
         
-        //        view.addSubview(customTextField)
-        //
-        //        customTextField.snp.makeConstraints({
-        //            $0.width.equalToSuperview().multipliedBy(0.8)
-        //            $0.height.equalTo(90)
-        //            $0.top.equalTo(titleLabel.snp.bottom).offset(15)
-        //            $0.centerX.equalToSuperview()
-        //        })
+        
+    }
+    
+    private func setupTextFields() {
+        view.addSubview(infoCollectionView)
+        
+        infoCollectionView.snp.makeConstraints({
+            $0.top.equalTo(addPhotosCollection.snp.bottom).offset(10)
+            $0.leading.trailing.bottom.equalToSuperview()
+        })
     }
     
     private func setupCollectionView() {
@@ -101,9 +113,7 @@ extension CreateAdViewController: CreateAdViewInput {
         setupLabel()
         createSubscriptions()
         setupCollectionView()
-        imagePickerController.delegate = self
-        imagePickerController.allowsEditing = true
-        imagePickerController.sourceType = .photoLibrary
+        setupTextFields()
         view.backgroundColor = R.color.appColors.background()
     }
     
@@ -112,17 +122,5 @@ extension CreateAdViewController: CreateAdViewInput {
     }
 }
 
-
-// MARK: - UIImagePickerControllerDelegate & UINavigationControllerDelegate
-extension CreateAdViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate {
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        dismiss(animated: true, completion: nil)
-        if let image = info[.editedImage] as? UIImage {
-            print("edited image")
-        } else if let originalImage = info[.originalImage] {
-            print("orginal image")
-        }
-    }
-}
 
 
