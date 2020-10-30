@@ -124,6 +124,8 @@
 		A76C9ED724C5F04E005828F8 /* NavigationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */; };
 		A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */; };
 		A77021572407EC9C005E6C4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021562407EC9C005E6C4A /* CustomTextField.swift */; };
+		A78C6B09254C64AA0020BCDA /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B08254C64AA0020BCDA /* Configurations.swift */; };
+		A78C6B39254C77080020BCDA /* YoormiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B38254C77080020BCDA /* YoormiTarget.swift */; };
 		A7BA327524E57D5400DC485E /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327424E57D5400DC485E /* CustomImagePicker.swift */; };
 		A7BA327824E5A1D000DC485E /* CreateAdInfoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327724E5A1D000DC485E /* CreateAdInfoCollectionView.swift */; };
 		A7BA327A24E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327924E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift */; };
@@ -331,6 +333,8 @@
 		A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowController.swift; sourceTree = "<group>"; };
 		A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OldRegsitrationControllerb .swift"; sourceTree = "<group>"; };
 		A77021562407EC9C005E6C4A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A78C6B08254C64AA0020BCDA /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
+		A78C6B38254C77080020BCDA /* YoormiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoormiTarget.swift; sourceTree = "<group>"; };
 		A7BA327424E57D5400DC485E /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
 		A7BA327724E5A1D000DC485E /* CreateAdInfoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdInfoCollectionView.swift; sourceTree = "<group>"; };
 		A7BA327924E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -936,6 +940,14 @@
 			path = FlowController;
 			sourceTree = "<group>";
 		};
+		A78C6B37254C76F50020BCDA /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				A78C6B38254C77080020BCDA /* YoormiTarget.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		A7BA327324E57D3500DC485E /* CustomImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1056,6 +1068,7 @@
 		A7F3878B2450ADDB009B780E /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A78C6B37254C76F50020BCDA /* Network */,
 				A76C9ED324C5DC3F005828F8 /* FlowController */,
 				A7FFBAB824533AA200CD7B5F /* Helpers */,
 				A7FFBA9E245213A100CD7B5F /* AppRouter */,
@@ -1072,6 +1085,7 @@
 			children = (
 				A7F3878D2450ADF9009B780E /* Images.swift */,
 				A7F3878F2450B97B009B780E /* Colors.swift */,
+				A78C6B08254C64AA0020BCDA /* Configurations.swift */,
 			);
 			path = Constans;
 			sourceTree = "<group>";
@@ -1805,6 +1819,7 @@
 				A74E6D2124DEAE9A00654699 /* AnimalChoosingControl.swift in Sources */,
 				A71F31C224B0FD51001832C0 /* SideMenuTableViewCell.swift in Sources */,
 				A41232788C585BD3C31C250D /* SettingsViewController.swift in Sources */,
+				A78C6B09254C64AA0020BCDA /* Configurations.swift in Sources */,
 				A86E9B192C18A19B212B3BAD /* SettingsModuleInput.swift in Sources */,
 				97A31DD8C63C5DF1E80DBB07 /* SettingsPresenter.swift in Sources */,
 				1EA32F7C73B314BFC6A75862 /* SettingsInteractorInput.swift in Sources */,
@@ -1834,6 +1849,7 @@
 				C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */,
 				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
 				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
+				A78C6B39254C77080020BCDA /* YoormiTarget.swift in Sources */,
 				A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */,
 				A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */,
 				A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */,

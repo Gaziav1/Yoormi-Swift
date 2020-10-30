@@ -35,7 +35,7 @@ class LaunchManager: LaunchManagerProtocol {
 //                flowController = NavigationFlowController(root: .starting, factory: self.factory)
 //            }
             
-            flowController = SideMenuFlowController(factory: self.factory, routerDestination: .cards(nil))
+            flowController = SideMenuFlowController(factory: self.factory, routerDestination: .starting)
             
             observer.onNext(flowController)
             

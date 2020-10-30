@@ -241,8 +241,6 @@ struct R: Rswift.Validatable {
   struct image {
     /// This `R.image.icons` struct is generated, and contains static references to 21 images.
     struct icons {
-      /// Image `Email`.
-      static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/Email")
       /// Image `adoption`.
       static let adoption = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/adoption")
       /// Image `boy`.
@@ -259,6 +257,8 @@ struct R: Rswift.Validatable {
       static let dogChoice = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/dogChoice")
       /// Image `dog`.
       static let dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/dog")
+      /// Image `email`.
+      static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/email")
       /// Image `girl`.
       static let girl = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/girl")
       /// Image `google`.
@@ -283,13 +283,6 @@ struct R: Rswift.Validatable {
       static let top_left_profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/top_left_profile")
       /// Image `top_right_messages`.
       static let top_right_messages = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/top_right_messages")
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "Email", bundle: ..., traitCollection: ...)`
-      static func email(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.icons.email, compatibleWith: traitCollection)
-      }
-      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "adoption", bundle: ..., traitCollection: ...)`
@@ -344,6 +337,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "dogChoice", bundle: ..., traitCollection: ...)`
       static func dogChoice(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.dogChoice, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "email", bundle: ..., traitCollection: ...)`
+      static func email(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.email, compatibleWith: traitCollection)
       }
       #endif
 

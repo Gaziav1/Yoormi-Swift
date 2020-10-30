@@ -8,6 +8,7 @@
 
 import Foundation
 import Swinject
+import Moya
 
 enum Containers {
     case viewControllers
@@ -78,6 +79,7 @@ enum Containers {
             let registrationConfigurator = RegistrationModuleConfigurator()
             registrationConfigurator.firebaseAuthManager = managersContainer.resolve(FirebaseManagerProtocol.self)
             registrationConfigurator.firebaseStrategy = strategiesContainer.resolve(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag)
+            registrationConfigurator.provider = managersContainer.resolve(MoyaProvider<YoormiTarget>.self)
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             registrationConfigurator.appRouter = appRouter
             let controller = registrationConfigurator.configure()
@@ -164,6 +166,10 @@ enum Containers {
             let googleSignInManager = GoogleSignInManager(authManager: firebaseAuth!)
             return googleSignInManager
         })
+        
+        container.register(MoyaProvider<YoormiTarget>.self) { (_)  in
+            return MoyaProvider<YoormiTarget>()
+        }
         
         return container
     }()

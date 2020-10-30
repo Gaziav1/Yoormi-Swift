@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Moya
 
 class RegistrationModuleConfigurator {
 
@@ -15,6 +16,7 @@ class RegistrationModuleConfigurator {
     var firebaseAuthManager: AuthManager!
     var firebaseStrategy: FirebaseSrategiesProtocol!
     var appRouter: AppRouterProtocol!
+    var provider: MoyaProvider<YoormiTarget>!
     
     func configure() -> UIViewController {
 
@@ -30,7 +32,8 @@ class RegistrationModuleConfigurator {
         interactor.firebaseStrategy = firebaseStrategy
         interactor.firebaseAuthManager = firebaseAuthManager
         interactor.output = presenter
-
+        interactor.provider = provider
+        
         presenter.interactor = interactor
         controller.output = presenter
         
