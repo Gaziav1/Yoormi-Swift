@@ -7,9 +7,11 @@
 //
 
 import Moya
+import RxSwift
 
 class RegistrationInteractor {
-
+    
+    private let disposeBag = DisposeBag()
     
     weak var output: RegistrationInteractorOutput!
     var firebaseStrategy: FirebaseSrategiesProtocol!
@@ -21,15 +23,31 @@ class RegistrationInteractor {
 extension RegistrationInteractor: RegistrationInteractorInput {
     
     func authorizateUser(email: String, password: String) {
-        
-        provider.request(.signUp(email: email, password: password)) { (result) in
-            
-            switch result {
-            case .success(let response):
-                print(response.data)
-            case .failure(let error):
-                print(error.localizedDescription)
-            }
-        }
+        provider
+            .requestModel(.signIn(email: email, password: password), User.self)
+            .subscribe({ response in
+                switch response {
+                case .next(let user):
+                    print(user)
+                case .error(let error):
+                    print(error.localizedDescription)
+                default: ()
+                }
+            }).disposed(by: disposeBag)
+    }
+    
+    
+    func signInUser(email: String, password: String) {
+        provider
+            .requestModel(.signIn(email: email, password: password), User.self)
+            .subscribe({ response in
+                switch response {
+                case .next(let user):
+                    print(user)
+                case .error(let error):
+                    print(error.localizedDescription)
+                default: ()
+                }
+            }).disposed(by: disposeBag)
     }
 }

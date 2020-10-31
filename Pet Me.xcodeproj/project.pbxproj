@@ -133,6 +133,8 @@
 		A7BA328124E5A74C00DC485E /* GenderTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA328024E5A74C00DC485E /* GenderTypeCollectionViewCell.swift */; };
 		A7BA328624E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA328524E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift */; };
 		A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCB71524B3895000BA2291 /* SideMenuItem.swift */; };
+		A7BDB2E3254DA039000B04DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDB2E2254DA039000B04DF /* User.swift */; };
+		A7BDB2E8254DA73F000B04DF /* MoyaExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */; };
 		A7D23281249E578600C88077 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D23280249E578600C88077 /* LoginView.swift */; };
 		A7D2328624A0BBBC00C88077 /* CustomSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */; };
 		A7D2328A24A0C0C800C88077 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328924A0C0C800C88077 /* R.generated.swift */; };
@@ -342,6 +344,8 @@
 		A7BA328024E5A74C00DC485E /* GenderTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7BA328524E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdChooseTypeCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7BCB71524B3895000BA2291 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
+		A7BDB2E2254DA039000B04DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaExtentions.swift; sourceTree = "<group>"; };
 		A7D23280249E578600C88077 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A7D23282249F9B0300C88077 /* Pet Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pet Me.entitlements"; sourceTree = "<group>"; };
 		A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignInButton.swift; sourceTree = "<group>"; };
@@ -943,6 +947,7 @@
 		A78C6B37254C76F50020BCDA /* Network */ = {
 			isa = PBXGroup;
 			children = (
+				A7BDB2E6254DA72E000B04DF /* MoyaExtentions */,
 				A78C6B38254C77080020BCDA /* YoormiTarget.swift */,
 			);
 			path = Network;
@@ -973,6 +978,14 @@
 				A7BA328024E5A74C00DC485E /* GenderTypeCollectionViewCell.swift */,
 			);
 			path = GenderTypeCollectionView;
+			sourceTree = "<group>";
+		};
+		A7BDB2E6254DA72E000B04DF /* MoyaExtentions */ = {
+			isa = PBXGroup;
+			children = (
+				A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */,
+			);
+			path = MoyaExtentions;
 			sourceTree = "<group>";
 		};
 		A7CAE88F249CDFF800401C2A /* RegistrationTextField */ = {
@@ -1152,6 +1165,7 @@
 				A7FFBAB42453394000CD7B5F /* Message.swift */,
 				A7FFBAB62453396A00CD7B5F /* Match.swift */,
 				A7BCB71524B3895000BA2291 /* SideMenuItem.swift */,
+				A7BDB2E2254DA039000B04DF /* User.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1811,6 +1825,7 @@
 				A5990DD430B831D161D57D86 /* CardsInteractor.swift in Sources */,
 				303590832F50AFD838CC38A6 /* CardsRouterInput.swift in Sources */,
 				A75D207C24E2FB0C007C4883 /* AddPhotosCollectionViewCell.swift in Sources */,
+				A7BDB2E8254DA73F000B04DF /* MoyaExtentions.swift in Sources */,
 				624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */,
 				F5E419DDD5A5965BF5C660FC /* CardsConfigurator.swift in Sources */,
 				7B3D0CB71B7A5732250E5351 /* SettingsViewInput.swift in Sources */,
@@ -1881,6 +1896,7 @@
 				2CFB388F0C03E2077281D3D8 /* SideMenuViewController.swift in Sources */,
 				A7BA327824E5A1D000DC485E /* CreateAdInfoCollectionView.swift in Sources */,
 				DC1C68E40DA17EE2B898A482 /* SideMenuModuleInput.swift in Sources */,
+				A7BDB2E3254DA039000B04DF /* User.swift in Sources */,
 				AF444B1E5D2F2BAABEB57025 /* SideMenuPresenter.swift in Sources */,
 				5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */,
 				BBE0B585E834001D6A68C2EB /* SideMenuInteractorOutput.swift in Sources */,

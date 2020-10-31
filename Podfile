@@ -23,6 +23,8 @@ target 'Pet Me' do
   pod 'RxCocoa'
   pod 'ImagePicker'
   pod 'Moya'
+  pod "Moya/RxSwift"
+  pod 'ObjectMapper'
   target 'Pet MeTests' do
     inherit! :search_paths
     # Pods for testing

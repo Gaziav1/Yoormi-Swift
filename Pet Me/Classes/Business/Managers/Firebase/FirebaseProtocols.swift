@@ -40,7 +40,7 @@ extension AuthManager {
                 return
             }
     
-            completion(.success(result!.user))
+            //completion(.success(result!.user))
             log.verbose("User \(result!.user.uid) successfully registrated")
         }
     }
@@ -56,7 +56,7 @@ extension AuthManager {
                 return 
             }
             
-            completion(.success(result!.user))
+            //completion(.success(result!.user))
             log.verbose("User registration through credential succeeded - \(result!.user.uid)")
         }
     }

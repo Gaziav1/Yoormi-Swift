@@ -14,6 +14,7 @@ enum YoormiTarget {
     
     //MARK: - Auth
     case signUp(email: String, password: String)
+    case signIn(email: String, password: String)
 }
 
 extension YoormiTarget: TargetType {
@@ -25,16 +26,17 @@ extension YoormiTarget: TargetType {
         switch self {
         case .signUp(_, _):
             return "auth/signup"
+        case .signIn(_, _):
+            return "auth/signin"
         }
     }
     
     var method: Moya.Method {
         switch self {
-        case .signUp(_, _):
+        case .signUp(_, _), .signIn(_, _):
             return .post
         }
     }
-    
     
     var sampleData: Data {
         return Data()
@@ -44,6 +46,8 @@ extension YoormiTarget: TargetType {
         switch self {
         case let .signUp(email, password):
             return .requestParameters(parameters: ["email": email, "password": password, "name": "ObiWanKenobi"], encoding: JSONEncoding.default)
+        case let .signIn(email, password):
+            return .requestParameters(parameters: ["email": email, "password": password], encoding: JSONEncoding.default)
         }
     }
     
