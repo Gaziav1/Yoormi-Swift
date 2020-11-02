@@ -124,6 +124,9 @@
 		A76C9ED724C5F04E005828F8 /* NavigationFlowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */; };
 		A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */; };
 		A77021572407EC9C005E6C4A /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77021562407EC9C005E6C4A /* CustomTextField.swift */; };
+		A77A3F2625503122007A3587 /* ProviderError.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A3F2525503122007A3587 /* ProviderError.swift */; };
+		A77A3F2C255043B5007A3587 /* Responses.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A3F2B255043B5007A3587 /* Responses.swift */; };
+		A77A3F302550581F007A3587 /* MoyaErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77A3F2F2550581F007A3587 /* MoyaErrorHandler.swift */; };
 		A78C6B09254C64AA0020BCDA /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B08254C64AA0020BCDA /* Configurations.swift */; };
 		A78C6B39254C77080020BCDA /* YoormiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B38254C77080020BCDA /* YoormiTarget.swift */; };
 		A7BA327524E57D5400DC485E /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327424E57D5400DC485E /* CustomImagePicker.swift */; };
@@ -335,6 +338,9 @@
 		A76C9ED624C5F04E005828F8 /* NavigationFlowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationFlowController.swift; sourceTree = "<group>"; };
 		A77021542407E6D6005E6C4A /* OldRegsitrationControllerb .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "OldRegsitrationControllerb .swift"; sourceTree = "<group>"; };
 		A77021562407EC9C005E6C4A /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
+		A77A3F2525503122007A3587 /* ProviderError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProviderError.swift; sourceTree = "<group>"; };
+		A77A3F2B255043B5007A3587 /* Responses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Responses.swift; sourceTree = "<group>"; };
+		A77A3F2F2550581F007A3587 /* MoyaErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaErrorHandler.swift; sourceTree = "<group>"; };
 		A78C6B08254C64AA0020BCDA /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		A78C6B38254C77080020BCDA /* YoormiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoormiTarget.swift; sourceTree = "<group>"; };
 		A7BA327424E57D5400DC485E /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
@@ -947,7 +953,7 @@
 		A78C6B37254C76F50020BCDA /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				A7BDB2E6254DA72E000B04DF /* MoyaExtentions */,
+				A7BDB2E6254DA72E000B04DF /* Moya */,
 				A78C6B38254C77080020BCDA /* YoormiTarget.swift */,
 			);
 			path = Network;
@@ -980,12 +986,15 @@
 			path = GenderTypeCollectionView;
 			sourceTree = "<group>";
 		};
-		A7BDB2E6254DA72E000B04DF /* MoyaExtentions */ = {
+		A7BDB2E6254DA72E000B04DF /* Moya */ = {
 			isa = PBXGroup;
 			children = (
 				A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */,
+				A77A3F2525503122007A3587 /* ProviderError.swift */,
+				A77A3F2B255043B5007A3587 /* Responses.swift */,
+				A77A3F2F2550581F007A3587 /* MoyaErrorHandler.swift */,
 			);
-			path = MoyaExtentions;
+			path = Moya;
 			sourceTree = "<group>";
 		};
 		A7CAE88F249CDFF800401C2A /* RegistrationTextField */ = {
@@ -1821,6 +1830,7 @@
 				5B4777ED663CE24FD0ED9E4F /* CardsInteractorInput.swift in Sources */,
 				E6DFCB6B42EB05B38B5F3B23 /* CardsInteractorOutput.swift in Sources */,
 				A74E6D2324DEB37B00654699 /* ControllerWithSideMenu.swift in Sources */,
+				A77A3F2C255043B5007A3587 /* Responses.swift in Sources */,
 				A7FFBA9A2451FE3200CD7B5F /* FirebaseManager.swift in Sources */,
 				A5990DD430B831D161D57D86 /* CardsInteractor.swift in Sources */,
 				303590832F50AFD838CC38A6 /* CardsRouterInput.swift in Sources */,
@@ -1866,6 +1876,7 @@
 				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
 				A78C6B39254C77080020BCDA /* YoormiTarget.swift in Sources */,
 				A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */,
+				A77A3F2625503122007A3587 /* ProviderError.swift in Sources */,
 				A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */,
 				A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */,
 				A756C51324E0629800545D4B /* DetailAdoptionBottomView.swift in Sources */,
@@ -1898,6 +1909,7 @@
 				DC1C68E40DA17EE2B898A482 /* SideMenuModuleInput.swift in Sources */,
 				A7BDB2E3254DA039000B04DF /* User.swift in Sources */,
 				AF444B1E5D2F2BAABEB57025 /* SideMenuPresenter.swift in Sources */,
+				A77A3F302550581F007A3587 /* MoyaErrorHandler.swift in Sources */,
 				5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */,
 				BBE0B585E834001D6A68C2EB /* SideMenuInteractorOutput.swift in Sources */,
 				E049CE6A7521E11B4126C1B8 /* SideMenuInteractor.swift in Sources */,

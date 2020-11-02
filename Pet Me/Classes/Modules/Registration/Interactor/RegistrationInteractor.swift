@@ -29,8 +29,8 @@ extension RegistrationInteractor: RegistrationInteractorInput {
                 switch response {
                 case .next(let user):
                     print(user)
-                case .error(let error):
-                    print(error.localizedDescription)
+                case .error(let error as ProviderError):
+                    print(error.message)
                 default: ()
                 }
             }).disposed(by: disposeBag)
@@ -44,8 +44,8 @@ extension RegistrationInteractor: RegistrationInteractorInput {
                 switch response {
                 case .next(let user):
                     print(user)
-                case .error(let error):
-                    print(error.localizedDescription)
+                case .error(let error as ProviderError):
+                    print(error.message)
                 default: ()
                 }
             }).disposed(by: disposeBag)
