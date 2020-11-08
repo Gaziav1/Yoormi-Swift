@@ -17,6 +17,11 @@ class RegistrationPresenter: RegistrationModuleInput {
 
 //MARK: - RegistrationViewOutput
 extension RegistrationPresenter: RegistrationViewOutput {
+    
+    func handlePhoneAuth(phone: String) {
+        interactor.authorizateUser(throughPhone: phone)
+    }
+    
     func engageAuthorizathion(withEmail email: String, andPassword password: String) {
         interactor.authorizateUser(email: email, password: password)
     }
@@ -28,6 +33,14 @@ extension RegistrationPresenter: RegistrationViewOutput {
 
 //MARK: - RegistrationInteractorOutput
 extension RegistrationPresenter: RegistrationInteractorOutput {
+    func phoneWillRecieveCode() {
+        view.showTextFieldForCode()
+    }
+    
+    func phoneWillNotRecieveCode() {
+        view.showPhoneError()
+    }
+    
     func registrationSuccess() {
         print("success")
     }

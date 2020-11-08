@@ -109,6 +109,7 @@ enum Containers {
             let configurator = SideMenuModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             configurator.appRouter = appRouter
+            configurator.authTokenManager = managersContainer.resolve(AuthTokenManagerProtocol.self)
             let controller = configurator.configure()
             return controller
         }
@@ -135,6 +136,11 @@ enum Containers {
         container.register(LaunchManagerProtocol.self) { (_) in
             let launchManager = LaunchManager(factory: viewControllersContainer)
             return launchManager
+        }
+        
+        container.register(AuthTokenManagerProtocol.self) { (_) in
+            let authTokenManager = AuthTokenManager()
+            return authTokenManager
         }
         
         container.register(AppRouterProtocol.self, factory: { (_, flow: FlowController?) in

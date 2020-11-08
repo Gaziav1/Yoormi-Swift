@@ -12,6 +12,12 @@ class SideMenuViewController: UIViewController {
     
     var output: SideMenuViewOutput!
 
+    private var items = [SideMenuItems]() {
+        didSet {
+            optionsTableView.reloadData()
+        }
+    }
+    
     private let optionsTableView: UITableView = {
        let tableView = UITableView()
         tableView.backgroundColor = .clear
@@ -70,7 +76,7 @@ class SideMenuViewController: UIViewController {
                 
         overallStack.snp.makeConstraints({
             $0.top.bottom.equalTo(view.safeAreaLayoutGuide).inset(30)
-            $0.leading.equalToSuperview()
+            $0.leading.equalToSuperview().inset(-10)
             $0.width.equalTo(265)
         })
     }
@@ -85,18 +91,23 @@ extension SideMenuViewController: SideMenuViewInput {
         optionsTableView.dataSource = self
         setupAvatar()
     }
+    
+    
+    func setItems(items: [SideMenuItems]) {
+        self.items = items
+    }
 }
 
 
 //MARK: TableViewDelegate & DataSource
 extension SideMenuViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return output.giveData().count
+        return items.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SideMenuTableViewCell = tableView.dequeueReusableCell(forIndexPath: indexPath)
-        cell.setup(withItem: output.giveData()[indexPath.row])
+        cell.setup(withItem: items[indexPath.row])
         return cell
     }
     

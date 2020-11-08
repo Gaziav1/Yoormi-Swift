@@ -13,6 +13,7 @@ class SideMenuModuleConfigurator {
     static let tag = "SideMenu"
     
     var appRouter: AppRouterProtocol!
+    var authTokenManager: AuthTokenManagerProtocol!
     
     func configure() -> UIViewController {
 
@@ -23,10 +24,10 @@ class SideMenuModuleConfigurator {
         router.appRouter = appRouter
         presenter.view = viewController
         presenter.router = router
-
+        
         let interactor = SideMenuInteractor()
         interactor.output = presenter
-
+        interactor.authTokenManager = authTokenManager
         presenter.interactor = interactor
         viewController.output = presenter
         

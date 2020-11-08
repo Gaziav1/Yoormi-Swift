@@ -7,8 +7,6 @@
 //
 
 protocol SideMenuViewOutput {
-
-    func giveData() -> [SideMenuItems]
     func viewIsReady()
     func didSelectRow(at index: Int)
 }

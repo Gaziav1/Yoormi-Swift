@@ -6,8 +6,18 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
-class SideMenuInteractor: SideMenuInteractorInput {
+class SideMenuInteractor  {
 
     weak var output: SideMenuInteractorOutput!
+    var authTokenManager: AuthTokenManagerProtocol!
 
+}
+
+
+//MARK: - SideMenuInteractorInput
+
+extension SideMenuInteractor: SideMenuInteractorInput {
+    func checkForAuthorization() {
+        authTokenManager.isAuthenticated() ? output.defineItemsForAuthUser() : output.defineItemsForNotAuthUser()
+    }
 }

@@ -15,7 +15,7 @@ struct ProviderError: Swift.Error, CustomStringConvertible {
     var status: Int
 
     var description: String {
-        return "status:\(status) | title:\(title) | message:\(message) "
+        return "status: \(status) | title: \(title) | message: \(message) "
     }
 }
 

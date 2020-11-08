@@ -7,6 +7,7 @@
 //
 
 protocol RegistrationViewInput: class {
-
+    func showTextFieldForCode()
+    func showPhoneError()
     func setupInitialState()
 }

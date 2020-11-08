@@ -50,4 +50,19 @@ extension RegistrationInteractor: RegistrationInteractorInput {
                 }
             }).disposed(by: disposeBag)
     }
+    
+    
+    func authorizateUser(throughPhone phone: String) {
+        provider
+            .requestModel(.phoneSignUp(phone: phone), Phone.self)
+            .subscribe({ [weak self] response in
+                switch response {
+                case .next(let phone):
+                    self?.output.phoneWillRecieveCode()
+                case .error(let error as ProviderError):
+                    self?.output.phoneWillNotRecieveCode()
+                default: ()
+                }
+            }).disposed(by: disposeBag)
+    }
 }

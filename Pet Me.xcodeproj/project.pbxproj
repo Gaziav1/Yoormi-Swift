@@ -77,6 +77,7 @@
 		A348A52EF9B827D2AA575B06 /* AdoptionDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B3DA94F94CB860BFE0FD3 /* AdoptionDetailRouter.swift */; };
 		A41232788C585BD3C31C250D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */; };
 		A5990DD430B831D161D57D86 /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52149797422F03CA114C17BD /* CardsInteractor.swift */; };
+		A7011BF225542DAB004A8F91 /* AuthTokenManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7011BF125542DAB004A8F91 /* AuthTokenManager.swift */; };
 		A70A8826249CF6BF0094F231 /* UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A8825249CF6BF0094F231 /* UI.swift */; };
 		A70A8828249CFCED0094F231 /* RegistrationTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A70A8827249CFCED0094F231 /* RegistrationTextField.swift */; };
 		A71274E424409D83004F0945 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274E324409D83004F0945 /* GradientButton.swift */; };
@@ -138,6 +139,7 @@
 		A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BCB71524B3895000BA2291 /* SideMenuItem.swift */; };
 		A7BDB2E3254DA039000B04DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDB2E2254DA039000B04DF /* User.swift */; };
 		A7BDB2E8254DA73F000B04DF /* MoyaExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */; };
+		A7C7996B25586A6400F69D70 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C7996A25586A6400F69D70 /* Phone.swift */; };
 		A7D23281249E578600C88077 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D23280249E578600C88077 /* LoginView.swift */; };
 		A7D2328624A0BBBC00C88077 /* CustomSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */; };
 		A7D2328A24A0C0C800C88077 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328924A0C0C800C88077 /* R.generated.swift */; };
@@ -291,6 +293,7 @@
 		A1FBFCBC52D156BD0AD62792 /* MessagesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
 		A2229FBD085F3D5638721E3B /* CreateAdRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdRouterInput.swift; sourceTree = "<group>"; };
 		A3CBC3999F90E96FABB075C0 /* MyAdsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsViewOutput.swift; sourceTree = "<group>"; };
+		A7011BF125542DAB004A8F91 /* AuthTokenManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTokenManager.swift; sourceTree = "<group>"; };
 		A70A8825249CF6BF0094F231 /* UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UI.swift; sourceTree = "<group>"; };
 		A70A8827249CFCED0094F231 /* RegistrationTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationTextField.swift; sourceTree = "<group>"; };
 		A71274E324409D83004F0945 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
@@ -352,6 +355,7 @@
 		A7BCB71524B3895000BA2291 /* SideMenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuItem.swift; sourceTree = "<group>"; };
 		A7BDB2E2254DA039000B04DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaExtentions.swift; sourceTree = "<group>"; };
+		A7C7996A25586A6400F69D70 /* Phone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
 		A7D23280249E578600C88077 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A7D23282249F9B0300C88077 /* Pet Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pet Me.entitlements"; sourceTree = "<group>"; };
 		A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignInButton.swift; sourceTree = "<group>"; };
@@ -1145,6 +1149,7 @@
 				A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */,
 				A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */,
 				A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */,
+				A7011BF125542DAB004A8F91 /* AuthTokenManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -1175,6 +1180,7 @@
 				A7FFBAB62453396A00CD7B5F /* Match.swift */,
 				A7BCB71524B3895000BA2291 /* SideMenuItem.swift */,
 				A7BDB2E2254DA039000B04DF /* User.swift */,
+				A7C7996A25586A6400F69D70 /* Phone.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1788,6 +1794,7 @@
 				A739DEF42409215500FEC06C /* RegistrationViewModel.swift in Sources */,
 				A7FFBA9D245207D300CD7B5F /* FirebaseProtocols.swift in Sources */,
 				A7FFBABA24533ABA00CD7B5F /* Shadow.swift in Sources */,
+				A7011BF225542DAB004A8F91 /* AuthTokenManager.swift in Sources */,
 				A7E53892244B8FBF007DA006 /* RecentMessagesCollectionViewCell.swift in Sources */,
 				A73830122410FFB200D0195B /* Bindable.swift in Sources */,
 				A7E0879624A390F3000B0B6A /* GoogleSignInManager.swift in Sources */,
@@ -1935,6 +1942,7 @@
 				0FC1D92A6BB63DB5D7BBC214 /* AdoptionDetailPresenter.swift in Sources */,
 				265302C5D4B8FEB43F285547 /* AdoptionDetailInteractorInput.swift in Sources */,
 				C8236A017826CCE5361A2239 /* AdoptionDetailInteractorOutput.swift in Sources */,
+				A7C7996B25586A6400F69D70 /* Phone.swift in Sources */,
 				79AB2A29C90849324D206B56 /* AdoptionDetailInteractor.swift in Sources */,
 				BA521927A68BFBA376E03561 /* AdoptionDetailRouterInput.swift in Sources */,
 				A75D207F24E30484007C4883 /* AddPhotosCollectionView.swift in Sources */,

@@ -18,13 +18,12 @@ target 'Pet Me' do
   pod 'GoogleSignIn'
   pod 'R.swift'
   pod 'lottie-ios'	
-  pod 'ObjectMapper'
   pod 'RxSwift'
   pod 'RxCocoa'
   pod 'ImagePicker'
   pod 'Moya'
   pod "Moya/RxSwift"
-  pod 'ObjectMapper'
+  pod "KeychainAccess"	
   target 'Pet MeTests' do
     inherit! :search_paths
     # Pods for testing

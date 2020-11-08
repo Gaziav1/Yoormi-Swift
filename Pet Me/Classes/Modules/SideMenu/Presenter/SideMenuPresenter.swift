@@ -15,20 +15,18 @@ enum SideMenuTittles: CaseIterable {
     case profile
 }
 
-
-class SideMenuPresenter: SideMenuModuleInput, SideMenuInteractorOutput {
+class SideMenuPresenter {
     
-    struct SideMenuElement {
+    private struct SideMenuElement {
         let sideMenuTitle: SideMenuTittles
         let sideMenuItem: SideMenuItems
     }
-    
     
     weak var view: SideMenuViewInput!
     var interactor: SideMenuInteractorInput!
     var router: SideMenuRouterInput!
 
-    private let sideMenuItems: [SideMenuElement] = [
+    private let sideMenuItemsAuth: [SideMenuElement] = [
         SideMenuElement(sideMenuTitle: .myAnnouncements, sideMenuItem: SideMenuItems(title: "Мои объявления", icon: "square.stack.3d.down.right")),
         SideMenuElement(sideMenuTitle: .findPet, sideMenuItem: SideMenuItems(title: "Найти питомца", icon: "magnifyingglass")),
         SideMenuElement(sideMenuTitle: .findPairToPet, sideMenuItem: SideMenuItems(title: "Найти пару питомцу", icon: "suit.heart")),
@@ -37,11 +35,19 @@ class SideMenuPresenter: SideMenuModuleInput, SideMenuInteractorOutput {
         SideMenuElement(sideMenuTitle: .profile, sideMenuItem:  SideMenuItems(title: "Профиль", icon: "person"))
     ]
     
+    private let sideMenuItemsNoAuth: [SideMenuElement] = [
+        SideMenuElement(sideMenuTitle: .findPet, sideMenuItem: SideMenuItems(title: "Найти питомца", icon: "magnifyingglass")),
+        SideMenuElement(sideMenuTitle: .profile, sideMenuItem:  SideMenuItems(title: "Авторизоваться", icon: "person"))
+    ]
+    
+    private var sideMenuItems = [SideMenuElement]()
+    
 }
 
 //MARK: -SideMenuViewOutput
 extension SideMenuPresenter: SideMenuViewOutput {
     func viewIsReady() {
+        interactor.checkForAuthorization()
         view.setupInitialState()
     }
     
@@ -62,9 +68,24 @@ extension SideMenuPresenter: SideMenuViewOutput {
         case .messages:
             router.performTransition(to: .messages)
         case .profile:
-            router.performTransition(to: .settings)
+            router.performTransition(to: .registration)
         case .findPairToPet:
             router.performTransition(to: .cards(nil))
         }
+    }
+}
+
+
+//MARK: - SideMenuInteractorOutput
+
+extension SideMenuPresenter: SideMenuInteractorOutput {
+    func defineItemsForAuthUser() {
+        view.setItems(items: sideMenuItemsAuth.map({ $0.sideMenuItem }))
+        sideMenuItems = sideMenuItemsAuth
+    }
+    
+    func defineItemsForNotAuthUser() {
+        view.setItems(items: sideMenuItemsNoAuth.map({ $0.sideMenuItem }))
+        sideMenuItems = sideMenuItemsNoAuth
     }
 }

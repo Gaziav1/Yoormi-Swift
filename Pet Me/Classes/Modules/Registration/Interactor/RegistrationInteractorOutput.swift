@@ -9,6 +9,8 @@
 import Foundation
 
 protocol RegistrationInteractorOutput: class {
+    func phoneWillRecieveCode()
+    func phoneWillNotRecieveCode()
     func registrationSuccess()
     func registrationFailure()
 }

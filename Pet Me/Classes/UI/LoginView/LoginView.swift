@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 protocol LoginViewDelegate: class {
     func didTapLoginButton(email: String, password: String)
@@ -16,15 +17,27 @@ class LoginView: UIView {
     
     weak var delegate: LoginViewDelegate?
     
+    private let publishSubject = PublishSubject<String>()
+    
+    var phoneTextFieldObservable: Observable<String> {
+        return publishSubject.asObservable()
+    }
+    
+    private let disposeBag = DisposeBag()
+    
     private let emailTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Email или телефон")
-        
+        let tf = RegistrationTextField(text: "Телефон")
+        tf.snp.makeConstraints({ $0.height.equalTo(70) })
         return tf
     }()
     
-    private let passwordTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Пароль")
-        tf.textField.textContentType = .password
+    private let codeTextField: RegistrationTextField = {
+        let tf = RegistrationTextField(text: "Код")
+        tf.isHidden = true
+        tf.alpha = 0
+        tf.textField.keyboardType = .numberPad
+        tf.textField.returnKeyType = .done
+        tf.textField.textContentType = .oneTimeCode
         return tf
     }()
     
@@ -35,19 +48,7 @@ class LoginView: UIView {
         stackView.spacing = 5
         return stackView
     }()
-    
-    private let registrationLabel: UILabel = {
-        let label = UILabel()
-        let mutableString = NSMutableAttributedString()
-        let string = NSAttributedString(string: "Впервые здесь? ", attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
-        let registrationString = NSAttributedString(string: "Зарегистрироваться", attributes: [NSAttributedString.Key.foregroundColor: UIColor.link])
-        mutableString.append(string)
-        mutableString.append(registrationString)
-        
-        label.attributedText = mutableString
-        return label
-    }()
-    
+
     private let loginButton: GradientButton = {
         let button = GradientButton()
         button.layer.cornerRadius = 10
@@ -68,46 +69,44 @@ class LoginView: UIView {
     }
     
     private func setupUI() {
-        [emailTextField, passwordTextField].forEach({ textFieldsStack.addArrangedSubview($0) })
-        
+
+        textFieldsStack.addArrangedSubview(emailTextField)
+        textFieldsStack.addArrangedSubview(codeTextField)
         emailTextField.textField.delegate = self
-        passwordTextField.textField.delegate = self
 
         addSubview(textFieldsStack)
         
         textFieldsStack.snp.makeConstraints({
             $0.leading.trailing.equalToSuperview()
             $0.top.equalToSuperview()
-            $0.height.equalTo(140)
         })
         
-        setupLabel()
         setupLoginButton()
     }
     
-    private func setupLabel() {
-        addSubview(registrationLabel)
-        registrationLabel.snp.makeConstraints({
-            $0.top.equalTo(textFieldsStack.snp.bottom).offset(5)
-            $0.leading.equalTo(textFieldsStack).inset(5)
-        })
+    func animateCodeTextFieldIn() {
+        guard codeTextField.isHidden else { return }
+        codeTextField.isHidden = false
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: ({ [unowned self] in
+            self.codeTextField.alpha = 1
+            self.loginButton.transform = .init(translationX: self.loginButton.frame.origin.x, y: self.emailTextField.frame.height)
+        }))
     }
     
+    
     private func setupLoginButton() {
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
         addSubview(loginButton)
         loginButton.snp.makeConstraints({
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(emailTextField.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(45)
         })
-    }
-    
-    
-    @objc private func loginButtonTapped() {
-        guard let email = emailTextField.textField.text, let password = passwordTextField.textField.text else { return }
         
-        delegate?.didTapLoginButton(email: email, password: password)
+        loginButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] observer in
+            if let text = self?.emailTextField.textField.text {
+                self?.publishSubject.onNext(text)
+            }
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -115,14 +114,9 @@ extension LoginView: UITextFieldDelegate {
     func textFieldDidChangeSelection(_ textField: UITextField) {
         guard let text = textField.text else { return }
         
-        if textField == emailTextField.textField {
-            emailTextField.isValid(text.isValidEmail)
-        } else {
-            passwordTextField.isValid(text.isValidPhone)
-        }
-        
+        emailTextField.isValid(text.isValidPhone)
+
     }
-    
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         

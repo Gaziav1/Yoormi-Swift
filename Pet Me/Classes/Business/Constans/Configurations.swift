@@ -24,7 +24,7 @@ enum Configurations {
     var baseURL: URL {
         switch self {
         case .release:
-            guard let url = URL(string: "http://localhost:3000") else { fatalError("Cannot access debug baseURL") }
+            guard let url = URL(string: "http://localhost:3000") else { fatalError("Cannot access release baseURL") }
             return url
         case let _:
             #warning("Change later")

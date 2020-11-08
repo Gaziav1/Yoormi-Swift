@@ -176,7 +176,7 @@ class SettingsTableViewController: UITableViewController {
             }
             
             guard let dictionary = snapshot?.data() else { return }
-            self.user = AppUser(JSON: dictionary)
+            //self.user = AppUser(JSON: dictionary)
             self.loadUserPhotos()
             self.tableView.reloadData()
         }

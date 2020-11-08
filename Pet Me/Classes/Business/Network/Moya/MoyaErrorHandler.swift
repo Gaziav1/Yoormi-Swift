@@ -14,7 +14,9 @@ class MoyaErrorHandler {
     func map(_ error: Swift.Error) -> ProviderError {
         switch error {
         case let error as MoyaError:
-            return mapMoyaError(error)
+            let providerError = mapMoyaError(error)
+            log.verbose(providerError)
+            return providerError
         default:
             return ProviderError(title: "Неизвестная ошибка", message: "Пожалуйста, попытайтесь еще раз", status: 0)
         }
