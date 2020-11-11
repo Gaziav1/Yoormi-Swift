@@ -8,4 +8,9 @@
 
 class RegistrationRouter: RegistrationRouterInput {
     var appRouter: AppRouterProtocol!
+    
+    
+    func openSideMenu() {
+        appRouter.openSideMenu()
+    }
 }

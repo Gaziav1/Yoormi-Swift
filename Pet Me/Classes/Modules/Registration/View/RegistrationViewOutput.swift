@@ -10,5 +10,6 @@ protocol RegistrationViewOutput {
 
     func viewIsReady()
     func handlePhoneAuth(phone: String)
+    func openSideMenu()
     func engageAuthorizathion(withEmail email: String, andPassword password: String)
 }

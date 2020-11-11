@@ -9,5 +9,5 @@
 import Foundation
 
 protocol RegistrationRouterInput {
-
+    func openSideMenu()
 }

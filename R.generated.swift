@@ -239,7 +239,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// This `R.image.icons` struct is generated, and contains static references to 21 images.
+    /// This `R.image.icons` struct is generated, and contains static references to 23 images.
     struct icons {
       /// Image `adoption`.
       static let adoption = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/adoption")
@@ -275,8 +275,12 @@ struct R: Rswift.Validatable {
       static let like_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/like_circle")
       /// Image `marker`.
       static let marker = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/marker")
+      /// Image `password`.
+      static let password = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/password")
       /// Image `refresh_circle`.
       static let refresh_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/refresh_circle")
+      /// Image `sms`.
+      static let sms = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/sms")
       /// Image `time`.
       static let time = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/time")
       /// Image `top_left_profile`.
@@ -404,9 +408,23 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "password", bundle: ..., traitCollection: ...)`
+      static func password(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.password, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "refresh_circle", bundle: ..., traitCollection: ...)`
       static func refresh_circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.refresh_circle, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "sms", bundle: ..., traitCollection: ...)`
+      static func sms(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.sms, compatibleWith: traitCollection)
       }
       #endif
 

@@ -8,6 +8,10 @@
 
 import UIKit
 
+func delay(seconds: Double, completion: @escaping ()-> Void) {
+  DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
+}
+
 extension UILabel {
 
     func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
@@ -54,4 +58,11 @@ extension UIView {
         self.autoresizingMask = [.flexibleHeight, .flexibleWidth]
     }
     
+}
+
+extension UILabel {
+    convenience init(_ text: String, frame: CGRect = .zero) {
+        self.init(frame: frame)
+        self.text = text
+    }
 }

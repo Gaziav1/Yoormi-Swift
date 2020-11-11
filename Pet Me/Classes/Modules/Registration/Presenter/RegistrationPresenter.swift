@@ -22,6 +22,10 @@ extension RegistrationPresenter: RegistrationViewOutput {
         interactor.authorizateUser(throughPhone: phone)
     }
     
+    func openSideMenu() {
+        router.openSideMenu()
+    }
+    
     func engageAuthorizathion(withEmail email: String, andPassword password: String) {
         interactor.authorizateUser(email: email, password: password)
     }

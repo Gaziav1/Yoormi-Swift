@@ -26,13 +26,13 @@ class LoginView: UIView {
     private let disposeBag = DisposeBag()
     
     private let emailTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Телефон")
+        let tf = RegistrationTextField(text: "Номер")
         tf.snp.makeConstraints({ $0.height.equalTo(70) })
         return tf
     }()
     
     private let codeTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Код")
+        let tf = RegistrationTextField(text: "Подтвердите код")
         tf.isHidden = true
         tf.alpha = 0
         tf.textField.keyboardType = .numberPad
@@ -87,12 +87,11 @@ class LoginView: UIView {
     func animateCodeTextFieldIn() {
         guard codeTextField.isHidden else { return }
         codeTextField.isHidden = false
-        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: ({ [unowned self] in
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: ({ [unowned self] in
             self.codeTextField.alpha = 1
             self.loginButton.transform = .init(translationX: self.loginButton.frame.origin.x, y: self.emailTextField.frame.height)
         }))
     }
-    
     
     private func setupLoginButton() {
         addSubview(loginButton)
