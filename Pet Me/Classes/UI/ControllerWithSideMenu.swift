@@ -21,6 +21,7 @@ class ControllerWithSideMenu: UIViewController {
     
     @objc private func rightBarButtonAction() {
         sideMenuAction()
+    
     }
     
     func setupNavigationBar() {

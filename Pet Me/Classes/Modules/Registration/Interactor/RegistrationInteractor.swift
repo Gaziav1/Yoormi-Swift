@@ -17,53 +17,38 @@ class RegistrationInteractor {
     var firebaseStrategy: FirebaseSrategiesProtocol!
     var firebaseAuthManager: AuthManager!
     var provider: MoyaProvider<YoormiTarget>!
+
 }
 
 //MARK: - RegistrationInteractorInput
 extension RegistrationInteractor: RegistrationInteractorInput {
     
-    func authorizateUser(email: String, password: String) {
-        provider
-            .requestModel(.signIn(email: email, password: password), User.self)
-            .subscribe({ response in
-                switch response {
-                case .next(let user):
-                    print(user)
-                case .error(let error as ProviderError):
-                    print(error.message)
-                default: ()
-                }
-            }).disposed(by: disposeBag)
-    }
-    
-    
-    func signInUser(email: String, password: String) {
-        provider
-            .requestModel(.signIn(email: email, password: password), User.self)
-            .subscribe({ response in
-                switch response {
-                case .next(let user):
-                    print(user)
-                case .error(let error as ProviderError):
-                    print(error.message)
-                default: ()
-                }
-            }).disposed(by: disposeBag)
-    }
-    
-    
     func authorizateUser(throughPhone phone: String) {
-        output.phoneWillRecieveCode()
-//        provider
-//            .requestModel(.phoneSignUp(phone: phone), Phone.self)
-//            .subscribe({ [weak self] response in
-//                switch response {
-//                case .next(let phone):
-//                    self?.output.phoneWillRecieveCode()
-//                case .error(let error as ProviderError):
-//                    self?.output.phoneWillNotRecieveCode()
-//                default: ()
-//                }
-//            }).disposed(by: disposeBag)
+        provider
+            .requestModel(.phoneSignUp(phone: phone), Phone.self)
+            .subscribe({ [weak self] response in
+                switch response {
+                case .next(let _):
+                    self?.output.phoneWillRecieveCode()
+                case .error(let error as ProviderError):
+                    self?.output.phoneWillNotRecieveCode()
+                default: ()
+                }
+            }).disposed(by: disposeBag)
+    }
+    
+    func confirmUser(phone: String, withCode code: String) {
+        provider
+            .requestModel(.phoneCodeCofirmation(code: code, phone: phone), PhoneAuthTokenResponse.self)
+            .subscribe({ response in
+                switch response {
+                case .next(let response):
+                    print(response.token)
+                    self.output.confirmationDidSuccess(user: response.user)
+                case .error(let error as ProviderError):
+                    self.output.confirmationDidFail(withError: error)
+                default: ()
+                }
+            }).disposed(by: disposeBag)
     }
 }

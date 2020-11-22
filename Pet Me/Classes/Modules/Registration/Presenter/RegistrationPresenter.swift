@@ -18,18 +18,21 @@ class RegistrationPresenter: RegistrationModuleInput {
 //MARK: - RegistrationViewOutput
 extension RegistrationPresenter: RegistrationViewOutput {
     
-    func handlePhoneAuth(phone: String) {
-        interactor.authorizateUser(throughPhone: phone)
+    func handlePhoneAuth(withData data: [String: String]) {
+        
+        guard let phone = data["phone"] else { return }
+       
+        if let code = data["code"] {
+            interactor.confirmUser(phone: phone, withCode: code)
+        } else {
+            interactor.authorizateUser(throughPhone: phone)
+        }
     }
     
     func openSideMenu() {
         router.openSideMenu()
     }
-    
-    func engageAuthorizathion(withEmail email: String, andPassword password: String) {
-        interactor.authorizateUser(email: email, password: password)
-    }
-    
+
     func viewIsReady() {
         view.setupInitialState()
     }
@@ -37,19 +40,20 @@ extension RegistrationPresenter: RegistrationViewOutput {
 
 //MARK: - RegistrationInteractorOutput
 extension RegistrationPresenter: RegistrationInteractorOutput {
+    func confirmationDidSuccess(user: User) {
+        
+        view.showTextFieldForCode()
+    }
+    
+    func confirmationDidFail(withError: ProviderError) {
+        view.showTextFieldForCode()
+    }
+    
     func phoneWillRecieveCode() {
         view.showTextFieldForCode()
     }
     
     func phoneWillNotRecieveCode() {
         view.showPhoneError()
-    }
-    
-    func registrationSuccess() {
-        print("success")
-    }
-    
-    func registrationFailure() {
-        print("failure")
     }
 }

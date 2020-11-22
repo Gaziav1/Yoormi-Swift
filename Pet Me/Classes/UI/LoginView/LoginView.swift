@@ -9,17 +9,11 @@
 import UIKit
 import RxSwift
 
-protocol LoginViewDelegate: class {
-    func didTapLoginButton(email: String, password: String)
-}
-
 class LoginView: UIView {
     
-    weak var delegate: LoginViewDelegate?
+    private let publishSubject = PublishSubject<[String: String]>()
     
-    private let publishSubject = PublishSubject<String>()
-    
-    var phoneTextFieldObservable: Observable<String> {
+    var phoneTextFieldObservable: Observable<[String: String]> {
         return publishSubject.asObservable()
     }
     
@@ -27,6 +21,8 @@ class LoginView: UIView {
     
     private let emailTextField: RegistrationTextField = {
         let tf = RegistrationTextField(text: "Номер")
+        tf.textField.autocorrectionType = .no
+        tf.textField.textContentType = .telephoneNumber
         tf.snp.makeConstraints({ $0.height.equalTo(70) })
         return tf
     }()
@@ -49,14 +45,7 @@ class LoginView: UIView {
         return stackView
     }()
 
-    private let loginButton: GradientButton = {
-        let button = GradientButton()
-        button.layer.cornerRadius = 10
-        button.setTitle("Войти", for: .normal)
-        button.clipsToBounds = true
-        button.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        return button
-    }()
+    private let phoneConfirmButton = UIButton.createDisabledButton(withTitle: "Запросить код")
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -68,56 +57,105 @@ class LoginView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    deinit {
+        
+    }
+    
     private func setupUI() {
-
-        textFieldsStack.addArrangedSubview(emailTextField)
-        textFieldsStack.addArrangedSubview(codeTextField)
+        let acessoryView = UIView()
+        acessoryView.backgroundColor = .clear
+        acessoryView.addSubview(phoneConfirmButton)
+        acessoryView.frame = .init(x: 0, y: 0, width: emailTextField.frame.width, height: 60)
+        
+        phoneConfirmButton.snp.makeConstraints({
+            $0.edges.equalToSuperview().inset(10)
+        })
+    
         emailTextField.textField.delegate = self
-
+        codeTextField.textField.delegate = self
+        
         addSubview(textFieldsStack)
+        
+        [emailTextField, codeTextField].forEach({
+            textFieldsStack.addArrangedSubview($0)
+            $0.textField.inputAccessoryView = acessoryView
+        })
         
         textFieldsStack.snp.makeConstraints({
             $0.leading.trailing.equalToSuperview()
             $0.top.equalToSuperview()
         })
-        
+        backgroundColor = .clear
         setupLoginButton()
     }
     
-    func animateCodeTextFieldIn() {
-        guard codeTextField.isHidden else { return }
-        codeTextField.isHidden = false
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: ({ [unowned self] in
-            self.codeTextField.alpha = 1
-            self.loginButton.transform = .init(translationX: self.loginButton.frame.origin.x, y: self.emailTextField.frame.height)
-        }))
+    func animateCodeTextField(hide: Bool) {
+        if !hide {
+            codeTextField.isHidden = false
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            self.codeTextField.alpha = hide ? 0 : 1
+        }, completion: { _ in
+            if hide {
+                self.codeTextField.isHidden = false
+                self.codeTextField.textField.text = ""
+            }
+        })
     }
     
     private func setupLoginButton() {
-        addSubview(loginButton)
-        loginButton.snp.makeConstraints({
-            $0.top.equalTo(emailTextField.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(45)
-        })
         
-        loginButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] observer in
-            if let text = self?.emailTextField.textField.text {
-                self?.publishSubject.onNext(text)
+        phoneConfirmButton.frame = .init(x: 0, y: 0, width: emailTextField.frame.width - 20, height: 50)
+        
+        phoneConfirmButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] observer in
+            
+            guard let self = self else { return }
+            
+            if let text = self.emailTextField.textField.text, let codeText = self.codeTextField.textField.text {
+                
+                if self.codeTextField.isHidden {
+                    self.publishSubject.onNext(["phone": text])
+                    self.codeTextField.textField.becomeFirstResponder()
+                } else {
+                    self.publishSubject.onNext(["phone": text, "code": codeText])
+                    return
+                }
             }
+            
         }).disposed(by: disposeBag)
     }
 }
 
 extension LoginView: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        guard let text = textField.text else { return }
-        
-        emailTextField.isValid(text.isValidPhone)
-
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return true
     }
     
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         
+        if textField == emailTextField.textField {
+            if !codeTextField.isHidden {
+                animateCodeTextField(hide: true)
+            }
+        }
+        
+        
+        guard let text = textField.text else { return }
+        emailTextField.isValid(text.isValidPhone)
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case codeTextField.textField:
+            phoneConfirmButton.setTitle("Подтвердить код", for: .normal)
+        case emailTextField.textField:
+            phoneConfirmButton.setTitle("Запросить код", for: .normal)
+        default:
+            ()
+        }
+    }
+    
+    
 }

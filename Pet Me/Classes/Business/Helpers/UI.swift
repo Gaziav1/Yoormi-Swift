@@ -7,29 +7,30 @@
 //
 
 import UIKit
+import RxSwift
 
 func delay(seconds: Double, completion: @escaping ()-> Void) {
-  DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
+    DispatchQueue.main.asyncAfter(deadline: .now() + seconds, execute: completion)
 }
 
 extension UILabel {
-
+    
     func setLineSpacing(lineSpacing: CGFloat = 0.0, lineHeightMultiple: CGFloat = 0.0) {
-
+        
         guard let labelText = self.text else { return }
-
+        
         let paragraphStyle = NSMutableParagraphStyle()
         paragraphStyle.lineSpacing = lineSpacing
         paragraphStyle.lineHeightMultiple = lineHeightMultiple
-
+        
         let attributedString:NSMutableAttributedString
         if let labelattributedText = self.attributedText {
             attributedString = NSMutableAttributedString(attributedString: labelattributedText)
         } else {
             attributedString = NSMutableAttributedString(string: labelText)
         }
-
-
+        
+        
         attributedString.addAttribute(NSAttributedString.Key.paragraphStyle, value:paragraphStyle, range:NSMakeRange(0, attributedString.length))
         
         self.attributedText = attributedString
@@ -41,14 +42,14 @@ extension String {
     //validation
     
     var isValidEmail: Bool {
-       let regularExpressionForEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
-       let testEmail = NSPredicate(format:"SELF MATCHES %@", regularExpressionForEmail)
-       return testEmail.evaluate(with: self)
+        let regularExpressionForEmail = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}"
+        let testEmail = NSPredicate(format:"SELF MATCHES %@", regularExpressionForEmail)
+        return testEmail.evaluate(with: self)
     }
     var isValidPhone: Bool {
-       let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
-       let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
-       return testPhone.evaluate(with: self)
+        let regularExpressionForPhone = "^\\d{3}-\\d{3}-\\d{4}$"
+        let testPhone = NSPredicate(format:"SELF MATCHES %@", regularExpressionForPhone)
+        return testPhone.evaluate(with: self)
     }
 }
 
@@ -64,5 +65,40 @@ extension UILabel {
     convenience init(_ text: String, frame: CGRect = .zero) {
         self.init(frame: frame)
         self.text = text
+    }
+}
+
+extension NotificationCenter {
+    //observing on keyboard height
+    func keyboardHeight() -> Observable<CGFloat> {
+        return Observable
+            .from([
+                NotificationCenter.default.rx.notification(UIResponder.keyboardWillShowNotification)
+                    .map { notification -> CGFloat in
+                        (notification.userInfo?[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue)?.cgRectValue.height ?? 0
+                    },
+                NotificationCenter.default.rx.notification(UIResponder.keyboardWillHideNotification)
+                    .map { _ -> CGFloat in
+                        0
+                    }
+            ])
+            .merge()
+    }
+    
+}
+
+
+extension UIButton {
+    static func createDisabledButton(withTitle title: String) -> UIButton {
+        let button = UIButton(type: .system)
+        
+        button.layer.cornerRadius = 5
+        button.backgroundColor = .systemGray4
+        button.setTitleColor(.systemGray5, for: .normal)
+        button.setTitle(title, for: .normal)
+        button.clipsToBounds = true
+        button.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        
+        return button
     }
 }

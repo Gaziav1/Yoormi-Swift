@@ -10,6 +10,5 @@ import Foundation
 
 protocol RegistrationInteractorInput {
   func authorizateUser(throughPhone: String)
-  func authorizateUser(email: String, password: String)
-  func signInUser(email: String, password: String)
+  func confirmUser(phone: String, withCode code: String)
 }

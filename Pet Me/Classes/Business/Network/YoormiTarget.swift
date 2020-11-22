@@ -11,10 +11,7 @@ import Moya
 
 enum YoormiTarget {
     
-    
     //MARK: - Auth
-    case signUp(email: String, password: String)
-    case signIn(email: String, password: String)
     case phoneSignUp(phone: String)
     case phoneCodeCofirmation(code: String, phone: String)
 }
@@ -26,10 +23,6 @@ extension YoormiTarget: TargetType {
     
     var path: String {
         switch self {
-        case .signUp:
-            return "auth/signup"
-        case .signIn:
-            return "auth/signin"
         case .phoneSignUp:
             return "auth/phoneauth"
         case .phoneCodeCofirmation:
@@ -39,7 +32,7 @@ extension YoormiTarget: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .signUp, .signIn, .phoneSignUp, .phoneCodeCofirmation:
+        case .phoneSignUp, .phoneCodeCofirmation:
             return .post
         }
     }
@@ -50,10 +43,6 @@ extension YoormiTarget: TargetType {
     
     var task: Task {
         switch self {
-        case let .signUp(email, password):
-            return .requestParameters(parameters: ["email": email, "password": password, "name": "ObiWanKenobi"], encoding: JSONEncoding.default)
-        case let .signIn(email, password):
-            return .requestParameters(parameters: ["email": email, "password": password], encoding: JSONEncoding.default)
         case let .phoneSignUp(phone):
             return .requestParameters(parameters: ["phone": phone], encoding: JSONEncoding.default)
         case let .phoneCodeCofirmation(code, phone):
