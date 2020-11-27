@@ -1,5 +1,5 @@
 //
-//  Responses.swift
+//  ErrorResponses.swift
 //  Pet Me
 //
 //  Created by Газияв Исхаков on 02.11.2020.

@@ -16,8 +16,9 @@ class RegistrationInteractor {
     weak var output: RegistrationInteractorOutput!
     var firebaseStrategy: FirebaseSrategiesProtocol!
     var firebaseAuthManager: AuthManager!
+    var authTokenManager: AuthTokenManagerProtocol!
     var provider: MoyaProvider<YoormiTarget>!
-
+    
 }
 
 //MARK: - RegistrationInteractorInput
@@ -28,7 +29,7 @@ extension RegistrationInteractor: RegistrationInteractorInput {
             .requestModel(.phoneSignUp(phone: phone), Phone.self)
             .subscribe({ [weak self] response in
                 switch response {
-                case .next(let _):
+                case .next:
                     self?.output.phoneWillRecieveCode()
                 case .error(let error as ProviderError):
                     self?.output.phoneWillNotRecieveCode()
@@ -43,7 +44,7 @@ extension RegistrationInteractor: RegistrationInteractorInput {
             .subscribe({ response in
                 switch response {
                 case .next(let response):
-                    print(response.token)
+                    self.authTokenManager.setJWT(token: response.token)
                     self.output.confirmationDidSuccess(user: response.user)
                 case .error(let error as ProviderError):
                     self.output.confirmationDidFail(withError: error)

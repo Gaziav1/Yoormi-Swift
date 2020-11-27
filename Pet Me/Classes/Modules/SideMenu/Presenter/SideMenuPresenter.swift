@@ -6,6 +6,7 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
+
 enum SideMenuTittles: CaseIterable {
     case myAnnouncements
     case findPet
@@ -47,7 +48,7 @@ class SideMenuPresenter {
 //MARK: -SideMenuViewOutput
 extension SideMenuPresenter: SideMenuViewOutput {
     func viewIsReady() {
-        interactor.checkForAuthorization()
+        interactor.createAuthSubscription()
         view.setupInitialState()
     }
     

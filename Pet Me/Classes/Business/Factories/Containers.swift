@@ -80,6 +80,7 @@ enum Containers {
             registrationConfigurator.firebaseAuthManager = managersContainer.resolve(FirebaseManagerProtocol.self)
             registrationConfigurator.firebaseStrategy = strategiesContainer.resolve(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag)
             registrationConfigurator.provider = managersContainer.resolve(MoyaProvider<YoormiTarget>.self)
+            registrationConfigurator.authTokenManager = managersContainer.resolve(AuthTokenManagerProtocol.self)
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             registrationConfigurator.appRouter = appRouter
             let controller = registrationConfigurator.configure()
@@ -174,7 +175,14 @@ enum Containers {
         })
         
         container.register(MoyaProvider<YoormiTarget>.self) { (_)  in
-            return MoyaProvider<YoormiTarget>()
+            let authTokenManager = managers.container.resolve(AuthTokenManagerProtocol.self)
+            guard let token = authTokenManager?.apiToken else { return MoyaProvider<YoormiTarget>() }
+            
+            let endpointClosure = { (target: YoormiTarget) -> Endpoint in
+                let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
+                return defaultEndpoint.adding(newHTTPHeaderFields: [token: "Bearer \(token)"])
+            }
+            return MoyaProvider<YoormiTarget>(endpointClosure: endpointClosure)
         }
         
         return container

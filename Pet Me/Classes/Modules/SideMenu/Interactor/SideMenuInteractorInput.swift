@@ -9,5 +9,5 @@
 import Foundation
 
 protocol SideMenuInteractorInput {
-    func checkForAuthorization()
+    func createAuthSubscription()
 }

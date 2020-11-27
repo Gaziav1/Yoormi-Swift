@@ -169,8 +169,7 @@ class SideMenu: UIViewController {
         case .changed:
            
         contentViewContainer.transform = CGAffineTransform(translationX: pan.translation(in: view).x, y: menuViewContainer.frame.origin.y)
-        print(pan.translation(in: view).x)
-
+  
         case .ended:
             
             if pan.translation(in: view).x < -145 {

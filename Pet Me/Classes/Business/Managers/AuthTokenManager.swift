@@ -7,9 +7,13 @@
 //
 
 import KeychainAccess
+import RxSwift
 
 protocol AuthTokenManagerProtocol {
-    func isAuthenticated() -> Bool
+    
+    var authStatusObservable: Observable<Bool> { get }
+    var apiToken: String? { get }
+
     func setJWT(token: String)
     func deleteJWT()
 }
@@ -18,18 +22,38 @@ protocol AuthTokenManagerProtocol {
 
 class AuthTokenManager: AuthTokenManagerProtocol {
     
-    private let keychain = Keychain()
-    private let apiToken: String? = nil
+    private let keychain: Keychain
+    private let bearerTokenKey = "BearerTokenKey"
+    private let authSubject = PublishSubject<Bool>()
+    
+    var authStatusObservable: Observable<Bool> {
+        return UserDefaults.standard.rx.observe(Bool.self, bearerTokenKey).compactMap({ $0 })
+    }
+    
+    var apiToken: String? {
+        return keychain[bearerTokenKey]
+    }
+    
+    init(keychain: Keychain = Keychain()) {
+        self.keychain = keychain
+    }
     
     func isAuthenticated() -> Bool {
-        return false
+        return UserDefaults.standard.bool(forKey: bearerTokenKey)
     }
     
     func setJWT(token: String) {
-        print("hello")
+        log.debug("Saving JWT Token - \(token)")
+        
+        keychain[bearerTokenKey] = token
+ 
+        UserDefaults.standard.setValue(true, forKey: bearerTokenKey)
     }
     
     func deleteJWT() {
-        print("hello")
+        log.debug("Removing jwt")
+        keychain[bearerTokenKey] = nil
+        
+        UserDefaults.standard.setValue(false, forKey: bearerTokenKey)
     }
 }
