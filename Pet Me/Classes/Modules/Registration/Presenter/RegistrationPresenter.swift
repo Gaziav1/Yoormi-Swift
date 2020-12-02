@@ -41,11 +41,11 @@ extension RegistrationPresenter: RegistrationViewOutput {
 //MARK: - RegistrationInteractorOutput
 extension RegistrationPresenter: RegistrationInteractorOutput {
     func confirmationDidSuccess(user: User) {
-        
-        view.showTextFieldForCode()
+        user.name == nil ? router.performTransitionToImageAndName() : router.performTransitionToAds(user: user)
     }
     
     func confirmationDidFail(withError: ProviderError) {
+        #warning("Обработай ошибку")
         view.showTextFieldForCode()
     }
     
@@ -54,6 +54,7 @@ extension RegistrationPresenter: RegistrationInteractorOutput {
     }
     
     func phoneWillNotRecieveCode() {
+        #warning("Обработай ошибку")
         view.showPhoneError()
     }
 }

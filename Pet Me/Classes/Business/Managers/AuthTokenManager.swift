@@ -36,6 +36,7 @@ class AuthTokenManager: AuthTokenManagerProtocol {
     
     init(keychain: Keychain = Keychain()) {
         self.keychain = keychain
+        
     }
     
     func isAuthenticated() -> Bool {

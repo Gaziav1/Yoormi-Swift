@@ -19,8 +19,8 @@ class LoginView: UIView {
     
     private let disposeBag = DisposeBag()
     
-    private let emailTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Номер")
+    private let phoneTextField: RegistrationTextField = {
+        let tf = RegistrationTextField(validationStrategy: PhoneValidation(), text: "Номер")
         tf.textField.autocorrectionType = .no
         tf.textField.textContentType = .telephoneNumber
         tf.snp.makeConstraints({ $0.height.equalTo(70) })
@@ -47,36 +47,31 @@ class LoginView: UIView {
 
     private let phoneConfirmButton = UIButton.createDisabledButton(withTitle: "Запросить код")
     
-    override init(frame: CGRect) {
+    override init(frame: CGRect = .zero) {
         super.init(frame: frame)
-        
         setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    deinit {
         
-    }
-    
     private func setupUI() {
         let acessoryView = UIView()
         acessoryView.backgroundColor = .clear
         acessoryView.addSubview(phoneConfirmButton)
-        acessoryView.frame = .init(x: 0, y: 0, width: emailTextField.frame.width, height: 60)
+        acessoryView.frame = .init(x: 0, y: 0, width: phoneTextField.frame.width, height: 60)
         
         phoneConfirmButton.snp.makeConstraints({
             $0.edges.equalToSuperview().inset(10)
         })
     
-        emailTextField.textField.delegate = self
+        phoneTextField.textField.delegate = self
         codeTextField.textField.delegate = self
         
         addSubview(textFieldsStack)
         
-        [emailTextField, codeTextField].forEach({
+        [phoneTextField, codeTextField].forEach({
             textFieldsStack.addArrangedSubview($0)
             $0.textField.inputAccessoryView = acessoryView
         })
@@ -106,13 +101,13 @@ class LoginView: UIView {
     
     private func setupLoginButton() {
         
-        phoneConfirmButton.frame = .init(x: 0, y: 0, width: emailTextField.frame.width - 20, height: 50)
+        phoneConfirmButton.frame = .init(x: 0, y: 0, width: phoneTextField.frame.width - 20, height: 50)
         
         phoneConfirmButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] observer in
             
             guard let self = self else { return }
             
-            if let text = self.emailTextField.textField.text, let codeText = self.codeTextField.textField.text {
+            if let text = self.phoneTextField.textField.text, let codeText = self.codeTextField.textField.text {
                 
                 if self.codeTextField.isHidden {
                     self.publishSubject.onNext(["phone": text])
@@ -128,29 +123,35 @@ class LoginView: UIView {
 }
 
 extension LoginView: UITextFieldDelegate {
-    
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+  
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        
+        switch textField {
+        case phoneTextField.textField:
+            phoneTextField.validate(text: text)
+        case codeTextField.textField:
+            codeTextField.validate(text: text)
+        default: ()
+        }
+        
         return true
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
         
-        if textField == emailTextField.textField {
+        if textField == phoneTextField.textField {
             if !codeTextField.isHidden {
                 animateCodeTextField(hide: true)
             }
         }
-        
-        
-        guard let text = textField.text else { return }
-        emailTextField.isValid(text.isValidPhone)
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
         switch textField {
         case codeTextField.textField:
             phoneConfirmButton.setTitle("Подтвердить код", for: .normal)
-        case emailTextField.textField:
+        case phoneTextField.textField:
             phoneConfirmButton.setTitle("Запросить код", for: .normal)
         default:
             ()

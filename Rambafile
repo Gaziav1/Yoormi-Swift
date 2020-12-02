@@ -1,8 +1,8 @@
 ### Headers settings
-company: Gaziav Ishakov
+company: Gaziav
 
 ### Xcode project settings
-project_name: PetMe
+project_name: Yoormi
 xcodeproj_path: Pet Me.xcodeproj
 
 ### Code generation settings section

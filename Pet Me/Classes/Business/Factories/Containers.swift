@@ -26,6 +26,15 @@ enum Containers {
     private static let viewControllersContainer: Container = {
         let container = Container()
         
+        
+        container.register(UIViewController.self, name: ImageAndNameModuleConfigurator.tag) { (_, flow: FlowController?) in
+            let configurator = ImageAndNameModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            configurator.appRouter = appRouter
+            let controller = configurator.configure()
+            return controller
+        }
+        
         container.register(UIViewController.self, name: CreateAdModuleConfigurator.tag) { (_, flow: FlowController?) in
             let configurator = CreateAdModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)

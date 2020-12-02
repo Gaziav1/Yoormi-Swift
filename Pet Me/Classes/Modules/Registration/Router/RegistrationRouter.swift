@@ -7,10 +7,20 @@
 //
 
 class RegistrationRouter: RegistrationRouterInput {
+   
     var appRouter: AppRouterProtocol!
     
     
     func openSideMenu() {
         appRouter.openSideMenu()
     }
+    
+    func performTransitionToImageAndName() {
+        appRouter.performTransitionTo(to: .imageAndName)
+    }
+    
+    func performTransitionToAds(user: User) {
+        appRouter.performTransitionTo(to: .adoption)
+    }
+    
 }
