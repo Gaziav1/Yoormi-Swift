@@ -21,7 +21,14 @@ class PopUpView: UIView {
         return view
     }()
     
-    private let popUpViewItem = PopUpViewItem(image: R.image.icons.camera()!, title: "Снимок")
+    private let titleLabel: UILabel = {
+       let label = UILabel()
+        label.text = "Фотография"
+        label.font = .systemFont(ofSize: 18)
+        return label
+    }()
+    
+    private let popUpViewItems = PopViewItemType.allCases.map({ PopUpViewItem(type: $0) })
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -38,18 +45,31 @@ class PopUpView: UIView {
     
     private func setupPopUpView() {
         addSubview(popUpView)
+       
         
         popUpView.snp.makeConstraints({
             $0.leading.trailing.bottom.equalToSuperview()
             $0.height.equalTo(LayoutConstants.PopUpView.height)
         })
         popUpView.transform = popUpViewIsHiddenTransform
-        popUpView.addSubview(popUpViewItem)
+       
+        popUpView.addSubview(titleLabel)
         
-        popUpViewItem.snp.makeConstraints {
-            $0.center.equalToSuperview()
-            $0.size.equalTo(85)
-        }
+        titleLabel.snp.makeConstraints({
+            $0.top.leading.equalToSuperview().inset(20)
+        })
+        
+        let stackView = UIStackView(arrangedSubviews: popUpViewItems)
+        stackView.spacing = 10
+        stackView.distribution = .fillEqually
+        
+        popUpView.addSubview(stackView)
+        
+        stackView.snp.makeConstraints({
+            $0.leading.trailing.equalToSuperview().inset(15)
+            $0.bottom.equalToSuperview().inset(25)
+            $0.height.equalTo(LayoutConstants.PopUpView.height - 90)
+        })
     }
     
 
