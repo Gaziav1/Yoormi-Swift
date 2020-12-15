@@ -26,6 +26,15 @@ enum Containers {
     private static let viewControllersContainer: Container = {
         let container = Container()
         
+        
+        container.register(UIViewController.self, name: ImageAndNameModuleConfigurator.tag) { (_, flow: FlowController?) in
+            let configurator = ImageAndNameModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            configurator.appRouter = appRouter
+            let controller = configurator.configure()
+            return controller
+        }
+        
         container.register(UIViewController.self, name: CreateAdModuleConfigurator.tag) { (_, flow: FlowController?) in
             let configurator = CreateAdModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
@@ -80,6 +89,7 @@ enum Containers {
             registrationConfigurator.firebaseAuthManager = managersContainer.resolve(FirebaseManagerProtocol.self)
             registrationConfigurator.firebaseStrategy = strategiesContainer.resolve(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag)
             registrationConfigurator.provider = managersContainer.resolve(MoyaProvider<YoormiTarget>.self)
+            registrationConfigurator.authTokenManager = managersContainer.resolve(AuthTokenManagerProtocol.self)
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             registrationConfigurator.appRouter = appRouter
             let controller = registrationConfigurator.configure()
@@ -109,6 +119,7 @@ enum Containers {
             let configurator = SideMenuModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             configurator.appRouter = appRouter
+            configurator.authTokenManager = managersContainer.resolve(AuthTokenManagerProtocol.self)
             let controller = configurator.configure()
             return controller
         }
@@ -135,6 +146,11 @@ enum Containers {
         container.register(LaunchManagerProtocol.self) { (_) in
             let launchManager = LaunchManager(factory: viewControllersContainer)
             return launchManager
+        }
+        
+        container.register(AuthTokenManagerProtocol.self) { (_) in
+            let authTokenManager = AuthTokenManager()
+            return authTokenManager
         }
         
         container.register(AppRouterProtocol.self, factory: { (_, flow: FlowController?) in
@@ -168,7 +184,14 @@ enum Containers {
         })
         
         container.register(MoyaProvider<YoormiTarget>.self) { (_)  in
-            return MoyaProvider<YoormiTarget>()
+            let authTokenManager = managers.container.resolve(AuthTokenManagerProtocol.self)
+            guard let token = authTokenManager?.apiToken else { return MoyaProvider<YoormiTarget>() }
+            
+            let endpointClosure = { (target: YoormiTarget) -> Endpoint in
+                let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
+                return defaultEndpoint.adding(newHTTPHeaderFields: [token: "Bearer \(token)"])
+            }
+            return MoyaProvider<YoormiTarget>(endpointClosure: endpointClosure)
         }
         
         return container

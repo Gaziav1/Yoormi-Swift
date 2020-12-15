@@ -7,24 +7,33 @@
 //
 
 import UIKit
-
-protocol LoginViewDelegate: class {
-    func didTapLoginButton(email: String, password: String)
-}
+import RxSwift
 
 class LoginView: UIView {
     
-    weak var delegate: LoginViewDelegate?
+    private let publishSubject = PublishSubject<[String: String]>()
     
-    private let emailTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Email или телефон")
-        
+    var phoneTextFieldObservable: Observable<[String: String]> {
+        return publishSubject.asObservable()
+    }
+    
+    private let disposeBag = DisposeBag()
+    
+    private let phoneTextField: RegistrationTextField = {
+        let tf = RegistrationTextField(validationStrategy: PhoneValidation(), text: "Номер")
+        tf.textField.autocorrectionType = .no
+        tf.textField.textContentType = .telephoneNumber
+        tf.snp.makeConstraints({ $0.height.equalTo(70) })
         return tf
     }()
     
-    private let passwordTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Пароль")
-        tf.textField.textContentType = .password
+    private let codeTextField: RegistrationTextField = {
+        let tf = RegistrationTextField(text: "Подтвердите код")
+        tf.isHidden = true
+        tf.alpha = 0
+        tf.textField.keyboardType = .numberPad
+        tf.textField.returnKeyType = .done
+        tf.textField.textContentType = .oneTimeCode
         return tf
     }()
     
@@ -35,96 +44,119 @@ class LoginView: UIView {
         stackView.spacing = 5
         return stackView
     }()
+
+    private let phoneConfirmButton = UIButton.createDisabledButton(withTitle: "Запросить код")
     
-    private let registrationLabel: UILabel = {
-        let label = UILabel()
-        let mutableString = NSMutableAttributedString()
-        let string = NSAttributedString(string: "Впервые здесь? ", attributes: [NSAttributedString.Key.foregroundColor: UIColor.secondaryLabel])
-        let registrationString = NSAttributedString(string: "Зарегистрироваться", attributes: [NSAttributedString.Key.foregroundColor: UIColor.link])
-        mutableString.append(string)
-        mutableString.append(registrationString)
-        
-        label.attributedText = mutableString
-        return label
-    }()
-    
-    private let loginButton: GradientButton = {
-        let button = GradientButton()
-        button.layer.cornerRadius = 10
-        button.setTitle("Войти", for: .normal)
-        button.clipsToBounds = true
-        button.titleLabel?.font = .boldSystemFont(ofSize: 17)
-        return button
-    }()
-    
-    override init(frame: CGRect) {
+    override init(frame: CGRect = .zero) {
         super.init(frame: frame)
-        
         setupUI()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    private func setupUI() {
-        [emailTextField, passwordTextField].forEach({ textFieldsStack.addArrangedSubview($0) })
         
-        emailTextField.textField.delegate = self
-        passwordTextField.textField.delegate = self
-
+    private func setupUI() {
+        let acessoryView = UIView()
+        acessoryView.backgroundColor = .clear
+        acessoryView.addSubview(phoneConfirmButton)
+        acessoryView.frame = .init(x: 0, y: 0, width: phoneTextField.frame.width, height: 60)
+        
+        phoneConfirmButton.snp.makeConstraints({
+            $0.edges.equalToSuperview().inset(10)
+        })
+    
+        phoneTextField.textField.delegate = self
+        codeTextField.textField.delegate = self
+        
         addSubview(textFieldsStack)
+        
+        [phoneTextField, codeTextField].forEach({
+            textFieldsStack.addArrangedSubview($0)
+            $0.textField.inputAccessoryView = acessoryView
+        })
         
         textFieldsStack.snp.makeConstraints({
             $0.leading.trailing.equalToSuperview()
             $0.top.equalToSuperview()
-            $0.height.equalTo(140)
         })
-        
-        setupLabel()
+        backgroundColor = .clear
         setupLoginButton()
     }
     
-    private func setupLabel() {
-        addSubview(registrationLabel)
-        registrationLabel.snp.makeConstraints({
-            $0.top.equalTo(textFieldsStack.snp.bottom).offset(5)
-            $0.leading.equalTo(textFieldsStack).inset(5)
+    func animateCodeTextField(hide: Bool) {
+        if !hide {
+            codeTextField.isHidden = false
+        }
+        
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+            self.codeTextField.alpha = hide ? 0 : 1
+        }, completion: { _ in
+            if hide {
+                self.codeTextField.isHidden = false
+                self.codeTextField.textField.text = ""
+            }
         })
     }
     
     private func setupLoginButton() {
-        loginButton.addTarget(self, action: #selector(loginButtonTapped), for: .touchUpInside)
-        addSubview(loginButton)
-        loginButton.snp.makeConstraints({
-            $0.bottom.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(45)
-        })
-    }
-    
-    
-    @objc private func loginButtonTapped() {
-        guard let email = emailTextField.textField.text, let password = passwordTextField.textField.text else { return }
         
-        delegate?.didTapLoginButton(email: email, password: password)
+        phoneConfirmButton.frame = .init(x: 0, y: 0, width: phoneTextField.frame.width - 20, height: 50)
+        
+        phoneConfirmButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] observer in
+            
+            guard let self = self else { return }
+            
+            if let text = self.phoneTextField.textField.text, let codeText = self.codeTextField.textField.text {
+                
+                if self.codeTextField.isHidden {
+                    self.publishSubject.onNext(["phone": text])
+                    self.codeTextField.textField.becomeFirstResponder()
+                } else {
+                    self.publishSubject.onNext(["phone": text, "code": codeText])
+                    return
+                }
+            }
+            
+        }).disposed(by: disposeBag)
     }
 }
 
 extension LoginView: UITextFieldDelegate {
-    func textFieldDidChangeSelection(_ textField: UITextField) {
-        guard let text = textField.text else { return }
+  
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
         
-        if textField == emailTextField.textField {
-            emailTextField.isValid(text.isValidEmail)
-        } else {
-            passwordTextField.isValid(text.isValidPhone)
+        switch textField {
+        case phoneTextField.textField:
+            phoneTextField.validate(text: text)
+        case codeTextField.textField:
+            codeTextField.validate(text: text)
+        default: ()
         }
         
+        return true
     }
     
-    
-    func textFieldDidEndEditing(_ textField: UITextField) {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         
+        if textField == phoneTextField.textField {
+            if !codeTextField.isHidden {
+                animateCodeTextField(hide: true)
+            }
+        }
     }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        switch textField {
+        case codeTextField.textField:
+            phoneConfirmButton.setTitle("Подтвердить код", for: .normal)
+        case phoneTextField.textField:
+            phoneConfirmButton.setTitle("Запросить код", for: .normal)
+        default:
+            ()
+        }
+    }
+    
+    
 }

@@ -17,6 +17,7 @@ import Swinject
 enum RouterDestination {
     case cards(AppUser?)
     case sideMenu
+    case imageAndName
     case settings
     case messages
     case registration
@@ -28,6 +29,8 @@ enum RouterDestination {
     
     func constructModule(in factory: Container, flow: FlowController? = nil) -> UIViewController? {
         switch self {
+        case .imageAndName:
+            return factory.resolve(UIViewController.self, name: ImageAndNameModuleConfigurator.tag, argument: flow)
         case .sideMenu:
             return factory.resolve(UIViewController.self, name: SideMenuModuleConfigurator.tag, argument: flow)
         case .cards(let user):
@@ -51,6 +54,7 @@ enum RouterDestination {
         }
     }
     
+
     var isPresent: Bool {
         switch self {
         case .createAd:
@@ -60,6 +64,8 @@ enum RouterDestination {
         }
     }
     
+    
+    //нужен если мы дропаем весь флоу до нового
     var shouldContainSideMenu: Bool {
         switch self {
         case .cards(_), .settings, .messages:

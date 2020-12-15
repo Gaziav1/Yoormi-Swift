@@ -9,5 +9,7 @@
 import Foundation
 
 protocol RegistrationRouterInput {
-
+    func openSideMenu()
+    func performTransitionToImageAndName()
+    func performTransitionToAds(user: User)
 }

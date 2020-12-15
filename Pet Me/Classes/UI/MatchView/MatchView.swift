@@ -29,7 +29,7 @@ class MatchView: UIView {
                 }
                 
                 guard let data = snapshot?.data() else { return }
-                let user = AppUser(JSON: data)
+                //let user = AppUser(JSON: data)
                 self.cardUserImage.alpha = 1
 //                self.cardUserImage.sd_setImage(with: URL(string: user.imageNames[0]), completed: nil)
                 

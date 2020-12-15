@@ -6,22 +6,11 @@
 //  Copyright © 2020 Газияв Исхаков. All rights reserved.
 //
 
-import ObjectMapper
-
-struct AppUser: Mappable {
+struct AppUser {
     
     var name: String?
     var imageURL: String?
     var uid: String!
-    
-    init?(map: Map) {
-        
-    }
-    
-    mutating func mapping(map: Map) {
-        name <- map["name"]
-        imageURL <- map["imageURL"]
-        uid <- map["uid"]
-    }
+
 }
 

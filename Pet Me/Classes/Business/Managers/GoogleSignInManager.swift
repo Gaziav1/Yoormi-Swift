@@ -60,13 +60,13 @@ class GoogleSignInManager: NSObject, GoogleSignInProtocol, GIDSignInDelegate {
             
             let imageURL = user?.profile.imageURL(withDimension: .max)?.absoluteString
                    
-            var currentUser = AppUser(JSON: [:])
-            currentUser?.imageURL = imageURL
-            currentUser?.uid = result?.user.uid
-            currentUser?.name = result?.user.displayName
-            
+//            var currentUser = AppUser(JSON: [:])
+//            currentUser?.imageURL = imageURL
+//            currentUser?.uid = result?.user.uid
+//            currentUser?.name = result?.user.displayName
+//
             log.verbose("Google sign in firebase successfully")
-            self.delegate?.signInSuccess(user: currentUser)
+            //self.delegate?.signInSuccess(user: currentUser)
         }
     }
     

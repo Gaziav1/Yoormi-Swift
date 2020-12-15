@@ -107,7 +107,7 @@ struct R: Rswift.Validatable {
 
   /// This `R.color` struct is generated, and contains static references to 0 colors.
   struct color {
-    /// This `R.color.appColors` struct is generated, and contains static references to 8 colors.
+    /// This `R.color.appColors` struct is generated, and contains static references to 9 colors.
     struct appColors {
       /// Color `AppMainColor`.
       static let appMainColor = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/AppMainColor")
@@ -115,6 +115,8 @@ struct R: Rswift.Validatable {
       static let background = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Background")
       /// Color `Border`.
       static let border = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Border")
+      /// Color `Button`.
+      static let button = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/Button")
       /// Color `ControlSelection`.
       static let controlSelection = Rswift.ColorResource(bundle: R.hostingBundle, name: "AppColors/ControlSelection")
       /// Color `DarkLabel`.
@@ -150,6 +152,15 @@ struct R: Rswift.Validatable {
       @available(iOS 11.0, *)
       static func border(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
         return UIKit.UIColor(resource: R.color.appColors.border, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIColor(named: "Button", bundle: ..., traitCollection: ...)`
+      @available(tvOS 11.0, *)
+      @available(iOS 11.0, *)
+      static func button(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIColor? {
+        return UIKit.UIColor(resource: R.color.appColors.button, compatibleWith: traitCollection)
       }
       #endif
 
@@ -239,12 +250,14 @@ struct R: Rswift.Validatable {
 
   /// This `R.image` struct is generated, and contains static references to 0 images.
   struct image {
-    /// This `R.image.icons` struct is generated, and contains static references to 21 images.
+    /// This `R.image.icons` struct is generated, and contains static references to 26 images.
     struct icons {
       /// Image `adoption`.
       static let adoption = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/adoption")
       /// Image `boy`.
       static let boy = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/boy")
+      /// Image `camera`.
+      static let camera = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/camera")
       /// Image `catChoice`.
       static let catChoice = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/catChoice")
       /// Image `cat`.
@@ -275,8 +288,16 @@ struct R: Rswift.Validatable {
       static let like_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/like_circle")
       /// Image `marker`.
       static let marker = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/marker")
+      /// Image `password`.
+      static let password = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/password")
+      /// Image `plus`.
+      static let plus = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/plus")
+      /// Image `profile_empty`.
+      static let profile_empty = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/profile_empty")
       /// Image `refresh_circle`.
       static let refresh_circle = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/refresh_circle")
+      /// Image `sms`.
+      static let sms = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/sms")
       /// Image `time`.
       static let time = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/time")
       /// Image `top_left_profile`.
@@ -295,6 +316,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "boy", bundle: ..., traitCollection: ...)`
       static func boy(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.boy, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "camera", bundle: ..., traitCollection: ...)`
+      static func camera(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.camera, compatibleWith: traitCollection)
       }
       #endif
 
@@ -404,9 +432,37 @@ struct R: Rswift.Validatable {
       #endif
 
       #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "password", bundle: ..., traitCollection: ...)`
+      static func password(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.password, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "plus", bundle: ..., traitCollection: ...)`
+      static func plus(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.plus, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "profile_empty", bundle: ..., traitCollection: ...)`
+      static func profile_empty(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.profile_empty, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
       /// `UIImage(named: "refresh_circle", bundle: ..., traitCollection: ...)`
       static func refresh_circle(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.refresh_circle, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "sms", bundle: ..., traitCollection: ...)`
+      static func sms(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.sms, compatibleWith: traitCollection)
       }
       #endif
 

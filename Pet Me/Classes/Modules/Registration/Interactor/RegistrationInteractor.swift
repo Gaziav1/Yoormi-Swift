@@ -16,36 +16,38 @@ class RegistrationInteractor {
     weak var output: RegistrationInteractorOutput!
     var firebaseStrategy: FirebaseSrategiesProtocol!
     var firebaseAuthManager: AuthManager!
+    var authTokenManager: AuthTokenManagerProtocol!
     var provider: MoyaProvider<YoormiTarget>!
+    
 }
 
 //MARK: - RegistrationInteractorInput
 extension RegistrationInteractor: RegistrationInteractorInput {
     
-    func authorizateUser(email: String, password: String) {
+    func authorizateUser(throughPhone phone: String) {
         provider
-            .requestModel(.signIn(email: email, password: password), User.self)
-            .subscribe({ response in
+            .requestModel(.phoneSignUp(phone: phone), Phone.self)
+            .subscribe({ [weak self] response in
                 switch response {
-                case .next(let user):
-                    print(user)
+                case .next:
+                    self?.output.phoneWillRecieveCode()
                 case .error(let error as ProviderError):
-                    print(error.message)
+                    self?.output.phoneWillNotRecieveCode()
                 default: ()
                 }
             }).disposed(by: disposeBag)
     }
     
-    
-    func signInUser(email: String, password: String) {
+    func confirmUser(phone: String, withCode code: String) {
         provider
-            .requestModel(.signIn(email: email, password: password), User.self)
+            .requestModel(.phoneCodeCofirmation(code: code, phone: phone), PhoneAuthTokenResponse.self)
             .subscribe({ response in
                 switch response {
-                case .next(let user):
-                    print(user)
+                case .next(let response):
+                    self.authTokenManager.setJWT(token: response.token)
+                    self.output.confirmationDidSuccess(user: response.user)
                 case .error(let error as ProviderError):
-                    print(error.message)
+                    self.output.confirmationDidFail(withError: error)
                 default: ()
                 }
             }).disposed(by: disposeBag)

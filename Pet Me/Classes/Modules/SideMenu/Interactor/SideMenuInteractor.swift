@@ -6,8 +6,23 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
-class SideMenuInteractor: SideMenuInteractorInput {
+import RxSwift
 
+class SideMenuInteractor  {
+    
     weak var output: SideMenuInteractorOutput!
+    var authTokenManager: AuthTokenManagerProtocol!
+    private let disposeBag = DisposeBag()
+}
 
+
+//MARK: - SideMenuInteractorInput
+
+extension SideMenuInteractor: SideMenuInteractorInput {
+ 
+    func createAuthSubscription() {
+        authTokenManager.authStatusObservable.subscribe(onNext: { authStatus in
+            authStatus ? self.output.defineItemsForAuthUser() : self.output.defineItemsForNotAuthUser()
+        }).disposed(by: disposeBag)
+    }
 }

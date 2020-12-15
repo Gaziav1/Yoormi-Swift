@@ -31,7 +31,7 @@ extension StartingInteractor: StartingInteractorInput {
 //MARK: -AppleSignInDelegate
 extension StartingInteractor: AppleSignInDelegate {
     func signInCompleted() {
-        output.signInCompleted(user: AppUser(JSON: [:])!)
+        //output.signInCompleted(user: AppUser(JSON: [:])!)
     }
     
     func signInError(error: Error) {

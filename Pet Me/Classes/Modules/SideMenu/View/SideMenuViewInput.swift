@@ -7,6 +7,6 @@
 //
 
 protocol SideMenuViewInput: class {
-
+    func setItems(items: [SideMenuItems])
     func setupInitialState()
 }

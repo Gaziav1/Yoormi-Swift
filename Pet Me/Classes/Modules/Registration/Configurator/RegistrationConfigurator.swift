@@ -15,6 +15,7 @@ class RegistrationModuleConfigurator {
  
     var firebaseAuthManager: AuthManager!
     var firebaseStrategy: FirebaseSrategiesProtocol!
+    var authTokenManager: AuthTokenManagerProtocol!
     var appRouter: AppRouterProtocol!
     var provider: MoyaProvider<YoormiTarget>!
     
@@ -33,6 +34,7 @@ class RegistrationModuleConfigurator {
         interactor.firebaseAuthManager = firebaseAuthManager
         interactor.output = presenter
         interactor.provider = provider
+        interactor.authTokenManager = authTokenManager
         
         presenter.interactor = interactor
         controller.output = presenter

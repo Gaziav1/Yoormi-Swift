@@ -6,9 +6,9 @@
 //  Copyright © 2020 Газияв Исхаков. All rights reserved.
 //
 
-import ObjectMapper
+import Foundation
 
 protocol FirebaseSrategiesProtocol {
-    func fetchData(completion: @escaping (Result<[Mappable], Error>) -> Void)
+    func fetchData(completion: @escaping (Result<[Codable], Error>) -> Void)
     func uploadData(data: [String: Any], completion: @escaping (Error?) -> Void)
 }
