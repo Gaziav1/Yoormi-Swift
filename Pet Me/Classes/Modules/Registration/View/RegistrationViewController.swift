@@ -55,6 +55,7 @@ class RegistrationViewController: ControllerWithSideMenu {
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
+     
     
     }
  
@@ -68,6 +69,7 @@ class RegistrationViewController: ControllerWithSideMenu {
     private func animateLabelTextChange() {
         let animationDuration: TimeInterval = 0.9
         let firstAndSecondAnimationRelativeDuration = 0.5
+     
      
         UIView.animateKeyframes(withDuration: animationDuration, delay: 0, animations: { [weak self] in
             

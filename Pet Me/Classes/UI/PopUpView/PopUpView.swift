@@ -7,11 +7,13 @@
 //
 
 import UIKit
-
+import RxSwift
 
 class PopUpView: UIView {
     
     private let popUpViewIsHiddenTransform = CGAffineTransform(translationX: 0, y: LayoutConstants.PopUpView.height)
+    
+    private let disposeBag = DisposeBag()
     
     private let popUpView: UIView = {
        let view = UIView()
@@ -30,6 +32,13 @@ class PopUpView: UIView {
     
     private let popUpViewItems = PopViewItemType.allCases.map({ PopUpViewItem(type: $0) })
     
+    private let popViewItemsTapSubject =  PublishSubject<PopViewItemType>()
+    
+    var popViewItemsTappingObservable: Observable<PopViewItemType> {
+        return popViewItemsTapSubject.asObservable()
+    }
+   
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         alpha = 0
@@ -43,22 +52,15 @@ class PopUpView: UIView {
     }
     
     
-    private func setupPopUpView() {
-        addSubview(popUpView)
-       
-        
-        popUpView.snp.makeConstraints({
-            $0.leading.trailing.bottom.equalToSuperview()
-            $0.height.equalTo(LayoutConstants.PopUpView.height)
-        })
-        popUpView.transform = popUpViewIsHiddenTransform
-       
+    private func setupTitleLabel() {
         popUpView.addSubview(titleLabel)
         
         titleLabel.snp.makeConstraints({
             $0.top.leading.equalToSuperview().inset(20)
         })
-        
+    }
+    
+    private func setupItems() {
         let stackView = UIStackView(arrangedSubviews: popUpViewItems)
         stackView.spacing = 10
         stackView.distribution = .fillEqually
@@ -70,6 +72,26 @@ class PopUpView: UIView {
             $0.bottom.equalToSuperview().inset(25)
             $0.height.equalTo(LayoutConstants.PopUpView.height - 90)
         })
+        
+        
+        popUpViewItems.forEach({
+            $0.tapObservable.subscribe(onNext: { [weak self] element in
+                self?.popViewItemsTapSubject.onNext(element)
+            }).disposed(by: disposeBag)
+        })
+    }
+    
+    private func setupPopUpView() {
+        addSubview(popUpView)
+       
+        popUpView.snp.makeConstraints({
+            $0.leading.trailing.bottom.equalToSuperview()
+            $0.height.equalTo(LayoutConstants.PopUpView.height)
+        })
+        popUpView.transform = popUpViewIsHiddenTransform
+       
+        setupTitleLabel()
+        setupItems()
     }
     
 
