@@ -31,6 +31,7 @@ enum Containers {
             let configurator = ImageAndNameModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             configurator.appRouter = appRouter
+            configurator.provider = managersContainer.resolve(MoyaProvider.self)
             let controller = configurator.configure()
             return controller
         }

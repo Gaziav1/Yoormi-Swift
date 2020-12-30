@@ -6,8 +6,32 @@
 //  Copyright © 2020 Gaziav. All rights reserved.
 //
 
-class ImageAndNameInteractor: ImageAndNameInteractorInput {
+import Moya
+import Foundation
+import RxSwift
 
+class ImageAndNameInteractor {
+    private let disposeBag = DisposeBag()
     weak var output: ImageAndNameInteractorOutput!
+    var provider: MoyaProvider<YoormiTarget>!
+}
 
+
+extension ImageAndNameInteractor: ImageAndNameInteractorInput {
+    func saveProfile(imageData: Data?, name: Data) {
+    
+        provider
+            .requestModel(.saveImageAndName(image: imageData, name: name), User.self)
+            .subscribe({ [weak self] response in
+                switch response {
+                case .next:
+                    print("success")
+                    //self?.output.phoneWillRecieveCode()
+                case .error(let error as ProviderError):
+                    print(error)
+                    //self?.output.phoneWillNotRecieveCode()
+                default: ()
+                }
+            }).disposed(by: disposeBag)
+    }
 }

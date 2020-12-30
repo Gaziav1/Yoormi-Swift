@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import Moya
+
 
 class ImageAndNameModuleConfigurator {
 
     static let tag = "ImageAndName"
     
     var appRouter: AppRouterProtocol!
-
+    var provider: MoyaProvider<YoormiTarget>!
+    
     func configure() -> UIViewController {
 
         let router = ImageAndNameRouter()
@@ -25,6 +28,7 @@ class ImageAndNameModuleConfigurator {
 
         let interactor = ImageAndNameInteractor()
         interactor.output = presenter
+        interactor.provider = provider
 
         presenter.interactor = interactor
         viewController.output = presenter

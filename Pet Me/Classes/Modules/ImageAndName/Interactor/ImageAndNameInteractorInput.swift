@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ImageAndNameInteractorInput {
-
+    func saveProfile(imageData: Data?, name: Data)
 }

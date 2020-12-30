@@ -20,6 +20,8 @@ class ImageAndNameViewController: UIViewController {
         return ip
     }()
     
+    private var choosenPhoto: UIImage?
+    
     private let disposeBag = DisposeBag()
     
     private let addPhotoButton: UIButton = {
@@ -29,6 +31,7 @@ class ImageAndNameViewController: UIViewController {
         }
         
         button.backgroundColor = .systemGray6
+      
         button.setImage(R.image.icons.camera()?.withRenderingMode(.alwaysOriginal), for: .normal)
         return button
     }()
@@ -108,6 +111,12 @@ class ImageAndNameViewController: UIViewController {
             $0.height.equalTo(40)
             $0.leading.trailing.equalToSuperview().inset(20)
         })
+        
+        continueButton.rx.controlEvent(.touchUpInside).subscribe(onNext: {
+            let data = self.choosenPhoto?.jpegData(compressionQuality: 1.0)
+            guard let text = self.nameTextField.textField.text else { return }
+            self.output.saveProfile(withImageData: data, name: text)
+        }).disposed(by: disposeBag)
     }
     
     private func setupPopUpView() {
@@ -160,10 +169,11 @@ extension ImageAndNameViewController: UIImagePickerControllerDelegate, UINavigat
         picker.dismiss(animated: true, completion: nil)
         
         guard let photo = info[.originalImage] as? UIImage else {
-            print("NO IMAGE")
+            choosenPhoto = nil
             return
         }
         
+        choosenPhoto = photo
         addPhotoButton.setImage(photo.withRenderingMode(.alwaysOriginal), for: .normal)
         addPhotoButton.imageView?.layer.cornerRadius = LayoutConstants.AddPhotoButton.size / 2
     }
