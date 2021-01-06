@@ -71,7 +71,6 @@ class PopUpViewItem: UIView {
         addGestureRecognizer(gestureRec)
         
         gestureRec.rx.event.bind(onNext: { element in
-            print(self.type)
             self.publishSubject.onNext(self.type)
         }).disposed(by: diposeBag)
     }
@@ -81,7 +80,6 @@ class PopUpViewItem: UIView {
         stackView.axis = .vertical
         stackView.alignment = .center
         stackView.distribution = .fillEqually
-        
         
         addSubview(stackView)
         

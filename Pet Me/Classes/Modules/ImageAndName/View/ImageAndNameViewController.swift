@@ -24,17 +24,20 @@ class ImageAndNameViewController: UIViewController {
     
     private let disposeBag = DisposeBag()
     
+    private let scrollView = UIScrollView()
+    
     private let addPhotoButton: UIButton = {
         let button = UIButton(type: .system)
         button.snp.makeConstraints {
             $0.size.equalTo(LayoutConstants.AddPhotoButton.size)
         }
-        
         button.backgroundColor = .systemGray6
-      
         button.setImage(R.image.icons.camera()?.withRenderingMode(.alwaysOriginal), for: .normal)
+        button.clipsToBounds = true
         return button
     }()
+    
+    private let scrollViewContainer = UIView()
     
     private let addPhotoLabel: UILabel = {
         let label = UILabel("Добавьте фото профиля (необязательно)")
@@ -54,6 +57,7 @@ class ImageAndNameViewController: UIViewController {
     private let continueButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGray4
+        button.isUserInteractionEnabled = false
         button.setTitle("Готово", for: .normal)
         button.setTitleColor(.systemGray6, for: .normal)
         button.layer.cornerRadius = 10
@@ -72,44 +76,64 @@ class ImageAndNameViewController: UIViewController {
     }
     
     // MARK: Layout setup
+    
+    private func setupScrollView() {
+        view.addSubview(scrollView)
+        
+        scrollView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
+    
+        scrollView.addSubview(scrollViewContainer)
+        scrollView.contentInsetAdjustmentBehavior = .never
+        scrollViewContainer.backgroundColor = .clear
+        
+        
+        scrollViewContainer.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+            $0.size.equalToSuperview()
+        })
+    }
+    
     private func setupButton() {
-        view.addSubview(addPhotoButton)
+        scrollViewContainer.addSubview(addPhotoButton)
         addPhotoButton.snp.makeConstraints({
-            $0.centerX.equalToSuperview()
-            $0.centerY.equalToSuperview().offset(-30)
+            $0.centerX.equalTo(scrollViewContainer)
+            $0.centerY.equalTo(scrollViewContainer).offset(-30)
         })
         
         addPhotoButton.layer.cornerRadius = LayoutConstants.AddPhotoButton.size / 2
         
         addPhotoButton.rx.controlEvent(.touchUpInside).bind {
+            self.view.endEditing(false)
             self.popUpPhotoView.fadeIn()
         }.disposed(by: disposeBag)
     }
     
     private func setupAddPhotoLabel() {
-        view.addSubview(addPhotoLabel)
+        scrollViewContainer.addSubview(addPhotoLabel)
         addPhotoLabel.snp.makeConstraints({
             $0.bottom.equalTo(addPhotoButton.snp.top).offset(-20)
-            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.leading.trailing.equalTo(scrollViewContainer).inset(10)
         })
     }
     
     private func setupNameTextField() {
-        view.addSubview(nameTextField)
-        
+        scrollViewContainer.addSubview(nameTextField)
+        nameTextField.textField.delegate = self
         nameTextField.snp.makeConstraints({
             $0.top.equalTo(addPhotoButton.snp.bottom).offset(20)
-            $0.leading.trailing.equalToSuperview().inset(10)
+            $0.leading.trailing.equalTo(scrollViewContainer).inset(10)
         })
     }
     
     private func setupContinueButton() {
-        view.addSubview(continueButton)
+        scrollViewContainer.addSubview(continueButton)
         
         continueButton.snp.makeConstraints({
-            $0.bottom.equalTo(view.safeAreaLayoutGuide).inset(15)
+            $0.bottom.equalTo(scrollViewContainer).inset(15)
             $0.height.equalTo(40)
-            $0.leading.trailing.equalToSuperview().inset(20)
+            $0.leading.trailing.equalTo(scrollViewContainer).inset(20)
         })
         
         continueButton.rx.controlEvent(.touchUpInside).subscribe(onNext: {
@@ -130,6 +154,11 @@ class ImageAndNameViewController: UIViewController {
         popUpPhotoView.popViewItemsTappingObservable.subscribe(onNext: { [weak self] tappedItemType in
             self?.showImagePicker(fromType: tappedItemType)
         }).disposed(by: disposeBag)
+        
+        
+        NotificationCenter.default.keyboardHeight().subscribe(onNext: { element in
+            self.scrollView.setContentOffset(.init(x: 0, y: element == 0 ? 0 : element + self.continueButton.frame.height), animated: true)
+        }).disposed(by: disposeBag)
     }
     
     private func showImagePicker(fromType type: PopViewItemType) {
@@ -139,7 +168,7 @@ class ImageAndNameViewController: UIViewController {
         case .choosePhoto:
             imagePickerController.sourceType = .photoLibrary
         case .noPhoto:
-            addPhotoButton.setImage(R.image.icons.camera(), for: .normal)
+            addPhotoButton.setImage(R.image.icons.camera()?.withRenderingMode(.alwaysOriginal), for: .normal)
             return
         }
         
@@ -153,8 +182,9 @@ extension ImageAndNameViewController: ImageAndNameViewInput {
     func setupInitialState() {
         imagePickerController.delegate = self
         view.backgroundColor = .white
+        setupScrollView()
         setupButton()
-        // setupAddPhotoLabel()
+         //setupAddPhotoLabel()
         setupNameTextField()
         setupContinueButton()
         setupPopUpView()
@@ -175,8 +205,29 @@ extension ImageAndNameViewController: UIImagePickerControllerDelegate, UINavigat
         
         choosenPhoto = photo
         addPhotoButton.setImage(photo.withRenderingMode(.alwaysOriginal), for: .normal)
-        addPhotoButton.imageView?.layer.cornerRadius = LayoutConstants.AddPhotoButton.size / 2
     }
+}
+
+extension ImageAndNameViewController: UITextFieldDelegate {
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        guard let text = textField.text else { return false }
+        //TODO: Засунь это в кастомный вью класс который содержит текстфилд
+        
+        
+        nameTextField.validate(text: text)
+        
+        //TODO: Сделай подписку на изменения значения isValid, чтобы не обращаться к нему в ручную
+        
+        if nameTextField.isValid {
+            addPhotoButton.isUserInteractionEnabled = true
+            continueButton.backgroundColor = .systemBlue
+        }
+        
+        return true
+    }
+    
+    
 }
 
 

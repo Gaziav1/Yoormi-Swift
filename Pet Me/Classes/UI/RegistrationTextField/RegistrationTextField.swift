@@ -12,7 +12,11 @@ import SnapKit
 
 class RegistrationTextField: UIView {
     
-    private var validationStrategy: ValidationStrategy?
+    private var validationStrategy: ValidationStrategy
+    
+    var isValid: Bool {
+        return validationStrategy.isValid
+    }
     
     private let label: UILabel = {
        let lbl = UILabel()
@@ -44,11 +48,11 @@ class RegistrationTextField: UIView {
     }()
     
     
-    init(frame: CGRect = .zero, validationStrategy: ValidationStrategy? = nil, text: String) {
+    init(frame: CGRect = .zero, validationStrategy: ValidationStrategy = DefaultValidationStrategy(), text: String) {
+        self.validationStrategy = validationStrategy
         super.init(frame: frame)
         backgroundColor = .clear
         label.text = " \(text) "
-        self.validationStrategy = validationStrategy
         setupView()
         setupLabel()
         setupTextFeild()
@@ -75,7 +79,6 @@ class RegistrationTextField: UIView {
             $0.top.equalToSuperview().inset(2)
             $0.leading.equalTo(borderView.snp.leading).offset(20)
         })
-        
     }
     
     private func setupTextFeild() {
@@ -103,14 +106,13 @@ class RegistrationTextField: UIView {
         self.validationStrategy = strategy
     }
     
-    func isValid(_ valid: Bool) {
+    private func changeBorderColor(_ valid: Bool) {
         animateBorderColorChange(valid)
     }
     
     func validate(text: String) {
-        guard let strategy = validationStrategy else { return }
-        let validatedText = strategy.validate(text: text)
+        let validatedText = validationStrategy.validate(text: text)
         textField.text = validatedText
-        isValid(strategy.isValid)
+        changeBorderColor(validationStrategy.isValid)
     }
 }

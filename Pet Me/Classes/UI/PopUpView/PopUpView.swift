@@ -37,7 +37,6 @@ class PopUpView: UIView {
     var popViewItemsTappingObservable: Observable<PopViewItemType> {
         return popViewItemsTapSubject.asObservable()
     }
-   
     
     override init(frame: CGRect) {
         super.init(frame: frame)

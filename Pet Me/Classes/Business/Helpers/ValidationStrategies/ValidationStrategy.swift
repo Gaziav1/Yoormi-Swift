@@ -12,3 +12,16 @@ protocol ValidationStrategy {
     var isValid: Bool { get }
     func validate(text: String) -> String
 }
+
+
+extension ValidationStrategy {
+    var isValid: Bool {
+        return true
+    }
+    
+    func validate(text: String) -> String {
+        return text
+    }
+}
+
+class DefaultValidationStrategy: ValidationStrategy { }
