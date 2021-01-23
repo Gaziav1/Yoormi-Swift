@@ -93,9 +93,11 @@ class LoginView: UIView {
             self.codeTextField.alpha = hide ? 0 : 1
         }, completion: { _ in
             if hide {
-                self.codeTextField.isHidden = false
+                self.codeTextField.isHidden = true
                 self.codeTextField.textField.text = ""
+                return
             }
+            self.codeTextField.becomeFirstResponder()
         })
     }
     

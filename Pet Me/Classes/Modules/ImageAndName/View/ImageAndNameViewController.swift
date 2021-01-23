@@ -57,7 +57,6 @@ class ImageAndNameViewController: UIViewController {
     private let continueButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGray4
-        button.isUserInteractionEnabled = false
         button.setTitle("Готово", for: .normal)
         button.setTitleColor(.systemGray6, for: .normal)
         button.layer.cornerRadius = 10
@@ -87,7 +86,6 @@ class ImageAndNameViewController: UIViewController {
         scrollView.addSubview(scrollViewContainer)
         scrollView.contentInsetAdjustmentBehavior = .never
         scrollViewContainer.backgroundColor = .clear
-        
         
         scrollViewContainer.snp.makeConstraints({
             $0.edges.equalToSuperview()

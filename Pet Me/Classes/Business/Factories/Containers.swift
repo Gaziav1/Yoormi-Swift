@@ -187,10 +187,9 @@ enum Containers {
         container.register(MoyaProvider<YoormiTarget>.self) { (_)  in
             let authTokenManager = managers.container.resolve(AuthTokenManagerProtocol.self)
             guard let token = authTokenManager?.apiToken else { return MoyaProvider<YoormiTarget>() }
-            
             let endpointClosure = { (target: YoormiTarget) -> Endpoint in
                 let defaultEndpoint = MoyaProvider.defaultEndpointMapping(for: target)
-                return defaultEndpoint.adding(newHTTPHeaderFields: [token: "Bearer \(token)"])
+                return defaultEndpoint.adding(newHTTPHeaderFields: ["token": "Bearer \(token)"])
             }
             return MoyaProvider<YoormiTarget>(endpointClosure: endpointClosure)
         }

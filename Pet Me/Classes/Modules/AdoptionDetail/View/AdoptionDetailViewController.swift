@@ -113,14 +113,12 @@ class AdoptionDetailViewController: UIViewController, UIScrollViewDelegate {
     }
     
     private func enableScrollSubscribtion() {
-        
-        
+    
         scrollView.rx.didScroll.asObservable().subscribe(onNext: { [unowned self] _ in
             let y = self.scrollView.contentOffset.y
             let width = max(self.view.frame.width - y , self.view.frame.width)
             width > self.view.frame.width ? self.scrollToTopConstraintsForPhotos(width: width, offsetY: y) : self.defaultContsraintsForPhotos()
             self.view.layoutIfNeeded()
-            print("didScroll")
         }).disposed(by: disposeBag)
     
         

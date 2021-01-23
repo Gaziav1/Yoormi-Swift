@@ -10,8 +10,6 @@ import Foundation
 
 class ImageAndNamePresenter: ImageAndNameModuleInput, ImageAndNameInteractorOutput {
     
-    
-
     weak var view: ImageAndNameViewInput!
     var interactor: ImageAndNameInteractorInput!
     var router: ImageAndNameRouterInput!

@@ -99,7 +99,8 @@ class RegistrationViewController: ControllerWithSideMenu {
         
         NotificationCenter.default.keyboardHeight().subscribe(onNext: { [weak self] element in
             guard let self = self else { return }
-            self.scrollView.scrollRectToVisible(element > 0 ? self.loginView.frame : self.authImage.frame, animated: true)
+            self.scrollView.contentInset.bottom = element
+
         }).disposed(by: disposeBag)
     }
     
@@ -119,6 +120,7 @@ class RegistrationViewController: ControllerWithSideMenu {
         })
         
         scrollView.addSubview(containerView)
+        scrollView.contentInsetAdjustmentBehavior = .never
         containerView.snp.makeConstraints({ $0.edges.equalToSuperview()
             $0.size.equalToSuperview()
         })
@@ -180,6 +182,7 @@ extension RegistrationViewController: RegistrationViewInput {
         
         animateLabelTextChange()
         loginView.animateCodeTextField(hide: false)
+        scrollView.setContentOffset(.init(x: 0, y: view.frame.midY / 2), animated: true)
     }
     
     func showPhoneError() {

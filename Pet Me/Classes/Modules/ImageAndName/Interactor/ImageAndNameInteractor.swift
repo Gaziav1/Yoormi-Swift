@@ -26,10 +26,8 @@ extension ImageAndNameInteractor: ImageAndNameInteractorInput {
                 switch response {
                 case .next:
                     print("success")
-                    //self?.output.phoneWillRecieveCode()
                 case .error(let error as ProviderError):
-                    print(error)
-                    //self?.output.phoneWillNotRecieveCode()
+                    print(error.localizedDescription)
                 default: ()
                 }
             }).disposed(by: disposeBag)

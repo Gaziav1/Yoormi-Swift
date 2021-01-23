@@ -22,7 +22,11 @@ extension SideMenuInteractor: SideMenuInteractorInput {
  
     func createAuthSubscription() {
         authTokenManager.authStatusObservable.subscribe(onNext: { authStatus in
-            authStatus ? self.output.defineItemsForAuthUser() : self.output.defineItemsForNotAuthUser()
+            guard let status = authStatus else {
+                self.output.defineItemsForNotAuthUser()
+                return
+            }
+            status ? self.output.defineItemsForAuthUser() : self.output.defineItemsForNotAuthUser()
         }).disposed(by: disposeBag)
     }
 }

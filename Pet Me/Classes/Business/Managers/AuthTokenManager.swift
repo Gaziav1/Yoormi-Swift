@@ -11,7 +11,7 @@ import RxSwift
 
 protocol AuthTokenManagerProtocol {
     
-    var authStatusObservable: Observable<Bool> { get }
+    var authStatusObservable: Observable<Bool?> { get }
     var apiToken: String? { get }
 
     func setJWT(token: String)
@@ -19,15 +19,13 @@ protocol AuthTokenManagerProtocol {
 }
 
 
-
 class AuthTokenManager: AuthTokenManagerProtocol {
     
     private let keychain: Keychain
     private let bearerTokenKey = "BearerTokenKey"
-    private let authSubject = PublishSubject<Bool>()
     
-    var authStatusObservable: Observable<Bool> {
-        return UserDefaults.standard.rx.observe(Bool.self, bearerTokenKey).compactMap({ $0 })
+    var authStatusObservable: Observable<Bool?> {
+        return UserDefaults.standard.rx.observe(Bool.self, bearerTokenKey).asObservable()
     }
     
     var apiToken: String? {
@@ -36,7 +34,6 @@ class AuthTokenManager: AuthTokenManagerProtocol {
     
     init(keychain: Keychain = Keychain()) {
         self.keychain = keychain
-        
     }
     
     func isAuthenticated() -> Bool {
