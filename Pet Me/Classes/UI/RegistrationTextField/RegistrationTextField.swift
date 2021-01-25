@@ -8,15 +8,13 @@
 
 import UIKit
 import SnapKit
-
+import RxSwift
 
 class RegistrationTextField: UIView {
     
     private var validationStrategy: ValidationStrategy
     
-    var isValid: Bool {
-        return validationStrategy.isValid
-    }
+    let isValid = BehaviorSubject(value: false)
     
     private let label: UILabel = {
        let lbl = UILabel()
@@ -114,5 +112,6 @@ class RegistrationTextField: UIView {
         let validatedText = validationStrategy.validate(text: text)
         textField.text = validatedText
         changeBorderColor(validationStrategy.isValid)
+        isValid.onNext(validationStrategy.isValid)
     }
 }

@@ -8,19 +8,33 @@
 
 import Foundation
 
-class ImageAndNamePresenter: ImageAndNameModuleInput, ImageAndNameInteractorOutput {
+class ImageAndNamePresenter: ImageAndNameModuleInput {
     
     weak var view: ImageAndNameViewInput!
     var interactor: ImageAndNameInteractorInput!
     var router: ImageAndNameRouterInput!
 
-    func viewIsReady() {
-        view.setupInitialState()
-    }
 }
 
 
+//MARK: - ImageAndNameInteractorOutput
+extension ImageAndNamePresenter: ImageAndNameInteractorOutput {
+    func userProfileSaved() {
+        router.performTransitionToAdoption()
+    }
+    
+    func userProfileSavingError() {
+        #warning("Handle Error")
+    }
+}
+
+//MARK: - ImageAndNameViewOutput
 extension ImageAndNamePresenter: ImageAndNameViewOutput {
+    
+    func viewIsReady() {
+        view.setupInitialState()
+    }
+    
     func saveProfile(withImageData data: Data?, name: String) {
         guard let nameData = name.data(using: .utf8) else { return }
         interactor.saveProfile(imageData: data, name: nameData)

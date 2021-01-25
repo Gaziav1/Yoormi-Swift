@@ -28,7 +28,7 @@ class LoginView: UIView {
     }()
     
     private let codeTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Подтвердите код")
+        let tf = RegistrationTextField(validationStrategy: ConfirmationCodeValidationStrategy(), text: "Подтвердите код")
         tf.isHidden = true
         tf.alpha = 0
         tf.textField.keyboardType = .numberPad
@@ -44,7 +44,7 @@ class LoginView: UIView {
         stackView.spacing = 5
         return stackView
     }()
-
+    
     private let phoneConfirmButton = UIButton.createDisabledButton(withTitle: "Запросить код")
     
     override init(frame: CGRect = .zero) {
@@ -55,7 +55,7 @@ class LoginView: UIView {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-        
+    
     private func setupUI() {
         let acessoryView = UIView()
         acessoryView.backgroundColor = .clear
@@ -65,7 +65,7 @@ class LoginView: UIView {
         phoneConfirmButton.snp.makeConstraints({
             $0.edges.equalToSuperview().inset(10)
         })
-    
+        
         phoneTextField.textField.delegate = self
         codeTextField.textField.delegate = self
         
@@ -121,11 +121,19 @@ class LoginView: UIView {
             }
             
         }).disposed(by: disposeBag)
+        
+        [phoneTextField, codeTextField].forEach({
+            $0.isValid.subscribe(onNext: { [weak self] element in
+                guard let self = self else { return }
+                self.phoneConfirmButton.backgroundColor = element ? .appLightGreen : .systemGray4
+            }).disposed(by: disposeBag)
+        })
+        
     }
 }
 
 extension LoginView: UITextFieldDelegate {
-  
+    
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         guard let text = textField.text else { return false }
         
@@ -141,7 +149,6 @@ extension LoginView: UITextFieldDelegate {
     }
     
     func textFieldDidChangeSelection(_ textField: UITextField) {
-        
         if textField == phoneTextField.textField {
             if !codeTextField.isHidden {
                 animateCodeTextField(hide: true)
@@ -153,6 +160,7 @@ extension LoginView: UITextFieldDelegate {
         switch textField {
         case codeTextField.textField:
             phoneConfirmButton.setTitle("Подтвердить код", for: .normal)
+            phoneConfirmButton.backgroundColor = textField.text?.count == 6 ? .appLightGreen : .systemGray4
         case phoneTextField.textField:
             phoneConfirmButton.setTitle("Запросить код", for: .normal)
         default:

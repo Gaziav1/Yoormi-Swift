@@ -143,23 +143,4 @@ class AppRouter: AppRouterProtocol {
     func changeSideMenuRoot(to destination: RouterDestination) {
         flow?.presentRoot(destination: destination).subscribe().disposed(by: disposeBag)
     }
-      
-    
-    
-//    func openSideMenu() {
-////        if #available(iOS 13.0, *) {
-////            guard let sceneDelegate = SceneDelegate.shared else { return }
-////            guard let sideMenuFlow = sceneDelegate.rootFlowController else {
-////                log.warning("can't receive flow controller for transition")
-////                return
-////            }
-////            sideMenuFlow.openSideMenu()
-////        } else {
-////            guard let sideMenuFlow = dataSource?.flowControllerForTransition() as? SideMenuFlowController else {
-////                log.warning("can't receive flow controller for transition")
-////                return
-////            }
-////            sideMenuFlow.openSideMenu()
-//        }
-    
 }

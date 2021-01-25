@@ -9,5 +9,5 @@
 import Foundation
 
 protocol ImageAndNameRouterInput {
-
+    func performTransitionToAdoption()
 }

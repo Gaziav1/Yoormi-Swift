@@ -15,7 +15,6 @@ class MoyaErrorHandler {
         switch error {
         case let error as MoyaError:
             let providerError = mapMoyaError(error)
-            log.verbose(providerError)
             return providerError
         default:
             return ProviderError(title: "Неизвестная ошибка", message: "Пожалуйста, попытайтесь еще раз", status: 0)
@@ -23,6 +22,7 @@ class MoyaErrorHandler {
     }
     
     private func mapMoyaError(_ error: MoyaError) -> ProviderError {
+        log.debug(error.localizedDescription)
         switch error {
         case .statusCode(let response):
             do {
@@ -31,7 +31,6 @@ class MoyaErrorHandler {
                 if let data = providerErrorResponse.data {
                    message = configurateFullErrorMessage(from: data)
                 }
-                
                 return ProviderError(message: message, status: response.statusCode)
             } catch {
                 return ProviderError(message: "Пожалуйста, попытайтесь еще раз", status: 0)
@@ -51,7 +50,7 @@ class MoyaErrorHandler {
     private func configurateFullErrorMessage(from fields: [ErrorFields]) -> String {
         var message = ""
         fields.forEach({ field in
-            message += field.msg + " "
+            message += field.msg + ", "
         })
         return message
     }

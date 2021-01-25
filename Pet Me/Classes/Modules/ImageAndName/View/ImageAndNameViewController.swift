@@ -153,6 +153,11 @@ class ImageAndNameViewController: UIViewController {
             self?.showImagePicker(fromType: tappedItemType)
         }).disposed(by: disposeBag)
         
+        nameTextField.isValid.subscribe(onNext: { [weak self] isValidText in
+            guard let self = self else { return }
+            self.addPhotoButton.isUserInteractionEnabled = isValidText
+            self.continueButton.backgroundColor = isValidText ? .systemBlue : .systemGray4
+        }).disposed(by: disposeBag)
         
         NotificationCenter.default.keyboardHeight().subscribe(onNext: { element in
             self.scrollView.setContentOffset(.init(x: 0, y: element == 0 ? 0 : element + self.continueButton.frame.height), animated: true)
@@ -214,14 +219,7 @@ extension ImageAndNameViewController: UITextFieldDelegate {
         
         
         nameTextField.validate(text: text)
-        
-        //TODO: Сделай подписку на изменения значения isValid, чтобы не обращаться к нему в ручную
-        
-        if nameTextField.isValid {
-            addPhotoButton.isUserInteractionEnabled = true
-            continueButton.backgroundColor = .systemBlue
-        }
-        
+                
         return true
     }
     

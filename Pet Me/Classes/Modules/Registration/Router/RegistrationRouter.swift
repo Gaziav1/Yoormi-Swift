@@ -20,7 +20,7 @@ class RegistrationRouter: RegistrationRouterInput {
     }
     
     func performTransitionToAds(user: User) {
-        appRouter.performTransitionTo(to: .adoption)
+        appRouter.changeSideMenuRoot(to: .adoption)
     }
     
 }

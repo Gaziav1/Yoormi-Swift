@@ -7,5 +7,10 @@
 //
 
 class ImageAndNameRouter: ImageAndNameRouterInput {
+
     var appRouter: AppRouterProtocol!
+    
+    func performTransitionToAdoption() {
+        appRouter.dropAll(to: .adoption)
+    }
 }

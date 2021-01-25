@@ -100,6 +100,7 @@
 		A71FA81624A0E668009AFC8E /* CatWaiting.json in Resources */ = {isa = PBXBuildFile; fileRef = A71FA81524A0E668009AFC8E /* CatWaiting.json */; };
 		A71FA81824A24886009AFC8E /* SecureNonceGeneratorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */; };
 		A71FA81C24A2504A009AFC8E /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */; };
+		A728108725BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A728108625BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift */; };
 		A7332E0E24E2C5C9003F2EEA /* EmptyAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7332E0D24E2C5C9003F2EEA /* EmptyAdsView.swift */; };
 		A7381DA5244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */; };
 		A7381DA72447B26A0034A7BF /* MessagesCollectionViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7381DA62447B26A0034A7BF /* MessagesCollectionViewHeader.swift */; };
@@ -329,6 +330,7 @@
 		A71FA81524A0E668009AFC8E /* CatWaiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CatWaiting.json; sourceTree = "<group>"; };
 		A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNonceGeneratorManager.swift; sourceTree = "<group>"; };
 		A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
+		A728108625BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeValidationStrategy.swift; sourceTree = "<group>"; };
 		A7332E0D24E2C5C9003F2EEA /* EmptyAdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAdsView.swift; sourceTree = "<group>"; };
 		A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsBottomAccessoryView.swift; sourceTree = "<group>"; };
 		A7381DA62447B26A0034A7BF /* MessagesCollectionViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesCollectionViewHeader.swift; sourceTree = "<group>"; };
@@ -1154,6 +1156,7 @@
 			children = (
 				A7E1B7472575359F00262539 /* ValidationStrategy.swift */,
 				A7E1B74D257535B200262539 /* PhoneValidation.swift */,
+				A728108625BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift */,
 			);
 			path = ValidationStrategies;
 			sourceTree = "<group>";
@@ -2014,6 +2017,7 @@
 				B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */,
 				9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */,
 				5A18AF594511100E10E18BC6 /* RegistrationInteractorOutput.swift in Sources */,
+				A728108725BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift in Sources */,
 				45C3654588AA1069538FFBAB /* RegistrationInteractor.swift in Sources */,
 				B311DD8E3DE68CF71F873CCF /* RegistrationRouterInput.swift in Sources */,
 				66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */,

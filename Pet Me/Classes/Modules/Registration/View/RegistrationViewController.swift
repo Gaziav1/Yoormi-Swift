@@ -104,14 +104,6 @@ class RegistrationViewController: ControllerWithSideMenu {
         }).disposed(by: disposeBag)
     }
     
-    private func setupSeparatorLabel() {
-//        containerView.addSubview(separatorLabel)
-//        
-//        separatorLabel.snp.makeConstraints({
-//            $0.top.equalTo(loginView.snp.bottom).offset(20)
-//            $0.centerX.equalToSuperview()
-//        })
-    }
     
     private func setupUI() {
         view.addSubview(scrollView)
@@ -125,7 +117,6 @@ class RegistrationViewController: ControllerWithSideMenu {
             $0.size.equalToSuperview()
         })
 
-        setupSeparatorLabel()
         setupImageView()
         setupLabel()
         setupLoginView()
@@ -168,7 +159,6 @@ extension RegistrationViewController: RegistrationViewInput {
     func setupInitialState() {
         view.backgroundColor = .white
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(endEditing)))
-       // setupLabel()
         setupUI()
         setupSubscriptions()
     }

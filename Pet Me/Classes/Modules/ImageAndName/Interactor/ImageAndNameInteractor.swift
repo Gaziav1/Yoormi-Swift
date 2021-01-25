@@ -25,9 +25,9 @@ extension ImageAndNameInteractor: ImageAndNameInteractorInput {
             .subscribe({ [weak self] response in
                 switch response {
                 case .next:
-                    print("success")
-                case .error(let error as ProviderError):
-                    print(error.localizedDescription)
+                    self?.output.userProfileSaved()
+                case .error( _ as ProviderError):
+                    self?.output.userProfileSavingError()
                 default: ()
                 }
             }).disposed(by: disposeBag)

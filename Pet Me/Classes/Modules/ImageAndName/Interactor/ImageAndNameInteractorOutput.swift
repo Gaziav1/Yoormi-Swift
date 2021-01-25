@@ -9,5 +9,6 @@
 import Foundation
 
 protocol ImageAndNameInteractorOutput: class {
-
+    func userProfileSaved()
+    func userProfileSavingError()
 }

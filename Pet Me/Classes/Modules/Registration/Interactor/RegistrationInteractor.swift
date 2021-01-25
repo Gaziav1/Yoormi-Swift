@@ -25,17 +25,18 @@ class RegistrationInteractor {
 extension RegistrationInteractor: RegistrationInteractorInput {
     
     func authorizateUser(throughPhone phone: String) {
-        provider
-            .requestModel(.phoneSignUp(phone: phone), Phone.self)
-            .subscribe({ [weak self] response in
-                switch response {
-                case .next:
-                    self?.output.phoneWillRecieveCode()
-                case .error(let error as ProviderError):
-                    self?.output.phoneWillNotRecieveCode()
-                default: ()
-                }
-            }).disposed(by: disposeBag)
+        output.phoneWillRecieveCode()
+//        provider
+//            .requestModel(.phoneSignUp(phone: phone), Phone.self)
+//            .subscribe({ [weak self] response in
+//                switch response {
+//                case .next:
+//                    self?.output.phoneWillRecieveCode()
+//                case .error(let error as ProviderError):
+//                    self?.output.phoneWillNotRecieveCode()
+//                default: ()
+//                }
+//            }).disposed(by: disposeBag)
     }
     
     func confirmUser(phone: String, withCode code: String) {
