@@ -21,7 +21,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let launchManager = Containers.managers.container.resolve(LaunchManagerProtocol.self) else { fatalError("Cant resolve launch manager") }
         launchManager.instantiateRootController(in: window!, options: [ : ])
             .subscribe(onNext: { element in
-                
+                #warning("Что здесь происходит?")
             })
     }
     

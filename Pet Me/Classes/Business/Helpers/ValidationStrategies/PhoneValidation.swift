@@ -26,7 +26,7 @@ class PhoneValidation: ValidationStrategy {
     }
     
     private func format(phone: String) -> String {
-
+    
         let numbers = phone.replacingOccurrences(of: "[^0-9]", with: "", options: .regularExpression)
         var result = ""
         var index = numbers.startIndex

@@ -17,13 +17,18 @@ class ConfirmationCodeValidationStrategy: ValidationStrategy {
     }
     
     func validate(text: String) -> String {
-        if text.count == 7 {
-            appliedText = String(text.dropLast())
+        
+        if text == "" {
+            appliedText.removeLast()
             return appliedText
         }
         
-        appliedText = text
-        return text
+        if appliedText.count == 6 {
+            return appliedText
+        }
+        
+        appliedText.append(text)
+        return appliedText
     }
 }
 

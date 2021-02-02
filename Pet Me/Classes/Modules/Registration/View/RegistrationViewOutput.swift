@@ -9,6 +9,7 @@
 protocol RegistrationViewOutput {
 
     func viewIsReady()
-    func handlePhoneAuth(withData: [String: String])
+    func handlePhoneAuth(withPhone: String)
+    func confirm(code: String)
     func openSideMenu()
 }

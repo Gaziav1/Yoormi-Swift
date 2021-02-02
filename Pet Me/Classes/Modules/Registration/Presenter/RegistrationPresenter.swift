@@ -7,26 +7,24 @@
 //
 
 class RegistrationPresenter: RegistrationModuleInput {
-
+    
     weak var view: RegistrationViewInput!
     var interactor: RegistrationInteractorInput!
     var router: RegistrationRouterInput!
-
-    
+        
+    private var currentUserPhoneNumber = ""
 }
 
 //MARK: - RegistrationViewOutput
 extension RegistrationPresenter: RegistrationViewOutput {
-    
-    func handlePhoneAuth(withData data: [String: String]) {
-        
-        guard let phone = data["phone"] else { return }
-       
-        if let code = data["code"] {
-            interactor.confirmUser(phone: phone, withCode: code)
-        } else {
-            interactor.authorizateUser(throughPhone: phone)
-        }
+
+    func confirm(code: String) {
+        interactor.confirmUser(phone: currentUserPhoneNumber, withCode: code)
+    }
+
+    func handlePhoneAuth(withPhone phone: String) {
+        currentUserPhoneNumber = phone
+        interactor.authorizateUser(throughPhone: phone)
     }
     
     func openSideMenu() {

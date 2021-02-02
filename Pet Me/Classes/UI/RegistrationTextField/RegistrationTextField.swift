@@ -16,6 +16,10 @@ class RegistrationTextField: UIView {
     
     let isValid = BehaviorSubject(value: false)
     
+    override var intrinsicContentSize: CGSize {
+        return .init(width: 100, height: 70)
+    }
+    
     private let label: UILabel = {
        let lbl = UILabel()
         lbl.text = " Email "
