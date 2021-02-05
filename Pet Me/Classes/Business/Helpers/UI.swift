@@ -86,3 +86,14 @@ extension UIButton {
         return button
     }
 }
+
+
+extension UIAlertController {
+    
+    static func prepareErrorController(header: String = "", body: String) -> UIAlertController {
+        let alert = UIAlertController(title: header, message: body, preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "Dismiss", style: UIAlertAction.Style.default, handler: nil))
+        return alert
+    }
+    
+}

@@ -10,7 +10,6 @@ import Foundation
 
 protocol RegistrationInteractorOutput: class {
     func phoneWillRecieveCode()
-    func phoneWillNotRecieveCode()
     func confirmationDidSuccess(user: User)
-    func confirmationDidFail(withError: ProviderError)
+    func didRecieveError(_ providerError: ProviderError)
 }

@@ -36,14 +36,13 @@ class MoyaErrorHandler {
                 return ProviderError(message: "Пожалуйста, попытайтесь еще раз", status: 0)
             }
         case .imageMapping, .jsonMapping, .stringMapping, .objectMapping, .encodableMapping:
-            return ProviderError(message: "Не удалось подготовить данные", status: 0)
+            return ProviderError(message: "Не удалось подготовить данные", status: error.response?.statusCode ?? 0)
         case .underlying:
-            let internalError = error as NSError
-            return ProviderError(message: internalError.localizedDescription, status: internalError.code)
+            return ProviderError(message: error.localizedDescription, status: error.response?.statusCode ?? 0)
         case .requestMapping(let message):
-            return ProviderError(title: "Не удалось сформировать запрос к серверу", message: message, status: 0)
+            return ProviderError(title: "Не удалось сформировать запрос к серверу", message: message, status: error.response?.statusCode ?? 0)
         case .parameterEncoding:
-            return ProviderError(title: "Не удалось сформировать URL для запроса", message: "Пожалуйста, попытайтесь еще раз", status: 0)
+            return ProviderError(title: "Не удалось сформировать URL для запроса", message: "Пожалуйста, попытайтесь еще раз", status: error.response?.statusCode ?? 0)
         }
     }
     

@@ -8,10 +8,12 @@
 
 class RegistrationPresenter: RegistrationModuleInput {
     
+    //MARK: - Viper dependencies
     weak var view: RegistrationViewInput!
     var interactor: RegistrationInteractorInput!
     var router: RegistrationRouterInput!
         
+    //MARK: - Private properties
     private var currentUserPhoneNumber = ""
 }
 
@@ -38,21 +40,16 @@ extension RegistrationPresenter: RegistrationViewOutput {
 
 //MARK: - RegistrationInteractorOutput
 extension RegistrationPresenter: RegistrationInteractorOutput {
+   
+    func didRecieveError(_ providerError: ProviderError) {
+        view.showError(header: providerError.title, body: providerError.message)
+    }
+    
     func confirmationDidSuccess(user: User) {
         user.name == nil ? router.performTransitionToImageAndName() : router.performTransitionToAds(user: user)
     }
     
-    func confirmationDidFail(withError: ProviderError) {
-        #warning("Обработай ошибку")
-        view.showTextFieldForCode()
-    }
-    
     func phoneWillRecieveCode() {
         view.showTextFieldForCode()
-    }
-    
-    func phoneWillNotRecieveCode() {
-        #warning("Обработай ошибку")
-        view.showPhoneError()
     }
 }

@@ -153,9 +153,8 @@ class ImageAndNameViewController: UIViewController {
             self?.showImagePicker(fromType: tappedItemType)
         }).disposed(by: disposeBag)
         
-        nameTextField.isValid.subscribe(onNext: { [weak self] isValidText in
+        nameTextField.isValidSubject.subscribe(onNext: { [weak self] isValidText in
             guard let self = self else { return }
-            self.addPhotoButton.isUserInteractionEnabled = isValidText
             self.continueButton.backgroundColor = isValidText ? .systemBlue : .systemGray4
         }).disposed(by: disposeBag)
         
@@ -181,6 +180,11 @@ class ImageAndNameViewController: UIViewController {
 
 // MARK: - ImageAndNameViewInput
 extension ImageAndNameViewController: ImageAndNameViewInput {
+    func showError(head: String, body: String) {
+        let errorController = UIAlertController.prepareErrorController(header: head, body: body)
+        present(errorController, animated: true, completion: nil)
+    }
+    
     
     func setupInitialState() {
         imagePickerController.delegate = self
@@ -193,6 +197,7 @@ extension ImageAndNameViewController: ImageAndNameViewInput {
         setupPopUpView()
         setupSubcriptions()
     }
+
 }
 
 

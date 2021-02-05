@@ -32,7 +32,6 @@ class LoginView: UIView {
         let tf = RegistrationTextField(validationStrategy: PhoneValidation(), text: "Номер")
         tf.textField.autocorrectionType = .no
         tf.textField.textContentType = .telephoneNumber
-     //   tf.snp.makeConstraints({ $0.height.equalTo(70) })
         return tf
     }()
     
@@ -68,11 +67,12 @@ class LoginView: UIView {
     }
     
     private func setupUI() {
+        confirmCodeButton.isHidden = true
         
         textFieldsAccessoryView.backgroundColor = .clear
         textFieldsAccessoryView.addSubview(confirmPhoneButton)
         textFieldsAccessoryView.addSubview(confirmCodeButton)
-        confirmCodeButton.isHidden = true
+        
         textFieldsAccessoryView.frame = .init(x: 0, y: 0, width: phoneTextField.frame.width, height: 60)
         
         confirmPhoneButton.snp.makeConstraints({
@@ -109,7 +109,7 @@ class LoginView: UIView {
         })
     }
     
-    private func animateTransition(toCode: Bool) {
+    private func animateButtonTransition(toCode: Bool) {
         let fromView = toCode ? confirmPhoneButton : confirmCodeButton
         let toView = toCode ? confirmCodeButton : confirmPhoneButton
         
@@ -127,9 +127,10 @@ class LoginView: UIView {
             
         }).disposed(by: disposeBag)
         
-        phoneTextField.isValid.subscribe(onNext: { [weak self] element in
+        phoneTextField.isValidSubject.subscribe(onNext: { [weak self] isValid in
             guard let self = self else { return }
-            self.confirmPhoneButton.backgroundColor = element ? .appLightGreen : .systemGray4
+            self.confirmPhoneButton.backgroundColor = isValid ? .appLightGreen : .systemGray4
+            self.confirmPhoneButton.isUserInteractionEnabled = isValid
         }).disposed(by: disposeBag)
     }
     
@@ -144,9 +145,10 @@ class LoginView: UIView {
             
         }).disposed(by: disposeBag)
         
-        codeTextField.isValid.subscribe(onNext: { [weak self] element in
+        codeTextField.isValidSubject.subscribe(onNext: { [weak self] isValid in
             guard let self = self else { return }
-            self.confirmCodeButton.backgroundColor = element ? .appLightGreen : .systemGray4
+            self.confirmCodeButton.backgroundColor = isValid ? .appLightGreen : .systemGray4
+            self.confirmCodeButton.isUserInteractionEnabled = isValid
         }).disposed(by: disposeBag)
     }
 }
@@ -172,15 +174,6 @@ extension LoginView: UITextFieldDelegate {
     
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        switch textField {
-        case codeTextField.textField:
-            animateTransition(toCode: true)
-        case phoneTextField.textField:
-            animateTransition(toCode: false)
-        default:
-            ()
-        }
+        animateButtonTransition(toCode: textField == codeTextField.textField)
     }
-    
-    
 }

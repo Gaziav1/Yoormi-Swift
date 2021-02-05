@@ -14,7 +14,7 @@ class RegistrationTextField: UIView {
     
     private var validationStrategy: ValidationStrategy
     
-    let isValid = BehaviorSubject(value: false)
+    let isValidSubject = BehaviorSubject(value: false)
     
     override var intrinsicContentSize: CGSize {
         return .init(width: 100, height: 70)
@@ -116,6 +116,6 @@ class RegistrationTextField: UIView {
         let validatedText = validationStrategy.validate(text: text)
         textField.text = validatedText
         changeBorderColor(validationStrategy.isValid)
-        isValid.onNext(validationStrategy.isValid)
+        isValidSubject.onNext(validationStrategy.isValid)
     }
 }

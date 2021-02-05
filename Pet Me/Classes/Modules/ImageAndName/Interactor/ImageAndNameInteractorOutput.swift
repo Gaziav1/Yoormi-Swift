@@ -10,5 +10,5 @@ import Foundation
 
 protocol ImageAndNameInteractorOutput: class {
     func userProfileSaved()
-    func userProfileSavingError()
+    func showError(_ error: ProviderError)
 }

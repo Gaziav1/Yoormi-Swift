@@ -26,8 +26,8 @@ extension ImageAndNameInteractor: ImageAndNameInteractorInput {
                 switch response {
                 case .next:
                     self?.output.userProfileSaved()
-                case .error( _ as ProviderError):
-                    self?.output.userProfileSavingError()
+                case .error(let error as ProviderError):
+                    self?.output.showError(error)
                 default: ()
                 }
             }).disposed(by: disposeBag)

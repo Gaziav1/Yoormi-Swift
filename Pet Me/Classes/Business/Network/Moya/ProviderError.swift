@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct ProviderError: Swift.Error, CustomStringConvertible {
+struct ProviderError: Error, CustomStringConvertible {
     
     var title: String
     var message: String

@@ -14,4 +14,5 @@ protocol ImageAndNameViewInput: class {
     */
 
     func setupInitialState()
+    func showError(head: String, body: String)
 }

@@ -69,6 +69,7 @@ class RegistrationViewController: ControllerWithSideMenu {
     //MARK: - Animations
     
     private func animateLabelTextChange() {
+    
         let animationDuration: TimeInterval = 0.9
         let firstAndSecondAnimationRelativeDuration = 0.5
         
@@ -205,7 +206,8 @@ extension RegistrationViewController: RegistrationViewInput {
         showCodeTextField()
     }
     
-    func showPhoneError() {
-        print("So close")
+    func showError(header: String, body: String) {
+        let alert = UIAlertController.prepareErrorController(header: header, body: body)
+        self.present(alert, animated: true, completion: nil)
     }
 }

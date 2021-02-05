@@ -23,8 +23,8 @@ extension ImageAndNamePresenter: ImageAndNameInteractorOutput {
         router.performTransitionToAdoption()
     }
     
-    func userProfileSavingError() {
-        #warning("Handle Error")
+    func showError(_ error: ProviderError) {
+        view.showError(head: error.title, body: error.message)
     }
 }
 
