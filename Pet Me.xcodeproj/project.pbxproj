@@ -97,6 +97,7 @@
 		A71274EC2444CEB2004F0945 /* ChatLogsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274EB2444CEB2004F0945 /* ChatLogsController.swift */; };
 		A71274EE2444CF44004F0945 /* ChatLogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */; };
 		A71274F02444D3A8004F0945 /* ChatLogsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */; };
+		A71DB5FA25DD40E4006DE50D /* CreateAdStepsCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DB5F925DD40E4006DE50D /* CreateAdStepsCollectionCell.swift */; };
 		A71F31C224B0FD51001832C0 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */; };
 		A71F31C824B0FE26001832C0 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F31C724B0FE26001832C0 /* ReusableView.swift */; };
 		A71FA81624A0E668009AFC8E /* CatWaiting.json in Resources */ = {isa = PBXBuildFile; fileRef = A71FA81524A0E668009AFC8E /* CatWaiting.json */; };
@@ -327,6 +328,7 @@
 		A71274EB2444CEB2004F0945 /* ChatLogsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsController.swift; sourceTree = "<group>"; };
 		A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsTopView.swift; sourceTree = "<group>"; };
+		A71DB5F925DD40E4006DE50D /* CreateAdStepsCollectionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdStepsCollectionCell.swift; sourceTree = "<group>"; };
 		A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A71F31C724B0FE26001832C0 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
 		A71FA81524A0E668009AFC8E /* CatWaiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CatWaiting.json; sourceTree = "<group>"; };
@@ -888,6 +890,14 @@
 			path = Interactor;
 			sourceTree = "<group>";
 		};
+		A71DB5F825DD40BB006DE50D /* CreateAdStepsCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				A71DB5F925DD40E4006DE50D /* CreateAdStepsCollectionCell.swift */,
+			);
+			path = CreateAdStepsCollectionView;
+			sourceTree = "<group>";
+		};
 		A71F31C024B0FD39001832C0 /* SideMenuCells */ = {
 			isa = PBXGroup;
 			children = (
@@ -1259,6 +1269,7 @@
 		A7FFBAA524532AD400CD7B5F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A71DB5F825DD40BB006DE50D /* CreateAdStepsCollectionView */,
 				A7BA327D24E5A70B00DC485E /* GenderTypeCollectionView */,
 				A7BA327624E5A1B500DC485E /* CreateAdInfoCollectionView */,
 				A7BA327324E57D3500DC485E /* CustomImagePicker */,
@@ -1848,7 +1859,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$SRCROOT/R.generated.swift",
+				$SRCROOT/R.generated.swift,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1930,6 +1941,7 @@
 				A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */,
 				A7E1B74E257535B200262539 /* PhoneValidation.swift in Sources */,
 				A756C51024E0507E00545D4B /* OwnerAdoptionView.swift in Sources */,
+				A71DB5FA25DD40E4006DE50D /* CreateAdStepsCollectionCell.swift in Sources */,
 				A71274E624423C61004F0945 /* MessageViewController.swift in Sources */,
 				A7FFBAB52453394000CD7B5F /* Message.swift in Sources */,
 				A741F5F124179A6E004544AE /* SettingsTableViewCell.swift in Sources */,

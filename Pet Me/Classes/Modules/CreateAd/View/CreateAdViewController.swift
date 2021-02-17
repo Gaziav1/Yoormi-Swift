@@ -12,97 +12,40 @@ import RxCocoa
 
 class CreateAdViewController: UIViewController {
     
-    private let disposeBag = DisposeBag()
-    
     var output: CreateAdViewOutput!
     
-    private let addPhotosCollection: AddPhotosCollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        let cv = AddPhotosCollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-        cv.showsHorizontalScrollIndicator = false
-        return cv
-    }()
-    
-    private let infoCollectionView: CreateAdInfoCollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        let cv = CreateAdInfoCollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.black.withAlphaComponent(0.1)
-        return cv
-    }()
-    
-    private let imagePickerController: CustomImagePicker = {
-        let imagePC = CustomImagePicker()
-        imagePC.imageLimit = 5
-        return imagePC
-    }()
-    
-    private let titleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "Создать новое объявление"
-        label.font = .systemFont(ofSize: 19)
-        label.textColor = .white
-        return label
-    }()
+    private let disposeBag = DisposeBag()
     
     
-    // MARK: Life cycle
+    //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
     }
     
-    private func createSubscriptions() {
-        
-        imagePickerController.choosenImagesObservable.subscribe(onNext: { [unowned self] images in
-            self.addPhotosCollection.setupPhotos(photos: images)
-            }).disposed(by: disposeBag)
-        
-//        customTextField.textFieldDidType
-//            .subscribe(onNext: {
-//                print($0)
-//            }).disposed(by: disposeBag)
-        
-        
-        addPhotosCollection.didSelectItem.map { (indexPath) -> Int in
-            return indexPath.row
-        }.subscribe(onNext: { [unowned self] index in
-            self.output.didSelectRow(withIndex: index)
-        }).disposed(by: disposeBag)
-        
-    }
+    //MARK: - UI Properties
+    private let stepsCollectionView: UICollectionView = {
+        let fl = UICollectionViewFlowLayout()
+        let cv = UICollectionView(frame: .zero, collectionViewLayout: fl)
+        cv.register(CreateAdStepsCollectionCell.self)
+        fl.scrollDirection = .horizontal
+        cv.isPagingEnabled = true
+        cv.backgroundColor = .clear
+        return cv
+    }()
     
-    private func setupLabel() {
-        view.addSubview(titleLabel)
-        
-        titleLabel.snp.makeConstraints({
-            $0.centerX.equalToSuperview()
-            $0.top.equalToSuperview().inset(20)
-        })
-        
-        
-    }
     
-    private func setupTextFields() {
-        view.addSubview(infoCollectionView)
-        
-        infoCollectionView.snp.makeConstraints({
-            $0.top.equalTo(addPhotosCollection.snp.bottom).offset(10)
-            $0.leading.trailing.bottom.equalToSuperview()
-        })
-    }
+    //MARK: - UI Setup
     
-    private func setupCollectionView() {
-        addPhotosCollection.register(AddPhotosCollectionViewCell.self)
-        view.addSubview(addPhotosCollection)
-        addPhotosCollection.snp.makeConstraints({
-            $0.width.equalToSuperview()
-            $0.height.equalTo(180)
-            $0.top.equalTo(titleLabel.snp.bottom).offset(15)
-            $0.centerX.equalToSuperview()
-        })
+    private func setupStepsCollectionView() {
+        view.addSubview(stepsCollectionView)
+        stepsCollectionView.delegate = self
+        stepsCollectionView.dataSource = self
+        stepsCollectionView.showsHorizontalScrollIndicator = false
         
+        stepsCollectionView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
     }
 }
 
@@ -110,17 +53,35 @@ class CreateAdViewController: UIViewController {
 extension CreateAdViewController: CreateAdViewInput {
     
     func setupInitialState() {
-        setupLabel()
-        createSubscriptions()
-        setupCollectionView()
-        setupTextFields()
-        view.backgroundColor = R.color.appColors.background()
+        view.backgroundColor = .white
+        setupStepsCollectionView()
     }
     
     func openImageController() {
-        present(imagePickerController, animated: true, completion: nil)
     }
 }
 
+//MARK: - UICollectionViewDelegate & DataSource
+extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewDataSource {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 5
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as CreateAdStepsCollectionCell
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+}
+
+//MARK: - UICollectionViewDelegateFlowLayout
+extension CreateAdViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return .init(width: view.frame.width - 10, height: view.frame.height)
+    }
+}
 
 

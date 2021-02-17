@@ -34,6 +34,7 @@ class AuthTokenManager: AuthTokenManagerProtocol {
     
     init(keychain: Keychain = Keychain()) {
         self.keychain = keychain
+        log.debug("CURRENT USER TOKEN - \(apiToken)")
     }
     
     func isAuthenticated() -> Bool {
