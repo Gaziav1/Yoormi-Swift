@@ -556,6 +556,174 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
+  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
+  struct string {
+    /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
+    struct launchScreen {
+      fileprivate init() {}
+    }
+
+    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    struct localizable {
+      /// en translation: Add your photo (optional)
+      ///
+      /// Locales: ru, en
+      static let addProfilePhoto = Rswift.StringResource(key: "add-profile-photo", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Confirm code
+      ///
+      /// Locales: ru, en
+      static let confirmCodeButtonTitle = Rswift.StringResource(key: "confirm-code-button-title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Done
+      ///
+      /// Locales: ru, en
+      static let doneButtonTitle = Rswift.StringResource(key: "done-button-title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Phone
+      ///
+      /// Locales: ru, en
+      static let phone = Rswift.StringResource(key: "phone", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Request code
+      ///
+      /// Locales: en
+      static let requestCodePhoneButtonTitle = Rswift.StringResource(key: "request-code-phone-button-title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// en translation: Select animal type
+      ///
+      /// Locales: ru, en
+      static let animalTypeLabel = Rswift.StringResource(key: "animal-type-label", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Select breed
+      ///
+      /// Locales: ru, en
+      static let animalSubtypeLabel = Rswift.StringResource(key: "animal-subtype-label", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Your name
+      ///
+      /// Locales: ru, en
+      static let userNameTextField = Rswift.StringResource(key: "user-name-text-field", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+
+      /// en translation: Add your photo (optional)
+      ///
+      /// Locales: ru, en
+      static func addProfilePhoto(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add-profile-photo", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add-profile-photo"
+        }
+
+        return NSLocalizedString("add-profile-photo", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Confirm code
+      ///
+      /// Locales: ru, en
+      static func confirmCodeButtonTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("confirm-code-button-title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "confirm-code-button-title"
+        }
+
+        return NSLocalizedString("confirm-code-button-title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Done
+      ///
+      /// Locales: ru, en
+      static func doneButtonTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("done-button-title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "done-button-title"
+        }
+
+        return NSLocalizedString("done-button-title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Phone
+      ///
+      /// Locales: ru, en
+      static func phone(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("phone", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "phone"
+        }
+
+        return NSLocalizedString("phone", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Request code
+      ///
+      /// Locales: en
+      static func requestCodePhoneButtonTitle(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("request-code-phone-button-title", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "request-code-phone-button-title"
+        }
+
+        return NSLocalizedString("request-code-phone-button-title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Select animal type
+      ///
+      /// Locales: ru, en
+      static func animalTypeLabel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("animal-type-label", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "animal-type-label"
+        }
+
+        return NSLocalizedString("animal-type-label", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Select breed
+      ///
+      /// Locales: ru, en
+      static func animalSubtypeLabel(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("animal-subtype-label", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "animal-subtype-label"
+        }
+
+        return NSLocalizedString("animal-subtype-label", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Your name
+      ///
+      /// Locales: ru, en
+      static func userNameTextField(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("user-name-text-field", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "user-name-text-field"
+        }
+
+        return NSLocalizedString("user-name-text-field", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
+    fileprivate init() {}
+  }
+
   fileprivate struct intern: Rswift.Validatable {
     fileprivate static func validate() throws {
       try _R.validate()

@@ -50,11 +50,11 @@ class RegistrationTextField: UIView {
     }()
     
     
-    init(frame: CGRect = .zero, validationStrategy: ValidationStrategy = DefaultValidationStrategy(), text: String) {
+    init(frame: CGRect = .zero, validationStrategy: ValidationStrategy = DefaultValidationStrategy(), text: LocalizationKeys) {
         self.validationStrategy = validationStrategy
         super.init(frame: frame)
         backgroundColor = .clear
-        label.text = " \(text) "
+        label.text = " \(text.localized) "
         setupView()
         setupLabel()
         setupTextFeild()

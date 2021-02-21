@@ -40,7 +40,7 @@ class ImageAndNameViewController: UIViewController {
     private let scrollViewContainer = UIView()
     
     private let addPhotoLabel: UILabel = {
-        let label = UILabel("Добавьте фото профиля (необязательно)")
+        let label = UILabel.localizedLabel(.addProfilePhotoLabel)
         label.textColor = .systemGray4
         label.textAlignment = .left
         label.font = .systemFont(ofSize: 16)
@@ -48,7 +48,7 @@ class ImageAndNameViewController: UIViewController {
     }()
     
     private let nameTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(text: "Ваше имя")
+        let tf = RegistrationTextField(text: .userNameTextField)
         tf.textField.textContentType = .name
         tf.textField.keyboardType = .alphabet
         return tf
@@ -57,7 +57,7 @@ class ImageAndNameViewController: UIViewController {
     private let continueButton: UIButton = {
         let button = UIButton(type: .system)
         button.backgroundColor = .systemGray4
-        button.setTitle("Готово", for: .normal)
+        button.setLocalizedTitle(.continueButtonTitle)
         button.setTitleColor(.systemGray6, for: .normal)
         button.layer.cornerRadius = 10
       

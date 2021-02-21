@@ -29,14 +29,14 @@ class LoginView: UIView {
     private let disposeBag = DisposeBag()
     
     private let phoneTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(validationStrategy: PhoneValidation(), text: "Номер")
+        let tf = RegistrationTextField(validationStrategy: PhoneValidation(), text: .phone)
         tf.textField.autocorrectionType = .no
         tf.textField.textContentType = .telephoneNumber
         return tf
     }()
     
     private let codeTextField: RegistrationTextField = {
-        let tf = RegistrationTextField(validationStrategy: ConfirmationCodeValidationStrategy(), text: "Подтвердите код")
+        let tf = RegistrationTextField(validationStrategy: ConfirmationCodeValidationStrategy(), text: .confirmCodeButtonTitle)
         tf.alpha = 0
         tf.textField.keyboardType = .numberPad
         tf.textField.returnKeyType = .done
@@ -54,8 +54,8 @@ class LoginView: UIView {
     
     private let textFieldsAccessoryView = UIView()
     
-    private let confirmPhoneButton = UIButton.createDisabledButton(withTitle: "Запросить код")
-    private let confirmCodeButton = UIButton.createDisabledButton(withTitle: "Подтвердить код")
+    private let confirmPhoneButton = UIButton.createDisabledButton(withTitle: .requestCodePhoneButtonTitle)
+    private let confirmCodeButton = UIButton.createDisabledButton(withTitle: .confirmCodeButtonTitle)
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)

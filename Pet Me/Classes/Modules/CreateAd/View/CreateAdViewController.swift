@@ -15,7 +15,7 @@ class CreateAdViewController: UIViewController {
     var output: CreateAdViewOutput!
     
     private let disposeBag = DisposeBag()
-    
+    private let steps = CreateAdStep.allCases
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -27,7 +27,7 @@ class CreateAdViewController: UIViewController {
     private let stepsCollectionView: UICollectionView = {
         let fl = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: fl)
-        cv.register(CreateAdStepsCollectionCell.self)
+        cv.register(MainAdInfoCollectionViewCell.self)
         fl.scrollDirection = .horizontal
         cv.isPagingEnabled = true
         cv.backgroundColor = .clear
@@ -64,12 +64,21 @@ extension CreateAdViewController: CreateAdViewInput {
 //MARK: - UICollectionViewDelegate & DataSource
 extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        return steps.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as CreateAdStepsCollectionCell
-        return cell
+        
+        let step = CreateAdStep(rawValue: indexPath.item)
+        switch step {
+        case .mainInfo:
+            let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell
+            cell.setup(fromStep: steps[indexPath.item])
+            return cell
+        default:
+            let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell
+            return cell
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {

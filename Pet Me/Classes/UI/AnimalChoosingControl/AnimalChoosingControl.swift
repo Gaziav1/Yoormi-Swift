@@ -9,20 +9,37 @@
 import UIKit
 import RxSwift
 
+enum AnimalTypes: String {
+    case cat = "Кошки"
+    case dog = "Собаки"
+    
+    var image: UIImage? {
+        switch self {
+        case .cat:
+            return R.image.icons.catChoice()
+        case .dog:
+            return R.image.icons.dogChoice()
+        }
+    }
+}
 
 
 class AnimalChoosingControl: UIView {
     
-    private let event = PublishSubject<String>()
+    private let event = PublishSubject<AnimalTypes>()
     
-    var choosenAnimalType: Observable<String> {
+    override var intrinsicContentSize: CGSize {
+        return .init(width: 150, height: 50)
+    }
+    
+    var choosenAnimalType: Observable<AnimalTypes> {
         return event.asObservable()
     }
     
     
-    let animalImage: UIImageView = {
+    private let animalImage: UIImageView = {
         let imageView = UIImageView(image: R.image.icons.dogChoice())
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         return imageView
     }()
     
@@ -44,7 +61,7 @@ class AnimalChoosingControl: UIView {
         return view
     }()
     
-    let animalType: UILabel = {
+    private let animalTypeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
         label.textColor = R.color.appColors.label()
@@ -53,10 +70,10 @@ class AnimalChoosingControl: UIView {
         return label
     }()
     
-    init(title: String, image: UIImage?, frame: CGRect = .zero) {
+    init(animalType: AnimalTypes, frame: CGRect = .zero) {
         super.init(frame: frame)
-        animalType.text = title
-        animalImage.image = image
+        animalTypeLabel.text = animalType.rawValue
+        animalImage.image = animalType.image
         setupLayout()
         backgroundColor = .clear
     }
@@ -69,11 +86,14 @@ class AnimalChoosingControl: UIView {
     private func setupLayout() {
         
         containerForImageView.addSubview(animalImage)
-        animalImage.snp.makeConstraints{ $0.edges.equalToSuperview().inset(10) }
+        animalImage.snp.makeConstraints{ $0.edges.equalToSuperview().inset(10)
+            $0.height.equalTo(50)
+            $0.width.equalTo(50)
+        }
         
-        animalType.textAlignment = .left
+        animalTypeLabel.textAlignment = .left
         
-        let bottomStack = UIStackView(arrangedSubviews: [choosenView, animalType])
+        let bottomStack = UIStackView(arrangedSubviews: [choosenView, animalTypeLabel])
         bottomStack.alignment = .center
         bottomStack.isLayoutMarginsRelativeArrangement = true
         bottomStack.layoutMargins = .init(top: 0, left: 1, bottom: 0, right: 0)
@@ -83,7 +103,7 @@ class AnimalChoosingControl: UIView {
         stackView.axis = .vertical
         stackView.spacing = 10
         
-        animalType.snp.makeConstraints({ $0.height.equalTo(10) })
+        animalTypeLabel.snp.makeConstraints({ $0.height.equalTo(10) })
         addSubview(stackView)
         stackView.snp.makeConstraints { $0.edges.equalToSuperview() }
         
@@ -92,7 +112,8 @@ class AnimalChoosingControl: UIView {
     
     
     @objc private func tapped() {
-        event.onNext(animalType.text!)
+        guard let text = animalTypeLabel.text, let animalType = AnimalTypes(rawValue: text) else { return }
+        event.onNext(animalType)
         containerForImageView.backgroundColor = R.color.appColors.appMainColor()
         
         UIView.animate(withDuration: 0.2) { [unowned self] in

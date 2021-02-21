@@ -1,0 +1,21 @@
+/* 
+  Localizable.strings
+  Pet Me
+
+  Created by Газияв Исхаков on 21.02.2021.
+  Copyright © 2021 Газияв Исхаков. All rights reserved.
+*/
+
+
+"animal-subtype-label" = "Select breed";
+"animal-type-label" = "Select animal type";
+
+"add-profile-photo" = "Add your photo (optional)";
+
+"user-name-text-field" = "Your name";
+
+"done-button-title" = "Done";
+"request-code-phone-button-title" = "Request code";
+"confirm-code-button-title" = "Confirm code";
+
+"phone" = "Phone";

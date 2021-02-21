@@ -15,8 +15,8 @@ class AdoptionViewController: ControllerWithSideMenu {
     private let disposeBag = DisposeBag()
     
 
-    private let dogChoosingView = AnimalChoosingControl(title: "Собаки", image: R.image.icons.dogChoice())
-    private let cat = AnimalChoosingControl(title: "Кошки", image: R.image.icons.catChoice())
+    private let dogChoosingView = AnimalChoosingControl(animalType: .dog)
+    private let cat = AnimalChoosingControl(animalType: .cat)
    
     private let animalsCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
@@ -45,8 +45,6 @@ class AdoptionViewController: ControllerWithSideMenu {
         
         stackView.snp.makeConstraints({
             $0.centerX.equalToSuperview()
-            $0.width.equalTo(150)
-            $0.height.equalTo(90)
             $0.top.equalTo(view.safeAreaLayoutGuide).inset(15)
         })
         

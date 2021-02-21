@@ -46,9 +46,13 @@ extension UIView {
 }
 
 extension UILabel {
-    convenience init(_ text: String, frame: CGRect = .zero) {
-        self.init(frame: frame)
-        self.text = text
+    
+    static func localizedLabel(_ localizedStringKey: LocalizationKeys) -> UILabel {
+        let localizedLabel = UILabel()
+        localizedLabel.text = localizedStringKey.localized
+        localizedLabel.font = .systemFont(ofSize: 17)
+        localizedLabel.textColor = .black
+        return localizedLabel
     }
 }
 
@@ -73,17 +77,21 @@ extension NotificationCenter {
 
 
 extension UIButton {
-    static func createDisabledButton(withTitle title: String) -> UIButton {
+    static func createDisabledButton(withTitle title: LocalizationKeys) -> UIButton {
         let button = UIButton(type: .system)
         
         button.layer.cornerRadius = 5
         button.backgroundColor = .systemGray4
         button.setTitleColor(.systemGray5, for: .normal)
-        button.setTitle(title, for: .normal)
+        button.setTitle(title.localized, for: .normal)
         button.clipsToBounds = true
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
         
         return button
+    }
+    
+    func setLocalizedTitle(_ key: LocalizationKeys, forState state: UIControl.State = .normal) {
+        setTitle(key.localized, for: state)
     }
 }
 
@@ -96,4 +104,11 @@ extension UIAlertController {
         return alert
     }
     
+}
+
+
+extension String {
+    func localized() -> String {
+        return NSLocalizedString(self, comment: self)
+    }
 }
