@@ -40,6 +40,7 @@ enum Containers {
             let configurator = CreateAdModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             configurator.appRouter = appRouter
+            configurator.moyaProvider = managersContainer.resolve(MoyaProvider.self)
             let controller = configurator.configure()
             return controller
         }

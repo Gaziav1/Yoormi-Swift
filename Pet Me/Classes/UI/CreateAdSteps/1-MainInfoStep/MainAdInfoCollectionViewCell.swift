@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 enum CreateAdStep: Int, CaseIterable {
     case mainInfo
@@ -17,6 +18,13 @@ enum CreateAdStep: Int, CaseIterable {
 
 
 class MainAdInfoCollectionViewCell: UICollectionViewCell {
+    
+    private let disposeBag = DisposeBag()
+    private let animalTypeSubject = PublishSubject<AnimalTypes>()
+    
+    var animalTypeChoiceObservable: Observable<AnimalTypes> {
+        return animalTypeSubject.asObservable()
+    }
     
     private let dummyAnimalSubTypeInfo = ["Хаски", "Бульдог", "Неизвестный", "Без названия", "Джон Шепард"]
     private let scrollView = UIScrollView()
@@ -37,22 +45,35 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
     private let animalSubTypeLabel = UILabel.localizedLabel(.animalSubtypeLabel)
     private let animalTypeLabel = UILabel.localizedLabel(.animalTypeLabel)
     
-    private lazy var stackView = UIStackView(arrangedSubviews: [dogChoiceControl, catChoiceControl])
+    private lazy var animalChoiceViewsStack = UIStackView(arrangedSubviews: [dogChoiceControl, catChoiceControl])
     
     //выбор пола
     //имя
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupSubscriptions()
+    }
+    
+    override func layoutSubviews() {
         setupScrollView()
         setupUI()
         setupAnimalSubtypeGroup()
+     
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
+    
+    private func setupSubscriptions() {
+        [dogChoiceControl, catChoiceControl].forEach({
+            $0.choosenAnimalType.subscribe(onNext: { [weak self] element in
+                self?.animalTypeSubject.onNext(element)
+            }).disposed(by: disposeBag)
+        })
+    }
     
     private func setupAnimalSubtypeGroup() {
         addSubview(animalSubTypeCollection)
@@ -64,7 +85,7 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         
         animalSubTypeLabel.snp.makeConstraints({
             $0.leading.equalTo(containerLayoutGuide).inset(10)
-            $0.top.equalTo(stackView.snp.bottom).offset(20)
+            $0.top.equalTo(animalChoiceViewsStack.snp.bottom).offset(20)
         })
         
         animalSubTypeCollection.snp.makeConstraints({
@@ -74,14 +95,6 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         })
     }
     
-    func setup(fromStep step: CreateAdStep) {
-        switch step {
-        case .mainInfo:
-            setupUI()
-        default:
-            setupUI()
-        }
-    }
     
     private func setupScrollView() {
         addSubview(scrollView)
@@ -91,18 +104,18 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
             $0.width.equalToSuperview()
         })
         scrollView.addLayoutGuide(containerLayoutGuide)
-        
+       
         containerLayoutGuide.snp.makeConstraints({
             $0.edges.equalToSuperview()
         })
     }
     
     private func setupUI() {
-        scrollView.addSubview(stackView)
-        stackView.distribution = .fillEqually
-        stackView.spacing = 5
-        stackView.snp.makeConstraints({
-            $0.top.equalTo(containerLayoutGuide)
+        scrollView.addSubview(animalChoiceViewsStack)
+        animalChoiceViewsStack.distribution = .fillEqually
+        animalChoiceViewsStack.spacing = 5
+        animalChoiceViewsStack.snp.makeConstraints({
+            $0.top.equalTo(containerLayoutGuide).offset(dogChoiceControl.intrinsicContentSize.height - 5)
             $0.centerX.equalTo(containerLayoutGuide)
         })
     }

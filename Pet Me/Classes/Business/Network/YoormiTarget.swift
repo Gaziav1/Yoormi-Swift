@@ -15,6 +15,7 @@ enum YoormiTarget {
     case phoneSignUp(phone: String)
     case phoneCodeCofirmation(code: String, phone: String)
     case saveImageAndName(image: Data?, name: Data)
+    case animalSubtypes(_ type: AnimalTypes)
 }
 
 extension YoormiTarget: TargetType {
@@ -30,13 +31,18 @@ extension YoormiTarget: TargetType {
             return "auth/phoneverify"
         case .saveImageAndName:
             return "auth/createProfile"
+        case .animalSubtypes(_):
+            return "animalInfo/animalSubtypes"
         }
+        
     }
     
     var method: Moya.Method {
         switch self {
         case .phoneSignUp, .phoneCodeCofirmation, .saveImageAndName:
             return .post
+        case .animalSubtypes:
+            return .get
         }
     }
     
@@ -56,11 +62,11 @@ extension YoormiTarget: TargetType {
             guard let imageData = image else { return .uploadMultipart(data) }
             data.append(MultipartFormData(provider: .data(imageData), name: "image", fileName: "avatarFile", mimeType: "image/jpeg"))
             return .uploadMultipart(data)
+        case .animalSubtypes(let animalTypes):
+            return .requestParameters(parameters: ["type": animalTypes.requestString], encoding: URLEncoding.queryString)
         }
     }
-    
-    
-    
+   
     var headers: [String : String]? {
         return nil
     }

@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CreateAdInteractorInput {
-
+    func fetchAnimalSubtypes(forAnimalType type: AnimalTypes)
 }

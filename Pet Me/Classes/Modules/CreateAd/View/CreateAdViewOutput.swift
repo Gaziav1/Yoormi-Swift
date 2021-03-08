@@ -14,5 +14,6 @@ protocol CreateAdViewOutput {
     */
 
     func viewIsReady()
+    func fetchAnimalSubtype(_ animalType: AnimalTypes)
     func didSelectRow(withIndex: Int)
 }

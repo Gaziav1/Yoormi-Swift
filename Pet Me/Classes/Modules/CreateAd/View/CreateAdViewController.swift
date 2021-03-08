@@ -44,7 +44,7 @@ class CreateAdViewController: UIViewController {
         stepsCollectionView.showsHorizontalScrollIndicator = false
         
         stepsCollectionView.snp.makeConstraints({
-            $0.edges.equalToSuperview()
+            $0.edges.equalTo(view.safeAreaLayoutGuide)
         })
     }
 }
@@ -73,7 +73,9 @@ extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewData
         switch step {
         case .mainInfo:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell
-            cell.setup(fromStep: steps[indexPath.item])
+            cell.animalTypeChoiceObservable.subscribe(onNext: { [weak self] choosenAnimalType in
+            self?.output.fetchAnimalSubtype(choosenAnimalType)
+            }).disposed(by: disposeBag)
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell

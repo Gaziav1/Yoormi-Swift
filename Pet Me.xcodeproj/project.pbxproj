@@ -158,6 +158,7 @@
 		A7BDB2E3254DA039000B04DF /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDB2E2254DA039000B04DF /* User.swift */; };
 		A7BDB2E8254DA73F000B04DF /* MoyaExtentions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */; };
 		A7C7996B25586A6400F69D70 /* Phone.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C7996A25586A6400F69D70 /* Phone.swift */; };
+		A7CE931D25F670E30058255D /* AnimalSubtypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CE931C25F670E30058255D /* AnimalSubtypes.swift */; };
 		A7D23281249E578600C88077 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D23280249E578600C88077 /* LoginView.swift */; };
 		A7D2328624A0BBBC00C88077 /* CustomSignInButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */; };
 		A7D2328A24A0C0C800C88077 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7D2328924A0C0C800C88077 /* R.generated.swift */; };
@@ -394,6 +395,7 @@
 		A7BDB2E2254DA039000B04DF /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A7BDB2E7254DA73F000B04DF /* MoyaExtentions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaExtentions.swift; sourceTree = "<group>"; };
 		A7C7996A25586A6400F69D70 /* Phone.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phone.swift; sourceTree = "<group>"; };
+		A7CE931C25F670E30058255D /* AnimalSubtypes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSubtypes.swift; sourceTree = "<group>"; };
 		A7D23280249E578600C88077 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A7D23282249F9B0300C88077 /* Pet Me.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Pet Me.entitlements"; sourceTree = "<group>"; };
 		A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSignInButton.swift; sourceTree = "<group>"; };
@@ -1290,6 +1292,7 @@
 				A7BCB71524B3895000BA2291 /* SideMenuItem.swift */,
 				A7BDB2E2254DA039000B04DF /* User.swift */,
 				A7C7996A25586A6400F69D70 /* Phone.swift */,
+				A7CE931C25F670E30058255D /* AnimalSubtypes.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1949,6 +1952,7 @@
 				A77021572407EC9C005E6C4A /* CustomTextField.swift in Sources */,
 				A71274E424409D83004F0945 /* GradientButton.swift in Sources */,
 				A742528E24054532002FB8C6 /* CardsBottomStackView.swift in Sources */,
+				A7CE931D25F670E30058255D /* AnimalSubtypes.swift in Sources */,
 				A70A8826249CF6BF0094F231 /* UI.swift in Sources */,
 				A71FA81C24A2504A009AFC8E /* AppleSignInManager.swift in Sources */,
 				A7E0467523C4D7E400A4C5B5 /* HomeViewController.swift in Sources */,

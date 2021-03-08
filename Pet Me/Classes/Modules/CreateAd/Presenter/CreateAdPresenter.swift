@@ -24,4 +24,8 @@ extension CreateAdPresenter: CreateAdViewOutput {
     func didSelectRow(withIndex: Int) {
         view.openImageController()
     }
+    
+    func fetchAnimalSubtype(_ animalType: AnimalTypes) {
+        interactor.fetchAnimalSubtypes(forAnimalType: animalType)
+    }
 }

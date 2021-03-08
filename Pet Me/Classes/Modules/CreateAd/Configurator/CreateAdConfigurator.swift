@@ -7,12 +7,14 @@
 //
 
 import UIKit
+import Moya
 
 class CreateAdModuleConfigurator {
     
     static let tag = "CreateAd"
 
     var appRouter: AppRouterProtocol!
+    var moyaProvider: MoyaProvider<YoormiTarget>!
     
     func configure() -> UIViewController {
 
@@ -25,7 +27,8 @@ class CreateAdModuleConfigurator {
 
         let interactor = CreateAdInteractor()
         interactor.output = presenter
-
+        interactor.moyaProvider = moyaProvider
+        
         presenter.interactor = interactor
         controller.output = presenter
         

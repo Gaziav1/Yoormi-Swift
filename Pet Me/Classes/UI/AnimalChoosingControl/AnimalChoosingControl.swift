@@ -21,6 +21,16 @@ enum AnimalTypes: String {
             return R.image.icons.dogChoice()
         }
     }
+
+    //Используется для запросов конкретного типа животного
+    var requestString: String {
+        switch self {
+        case .dog:
+            return "dog"
+        case .cat:
+            return "cat"
+        }
+    }
 }
 
 
