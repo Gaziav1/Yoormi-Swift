@@ -42,7 +42,7 @@ class CreateAdViewController: UIViewController {
         stepsCollectionView.delegate = self
         stepsCollectionView.dataSource = self
         stepsCollectionView.showsHorizontalScrollIndicator = false
-        
+        navigationController?.navigationBar.backgroundColor = .clear
         stepsCollectionView.snp.makeConstraints({
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         })
@@ -59,6 +59,17 @@ extension CreateAdViewController: CreateAdViewInput {
     
     func openImageController() {
     }
+    
+    func showError(_ description: String) {
+        let alertController = UIAlertController.prepareErrorController(body: description)
+        present(alertController, animated: true, completion: nil)
+    }
+    
+    func showAnimalSubtypes(_ subtypesItem: [AnimalSubtypeCellItem]) {
+        guard let subtypesCell = stepsCollectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? MainAdInfoCollectionViewCell else { return }
+        subtypesCell.setupAnimalSubtypes(subtypesItem)
+    }
+    
 }
 
 //MARK: - UICollectionViewDelegate & DataSource
@@ -74,7 +85,7 @@ extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewData
         case .mainInfo:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell
             cell.animalTypeChoiceObservable.subscribe(onNext: { [weak self] choosenAnimalType in
-            self?.output.fetchAnimalSubtype(choosenAnimalType)
+                self?.output.fetchAnimalSubtype(choosenAnimalType)
             }).disposed(by: disposeBag)
             return cell
         default:
@@ -91,7 +102,7 @@ extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewData
 //MARK: - UICollectionViewDelegateFlowLayout
 extension CreateAdViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: view.frame.width - 10, height: view.frame.height)
+        return .init(width: view.frame.width, height: stepsCollectionView.frame.height)
     }
 }
 

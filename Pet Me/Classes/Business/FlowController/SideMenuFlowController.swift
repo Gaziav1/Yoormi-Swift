@@ -56,8 +56,6 @@ extension SideMenuFlowController: FlowController {
     }
     
     func performTransition(to destination: RouterDestination, animated: Bool) -> FlowControllerResult {
-        print("hey")
-        
         return Observable.create({ (observer) in
             
             

@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-enum AnimalTypes: String {
+enum AnimalTypes: String, CaseIterable {
     case cat = "Кошки"
     case dog = "Собаки"
     
@@ -21,7 +21,7 @@ enum AnimalTypes: String {
             return R.image.icons.dogChoice()
         }
     }
-
+    
     //Используется для запросов конкретного типа животного
     var requestString: String {
         switch self {
@@ -33,19 +33,70 @@ enum AnimalTypes: String {
     }
 }
 
+class AnimalChoosingStack: UIView {
+    
+    private let disposeBag = DisposeBag()
+    private let choosenAnimalTypeEvent = BehaviorSubject<AnimalTypes>(value: .dog)
+    
+    private let animalTypesViews = AnimalTypes.allCases.map { AnimalChoosingControl(animalType: $0) }
+    private lazy var stackView = UIStackView(arrangedSubviews: animalTypesViews)
+    private var currentSelectedType: AnimalTypes = .dog {
+        didSet {
+            let oldSelectedType = animalTypesViews.first(where: { $0.currentType == oldValue})
+            oldSelectedType?.deselect()
+        }
+    }
+    
+    var choosenAnimalTypeObservable: Observable<AnimalTypes> {
+        return choosenAnimalTypeEvent.asObservable()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        setupUI()
+        setupSubcription()
+        //force tap dog type
+        animalTypesViews.first(where: { $0.currentType == currentSelectedType })?.tapped()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    private func setupUI() {
+        addSubview(stackView)
+        stackView.distribution = .fillEqually
+        stackView.snp.makeConstraints({
+            $0.edges.equalToSuperview()
+        })
+        stackView.spacing = 10
+    }
+    
+    private func setupSubcription() {
+        
+        animalTypesViews.forEach({
+            $0.choosenAnimalType.subscribe(onNext: { [weak self] element in
+                self?.currentSelectedType = element
+                self?.choosenAnimalTypeEvent.onNext(element)
+            }).disposed(by: disposeBag)
+        })
+    }
+}
+
 
 class AnimalChoosingControl: UIView {
     
     private let event = PublishSubject<AnimalTypes>()
     
     override var intrinsicContentSize: CGSize {
-        return .init(width: 150, height: 50)
+        return .init(width: 90, height: 85)
     }
     
     var choosenAnimalType: Observable<AnimalTypes> {
         return event.asObservable()
     }
     
+    let currentType: AnimalTypes
     
     private let animalImage: UIImageView = {
         let imageView = UIImageView(image: R.image.icons.dogChoice())
@@ -63,7 +114,7 @@ class AnimalChoosingControl: UIView {
     }()
     
     private let choosenView: UIView = {
-       let view = UIView()
+        let view = UIView()
         view.backgroundColor = R.color.appColors.appMainColor()
         view.snp.makeConstraints({ $0.size.equalTo(5) })
         view.layer.cornerRadius = 5 / 2
@@ -81,6 +132,7 @@ class AnimalChoosingControl: UIView {
     }()
     
     init(animalType: AnimalTypes, frame: CGRect = .zero) {
+        currentType = animalType
         super.init(frame: frame)
         animalTypeLabel.text = animalType.rawValue
         animalImage.image = animalType.image
@@ -96,39 +148,54 @@ class AnimalChoosingControl: UIView {
     private func setupLayout() {
         
         containerForImageView.addSubview(animalImage)
-        animalImage.snp.makeConstraints{ $0.edges.equalToSuperview().inset(10)
-            $0.height.equalTo(50)
-            $0.width.equalTo(50)
-        }
+        animalImage.snp.makeConstraints({
+            $0.edges.equalToSuperview().inset(5)
+            $0.height.equalTo(intrinsicContentSize.height - 15)
+            $0.width.equalTo(intrinsicContentSize.width - 15)
+        })
         
         animalTypeLabel.textAlignment = .left
         
         let bottomStack = UIStackView(arrangedSubviews: [choosenView, animalTypeLabel])
         bottomStack.alignment = .center
         bottomStack.isLayoutMarginsRelativeArrangement = true
-        bottomStack.layoutMargins = .init(top: 0, left: 1, bottom: 0, right: 0)
+        bottomStack.layoutMargins = .init(top: 0, left: 8, bottom: 0, right: 0)
         bottomStack.spacing = 5
         
-        let stackView = UIStackView(arrangedSubviews: [containerForImageView, bottomStack])
-        stackView.axis = .vertical
-        stackView.spacing = 10
         
-        animalTypeLabel.snp.makeConstraints({ $0.height.equalTo(10) })
-        addSubview(stackView)
-        stackView.snp.makeConstraints { $0.edges.equalToSuperview() }
+        addSubview(bottomStack)
+        bottomStack.snp.makeConstraints({
+            $0.bottom.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.height.equalTo(10)
+        })
+        
+        addSubview(containerForImageView)
+        containerForImageView.snp.makeConstraints({
+            $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+            $0.bottom.equalTo(bottomStack.snp.top).offset(-10)
+        })
+        
         
         addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapped)))
     }
     
+    private func didSelect() {
+        self.containerForImageView.backgroundColor = R.color.appColors.appMainColor()
+        self.choosenView.alpha = 1
+    }
     
-    @objc private func tapped() {
-        guard let text = animalTypeLabel.text, let animalType = AnimalTypes(rawValue: text) else { return }
-        event.onNext(animalType)
-        containerForImageView.backgroundColor = R.color.appColors.appMainColor()
-        
-        UIView.animate(withDuration: 0.2) { [unowned self] in
-            self.containerForImageView.backgroundColor = R.color.appColors.appMainColor()
-            self.choosenView.alpha = 1
+    func deselect() {
+        self.containerForImageView.backgroundColor = .clear
+        self.choosenView.alpha = 0
+    }
+    
+    @objc func tapped() {
+        event.onNext(currentType)
+      
+        UIView.animate(withDuration: 0.6) { [unowned self] in
+            didSelect()
         }
     }
 }

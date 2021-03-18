@@ -15,13 +15,13 @@ class CreateAdInteractor: CreateAdInteractorInput {
     
     func fetchAnimalSubtypes(forAnimalType type: AnimalTypes) {
         moyaProvider
-            .requestModel(.animalSubtypes(type), AnimalSubtypes.self)
+            .requestArray(.animalSubtypes(type), AnimalSubtypes.self)
             .subscribe({ [weak self] result in
                 switch result {
                 case .next(let animalSubtypes):
-                    print(animalSubtypes)
+                    self?.output.fetchSubtypesSuccess(animalSubtypes)
                 case .error(let error as ProviderError):
-                    print(error.localizedDescription)
+                    self?.output.showError(error)
                 default: ()
                 }
             })

@@ -15,7 +15,7 @@
 "user-name-text-field" = "Ваше имя";
 
 "done-button-title" = "Готово";
-"request-code-button-title" = "Запросить код";
+"request-code-phone-button-title" = "Запросить код";
 "confirm-code-button-title" = "Подтвердить код";
 
 "phone" = "Телефон";

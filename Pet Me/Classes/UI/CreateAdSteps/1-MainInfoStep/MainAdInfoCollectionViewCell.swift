@@ -20,18 +20,20 @@ enum CreateAdStep: Int, CaseIterable {
 class MainAdInfoCollectionViewCell: UICollectionViewCell {
     
     private let disposeBag = DisposeBag()
-    private let animalTypeSubject = PublishSubject<AnimalTypes>()
+    private let animalTypeSubject = BehaviorSubject<AnimalTypes>(value: .dog)
     
     var animalTypeChoiceObservable: Observable<AnimalTypes> {
         return animalTypeSubject.asObservable()
     }
     
-    private let dummyAnimalSubTypeInfo = ["Хаски", "Бульдог", "Неизвестный", "Без названия", "Джон Шепард"]
+    private var animalSubtypes: [AnimalSubtypeCellItem] = [] {
+        didSet {
+            animalSubTypeCollection.reloadData()
+        }
+    }
+    
     private let scrollView = UIScrollView()
     private let containerLayoutGuide = UILayoutGuide()
-    
-    private let dogChoiceControl = AnimalChoosingControl(animalType: .dog)
-    private let catChoiceControl = AnimalChoosingControl(animalType: .cat)
     private let animalSubTypeCollection: UICollectionView = {
         let fl = UICollectionViewFlowLayout()
         fl.scrollDirection = .horizontal
@@ -45,10 +47,8 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
     private let animalSubTypeLabel = UILabel.localizedLabel(.animalSubtypeLabel)
     private let animalTypeLabel = UILabel.localizedLabel(.animalTypeLabel)
     
-    private lazy var animalChoiceViewsStack = UIStackView(arrangedSubviews: [dogChoiceControl, catChoiceControl])
+    private let animalChoiceViewsStack = AnimalChoosingStack()
     
-    //выбор пола
-    //имя
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -59,7 +59,7 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         setupScrollView()
         setupUI()
         setupAnimalSubtypeGroup()
-     
+        super.layoutSubviews()
     }
     
     required init?(coder: NSCoder) {
@@ -67,12 +67,14 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
     }
     
     
+    func setupAnimalSubtypes(_ subtypes: [AnimalSubtypeCellItem]) {
+        self.animalSubtypes = subtypes
+    }
+    
     private func setupSubscriptions() {
-        [dogChoiceControl, catChoiceControl].forEach({
-            $0.choosenAnimalType.subscribe(onNext: { [weak self] element in
-                self?.animalTypeSubject.onNext(element)
-            }).disposed(by: disposeBag)
-        })
+        animalChoiceViewsStack.choosenAnimalTypeObservable.subscribe(onNext: { [weak self] element in
+            self?.animalTypeSubject.onNext(element)
+        }).disposed(by: disposeBag)
     }
     
     private func setupAnimalSubtypeGroup() {
@@ -112,10 +114,8 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
     
     private func setupUI() {
         scrollView.addSubview(animalChoiceViewsStack)
-        animalChoiceViewsStack.distribution = .fillEqually
-        animalChoiceViewsStack.spacing = 5
         animalChoiceViewsStack.snp.makeConstraints({
-            $0.top.equalTo(containerLayoutGuide).offset(dogChoiceControl.intrinsicContentSize.height - 5)
+            $0.top.equalTo(containerLayoutGuide)
             $0.centerX.equalTo(containerLayoutGuide)
         })
     }
@@ -125,12 +125,12 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
 //MARK: - UICollectionViewDelegate & DataSource
 extension MainAdInfoCollectionViewCell: UICollectionViewDelegate, UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return dummyAnimalSubTypeInfo.count
+        return animalSubtypes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as AdSubTypeCollectionViewCell
-        cell.animalTypeLabel.text = dummyAnimalSubTypeInfo[indexPath.item]
+        cell.animalTypeLabel.text = animalSubtypes[indexPath.item].name
         return cell
     }
     
@@ -143,7 +143,7 @@ extension MainAdInfoCollectionViewCell: UICollectionViewDelegate, UICollectionVi
 //MARK: - UICollectionViewDelegateFlowLayout
 extension MainAdInfoCollectionViewCell: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let width = dummyAnimalSubTypeInfo[indexPath.item].size(withAttributes: nil).width
+        let width = animalSubtypes[indexPath.item].name.size(withAttributes: nil).width
         return .init(width: width + 22, height: 35)
     }
     

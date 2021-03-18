@@ -9,5 +9,7 @@
 import Foundation
 
 protocol CreateAdInteractorOutput: class {
-
+    
+    func fetchSubtypesSuccess(_ subtypes: [AnimalSubtypes])
+    func showError(_ error: ProviderError)
 }

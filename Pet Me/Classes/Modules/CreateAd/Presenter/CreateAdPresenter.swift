@@ -6,15 +6,17 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
-class CreateAdPresenter: CreateAdModuleInput, CreateAdInteractorOutput {
+class CreateAdPresenter: CreateAdModuleInput {
 
     weak var view: CreateAdViewInput!
     var interactor: CreateAdInteractorInput!
     var router: CreateAdRouterInput!
 
-    
 }
 
+
+
+//MARK: - CreateAdViewOutput
 extension CreateAdPresenter: CreateAdViewOutput {
     
     func viewIsReady() {
@@ -27,5 +29,18 @@ extension CreateAdPresenter: CreateAdViewOutput {
     
     func fetchAnimalSubtype(_ animalType: AnimalTypes) {
         interactor.fetchAnimalSubtypes(forAnimalType: animalType)
+    }
+}
+
+
+//MARK: - CreateAdInteractorOutput
+extension CreateAdPresenter: CreateAdInteractorOutput {
+    func fetchSubtypesSuccess(_ subtypes: [AnimalSubtypes]) {
+        let animalSubtypeCellItems = subtypes.map({ AnimalSubtypeCellItem($0) })
+        view.showAnimalSubtypes(animalSubtypeCellItems)
+    }
+    
+    func showError(_ error: ProviderError) {
+        view.showError(error.localizedDescription)
     }
 }

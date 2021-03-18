@@ -583,8 +583,8 @@ struct R: Rswift.Validatable {
       static let phone = Rswift.StringResource(key: "phone", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Request code
       ///
-      /// Locales: en
-      static let requestCodePhoneButtonTitle = Rswift.StringResource(key: "request-code-phone-button-title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["en"], comment: nil)
+      /// Locales: ru, en
+      static let requestCodePhoneButtonTitle = Rswift.StringResource(key: "request-code-phone-button-title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Select animal type
       ///
       /// Locales: ru, en
@@ -660,7 +660,7 @@ struct R: Rswift.Validatable {
 
       /// en translation: Request code
       ///
-      /// Locales: en
+      /// Locales: ru, en
       static func requestCodePhoneButtonTitle(preferredLanguages: [String]? = nil) -> String {
         guard let preferredLanguages = preferredLanguages else {
           return NSLocalizedString("request-code-phone-button-title", bundle: hostingBundle, comment: "")

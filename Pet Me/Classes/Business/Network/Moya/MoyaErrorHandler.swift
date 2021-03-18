@@ -32,7 +32,7 @@ class MoyaErrorHandler {
                     #warning("Это в данным момент не используется, разбирись потом")
                    message = configurateFullErrorMessage(from: data)
                 }
-                log.debug(providerErrorResponse.message)
+                log.debug(providerErrorResponse.message, response.data.debugDescription)
                 return ProviderError(message: providerErrorResponse.message, status: response.statusCode)
             } catch {
                 return ProviderError(message: "Пожалуйста, попытайтесь еще раз", status: 0)
