@@ -19,3 +19,6 @@
 "confirm-code-button-title" = "Confirm code";
 
 "phone" = "Phone";
+"male" = "Male";
+"female" = "Female";
+"name" = "Name";

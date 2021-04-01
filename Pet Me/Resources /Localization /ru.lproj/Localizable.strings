@@ -19,3 +19,6 @@
 "confirm-code-button-title" = "Подтвердить код";
 
 "phone" = "Телефон";
+"male" = "Мужской";
+"female" = "Женский";
+"name" = "Имя";

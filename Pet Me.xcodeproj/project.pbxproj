@@ -97,6 +97,7 @@
 		A71274EE2444CF44004F0945 /* ChatLogsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */; };
 		A71274F02444D3A8004F0945 /* ChatLogsTopView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */; };
 		A71595A225FD0CB10051612C /* AnimalSubtypeCellItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71595A125FD0CB10051612C /* AnimalSubtypeCellItem.swift */; };
+		A71D29BA2615F55500AE1269 /* AnimalGenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71D29B92615F55500AE1269 /* AnimalGenderView.swift */; };
 		A71DB5FA25DD40E4006DE50D /* MainAdInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71DB5F925DD40E4006DE50D /* MainAdInfoCollectionViewCell.swift */; };
 		A71F31C224B0FD51001832C0 /* SideMenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */; };
 		A71F31C824B0FE26001832C0 /* ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71F31C724B0FE26001832C0 /* ReusableView.swift */; };
@@ -331,6 +332,7 @@
 		A71274ED2444CF44004F0945 /* ChatLogsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsCollectionViewCell.swift; sourceTree = "<group>"; };
 		A71274EF2444D3A8004F0945 /* ChatLogsTopView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsTopView.swift; sourceTree = "<group>"; };
 		A71595A125FD0CB10051612C /* AnimalSubtypeCellItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalSubtypeCellItem.swift; sourceTree = "<group>"; };
+		A71D29B92615F55500AE1269 /* AnimalGenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalGenderView.swift; sourceTree = "<group>"; };
 		A71DB5F925DD40E4006DE50D /* MainAdInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainAdInfoCollectionViewCell.swift; sourceTree = "<group>"; };
 		A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuTableViewCell.swift; sourceTree = "<group>"; };
 		A71F31C724B0FE26001832C0 /* ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableView.swift; sourceTree = "<group>"; };
@@ -919,6 +921,14 @@
 			path = Items;
 			sourceTree = "<group>";
 		};
+		A71D29B82615F53000AE1269 /* AnimalGenderView */ = {
+			isa = PBXGroup;
+			children = (
+				A71D29B92615F55500AE1269 /* AnimalGenderView.swift */,
+			);
+			path = AnimalGenderView;
+			sourceTree = "<group>";
+		};
 		A71DB5F825DD40BB006DE50D /* CreateAdSteps */ = {
 			isa = PBXGroup;
 			children = (
@@ -1319,6 +1329,7 @@
 		A7FFBAA524532AD400CD7B5F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				A71D29B82615F53000AE1269 /* AnimalGenderView */,
 				A71595A025FD0C9A0051612C /* Items */,
 				A71DB5F825DD40BB006DE50D /* CreateAdSteps */,
 				A7BA327D24E5A70B00DC485E /* GenderTypeCollectionView */,
@@ -2097,6 +2108,7 @@
 				8C5312721E68369592998531 /* StartingRouter.swift in Sources */,
 				D4F3BE1EAD1180AFE58AB7D8 /* StartingConfigurator.swift in Sources */,
 				47B7D3F44F555983ECB12EF3 /* SideMenuViewInput.swift in Sources */,
+				A71D29BA2615F55500AE1269 /* AnimalGenderView.swift in Sources */,
 				FDFD5FBFE66E55139048291A /* SideMenuViewOutput.swift in Sources */,
 				2CFB388F0C03E2077281D3D8 /* SideMenuViewController.swift in Sources */,
 				A7BA327824E5A1D000DC485E /* CreateAdInfoCollectionView.swift in Sources */,

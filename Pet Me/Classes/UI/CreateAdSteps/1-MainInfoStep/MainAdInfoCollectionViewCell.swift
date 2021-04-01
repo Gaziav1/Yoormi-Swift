@@ -32,6 +32,8 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         }
     }
     
+    private let nameTextField = RegistrationTextField(text: .name)
+    private let animalGenderSegControl = AnimalGenderView()
     private let scrollView = UIScrollView()
     private let containerLayoutGuide = UILayoutGuide()
     private let animalSubTypeCollection: UICollectionView = {
@@ -53,15 +55,18 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupSubscriptions()
+       
     }
     
     override func layoutSubviews() {
         setupScrollView()
         setupUI()
         setupAnimalSubtypeGroup()
+        setupAnimalGenderSegControl()
+        setupNameTextField()
         super.layoutSubviews()
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -77,8 +82,18 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         }).disposed(by: disposeBag)
     }
     
+    private func setupNameTextField() {
+        scrollView.addSubview(nameTextField)
+
+        nameTextField.snp.makeConstraints({
+            $0.top.equalTo(animalGenderSegControl.snp.bottom).offset(15)
+            $0.leading.equalTo(animalSubTypeLabel)
+            $0.trailing.equalTo(containerLayoutGuide).offset(-15)
+        })
+    }
+    
     private func setupAnimalSubtypeGroup() {
-        addSubview(animalSubTypeCollection)
+    
         animalSubTypeCollection.delegate = self
         animalSubTypeCollection.dataSource = self
         
@@ -97,6 +112,15 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         })
     }
     
+    private func setupAnimalGenderSegControl() {
+        scrollView.addSubview(animalGenderSegControl)
+        
+        animalGenderSegControl.snp.makeConstraints({
+            $0.leading.equalTo(animalSubTypeLabel)
+            $0.top.equalTo(animalSubTypeCollection.snp.bottom).offset(30)
+            $0.height.equalTo(50)
+        })
+    }
     
     private func setupScrollView() {
         addSubview(scrollView)

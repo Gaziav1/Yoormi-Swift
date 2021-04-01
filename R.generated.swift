@@ -563,7 +563,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 8 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 11 localization keys.
     struct localizable {
       /// en translation: Add your photo (optional)
       ///
@@ -577,6 +577,18 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let doneButtonTitle = Rswift.StringResource(key: "done-button-title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Female
+      ///
+      /// Locales: ru, en
+      static let female = Rswift.StringResource(key: "female", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Male
+      ///
+      /// Locales: ru, en
+      static let male = Rswift.StringResource(key: "male", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Name
+      ///
+      /// Locales: ru, en
+      static let name = Rswift.StringResource(key: "name", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Phone
       ///
       /// Locales: ru, en
@@ -641,6 +653,51 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("done-button-title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Female
+      ///
+      /// Locales: ru, en
+      static func female(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("female", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "female"
+        }
+
+        return NSLocalizedString("female", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Male
+      ///
+      /// Locales: ru, en
+      static func male(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("male", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "male"
+        }
+
+        return NSLocalizedString("male", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Name
+      ///
+      /// Locales: ru, en
+      static func name(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("name", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "name"
+        }
+
+        return NSLocalizedString("name", bundle: bundle, comment: "")
       }
 
       /// en translation: Phone
