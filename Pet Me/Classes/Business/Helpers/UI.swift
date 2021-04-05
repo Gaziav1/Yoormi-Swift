@@ -86,6 +86,7 @@ extension UIButton {
         button.setTitle(title.localized, for: .normal)
         button.clipsToBounds = true
         button.titleLabel?.font = .boldSystemFont(ofSize: 15)
+        button.isEnabled = false
         
         return button
     }

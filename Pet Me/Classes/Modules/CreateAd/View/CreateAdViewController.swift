@@ -10,12 +10,22 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+
+enum CreateAdStep: Int, CaseIterable {
+    case mainInfo
+    case photoAndDescription
+    case mapAndAdress
+    case final
+}
+
+
 class CreateAdViewController: UIViewController {
     
     var output: CreateAdViewOutput!
     
     private let disposeBag = DisposeBag()
     private let steps = CreateAdStep.allCases
+    
     
     //MARK: - Life cycle
     override func viewDidLoad() {
@@ -84,9 +94,15 @@ extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewData
         switch step {
         case .mainInfo:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell
+            
             cell.animalTypeChoiceObservable.subscribe(onNext: { [weak self] choosenAnimalType in
                 self?.output.fetchAnimalSubtype(choosenAnimalType)
             }).disposed(by: disposeBag)
+            
+            cell.userChoosenInfoObservable.subscribe(onNext: { [weak self] firstStepUserInfo in
+                self?.output.saveFirstStepUserInfo(firstStepUserInfo)
+            }).disposed(by: disposeBag)
+            
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell

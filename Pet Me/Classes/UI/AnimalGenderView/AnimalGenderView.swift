@@ -7,9 +7,19 @@
 //
 
 import UIKit
+import RxSwift
+
+enum AnimalGender: String, RawRepresentable {
+    case male
+    case female
+}
 
 class AnimalGenderView: UISegmentedControl {
    
+    private let animalGenderSubject = BehaviorSubject<AnimalGender>(value: .male)
+    var animalGenderObservable: Observable<AnimalGender> {
+        return animalGenderSubject.asObservable()
+    }
     
     override init(frame: CGRect = .zero) {
         super.init(frame: frame)
@@ -38,6 +48,8 @@ class AnimalGenderView: UISegmentedControl {
     
     @objc private func didChangeSelection() {
         selectedSegmentTintColor = selectedSegmentIndex == 0 ? .systemBlue : .systemPink
-       
+
+        let choosenAnimalGender: AnimalGender = selectedSegmentIndex == 0 ? .male : .female
+        animalGenderSubject.onNext(choosenAnimalGender)
     }
 }

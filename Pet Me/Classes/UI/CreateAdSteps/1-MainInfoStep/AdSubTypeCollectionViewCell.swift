@@ -32,6 +32,26 @@ class AdSubTypeCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
+    override var isHighlighted: Bool {
+        didSet {
+            animateHighlightedState(isHighlighted)
+        }
+    }
+    
+    override var isSelected: Bool {
+        didSet {
+            animalTypeLabel.textColor = oldValue ? .black : .white
+        }
+    }
+    
+    private func animateHighlightedState(_ highlighted: Bool) {
+        let transform = CGAffineTransform(scaleX: 0.9, y: 0.9)
+        
+        UIView.animate(withDuration: 0.4) { [weak self] in
+            self?.transform = highlighted ? transform : .identity
+        }
+    }
+    
     private func animalTypeLabelSetup() {
         addSubview(animalTypeLabel)
         

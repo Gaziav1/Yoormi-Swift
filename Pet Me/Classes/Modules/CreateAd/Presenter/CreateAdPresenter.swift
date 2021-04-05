@@ -11,7 +11,7 @@ class CreateAdPresenter: CreateAdModuleInput {
     weak var view: CreateAdViewInput!
     var interactor: CreateAdInteractorInput!
     var router: CreateAdRouterInput!
-
+    var adRequestBuilder: AnimalAdRequestModelBuildable!
 }
 
 
@@ -30,6 +30,20 @@ extension CreateAdPresenter: CreateAdViewOutput {
     func fetchAnimalSubtype(_ animalType: AnimalTypes) {
         interactor.fetchAnimalSubtypes(forAnimalType: animalType)
     }
+    
+    func saveFirstStepUserInfo(_ info: FirstStepAdInfo) {
+        adRequestBuilder
+            .setName(info.animalName)
+            .setAge(10)
+            .setGender(info.animalGender)
+            .setAnimalType(info.animalType)
+            .setAnimalSubtype(info.animalSubtype)
+            .done()
+        
+        
+        //Refactoring & Begin Second Step
+    }
+    
 }
 
 

@@ -18,10 +18,11 @@ enum LocalizationKeys: String {
     case continueButtonTitle = "done-button-title"
     case requestCodePhoneButtonTitle = "request-code-phone-button-title"
     case confirmCodeButtonTitle = "confirm-code-button-title"
-    case phone = "phone"
-    case male = "male"
-    case female = "female"
-    case name = "name"
+    case phone
+    case male
+    case female
+    case name
+    case next
     
     var localized: String {
         return self.rawValue.localized()

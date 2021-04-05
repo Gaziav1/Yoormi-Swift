@@ -9,29 +9,37 @@
 import UIKit
 import RxSwift
 
-enum CreateAdStep: Int, CaseIterable {
-    case mainInfo
-    case photoAndDescription
-    case mapAndAdress
-    case final
+struct FirstStepAdInfo {
+    let animalType: AnimalTypes
+    let animalGender: AnimalGender
+    let animalSubtype: String
+    let animalName: String
 }
-
 
 class MainAdInfoCollectionViewCell: UICollectionViewCell {
     
+  
+    //MARK: - RX
     private let disposeBag = DisposeBag()
+    private let userChoosenInfoSubject = PublishSubject<FirstStepAdInfo>()
     private let animalTypeSubject = BehaviorSubject<AnimalTypes>(value: .dog)
     
     var animalTypeChoiceObservable: Observable<AnimalTypes> {
         return animalTypeSubject.asObservable()
     }
     
+    var userChoosenInfoObservable: Observable<FirstStepAdInfo> {
+        return userChoosenInfoSubject.asObservable()
+    }
+    
+    //MARK: - Items
     private var animalSubtypes: [AnimalSubtypeCellItem] = [] {
         didSet {
             animalSubTypeCollection.reloadData()
         }
     }
     
+    //MARK: - UI
     private let nameTextField = RegistrationTextField(text: .name)
     private let animalGenderSegControl = AnimalGenderView()
     private let scrollView = UIScrollView()
@@ -48,9 +56,26 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
     
     private let animalSubTypeLabel = UILabel.localizedLabel(.animalSubtypeLabel)
     private let animalTypeLabel = UILabel.localizedLabel(.animalTypeLabel)
-    
     private let animalChoiceViewsStack = AnimalChoosingStack()
+    private let nextButton: UIButton = {
+        let button = UIButton.createDisabledButton(withTitle: .next)
+        return button
+    }()
     
+    //MARK: - Data
+    private var choosenAnimalType = AnimalTypes.dog
+  
+    private var choosenAnimalGender = AnimalGender.male
+    private var choosenAnimalSubtype: String? {
+        didSet {
+            changeButtonColor()
+        }
+    }
+    private var choosenAnimalName: String? {
+        didSet {
+            changeButtonColor()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -64,6 +89,7 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         setupAnimalSubtypeGroup()
         setupAnimalGenderSegControl()
         setupNameTextField()
+        setupNextButton()
         super.layoutSubviews()
     }
 
@@ -71,20 +97,52 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     func setupAnimalSubtypes(_ subtypes: [AnimalSubtypeCellItem]) {
         self.animalSubtypes = subtypes
     }
     
+    private func changeButtonColor() {
+        let shouldEnableButton = choosenAnimalSubtype != nil && choosenAnimalName != nil
+        nextButton.isEnabled = shouldEnableButton
+        nextButton.backgroundColor = shouldEnableButton ? .appLightGreen : .systemGray4
+    }
+    
+    private func setupNextButton() {
+        scrollView.addSubview(nextButton)
+        
+        nextButton.snp.makeConstraints({
+            $0.top.equalTo(nameTextField.snp.bottom).offset(10)
+            $0.leading.trailing.equalTo(containerLayoutGuide).inset(10)
+            $0.height.equalTo(45)
+        })
+    }
+    
     private func setupSubscriptions() {
-        animalChoiceViewsStack.choosenAnimalTypeObservable.subscribe(onNext: { [weak self] element in
-            self?.animalTypeSubject.onNext(element)
+        
+        animalChoiceViewsStack.choosenAnimalTypeObservable.subscribe(onNext: { [weak self] choosenAnimalType in
+            self?.animalTypeSubject.onNext(choosenAnimalType)
+            self?.choosenAnimalType = choosenAnimalType
+        }).disposed(by: disposeBag)
+        
+        animalGenderSegControl.animalGenderObservable.subscribe(onNext: { [weak self] choosenAnimalGender in
+            self?.choosenAnimalGender = choosenAnimalGender
+        }).disposed(by: disposeBag)
+        
+        nameTextField.textField.rx.controlEvent(.editingChanged).subscribe({ [weak self] text in
+            guard let text = self?.nameTextField.textField.text else { return }
+            self?.choosenAnimalName = text.isEmpty ? nil : text
+        }).disposed(by: disposeBag)
+        
+        nextButton.rx.controlEvent(.touchUpInside).subscribe({ [weak self] _ in
+            guard let self = self else { return }
+            guard let name = self.choosenAnimalName, let subtype = self.choosenAnimalName else { return }
+            let info = FirstStepAdInfo(animalType: self.choosenAnimalType, animalGender: self.choosenAnimalGender, animalSubtype: subtype, animalName: name)
+            self.userChoosenInfoSubject.onNext(info)
         }).disposed(by: disposeBag)
     }
     
     private func setupNameTextField() {
         scrollView.addSubview(nameTextField)
-
         nameTextField.snp.makeConstraints({
             $0.top.equalTo(animalGenderSegControl.snp.bottom).offset(15)
             $0.leading.equalTo(animalSubTypeLabel)
@@ -155,12 +213,17 @@ extension MainAdInfoCollectionViewCell: UICollectionViewDelegate, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as AdSubTypeCollectionViewCell
         cell.animalTypeLabel.text = animalSubtypes[indexPath.item].name
+        cell.selectedBackgroundView = UIView(frame: cell.bounds)
+        cell.selectedBackgroundView?.backgroundColor = .appLightGreen
         return cell
     }
     
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return .init(top: 0, left: 10, bottom: 0, right: 10)
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.choosenAnimalSubtype = animalSubtypes[indexPath.item].name
     }
 }
 

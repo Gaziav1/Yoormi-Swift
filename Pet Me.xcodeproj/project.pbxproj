@@ -149,6 +149,9 @@
 		A77D38C825E2934A002B0973 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D38C725E2934A002B0973 /* LocalizationKeys.swift */; };
 		A78C6B09254C64AA0020BCDA /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B08254C64AA0020BCDA /* Configurations.swift */; };
 		A78C6B39254C77080020BCDA /* YoormiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B38254C77080020BCDA /* YoormiTarget.swift */; };
+		A7B1DF9D261760AE00679833 /* AnimalAdRequestModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DF9C261760AE00679833 /* AnimalAdRequestModelBuilder.swift */; };
+		A7B1DFA3261760E400679833 /* AnimalAdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DFA2261760E400679833 /* AnimalAdModel.swift */; };
+		A7B1DFA8261762AC00679833 /* AnimalAdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DFA7261762AC00679833 /* AnimalAdRequestModel.swift */; };
 		A7BA327524E57D5400DC485E /* CustomImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327424E57D5400DC485E /* CustomImagePicker.swift */; };
 		A7BA327824E5A1D000DC485E /* CreateAdInfoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327724E5A1D000DC485E /* CreateAdInfoCollectionView.swift */; };
 		A7BA327A24E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7BA327924E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift */; };
@@ -386,6 +389,9 @@
 		A77D38C725E2934A002B0973 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		A78C6B08254C64AA0020BCDA /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		A78C6B38254C77080020BCDA /* YoormiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoormiTarget.swift; sourceTree = "<group>"; };
+		A7B1DF9C261760AE00679833 /* AnimalAdRequestModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAdRequestModelBuilder.swift; sourceTree = "<group>"; };
+		A7B1DFA2261760E400679833 /* AnimalAdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAdModel.swift; sourceTree = "<group>"; };
+		A7B1DFA7261762AC00679833 /* AnimalAdRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAdRequestModel.swift; sourceTree = "<group>"; };
 		A7BA327424E57D5400DC485E /* CustomImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomImagePicker.swift; sourceTree = "<group>"; };
 		A7BA327724E5A1D000DC485E /* CreateAdInfoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdInfoCollectionView.swift; sourceTree = "<group>"; };
 		A7BA327924E5A1F100DC485E /* CreateAdInfoCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAdInfoCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -1082,6 +1088,14 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		A7B1DF9B261760A000679833 /* Builders */ = {
+			isa = PBXGroup;
+			children = (
+				A7B1DF9C261760AE00679833 /* AnimalAdRequestModelBuilder.swift */,
+			);
+			path = Builders;
+			sourceTree = "<group>";
+		};
 		A7BA327324E57D3500DC485E /* CustomImagePicker */ = {
 			isa = PBXGroup;
 			children = (
@@ -1233,6 +1247,7 @@
 		A7F3878B2450ADDB009B780E /* Business */ = {
 			isa = PBXGroup;
 			children = (
+				A7B1DF9B261760A000679833 /* Builders */,
 				A78C6B37254C76F50020BCDA /* Network */,
 				A76C9ED324C5DC3F005828F8 /* FlowController */,
 				A7FFBAB824533AA200CD7B5F /* Helpers */,
@@ -1322,6 +1337,8 @@
 				A7BDB2E2254DA039000B04DF /* User.swift */,
 				A7C7996A25586A6400F69D70 /* Phone.swift */,
 				A7CE931C25F670E30058255D /* AnimalSubtypes.swift */,
+				A7B1DFA2261760E400679833 /* AnimalAdModel.swift */,
+				A7B1DFA7261762AC00679833 /* AnimalAdRequestModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1993,6 +2010,7 @@
 				A7F387902450B97B009B780E /* Colors.swift in Sources */,
 				A742529024054CF8002FB8C6 /* TopNavigationStackView.swift in Sources */,
 				A742529924069990002FB8C6 /* CardViewModel.swift in Sources */,
+				A7B1DF9D261760AE00679833 /* AnimalAdRequestModelBuilder.swift in Sources */,
 				A7381DA5244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift in Sources */,
 				A77021552407E6D6005E6C4A /* OldRegsitrationControllerb .swift in Sources */,
 				A7E1B74E257535B200262539 /* PhoneValidation.swift in Sources */,
@@ -2078,6 +2096,7 @@
 				822DE678A483146A1E0FDC8D /* RegistrationViewController.swift in Sources */,
 				A78C6B39254C77080020BCDA /* YoormiTarget.swift in Sources */,
 				A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */,
+				A7B1DFA8261762AC00679833 /* AnimalAdRequestModel.swift in Sources */,
 				A77A3F2625503122007A3587 /* ProviderError.swift in Sources */,
 				A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */,
 				A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */,
@@ -2157,6 +2176,7 @@
 				7955C57AB780C6175F48C82F /* MyAdsPresenter.swift in Sources */,
 				551BE460AD4EE42D7CF87127 /* MyAdsInteractorInput.swift in Sources */,
 				E6CE30C666C46557D15B59D1 /* MyAdsInteractorOutput.swift in Sources */,
+				A7B1DFA3261760E400679833 /* AnimalAdModel.swift in Sources */,
 				2AC3FBF2E6419CDE541F6F39 /* MyAdsInteractor.swift in Sources */,
 				555CB49E4957217FEF25A930 /* MyAdsRouterInput.swift in Sources */,
 				003AD9864B846F62A1F1C6CF /* MyAdsRouter.swift in Sources */,

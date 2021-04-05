@@ -14,6 +14,7 @@ class CreateAdModuleConfigurator {
     static let tag = "CreateAd"
 
     var appRouter: AppRouterProtocol!
+    var adRequestBuilder: AnimalAdRequestModelBuildable!
     var moyaProvider: MoyaProvider<YoormiTarget>!
     
     func configure() -> UIViewController {
@@ -23,6 +24,7 @@ class CreateAdModuleConfigurator {
         let presenter = CreateAdPresenter()
         presenter.view = controller
         presenter.router = router
+        presenter.adRequestBuilder = adRequestBuilder
         router.appRouter = appRouter
 
         let interactor = CreateAdInteractor()
