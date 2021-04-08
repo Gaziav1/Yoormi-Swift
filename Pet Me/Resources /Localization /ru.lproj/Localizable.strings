@@ -18,8 +18,12 @@
 "request-code-phone-button-title" = "Запросить код";
 "confirm-code-button-title" = "Подтвердить код";
 
+"add-pet-photos" = "Добавьте фотографии вашего питомца";
+"add-pet-description" = "Опишите вашего питомца";
+
 "phone" = "Телефон";
 "male" = "Мужской";
 "female" = "Женский";
 "name" = "Имя";
 "next" = "Далее";
+

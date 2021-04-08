@@ -40,7 +40,7 @@ class AdSubTypeCollectionViewCell: UICollectionViewCell {
     
     override var isSelected: Bool {
         didSet {
-            animalTypeLabel.textColor = oldValue ? .black : .white
+            animalTypeLabel.textColor = isSelected ? .white : .black
         }
     }
     

@@ -563,8 +563,12 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 12 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 14 localization keys.
     struct localizable {
+      /// en translation: Add photos of your pet
+      ///
+      /// Locales: ru, en
+      static let addPetPhotos = Rswift.StringResource(key: "add-pet-photos", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Add your photo (optional)
       ///
       /// Locales: ru, en
@@ -573,6 +577,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let confirmCodeButtonTitle = Rswift.StringResource(key: "confirm-code-button-title", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Describe your pet
+      ///
+      /// Locales: ru, en
+      static let addPetDescription = Rswift.StringResource(key: "add-pet-description", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Done
       ///
       /// Locales: ru, en
@@ -614,6 +622,21 @@ struct R: Rswift.Validatable {
       /// Locales: ru, en
       static let userNameTextField = Rswift.StringResource(key: "user-name-text-field", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
 
+      /// en translation: Add photos of your pet
+      ///
+      /// Locales: ru, en
+      static func addPetPhotos(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add-pet-photos", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add-pet-photos"
+        }
+
+        return NSLocalizedString("add-pet-photos", bundle: bundle, comment: "")
+      }
+
       /// en translation: Add your photo (optional)
       ///
       /// Locales: ru, en
@@ -642,6 +665,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("confirm-code-button-title", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Describe your pet
+      ///
+      /// Locales: ru, en
+      static func addPetDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("add-pet-description", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "add-pet-description"
+        }
+
+        return NSLocalizedString("add-pet-description", bundle: bundle, comment: "")
       }
 
       /// en translation: Done

@@ -104,6 +104,8 @@
 		A71FA81624A0E668009AFC8E /* CatWaiting.json in Resources */ = {isa = PBXBuildFile; fileRef = A71FA81524A0E668009AFC8E /* CatWaiting.json */; };
 		A71FA81824A24886009AFC8E /* SecureNonceGeneratorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */; };
 		A71FA81C24A2504A009AFC8E /* AppleSignInManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */; };
+		A7232418261F5F53007D187E /* AddressRequestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7232417261F5F53007D187E /* AddressRequestCollectionViewCell.swift */; };
+		A723241D261F6063007D187E /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A723241C261F6063007D187E /* LocationManager.swift */; };
 		A728108725BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift in Sources */ = {isa = PBXBuildFile; fileRef = A728108625BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift */; };
 		A7332E0E24E2C5C9003F2EEA /* EmptyAdsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7332E0D24E2C5C9003F2EEA /* EmptyAdsView.swift */; };
 		A7381DA5244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */; };
@@ -149,6 +151,7 @@
 		A77D38C825E2934A002B0973 /* LocalizationKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77D38C725E2934A002B0973 /* LocalizationKeys.swift */; };
 		A78C6B09254C64AA0020BCDA /* Configurations.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B08254C64AA0020BCDA /* Configurations.swift */; };
 		A78C6B39254C77080020BCDA /* YoormiTarget.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78C6B38254C77080020BCDA /* YoormiTarget.swift */; };
+		A7AD396F261C8AB5001B96C8 /* PhotosAndDescriptionCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7AD396E261C8AB5001B96C8 /* PhotosAndDescriptionCollectionViewCell.swift */; };
 		A7B1DF9D261760AE00679833 /* AnimalAdRequestModelBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DF9C261760AE00679833 /* AnimalAdRequestModelBuilder.swift */; };
 		A7B1DFA3261760E400679833 /* AnimalAdModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DFA2261760E400679833 /* AnimalAdModel.swift */; };
 		A7B1DFA8261762AC00679833 /* AnimalAdRequestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B1DFA7261762AC00679833 /* AnimalAdRequestModel.swift */; };
@@ -342,6 +345,8 @@
 		A71FA81524A0E668009AFC8E /* CatWaiting.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = CatWaiting.json; sourceTree = "<group>"; };
 		A71FA81724A24886009AFC8E /* SecureNonceGeneratorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecureNonceGeneratorManager.swift; sourceTree = "<group>"; };
 		A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleSignInManager.swift; sourceTree = "<group>"; };
+		A7232417261F5F53007D187E /* AddressRequestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddressRequestCollectionViewCell.swift; sourceTree = "<group>"; };
+		A723241C261F6063007D187E /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 		A728108625BEF3FC007A9479 /* ConfirmationCodeValidationStrategy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmationCodeValidationStrategy.swift; sourceTree = "<group>"; };
 		A7332E0D24E2C5C9003F2EEA /* EmptyAdsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptyAdsView.swift; sourceTree = "<group>"; };
 		A7381DA4244756EF0034A7BF /* ChatLogsBottomAccessoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogsBottomAccessoryView.swift; sourceTree = "<group>"; };
@@ -389,6 +394,7 @@
 		A77D38C725E2934A002B0973 /* LocalizationKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizationKeys.swift; sourceTree = "<group>"; };
 		A78C6B08254C64AA0020BCDA /* Configurations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Configurations.swift; sourceTree = "<group>"; };
 		A78C6B38254C77080020BCDA /* YoormiTarget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YoormiTarget.swift; sourceTree = "<group>"; };
+		A7AD396E261C8AB5001B96C8 /* PhotosAndDescriptionCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotosAndDescriptionCollectionViewCell.swift; sourceTree = "<group>"; };
 		A7B1DF9C261760AE00679833 /* AnimalAdRequestModelBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAdRequestModelBuilder.swift; sourceTree = "<group>"; };
 		A7B1DFA2261760E400679833 /* AnimalAdModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAdModel.swift; sourceTree = "<group>"; };
 		A7B1DFA7261762AC00679833 /* AnimalAdRequestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalAdRequestModel.swift; sourceTree = "<group>"; };
@@ -938,6 +944,8 @@
 		A71DB5F825DD40BB006DE50D /* CreateAdSteps */ = {
 			isa = PBXGroup;
 			children = (
+				A7232415261F5F20007D187E /* 3-AdressStep */,
+				A7AD396C261C8A85001B96C8 /* 2-PhotosAndDescription */,
 				A7E734B925E14909006C0F23 /* 1-MainInfoStep */,
 			);
 			name = CreateAdSteps;
@@ -950,6 +958,14 @@
 				A71F31C124B0FD51001832C0 /* SideMenuTableViewCell.swift */,
 			);
 			path = SideMenuCells;
+			sourceTree = "<group>";
+		};
+		A7232415261F5F20007D187E /* 3-AdressStep */ = {
+			isa = PBXGroup;
+			children = (
+				A7232417261F5F53007D187E /* AddressRequestCollectionViewCell.swift */,
+			);
+			name = "3-AdressStep";
 			sourceTree = "<group>";
 		};
 		A7332E0C24E2C5B6003F2EEA /* EmptyAdsView */ = {
@@ -1086,6 +1102,14 @@
 				A78C6B38254C77080020BCDA /* YoormiTarget.swift */,
 			);
 			path = Network;
+			sourceTree = "<group>";
+		};
+		A7AD396C261C8A85001B96C8 /* 2-PhotosAndDescription */ = {
+			isa = PBXGroup;
+			children = (
+				A7AD396E261C8AB5001B96C8 /* PhotosAndDescriptionCollectionViewCell.swift */,
+			);
+			name = "2-PhotosAndDescription";
 			sourceTree = "<group>";
 		};
 		A7B1DF9B261760A000679833 /* Builders */ = {
@@ -1304,6 +1328,7 @@
 				A71FA81B24A2504A009AFC8E /* AppleSignInManager.swift */,
 				A7E0879524A390F3000B0B6A /* GoogleSignInManager.swift */,
 				A7011BF125542DAB004A8F91 /* AuthTokenManager.swift */,
+				A723241C261F6063007D187E /* LocationManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -2039,6 +2064,7 @@
 				A70A8828249CFCED0094F231 /* RegistrationTextField.swift in Sources */,
 				A742A9C0241BAF9D006721D7 /* PhotoViewController.swift in Sources */,
 				B9271326341F1522AABE50B7 /* CardsViewInput.swift in Sources */,
+				A7232418261F5F53007D187E /* AddressRequestCollectionViewCell.swift in Sources */,
 				1A1953CF43DEDE2CCBA282F6 /* CardsViewOutput.swift in Sources */,
 				0121A96D027443144A5054E3 /* CardsViewController.swift in Sources */,
 				A7FFBA962451F48800CD7B5F /* Containers.swift in Sources */,
@@ -2090,6 +2116,7 @@
 				A7BA328624E5AB0900DC485E /* CreateAdChooseTypeCollectionViewCell.swift in Sources */,
 				1C26CB93AC1B34778CACDDD2 /* MessagesRouterInput.swift in Sources */,
 				F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */,
+				A723241D261F6063007D187E /* LocationManager.swift in Sources */,
 				878CD1B057FC8DBE13F97545 /* MessagesConfigurator.swift in Sources */,
 				C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */,
 				37DF25E40F3581FDBF2BBD8E /* RegistrationViewOutput.swift in Sources */,
@@ -2100,6 +2127,7 @@
 				A77A3F2625503122007A3587 /* ProviderError.swift in Sources */,
 				A7BCB71624B3895000BA2291 /* SideMenuItem.swift in Sources */,
 				A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */,
+				A7AD396F261C8AB5001B96C8 /* PhotosAndDescriptionCollectionViewCell.swift in Sources */,
 				A756C51324E0629800545D4B /* DetailAdoptionBottomView.swift in Sources */,
 				1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */,
 				A77D38C825E2934A002B0973 /* LocalizationKeys.swift in Sources */,

@@ -18,6 +18,9 @@
 "request-code-phone-button-title" = "Request code";
 "confirm-code-button-title" = "Confirm code";
 
+"add-pet-photos" = "Add photos of your pet";
+"add-pet-description" = "Describe your pet";
+
 "phone" = "Phone";
 "male" = "Male";
 "female" = "Female";

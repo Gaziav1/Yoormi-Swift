@@ -30,6 +30,7 @@ class CreateAdViewController: UIViewController {
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
+        imagePickerController.imageLimit = 5
         output.viewIsReady()
     }
     
@@ -38,11 +39,14 @@ class CreateAdViewController: UIViewController {
         let fl = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: fl)
         cv.register(MainAdInfoCollectionViewCell.self)
+        cv.register(PhotosAndDescriptionCollectionViewCell.self)
         fl.scrollDirection = .horizontal
         cv.isPagingEnabled = true
         cv.backgroundColor = .clear
         return cv
     }()
+    
+    private let imagePickerController = CustomImagePicker()
     
     
     //MARK: - UI Setup
@@ -56,6 +60,34 @@ class CreateAdViewController: UIViewController {
         stepsCollectionView.snp.makeConstraints({
             $0.edges.equalTo(view.safeAreaLayoutGuide)
         })
+    }
+    
+    
+    //MARK: - RX Subscriptions
+    
+    
+    private func setupMainAdInfoCellSubscriptions(_ cell: MainAdInfoCollectionViewCell) {
+        cell.animalTypeChoiceObservable.subscribe(onNext: { [weak self] choosenAnimalType in
+            self?.output.fetchAnimalSubtype(choosenAnimalType)
+        }).disposed(by: disposeBag)
+        
+        cell.userChoosenInfoObservable.subscribe(onNext: { [weak self] firstStepUserInfo in
+            self?.output.saveFirstStepUserInfo(firstStepUserInfo)
+        }).disposed(by: disposeBag)
+    }
+    
+    private func setupPhotoAndDescriptionCellSubscriptions(_ cell: PhotosAndDescriptionCollectionViewCell) {
+        cell.didSelectAddPhoto.subscribe(onNext: { _ in
+            self.present(self.imagePickerController, animated: true, completion: nil)
+        }).disposed(by: disposeBag)
+        
+        imagePickerController.choosenImagesObservable.subscribe(onNext: { images in
+            cell.setImages(images)
+        }).disposed(by: disposeBag)
+        
+        cell.didSelectButtonObervable.subscribe(onNext: { secondStepCellInfo in
+            self.output.saveSecondStepUserInfo(secondStepCellInfo)
+        }).disposed(by: disposeBag)
     }
 }
 
@@ -94,15 +126,11 @@ extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewData
         switch step {
         case .mainInfo:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell
-            
-            cell.animalTypeChoiceObservable.subscribe(onNext: { [weak self] choosenAnimalType in
-                self?.output.fetchAnimalSubtype(choosenAnimalType)
-            }).disposed(by: disposeBag)
-            
-            cell.userChoosenInfoObservable.subscribe(onNext: { [weak self] firstStepUserInfo in
-                self?.output.saveFirstStepUserInfo(firstStepUserInfo)
-            }).disposed(by: disposeBag)
-            
+            setupMainAdInfoCellSubscriptions(cell)
+            return cell
+        case .photoAndDescription:
+            let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PhotosAndDescriptionCollectionViewCell
+            setupPhotoAndDescriptionCellSubscriptions(cell)
             return cell
         default:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell

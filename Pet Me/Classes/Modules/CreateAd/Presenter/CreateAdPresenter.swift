@@ -18,6 +18,7 @@ class CreateAdPresenter: CreateAdModuleInput {
 
 //MARK: - CreateAdViewOutput
 extension CreateAdPresenter: CreateAdViewOutput {
+   
     
     func viewIsReady() {
         view.setupInitialState()
@@ -39,10 +40,15 @@ extension CreateAdPresenter: CreateAdViewOutput {
             .setAnimalType(info.animalType)
             .setAnimalSubtype(info.animalSubtype)
             .done()
-        
-        
-        //Refactoring & Begin Second Step
     }
+    
+    func saveSecondStepUserInfo(_ info: SecondStepCellInfo) {
+        adRequestBuilder
+            .setText(info.description)
+            .setImages(info.images)
+            .done()
+    }
+    
     
 }
 

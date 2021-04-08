@@ -25,6 +25,7 @@ class AddPhotosCollectionView: UICollectionView {
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
         register(AddPhotosCollectionViewCell.self)
+        backgroundColor = .clear
         delegate = self
         dataSource = self
     }
@@ -35,6 +36,7 @@ class AddPhotosCollectionView: UICollectionView {
     
     func setupPhotos(photos: [UIImage]) {
         self.photos = photos
+
     }
     
 }
@@ -61,12 +63,13 @@ extension AddPhotosCollectionView: UICollectionViewDelegateFlowLayout, UICollect
         return cell
     }
     
+  
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return .init(width: 150, height: collectionView.frame.height - 10)
     }
     
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 10, bottom: 0, right: 10)
+        return .init(top: 10, left: 10, bottom: 0, right: 10)
     }
 }
