@@ -23,11 +23,11 @@ struct AnimalAdRequestModel: Encodable {
 }
 
 struct Coordinates: Codable {
-    var lat: Double
-    var long: Double
+    var lat: String
+    var long: String
     
     init(_ coordinates: CLLocationCoordinate2D) {
-        self.lat = coordinates.latitude
-        self.long = coordinates.longitude
+        self.lat = String(coordinates.latitude)
+        self.long = String(coordinates.longitude)
     }
 }
