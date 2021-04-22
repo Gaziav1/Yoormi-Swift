@@ -39,6 +39,7 @@ enum Containers {
             let configurator = CreateAdModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             configurator.adRequestBuilder = managersContainer.resolve(AnimalAdRequestModelBuildable.self)
+            configurator.locationManager = managersContainer.resolve(LocationManagerProtocol.self)
             configurator.appRouter = appRouter
             configurator.moyaProvider = managersContainer.resolve(MoyaProvider.self)
             let controller = configurator.configure()
@@ -148,6 +149,10 @@ enum Containers {
         container.register(LaunchManagerProtocol.self) { (_) in
             let launchManager = LaunchManager(factory: viewControllersContainer)
             return launchManager
+        }
+        
+        container.register(LocationManagerProtocol.self) { (_) in
+            return LocationManager()
         }
         
         container.register(AnimalAdRequestModelBuildable.self, factory: { (_) in

@@ -16,7 +16,7 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A7E0466C23C4D7E400A4C5B5"
                BuildableName = "Yoormi.app"
-               BlueprintName = "Pet Me"
+               BlueprintName = "Yoormi"
                ReferencedContainer = "container:Pet Me.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -57,7 +57,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A7E0466C23C4D7E400A4C5B5"
             BuildableName = "Yoormi.app"
-            BlueprintName = "Pet Me"
+            BlueprintName = "Yoormi"
             ReferencedContainer = "container:Pet Me.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -74,7 +74,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A7E0466C23C4D7E400A4C5B5"
             BuildableName = "Yoormi.app"
-            BlueprintName = "Pet Me"
+            BlueprintName = "Yoormi"
             ReferencedContainer = "container:Pet Me.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>

@@ -6,6 +6,8 @@
 //  Copyright © 2020 Gaziav Ishakov. All rights reserved.
 //
 
+import CoreLocation
+
 class CreateAdPresenter: CreateAdModuleInput {
 
     weak var view: CreateAdViewInput!
@@ -18,7 +20,6 @@ class CreateAdPresenter: CreateAdModuleInput {
 
 //MARK: - CreateAdViewOutput
 extension CreateAdPresenter: CreateAdViewOutput {
-   
     
     func viewIsReady() {
         view.setupInitialState()
@@ -49,12 +50,26 @@ extension CreateAdPresenter: CreateAdViewOutput {
             .done()
     }
     
-    
+    func requestLocation() {
+        interactor.requestUserLocation()
+    }
 }
 
 
 //MARK: - CreateAdInteractorOutput
 extension CreateAdPresenter: CreateAdInteractorOutput {
+    
+    
+    func requestForLocationSucceeded(_ location: String, _ coordinate: CLLocationCoordinate2D) {
+        adRequestBuilder.setAddress(coordinate).done()
+        view.showLocationString(location)
+    }
+    
+    func requestForLocationFailed() {
+        #warning("Change this later")
+        view.showError("Request for location failed")
+    }
+    
     func fetchSubtypesSuccess(_ subtypes: [AnimalSubtypes]) {
         let animalSubtypeCellItems = subtypes.map({ AnimalSubtypeCellItem($0) })
         view.showAnimalSubtypes(animalSubtypeCellItems)

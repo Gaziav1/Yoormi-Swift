@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 struct AnimalAdRequestModel: Encodable {
     var name: String
@@ -15,8 +16,18 @@ struct AnimalAdRequestModel: Encodable {
     var isMale: Bool
     var animalSubType: String
     var images: [Data]
-    var address: String?
+    var coordinates: Coordinates?
     var text: String
     var price: Int
     var isReadyForSale: Bool
+}
+
+struct Coordinates: Codable {
+    var lat: Double
+    var long: Double
+    
+    init(_ coordinates: CLLocationCoordinate2D) {
+        self.lat = coordinates.latitude
+        self.long = coordinates.longitude
+    }
 }

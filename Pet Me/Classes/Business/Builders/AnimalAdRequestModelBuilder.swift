@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 protocol AnimalAdRequestModelBuildable {
     func setName(_ name: String) -> AnimalAdRequestModelBuildable
@@ -15,7 +16,7 @@ protocol AnimalAdRequestModelBuildable {
     func setGender(_ gender: AnimalGender) -> AnimalAdRequestModelBuildable
     func setAnimalSubtype(_ animalSubtype: String) -> AnimalAdRequestModelBuildable
     func setImages(_ images: [UIImage]) -> AnimalAdRequestModelBuildable
-    func setAddress(_ address: String) -> AnimalAdRequestModelBuildable
+    func setAddress(_ coordinates: CLLocationCoordinate2D) -> AnimalAdRequestModelBuildable
     func setText(_ text: String) -> AnimalAdRequestModelBuildable
     func setPrice(_ price: Int) -> AnimalAdRequestModelBuildable
     func done()
@@ -29,6 +30,8 @@ enum BuilderStepsErrors: Error {
     case fourthStepError(String)
 }
 
+
+
 class AnimalAdRequestModelBuilder: AnimalAdRequestModelBuildable {
 
     private var name: String?
@@ -37,7 +40,7 @@ class AnimalAdRequestModelBuilder: AnimalAdRequestModelBuildable {
     private var isMale: Bool?
     private var animalSubType: String?
     private var images: [Data]?
-    private var address: String?
+    private var coordinates: Coordinates?
     private var text: String?
     private var price: Int?
     private var isReadyForSale: Bool?
@@ -79,8 +82,8 @@ class AnimalAdRequestModelBuilder: AnimalAdRequestModelBuildable {
         return self
     }
     
-    func setAddress(_ address: String) -> AnimalAdRequestModelBuildable {
-        self.address = address
+    func setAddress(_ coordinates: CLLocationCoordinate2D) -> AnimalAdRequestModelBuildable {
+        self.coordinates = Coordinates(coordinates)
         return self
     }
     
@@ -114,12 +117,12 @@ class AnimalAdRequestModelBuilder: AnimalAdRequestModelBuildable {
             throw BuilderStepsErrors.secondStepError("Lala")
         case text == nil:
             throw BuilderStepsErrors.secondStepError("Localized error")
-        case address == nil:
+        case coordinates == nil:
             throw BuilderStepsErrors.thirdStepError("Localized error")
         default: ()
         }
         
         
-        return AnimalAdRequestModel(name: name!, animalType: animalType!, age: age!, isMale: isMale!, animalSubType: animalSubType!, images: images!, address: address, text: text!, price: price!, isReadyForSale: isReadyForSale!)
+        return AnimalAdRequestModel(name: name!, animalType: animalType!, age: age!, isMale: isMale!, animalSubType: animalSubType!, images: images!, coordinates: coordinates, text: text!, price: price!, isReadyForSale: isReadyForSale!)
     }
 }

@@ -16,5 +16,6 @@ protocol CreateAdViewInput: class {
     func setupInitialState()
     func openImageController()
     func showError(_ description: String)
+    func showLocationString(_ locationString: String)
     func showAnimalSubtypes(_ subtypesItem: [AnimalSubtypeCellItem])
 }

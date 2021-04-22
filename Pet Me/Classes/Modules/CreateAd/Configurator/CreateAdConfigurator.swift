@@ -14,6 +14,7 @@ class CreateAdModuleConfigurator {
     static let tag = "CreateAd"
 
     var appRouter: AppRouterProtocol!
+    var locationManager: LocationManagerProtocol!
     var adRequestBuilder: AnimalAdRequestModelBuildable!
     var moyaProvider: MoyaProvider<YoormiTarget>!
     
@@ -29,6 +30,7 @@ class CreateAdModuleConfigurator {
 
         let interactor = CreateAdInteractor()
         interactor.output = presenter
+        interactor.locationManager = locationManager
         interactor.moyaProvider = moyaProvider
         
         presenter.interactor = interactor

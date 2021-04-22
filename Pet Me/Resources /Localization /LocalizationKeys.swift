@@ -20,6 +20,8 @@ enum LocalizationKeys: String {
     case confirmCodeButtonTitle = "confirm-code-button-title"
     case addPetPhotos = "add-pet-photos"
     case addPetDescription = "add-pet-description"
+    case yourAddress = "your_address"
+    case addressNote = "address_note"
     case phone
     case male
     case female

@@ -40,6 +40,7 @@ class CreateAdViewController: UIViewController {
         let cv = UICollectionView(frame: .zero, collectionViewLayout: fl)
         cv.register(MainAdInfoCollectionViewCell.self)
         cv.register(PhotosAndDescriptionCollectionViewCell.self)
+        cv.register(AddressRequestCollectionViewCell.self)
         fl.scrollDirection = .horizontal
         cv.isPagingEnabled = true
         cv.backgroundColor = .clear
@@ -94,6 +95,11 @@ class CreateAdViewController: UIViewController {
 // MARK: - CreateAdViewInput
 extension CreateAdViewController: CreateAdViewInput {
     
+    func showLocationString(_ locationString: String) {
+        guard let mapAndAddressCell = stepsCollectionView.cellForItem(at: IndexPath(item: CreateAdStep.mapAndAdress.rawValue, section: 0)) as? AddressRequestCollectionViewCell else { return }
+        mapAndAddressCell.showAddress(locationString)
+    }
+    
     func setupInitialState() {
         view.backgroundColor = .white
         setupStepsCollectionView()
@@ -111,6 +117,7 @@ extension CreateAdViewController: CreateAdViewInput {
         guard let subtypesCell = stepsCollectionView.cellForItem(at: IndexPath(item: 0, section: 0)) as? MainAdInfoCollectionViewCell else { return }
         subtypesCell.setupAnimalSubtypes(subtypesItem)
     }
+    
     
 }
 
@@ -132,9 +139,20 @@ extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewData
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as PhotosAndDescriptionCollectionViewCell
             setupPhotoAndDescriptionCellSubscriptions(cell)
             return cell
+        case .mapAndAdress:
+            let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as AddressRequestCollectionViewCell
+            return cell
+
         default:
             let cell = collectionView.dequeueReusableCell(forIndexPath: indexPath) as MainAdInfoCollectionViewCell
             return cell
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let step = CreateAdStep(rawValue: indexPath.item)
+        if step == .photoAndDescription {
+            output.requestLocation()
         }
     }
     

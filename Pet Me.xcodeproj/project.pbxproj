@@ -63,6 +63,8 @@
 		5DFA1247B13F9F61DF429CBC /* ImageAndNameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72558E4DD93367ED5A4C4A8 /* ImageAndNameConfigurator.swift */; };
 		5EF068D3832129F81250CC5F /* SideMenuInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */; };
 		624386688E764ACBD2336A99 /* CardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06061268F27E49CBA8513BB4 /* CardsRouter.swift */; };
+		6308E9362631B2E50052D6E1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308E9352631B2E50052D6E1 /* Location.swift */; };
+		6308E93D2631B6B50052D6E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6308E93F2631B6B50052D6E1 /* InfoPlist.strings */; };
 		66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */; };
 		73C5DA44FD9B5C067DCE065B /* Pods_Pet_MeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72F8F44FC9DE8B606A2F510 /* Pods_Pet_MeTests.framework */; };
 		7955C57AB780C6175F48C82F /* MyAdsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102899206DCFD91F7B22FD5 /* MyAdsPresenter.swift */; };
@@ -301,6 +303,9 @@
 		56CF91A6FE7ED406718A1334 /* ImageAndNameModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageAndNameModuleInput.swift; sourceTree = "<group>"; };
 		57A693787C0B4D794715266B /* AdoptionConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionConfigurator.swift; sourceTree = "<group>"; };
 		62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorOutput.swift; sourceTree = "<group>"; };
+		6308E9352631B2E50052D6E1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		6308E93E2631B6B50052D6E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		6308E9402631B6B90052D6E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		675083BC20DF5E0E9894730B /* AdoptionViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewOutput.swift; sourceTree = "<group>"; };
 		6778F50C1CCF8B6F9EE42BEB /* MyAdsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsViewInput.swift; sourceTree = "<group>"; };
 		68CCB2B7E9BF55705180E102 /* ImageAndNameRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageAndNameRouterInput.swift; sourceTree = "<group>"; };
@@ -1225,6 +1230,7 @@
 				A7E0467223C4D7E400A4C5B5 /* SceneDelegate.swift */,
 				A7D2328824A0C0B000C88077 /* Resources  */,
 				A756B1E924093153004D77B8 /* GoogleService-Info.plist */,
+				6308E93F2631B6B50052D6E1 /* InfoPlist.strings */,
 				A7E0468123C4D7E600A4C5B5 /* Info.plist */,
 				A7E0467923C4D7E400A4C5B5 /* Pet_Me.xcdatamodeld */,
 			);
@@ -1528,6 +1534,7 @@
 				A7FFBAB924533ABA00CD7B5F /* Shadow.swift */,
 				A70A8825249CF6BF0094F231 /* UI.swift */,
 				A71F31C724B0FE26001832C0 /* ReusableView.swift */,
+				6308E9352631B2E50052D6E1 /* Location.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -1807,9 +1814,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A7E0466C23C4D7E400A4C5B5 /* Pet Me */ = {
+		A7E0466C23C4D7E400A4C5B5 /* Yoormi */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A7E0468F23C4D7E700A4C5B5 /* Build configuration list for PBXNativeTarget "Pet Me" */;
+			buildConfigurationList = A7E0468F23C4D7E700A4C5B5 /* Build configuration list for PBXNativeTarget "Yoormi" */;
 			buildPhases = (
 				280EC17840422F6094152D2F /* [CP] Check Pods Manifest.lock */,
 				A7D2328724A0BDA800C88077 /* ShellScript */,
@@ -1823,7 +1830,7 @@
 			);
 			dependencies = (
 			);
-			name = "Pet Me";
+			name = Yoormi;
 			productName = "Pet Me";
 			productReference = A7E0466D23C4D7E400A4C5B5 /* Yoormi.app */;
 			productType = "com.apple.product-type.application";
@@ -1880,7 +1887,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A7E0466C23C4D7E400A4C5B5 /* Pet Me */,
+				A7E0466C23C4D7E400A4C5B5 /* Yoormi */,
 				A7E0468523C4D7E700A4C5B5 /* Pet MeTests */,
 			);
 		};
@@ -1892,6 +1899,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A77D38BE25E291B6002B0973 /* Localizable.strings in Resources */,
+				6308E93D2631B6B50052D6E1 /* InfoPlist.strings in Resources */,
 				A7E0468023C4D7E600A4C5B5 /* LaunchScreen.storyboard in Resources */,
 				A7E0467D23C4D7E600A4C5B5 /* Assets.xcassets in Resources */,
 				A756B1EA24093153004D77B8 /* GoogleService-Info.plist in Resources */,
@@ -2065,6 +2073,7 @@
 				A742A9C0241BAF9D006721D7 /* PhotoViewController.swift in Sources */,
 				B9271326341F1522AABE50B7 /* CardsViewInput.swift in Sources */,
 				A7232418261F5F53007D187E /* AddressRequestCollectionViewCell.swift in Sources */,
+				6308E9362631B2E50052D6E1 /* Location.swift in Sources */,
 				1A1953CF43DEDE2CCBA282F6 /* CardsViewOutput.swift in Sources */,
 				0121A96D027443144A5054E3 /* CardsViewController.swift in Sources */,
 				A7FFBA962451F48800CD7B5F /* Containers.swift in Sources */,
@@ -2250,12 +2259,21 @@
 /* Begin PBXTargetDependency section */
 		A7E0468823C4D7E700A4C5B5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A7E0466C23C4D7E400A4C5B5 /* Pet Me */;
+			target = A7E0466C23C4D7E400A4C5B5 /* Yoormi */;
 			targetProxy = A7E0468723C4D7E700A4C5B5 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
+		6308E93F2631B6B50052D6E1 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				6308E93E2631B6B50052D6E1 /* en */,
+				6308E9402631B6B90052D6E1 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
 		A77D38C025E291B6002B0973 /* Localizable.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -2409,7 +2427,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.gazya.Pet-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.gazya.Yoormi;
 				PRODUCT_NAME = Yoormi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2430,7 +2448,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "ru.gazya.Pet-Me";
+				PRODUCT_BUNDLE_IDENTIFIER = ru.gazya.Yoormi;
 				PRODUCT_NAME = Yoormi;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -2495,7 +2513,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A7E0468F23C4D7E700A4C5B5 /* Build configuration list for PBXNativeTarget "Pet Me" */ = {
+		A7E0468F23C4D7E700A4C5B5 /* Build configuration list for PBXNativeTarget "Yoormi" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A7E0469023C4D7E700A4C5B5 /* Debug */,

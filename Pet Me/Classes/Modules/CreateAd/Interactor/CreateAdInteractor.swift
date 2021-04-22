@@ -7,11 +7,19 @@
 //
 
 import Moya
+import RxSwift
 
 class CreateAdInteractor: CreateAdInteractorInput {
-
+    private let diposeBag = DisposeBag()
+    
     weak var output: CreateAdInteractorOutput!
     var moyaProvider: MoyaProvider<YoormiTarget>!
+    var locationManager: LocationManagerProtocol! {
+        didSet {
+            setupSubscriptions()
+        }
+    }
+    
     
     func fetchAnimalSubtypes(forAnimalType type: AnimalTypes) {
         moyaProvider
@@ -24,7 +32,24 @@ class CreateAdInteractor: CreateAdInteractorInput {
                     self?.output.showError(error)
                 default: ()
                 }
-            })
-        
+            }).disposed(by: diposeBag)
+    }
+    
+    func requestUserLocation() {
+        locationManager.requestUserLocation()
+    }
+    
+    
+    private func setupSubscriptions() {
+        locationManager.locationChangeObservable.subscribe(onNext: { [weak self] locationItem in
+            guard let item = locationItem, let location = item.location else {
+                self?.output.requestForLocationFailed()
+                print("Failed")
+                return
+            }
+            print(item.locationString)
+            self?.output.requestForLocationSucceeded(item.locationString, location.coordinate)
+        }).disposed(by: diposeBag)
     }
 }
+

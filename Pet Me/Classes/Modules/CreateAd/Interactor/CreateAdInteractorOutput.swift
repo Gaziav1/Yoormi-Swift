@@ -7,9 +7,12 @@
 //
 
 import Foundation
+import CoreLocation
 
 protocol CreateAdInteractorOutput: class {
     
     func fetchSubtypesSuccess(_ subtypes: [AnimalSubtypes])
     func showError(_ error: ProviderError)
+    func requestForLocationSucceeded(_ location: String, _ coordinate: CLLocationCoordinate2D)
+    func requestForLocationFailed()
 }

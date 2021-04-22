@@ -1,0 +1,10 @@
+/* 
+  InfoPlist.strings
+  Pet Me
+
+  Created by 1 on 22.04.2021.
+  Copyright © 2021 Газияв Исхаков. All rights reserved.
+*/
+
+
+NSLocationWhenInUseUsageDescription = "Your address will be used for sorting and will not be publicly available";

@@ -18,4 +18,5 @@ protocol CreateAdViewOutput {
     func didSelectRow(withIndex: Int)
     func saveFirstStepUserInfo(_ info: FirstStepAdInfo)
     func saveSecondStepUserInfo(_ info: SecondStepCellInfo)
+    func requestLocation()
 }

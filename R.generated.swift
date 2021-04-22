@@ -209,6 +209,78 @@ struct R: Rswift.Validatable {
       }
       #endif
 
+      #if os(watchOS)
+      /// `UIColor(named: "AppMainColor", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func appMainColor(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.appMainColor.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "Background", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func background(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.background.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "Border", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func border(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.border.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "Button", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func button(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.button.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "ControlSelection", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func controlSelection(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.controlSelection.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "DarkLabel", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func darkLabel(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.darkLabel.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "Label", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func label(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.label.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "SideMenuLabel", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func sideMenuLabel(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.sideMenuLabel.name)
+      }
+      #endif
+
+      #if os(watchOS)
+      /// `UIColor(named: "lightBackground", bundle: ..., traitCollection: ...)`
+      @available(watchOSApplicationExtension 4.0, *)
+      static func lightBackground(_: Void = ()) -> UIKit.UIColor? {
+        return UIKit.UIColor(named: R.color.appColors.lightBackground.name)
+      }
+      #endif
+
       fileprivate init() {}
     }
 
@@ -252,6 +324,8 @@ struct R: Rswift.Validatable {
   struct image {
     /// This `R.image.icons` struct is generated, and contains static references to 26 images.
     struct icons {
+      /// Image `Email`.
+      static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/Email")
       /// Image `adoption`.
       static let adoption = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/adoption")
       /// Image `boy`.
@@ -270,8 +344,6 @@ struct R: Rswift.Validatable {
       static let dogChoice = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/dogChoice")
       /// Image `dog`.
       static let dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/dog")
-      /// Image `email`.
-      static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/email")
       /// Image `girl`.
       static let girl = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/girl")
       /// Image `google`.
@@ -304,6 +376,13 @@ struct R: Rswift.Validatable {
       static let top_left_profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/top_left_profile")
       /// Image `top_right_messages`.
       static let top_right_messages = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/top_right_messages")
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "Email", bundle: ..., traitCollection: ...)`
+      static func email(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.email, compatibleWith: traitCollection)
+      }
+      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "adoption", bundle: ..., traitCollection: ...)`
@@ -365,13 +444,6 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "dogChoice", bundle: ..., traitCollection: ...)`
       static func dogChoice(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.dogChoice, compatibleWith: traitCollection)
-      }
-      #endif
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "email", bundle: ..., traitCollection: ...)`
-      static func email(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.icons.email, compatibleWith: traitCollection)
       }
       #endif
 
@@ -556,14 +628,39 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.string` struct is generated, and contains static references to 2 localization tables.
+  /// This `R.string` struct is generated, and contains static references to 3 localization tables.
   struct string {
+    /// This `R.string.infoPlist` struct is generated, and contains static references to 1 localization keys.
+    struct infoPlist {
+      /// en translation: Your address will be used for sorting and will not be publicly available
+      ///
+      /// Locales: en, ru
+      static let nsLocationWhenInUseUsageDescription = Rswift.StringResource(key: "NSLocationWhenInUseUsageDescription", tableName: "InfoPlist", bundle: R.hostingBundle, locales: ["en", "ru"], comment: nil)
+
+      /// en translation: Your address will be used for sorting and will not be publicly available
+      ///
+      /// Locales: en, ru
+      static func nsLocationWhenInUseUsageDescription(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("NSLocationWhenInUseUsageDescription", tableName: "InfoPlist", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "InfoPlist", preferredLanguages: preferredLanguages) else {
+          return "NSLocationWhenInUseUsageDescription"
+        }
+
+        return NSLocalizedString("NSLocationWhenInUseUsageDescription", tableName: "InfoPlist", bundle: bundle, comment: "")
+      }
+
+      fileprivate init() {}
+    }
+
     /// This `R.string.launchScreen` struct is generated, and contains static references to 0 localization keys.
     struct launchScreen {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 14 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 16 localization keys.
     struct localizable {
       /// en translation: Add photos of your pet
       ///
@@ -617,6 +714,14 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let animalSubtypeLabel = Rswift.StringResource(key: "animal-subtype-label", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Your address
+      ///
+      /// Locales: ru, en
+      static let your_address = Rswift.StringResource(key: "your_address", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Your address will be used for sorting and will not be publicly available
+      ///
+      /// Locales: ru, en
+      static let address_note = Rswift.StringResource(key: "address_note", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Your name
       ///
       /// Locales: ru, en
@@ -815,6 +920,36 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("animal-subtype-label", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Your address
+      ///
+      /// Locales: ru, en
+      static func your_address(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("your_address", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "your_address"
+        }
+
+        return NSLocalizedString("your_address", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Your address will be used for sorting and will not be publicly available
+      ///
+      /// Locales: ru, en
+      static func address_note(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("address_note", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "address_note"
+        }
+
+        return NSLocalizedString("address_note", bundle: bundle, comment: "")
       }
 
       /// en translation: Your name
