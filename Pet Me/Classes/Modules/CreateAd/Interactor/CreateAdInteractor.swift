@@ -39,6 +39,20 @@ class CreateAdInteractor: CreateAdInteractorInput {
         locationManager.requestUserLocation()
     }
     
+    func saveRequestModel(_ adRequestModel: AnimalAdRequestModel) {
+        print(adRequestModel)
+        moyaProvider
+            .requestModel(.createAd(adRequestModel), ServerResponse.self)
+            .subscribe({ [weak self] result in
+                switch result {
+                case .next:
+                    print("harray")
+                case .error(let error):
+                    print(error.localizedDescription)
+                default: ()
+                }
+            }).disposed(by: diposeBag)
+    }
     
     private func setupSubscriptions() {
         locationManager.locationChangeObservable.subscribe(onNext: { [weak self] locationItem in

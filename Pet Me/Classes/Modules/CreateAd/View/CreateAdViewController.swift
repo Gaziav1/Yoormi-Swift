@@ -151,8 +151,13 @@ extension CreateAdViewController: UICollectionViewDelegate, UICollectionViewData
     
     func collectionView(_ collectionView: UICollectionView, didEndDisplaying cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         let step = CreateAdStep(rawValue: indexPath.item)
-        if step == .photoAndDescription {
+        switch step {
+        case .photoAndDescription:
             output.requestLocation()
+        case .mapAndAdress:
+            output.createAdRequestModel()
+        default:
+            ()
         }
     }
     

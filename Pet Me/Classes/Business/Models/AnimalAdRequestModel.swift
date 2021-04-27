@@ -15,7 +15,7 @@ struct AnimalAdRequestModel: Encodable {
     var age: Int
     var isMale: Bool
     var animalSubType: String
-    var images: [Data]
+    var images: [Data]?
     var coordinates: Coordinates?
     var text: String
     var price: Int

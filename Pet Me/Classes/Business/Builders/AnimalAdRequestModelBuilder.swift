@@ -119,10 +119,13 @@ class AnimalAdRequestModelBuilder: AnimalAdRequestModelBuildable {
             throw BuilderStepsErrors.secondStepError("Localized error")
         case coordinates == nil:
             throw BuilderStepsErrors.thirdStepError("Localized error")
+        case price == nil:
+            throw BuilderStepsErrors.thirdStepError("Localized error")
         default: ()
         }
         
-        
+        isReadyForSale = true
+        #warning("isReadyForSale should be defined from user choose")
         return AnimalAdRequestModel(name: name!, animalType: animalType!, age: age!, isMale: isMale!, animalSubType: animalSubType!, images: images!, coordinates: coordinates, text: text!, price: price!, isReadyForSale: isReadyForSale!)
     }
 }

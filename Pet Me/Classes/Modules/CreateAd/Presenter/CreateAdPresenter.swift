@@ -21,6 +21,16 @@ class CreateAdPresenter: CreateAdModuleInput {
 //MARK: - CreateAdViewOutput
 extension CreateAdPresenter: CreateAdViewOutput {
     
+
+    func createAdRequestModel() {
+        do {
+            let adRequestModel = try adRequestBuilder.build()
+            interactor.saveRequestModel(adRequestModel)
+        } catch let error {
+            print(error)
+        }
+    }
+    
     func viewIsReady() {
         view.setupInitialState()
     }
@@ -34,12 +44,14 @@ extension CreateAdPresenter: CreateAdViewOutput {
     }
     
     func saveFirstStepUserInfo(_ info: FirstStepAdInfo) {
+        #warning("Price and age are hardcoded for now")
         adRequestBuilder
             .setName(info.animalName)
             .setAge(10)
             .setGender(info.animalGender)
             .setAnimalType(info.animalType)
             .setAnimalSubtype(info.animalSubtype)
+            .setPrice(22)
             .done()
     }
     

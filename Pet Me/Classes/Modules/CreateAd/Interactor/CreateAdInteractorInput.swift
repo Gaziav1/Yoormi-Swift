@@ -10,4 +10,7 @@ import Foundation
 
 protocol CreateAdInteractorInput {
     func fetchAnimalSubtypes(forAnimalType type: AnimalTypes)
-    func requestUserLocation()}
+    func saveRequestModel(_ adRequestModel: AnimalAdRequestModel)
+    func requestUserLocation()
+    
+}

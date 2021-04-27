@@ -19,4 +19,5 @@ protocol CreateAdViewOutput {
     func saveFirstStepUserInfo(_ info: FirstStepAdInfo)
     func saveSecondStepUserInfo(_ info: SecondStepCellInfo)
     func requestLocation()
+    func createAdRequestModel()
 }

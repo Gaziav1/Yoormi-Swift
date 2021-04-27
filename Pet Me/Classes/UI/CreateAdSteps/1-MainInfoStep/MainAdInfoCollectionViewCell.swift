@@ -135,7 +135,7 @@ class MainAdInfoCollectionViewCell: UICollectionViewCell {
         
         nextButton.rx.controlEvent(.touchUpInside).subscribe({ [weak self] _ in
             guard let self = self else { return }
-            guard let name = self.choosenAnimalName, let subtype = self.choosenAnimalName else { return }
+            guard let name = self.choosenAnimalName, let subtype = self.choosenAnimalSubtype else { return }
             let info = FirstStepAdInfo(animalType: self.choosenAnimalType, animalGender: self.choosenAnimalGender, animalSubtype: subtype, animalName: name)
             self.userChoosenInfoSubject.onNext(info)
         }).disposed(by: disposeBag)
