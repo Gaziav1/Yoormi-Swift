@@ -71,7 +71,8 @@ extension SideMenuPresenter: SideMenuViewOutput {
         case .profile:
             router.performTransition(to: .registration)
         case .findPairToPet:
-            router.performTransition(to: .cards(nil))
+           // router.performTransition(to: .cards)
+            router.performTransition(to: .registration)
         }
     }
 }

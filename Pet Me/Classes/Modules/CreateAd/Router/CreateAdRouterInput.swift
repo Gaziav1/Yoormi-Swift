@@ -9,5 +9,5 @@
 import Foundation
 
 protocol CreateAdRouterInput {
-
+    func proceedToMyAds() 
 }

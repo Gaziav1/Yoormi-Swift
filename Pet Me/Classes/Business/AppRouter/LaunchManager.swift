@@ -29,7 +29,7 @@ class LaunchManager: LaunchManagerProtocol {
             
             let flowController: FlowController
             
-            flowController = SideMenuFlowController(factory: self.factory, routerDestination: .createAd)
+            flowController = SideMenuFlowController(factory: self.factory, routerDestination: .registration)
             
             observer.onNext(flowController)
             

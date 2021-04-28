@@ -15,4 +15,5 @@ protocol CreateAdInteractorOutput: class {
     func showError(_ error: ProviderError)
     func requestForLocationSucceeded(_ location: String, _ coordinate: CLLocationCoordinate2D)
     func requestForLocationFailed()
+    func didSaveUserAd()
 }

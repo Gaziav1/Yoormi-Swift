@@ -42,11 +42,11 @@ class AdoptionPhotosSwipingController: UIPageViewController {
         dataSource = self
         delegate = self
         
-        controllers = dummyImages.compactMap({
-            guard let image = $0 else { return nil }
-            let controller = PhotoViewController(image: image)
-            return controller
-        })
+//        controllers = dummyImages.compactMap({
+//            guard let image = $0 else { return nil }
+//            let controller = PhotoViewController(image: image)
+//            return controller
+//        })
         
         guard let first = controllers?.first else { return }
         setViewControllers([first], direction: .forward, animated: true) { [unowned self] (_) in

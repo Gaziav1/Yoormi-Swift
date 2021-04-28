@@ -46,9 +46,9 @@ class CreateAdInteractor: CreateAdInteractorInput {
             .subscribe({ [weak self] result in
                 switch result {
                 case .next:
-                    print("harray")
-                case .error(let error):
-                    print(error.localizedDescription)
+                    self?.output.didSaveUserAd()
+                case .error(let error as ProviderError):
+                    self?.output.showError(error)
                 default: ()
                 }
             }).disposed(by: diposeBag)

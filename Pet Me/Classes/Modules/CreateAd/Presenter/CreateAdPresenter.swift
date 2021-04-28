@@ -77,6 +77,10 @@ extension CreateAdPresenter: CreateAdInteractorOutput {
         view.showLocationString(location)
     }
     
+    func didSaveUserAd() {
+        router.proceedToMyAds()
+    }
+    
     func requestForLocationFailed() {
         #warning("Change this later")
         view.showError("Request for location failed")

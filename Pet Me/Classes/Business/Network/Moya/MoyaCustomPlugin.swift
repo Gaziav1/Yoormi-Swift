@@ -33,9 +33,8 @@ struct MoyaCustomPlugin: PluginType {
         switch result {
         case .success(let body):
             if verbose {
-                log.debug("Response:")
                 if let json = try? JSONSerialization.jsonObject(with: body.data, options: .mutableContainers) {
-                    log.debug(json)
+                    log.debug("Response: \n\(json)")
                 } else {
                     let response = String(data: body.data, encoding: .utf8)!
                     log.debug(response)

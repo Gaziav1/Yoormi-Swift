@@ -119,6 +119,7 @@ class LoginView: UIView {
     private func setupConfrimPhoneButton() {
         
         confirmPhoneButton.rx.controlEvent(.touchUpInside).subscribe(onNext: { [weak self] observer in
+           
             guard let self = self else { return }
             
             if let text = self.phoneTextField.textField.text {
@@ -130,7 +131,7 @@ class LoginView: UIView {
         phoneTextField.isValidSubject.subscribe(onNext: { [weak self] isValid in
             guard let self = self else { return }
             self.confirmPhoneButton.backgroundColor = isValid ? .appLightGreen : .systemGray4
-            self.confirmPhoneButton.isUserInteractionEnabled = isValid
+            self.confirmPhoneButton.isEnabled = isValid
         }).disposed(by: disposeBag)
     }
     
@@ -148,7 +149,7 @@ class LoginView: UIView {
         codeTextField.isValidSubject.subscribe(onNext: { [weak self] isValid in
             guard let self = self else { return }
             self.confirmCodeButton.backgroundColor = isValid ? .appLightGreen : .systemGray4
-            self.confirmCodeButton.isUserInteractionEnabled = isValid
+            self.confirmCodeButton.isEnabled = isValid
         }).disposed(by: disposeBag)
     }
 }

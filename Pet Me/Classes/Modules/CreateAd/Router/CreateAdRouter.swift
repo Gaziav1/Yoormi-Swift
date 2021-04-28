@@ -8,4 +8,9 @@
 
 class CreateAdRouter: CreateAdRouterInput {
     var appRouter: AppRouterProtocol!
+    
+    func proceedToMyAds() {
+        #warning("Just dismiss instead of this")
+        appRouter.dropAll(to: .myAds)
+    }
 }

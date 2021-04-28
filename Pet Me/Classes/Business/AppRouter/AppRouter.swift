@@ -15,13 +15,12 @@ import Swinject
 //MARK: RouterDestination
 
 enum RouterDestination {
-    case cards(AppUser?)
+   // case cards(AppUser?)
     case sideMenu
     case imageAndName
     case settings
     case messages
     case registration
-    case starting
     case adoption
     case adoptionDetail
     case myAds
@@ -33,16 +32,15 @@ enum RouterDestination {
             return factory.resolve(UIViewController.self, name: ImageAndNameModuleConfigurator.tag, argument: flow)
         case .sideMenu:
             return factory.resolve(UIViewController.self, name: SideMenuModuleConfigurator.tag, argument: flow)
-        case .cards(let user):
-            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag, arguments: user, flow)
+//        case .cards(let user):
+//            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag, arguments: user, flow)
         case .settings:
             return factory.resolve(UIViewController.self, name: SettingsModuleConfigurator.tag, argument: flow)
         case .messages:
             return factory.resolve(UIViewController.self, name: MessagesModuleConfigurator.tag, argument: flow)
         case .registration:
             return factory.resolve(UIViewController.self, name: RegistrationModuleConfigurator.tag, argument: flow)
-        case .starting:
-            return factory.resolve(UIViewController.self, name: StartingModuleConfigurator.tag, argument: flow)
+
         case .adoption:
             return factory.resolve(UIViewController.self, name: AdoptionModuleConfigurator.tag, argument: flow)
         case .adoptionDetail:
@@ -68,7 +66,7 @@ enum RouterDestination {
     //нужен если мы дропаем весь флоу до нового
     var shouldContainSideMenu: Bool {
         switch self {
-        case .cards(_), .settings, .messages:
+        case .settings, .messages:
             return true
         default:
             return false
@@ -130,6 +128,7 @@ class AppRouter: AppRouterProtocol {
         } else {
             newFlow = NavigationFlowController(root: destination, factory: factory)
         }
+        
         
         if let window = application.windows.first {
             window.rootViewController = newFlow.rootViewController

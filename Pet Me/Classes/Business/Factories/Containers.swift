@@ -62,14 +62,14 @@ enum Containers {
             return controller
         }
         
-        container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_, user: AppUser?, flow: FlowController?) in
-            let cardConfigurator = CardsModuleConfigurator(user: user)
-            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
-            cardConfigurator.appRouter = appRouter
-            cardConfigurator.firebaseManager = managersContainer.resolve(FirebaseManagerProtocol.self)
-            let controller = cardConfigurator.configure()
-            return controller
-        }
+//        container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_, user: AppUser?, flow: FlowController?) in
+//            let cardConfigurator = CardsModuleConfigurator(user: user)
+//            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+//            cardConfigurator.appRouter = appRouter
+//            cardConfigurator.firebaseManager = managersContainer.resolve(FirebaseManagerProtocol.self)
+//            let controller = cardConfigurator.configure()
+//            return controller
+//        }
         
         container.register(UIViewController.self, name: SettingsModuleConfigurator.tag) { (_, flow: FlowController?) in
             let settingsConfigurator = SettingsModuleConfigurator()
@@ -107,16 +107,6 @@ enum Containers {
             return controller
         }
         
-        container.register(UIViewController.self, name: StartingModuleConfigurator.tag) { (_, flow: FlowController?) in
-            let configurator = StartingModuleConfigurator()
-            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
-            configurator.appRouter = appRouter
-            configurator.appleSignInManager = managersContainer.resolve(AppleSignInManagerProtocol.self)
-            configurator.googleSignInManager = managersContainer.resolve(GoogleSignInProtocol.self)
-            configurator.firebaseStrategy = strategiesContainer.resolve(FirebaseSrategiesProtocol.self, name: FirebaseUsersFetcher.tag)
-            let controller = configurator.configure()
-            return controller
-        }
         
         container.register(UIViewController.self, name: SideMenuModuleConfigurator.tag) { (_, flow: FlowController?) in
             let configurator = SideMenuModuleConfigurator()
