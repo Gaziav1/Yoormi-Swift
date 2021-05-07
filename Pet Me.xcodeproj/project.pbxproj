@@ -16,6 +16,7 @@
 		0EAEA30E00D128052C3BEC9E /* AdoptionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9B8538132EB27B5D7942169 /* AdoptionDetailViewController.swift */; };
 		0F968E46456E55108B828741 /* CreateAdInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB49CABEB77DA37C771B218 /* CreateAdInteractor.swift */; };
 		0FC1D92A6BB63DB5D7BBC214 /* AdoptionDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD99AA625F21786B1CF4FF08 /* AdoptionDetailPresenter.swift */; };
+		12A3868108041AE070850C1B /* CardsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 963D4E9AF7AC4B41E1C8CAA7 /* CardsViewOutput.swift */; };
 		12A9EDB84A65DB41FDF5E81F /* CreateAdPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CBF333718C453A4A73D04EB /* CreateAdPresenter.swift */; };
 		1397B17E478A12F5148E1DA1 /* RegistrationModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */; };
 		179BC7C4EC882586BACE48AB /* ImageAndNameInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AC6213F5D687AAFEC547339 /* ImageAndNameInteractor.swift */; };
@@ -27,6 +28,7 @@
 		200D85504FDBDFF42D2A4C3F /* AdoptionDetailViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D693CAF26150470E2A697313 /* AdoptionDetailViewOutput.swift */; };
 		20F854ED476A1DA3677CB207 /* MyAdsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6778F50C1CCF8B6F9EE42BEB /* MyAdsViewInput.swift */; };
 		22411951F02993254BB21DC4 /* MessagesInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */; };
+		22608239D0B5EE13FC737C64 /* CardsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2DC13B13B49C3E8CCDEFC0D /* CardsInteractorOutput.swift */; };
 		25978C49D560B890F9A7AFAF /* CreateAdViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E8DD4299D35E9B306F436275 /* CreateAdViewOutput.swift */; };
 		265302C5D4B8FEB43F285547 /* AdoptionDetailInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 893D8D2EC7ED1EA24EF290A9 /* AdoptionDetailInteractorInput.swift */; };
 		28B58087199A5E378C7C9123 /* ImageAndNameInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 97D860CEFF64FDF57D16F880 /* ImageAndNameInteractorOutput.swift */; };
@@ -41,6 +43,7 @@
 		47B7D3F44F555983ECB12EF3 /* SideMenuViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */; };
 		47E047BADA207AC7D05A5F6D /* ImageAndNamePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0C5F4929BE86AD2D523C04 /* ImageAndNamePresenter.swift */; };
 		49D2CF6C26FD00BABA1A32F7 /* AdoptionModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E86CB0499001441968DF450D /* AdoptionModuleInput.swift */; };
+		4A25779183D52D388204004B /* CardsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DF93CDFBC4973681EACE669 /* CardsInteractor.swift */; };
 		4B2896128497C7B69ED90BBD /* ImageAndNameModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56CF91A6FE7ED406718A1334 /* ImageAndNameModuleInput.swift */; };
 		527DC4F86C63B39D4D3E4B71 /* SettingsViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C0963C95C87D24E55F65ECB /* SettingsViewOutput.swift */; };
 		546DFE55BA62EE5EFB637DF8 /* ImageAndNameInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA587A75E93A087B7A083DEC /* ImageAndNameInteractorInput.swift */; };
@@ -48,8 +51,10 @@
 		555CB49E4957217FEF25A930 /* MyAdsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94B2F11B628C38E26B453AED /* MyAdsRouterInput.swift */; };
 		589FA99525D6B9DA2E69A892 /* AdoptionViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01FA3DC9F357A217CE91014D /* AdoptionViewInput.swift */; };
 		5A18AF594511100E10E18BC6 /* RegistrationInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */; };
+		5A51603F66F4AF46E3FE813E /* CardsInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 887A5B5F730C48C38B5C2DA8 /* CardsInteractorInput.swift */; };
 		5BF8C29179AD2DC324E5830D /* MessagesInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = B397CDA3BB204CD415929F79 /* MessagesInteractorOutput.swift */; };
 		5D7C1B1E104E66497DAD19BB /* AdoptionDetailConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D82D3E5AB50E72B8F0931FD /* AdoptionDetailConfigurator.swift */; };
+		5DA0E525473F141A1F40D23F /* CardsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27CF3B7A5A8CE918F1BA56AE /* CardsViewController.swift */; };
 		5DC91A79D356DDC91B253D8D /* AdoptionConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A693787C0B4D794715266B /* AdoptionConfigurator.swift */; };
 		5DE37660352673B4AC04FDD0 /* ImageAndNameViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = A802E680BDCD22738AB4A23C /* ImageAndNameViewOutput.swift */; };
 		5DFA1247B13F9F61DF429CBC /* ImageAndNameConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = F72558E4DD93367ED5A4C4A8 /* ImageAndNameConfigurator.swift */; };
@@ -57,9 +62,13 @@
 		6308E9362631B2E50052D6E1 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308E9352631B2E50052D6E1 /* Location.swift */; };
 		6308E93D2631B6B50052D6E1 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6308E93F2631B6B50052D6E1 /* InfoPlist.strings */; };
 		6308ED3C2631DE8F0052D6E1 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6308ED3B2631DE8F0052D6E1 /* ServerResponse.swift */; };
+		6332107C263C3B88006F4047 /* AnimalModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6332107B263C3B88006F4047 /* AnimalModel.swift */; };
 		634CD8D82639A7CB00B922ED /* Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 634CD8D72639A7CB00B922ED /* Animation.swift */; };
 		63D004E8263836C40028C279 /* MoyaCustomPlugin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63D004E7263836C40028C279 /* MoyaCustomPlugin.swift */; };
+		63DEE19D263AE42800369446 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEE19C263AE42800369446 /* CardView.swift */; };
+		63DEE1A3263AE4AA00369446 /* CardViewBottomInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 63DEE1A2263AE4AA00369446 /* CardViewBottomInfoView.swift */; };
 		66292824AF2C597E4A405D3C /* RegistrationRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */; };
+		6FED0F6FC1B4EEBD6BC84E35 /* CardsViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 437C1C578FF24C86B29735D4 /* CardsViewInput.swift */; };
 		73C5DA44FD9B5C067DCE065B /* Pods_Pet_MeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C72F8F44FC9DE8B606A2F510 /* Pods_Pet_MeTests.framework */; };
 		7955C57AB780C6175F48C82F /* MyAdsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8102899206DCFD91F7B22FD5 /* MyAdsPresenter.swift */; };
 		79AB2A29C90849324D206B56 /* AdoptionDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B3F08026D7A3C0D3F5C936 /* AdoptionDetailInteractor.swift */; };
@@ -75,6 +84,7 @@
 		8B46488FC97D714FD8621F0E /* AdoptionDetailViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13AFE86DA75B33956004B4BC /* AdoptionDetailViewInput.swift */; };
 		8C571CD65CBA7D104961E533 /* SideMenuConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */; };
 		9184F323E58C0E021C5C6915 /* RegistrationInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = CACD12B18C0774B5253BDD3A /* RegistrationInteractorInput.swift */; };
+		9316111AC2B9B3AAA51BDBF1 /* CardsRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94BEC169853F069A4E371CD4 /* CardsRouterInput.swift */; };
 		97A31DD8C63C5DF1E80DBB07 /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9727EE2B3337471B9B962221 /* SettingsPresenter.swift */; };
 		9F0ABAF3AE7C0A36F2DA2BAA /* AdoptionInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = C4158AF0FF55E60704AC8A5A /* AdoptionInteractor.swift */; };
 		A348A52EF9B827D2AA575B06 /* AdoptionDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E17B3DA94F94CB860BFE0FD3 /* AdoptionDetailRouter.swift */; };
@@ -100,7 +110,6 @@
 		A741F5F124179A6E004544AE /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A741F5F024179A6E004544AE /* SettingsTableViewCell.swift */; };
 		A7421A0A24ABB11900E2EAF5 /* FirebaseFetchProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7421A0924ABB11900E2EAF5 /* FirebaseFetchProtocol.swift */; };
 		A7421A0E24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7421A0D24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift */; };
-		A742529224055C86002FB8C6 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742529124055C86002FB8C6 /* CardView.swift */; };
 		A742529424068C4E002FB8C6 /* AppUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A742529324068C4E002FB8C6 /* AppUser.swift */; };
 		A749DB0724E0193700543560 /* AdoptionPhotosSwipingController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749DB0624E0193700543560 /* AdoptionPhotosSwipingController.swift */; };
 		A749DB0A24E03CA100543560 /* AnimalToAdoptInformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A749DB0924E03CA100543560 /* AnimalToAdoptInformationView.swift */; };
@@ -181,7 +190,9 @@
 		BBE0B585E834001D6A68C2EB /* SideMenuInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */; };
 		BC8B576956F510F59290E005 /* AdoptionDetailModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72B20F9B9FAE87853DF19B2D /* AdoptionDetailModuleInput.swift */; };
 		BD7A6821F7ADE7ADE8C0794F /* MessagesInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CB1D9B8E1A8E8295CC39AA2 /* MessagesInteractorInput.swift */; };
+		BF22ABB60750EF8AFA90CA06 /* CardsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 79D16EDE48BD95E08EAC2081 /* CardsPresenter.swift */; };
 		BFFF8BCFE048CDA02784E582 /* ImageAndNameRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68CCB2B7E9BF55705180E102 /* ImageAndNameRouterInput.swift */; };
+		C05F6265BD6976F439880365 /* CardsModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C24CA4D33D82DBF8942AAA95 /* CardsModuleInput.swift */; };
 		C1CF3AB5EE5635CF2DBFD8AF /* RegistrationViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */; };
 		C8236A017826CCE5361A2239 /* AdoptionDetailInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7948B75F7167B92F7480C013 /* AdoptionDetailInteractorOutput.swift */; };
 		C91AB6CBAD3FF1BFE06B8DA2 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0C8B87252400B1B5BDA40363 /* MessagesViewController.swift */; };
@@ -196,8 +207,10 @@
 		E8B6A75AFE12B6ECE8EC53B5 /* ImageAndNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A6DEB03DD7D49B3FB0174B /* ImageAndNameRouter.swift */; };
 		EAB05DC5BECB0C1F72BB0322 /* Pods_Pet_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F381E6B906A6AC1DAD40584 /* Pods_Pet_Me.framework */; };
 		EEA454753AE711FBABC04390 /* SideMenuRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */; };
+		F294BB526A6A18D21E28EF9F /* CardsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976399B6B5CEE76623BB4BFD /* CardsConfigurator.swift */; };
 		F3E2FB15B94B95FCD6F1D0A5 /* CreateAdModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D396C88FA6B81CDC35816 /* CreateAdModuleInput.swift */; };
 		F494D70764029DEADB15AD64 /* MessagesRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE09F708CBF11033FB8947B0 /* MessagesRouter.swift */; };
+		F553B08F8F28EFDD45901AE9 /* CardsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9D5CEB0CED427BA28E0447D2 /* CardsRouter.swift */; };
 		FC1FCAC29556F84D925AE139 /* CreateAdViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 01E8D79FF891CAA6C902758C /* CreateAdViewController.swift */; };
 		FDFD5FBFE66E55139048291A /* SideMenuViewOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EE97253A1E797FF9578C71F /* SideMenuViewOutput.swift */; };
 		FFA45B2800F64AFFD873AF6D /* AdoptionRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C164A164CD8802A38C31557F /* AdoptionRouterInput.swift */; };
@@ -231,6 +244,7 @@
 		224A2516A27F92F90528D80E /* SideMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		25A6DEB03DD7D49B3FB0174B /* ImageAndNameRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageAndNameRouter.swift; sourceTree = "<group>"; };
+		27CF3B7A5A8CE918F1BA56AE /* CardsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewController.swift; sourceTree = "<group>"; };
 		283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuConfigurator.swift; sourceTree = "<group>"; };
 		28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewInput.swift; sourceTree = "<group>"; };
 		28F65F80C5BA7E77A7CB1850 /* MyAdsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsConfigurator.swift; sourceTree = "<group>"; };
@@ -244,11 +258,13 @@
 		3CBF333718C453A4A73D04EB /* CreateAdPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdPresenter.swift; sourceTree = "<group>"; };
 		3DE3D905B51053F119FCA0C0 /* MessagesRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesRouterInput.swift; sourceTree = "<group>"; };
 		4052F43CAE5316B8CB1B7E5F /* RegistrationRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouter.swift; sourceTree = "<group>"; };
+		437C1C578FF24C86B29735D4 /* CardsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewInput.swift; sourceTree = "<group>"; };
 		44EC0ECB57B4739D7D185C0D /* SettingsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsModuleInput.swift; sourceTree = "<group>"; };
 		48B765FD42DCB43587A44E07 /* MyAdsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsViewController.swift; sourceTree = "<group>"; };
 		4ADF1A08E64DC2DF05EBB116 /* MyAdsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsInteractor.swift; sourceTree = "<group>"; };
 		4C60368BFAA92001FDFB77B8 /* CreateAdConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdConfigurator.swift; sourceTree = "<group>"; };
 		4D82D3E5AB50E72B8F0931FD /* AdoptionDetailConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailConfigurator.swift; sourceTree = "<group>"; };
+		4DF93CDFBC4973681EACE669 /* CardsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractor.swift; sourceTree = "<group>"; };
 		4FC9842DEA8787807ECE1880 /* MessagesInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractor.swift; sourceTree = "<group>"; };
 		50C93D468BE2805FE882BAEB /* MessagesViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesViewOutput.swift; sourceTree = "<group>"; };
 		56C948515FE521118933B161 /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
@@ -259,8 +275,11 @@
 		6308E93E2631B6B50052D6E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6308E9402631B6B90052D6E1 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		6308ED3B2631DE8F0052D6E1 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
+		6332107B263C3B88006F4047 /* AnimalModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalModel.swift; sourceTree = "<group>"; };
 		634CD8D72639A7CB00B922ED /* Animation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animation.swift; sourceTree = "<group>"; };
 		63D004E7263836C40028C279 /* MoyaCustomPlugin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoyaCustomPlugin.swift; sourceTree = "<group>"; };
+		63DEE19C263AE42800369446 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		63DEE1A2263AE4AA00369446 /* CardViewBottomInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewBottomInfoView.swift; sourceTree = "<group>"; };
 		675083BC20DF5E0E9894730B /* AdoptionViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewOutput.swift; sourceTree = "<group>"; };
 		6778F50C1CCF8B6F9EE42BEB /* MyAdsViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsViewInput.swift; sourceTree = "<group>"; };
 		68CCB2B7E9BF55705180E102 /* ImageAndNameRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageAndNameRouterInput.swift; sourceTree = "<group>"; };
@@ -269,16 +288,22 @@
 		72B20F9B9FAE87853DF19B2D /* AdoptionDetailModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailModuleInput.swift; sourceTree = "<group>"; };
 		73AE10C855BF40BDB75086D9 /* RegistrationConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationConfigurator.swift; sourceTree = "<group>"; };
 		7948B75F7167B92F7480C013 /* AdoptionDetailInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailInteractorOutput.swift; sourceTree = "<group>"; };
+		79D16EDE48BD95E08EAC2081 /* CardsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsPresenter.swift; sourceTree = "<group>"; };
 		7C6FCB3F38660A635ABECA98 /* SideMenuInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorInput.swift; sourceTree = "<group>"; };
 		8021368F37EB95C8BEA82984 /* SettingsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouterInput.swift; sourceTree = "<group>"; };
 		8102899206DCFD91F7B22FD5 /* MyAdsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsPresenter.swift; sourceTree = "<group>"; };
 		85B61ACDC9CE74634CDE578D /* SettingsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsRouter.swift; sourceTree = "<group>"; };
 		87AD42EF7A9DE43E9A0E2F17 /* RegistrationViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewInput.swift; sourceTree = "<group>"; };
+		887A5B5F730C48C38B5C2DA8 /* CardsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorInput.swift; sourceTree = "<group>"; };
 		893D8D2EC7ED1EA24EF290A9 /* AdoptionDetailInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailInteractorInput.swift; sourceTree = "<group>"; };
 		8BB49CABEB77DA37C771B218 /* CreateAdInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CreateAdInteractor.swift; sourceTree = "<group>"; };
 		94B2F11B628C38E26B453AED /* MyAdsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsRouterInput.swift; sourceTree = "<group>"; };
+		94BEC169853F069A4E371CD4 /* CardsRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsRouterInput.swift; sourceTree = "<group>"; };
+		963D4E9AF7AC4B41E1C8CAA7 /* CardsViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsViewOutput.swift; sourceTree = "<group>"; };
 		9727EE2B3337471B9B962221 /* SettingsPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
+		976399B6B5CEE76623BB4BFD /* CardsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsConfigurator.swift; sourceTree = "<group>"; };
 		97D860CEFF64FDF57D16F880 /* ImageAndNameInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageAndNameInteractorOutput.swift; sourceTree = "<group>"; };
+		9D5CEB0CED427BA28E0447D2 /* CardsRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsRouter.swift; sourceTree = "<group>"; };
 		9F30B50FC096414D781555EC /* AdoptionPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionPresenter.swift; sourceTree = "<group>"; };
 		A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsConfigurator.swift; sourceTree = "<group>"; };
 		A1FBFCBC52D156BD0AD62792 /* MessagesPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesPresenter.swift; sourceTree = "<group>"; };
@@ -305,7 +330,6 @@
 		A741F5F024179A6E004544AE /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		A7421A0924ABB11900E2EAF5 /* FirebaseFetchProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseFetchProtocol.swift; sourceTree = "<group>"; };
 		A7421A0D24ABB79400E2EAF5 /* FirebaseUsersFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseUsersFetcher.swift; sourceTree = "<group>"; };
-		A742529124055C86002FB8C6 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
 		A742529324068C4E002FB8C6 /* AppUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppUser.swift; sourceTree = "<group>"; };
 		A749DB0624E0193700543560 /* AdoptionPhotosSwipingController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdoptionPhotosSwipingController.swift; sourceTree = "<group>"; };
 		A749DB0924E03CA100543560 /* AnimalToAdoptInformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimalToAdoptInformationView.swift; sourceTree = "<group>"; };
@@ -390,6 +414,7 @@
 		BD99AA625F21786B1CF4FF08 /* AdoptionDetailPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailPresenter.swift; sourceTree = "<group>"; };
 		BF14567CC044E32BBC76BAAE /* SideMenuRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuRouter.swift; sourceTree = "<group>"; };
 		C164A164CD8802A38C31557F /* AdoptionRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionRouterInput.swift; sourceTree = "<group>"; };
+		C24CA4D33D82DBF8942AAA95 /* CardsModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsModuleInput.swift; sourceTree = "<group>"; };
 		C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesViewInput.swift; sourceTree = "<group>"; };
 		C4158AF0FF55E60704AC8A5A /* AdoptionInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionInteractor.swift; sourceTree = "<group>"; };
 		C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractor.swift; sourceTree = "<group>"; };
@@ -399,6 +424,7 @@
 		CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsInteractorInput.swift; sourceTree = "<group>"; };
 		CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationPresenter.swift; sourceTree = "<group>"; };
 		D2A7DC67D6FEAC1B0C7739C0 /* SideMenuModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuModuleInput.swift; sourceTree = "<group>"; };
+		D2DC13B13B49C3E8CCDEFC0D /* CardsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = CardsInteractorOutput.swift; sourceTree = "<group>"; };
 		D693CAF26150470E2A697313 /* AdoptionDetailViewOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionDetailViewOutput.swift; sourceTree = "<group>"; };
 		DCAEC9C8DB79627795862369 /* Pods-Pet Me.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pet Me.release.xcconfig"; path = "Target Support Files/Pods-Pet Me/Pods-Pet Me.release.xcconfig"; sourceTree = "<group>"; };
 		DE553760541E992ADDC749C2 /* RegistrationModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationModuleInput.swift; sourceTree = "<group>"; };
@@ -457,6 +483,15 @@
 				25A6DEB03DD7D49B3FB0174B /* ImageAndNameRouter.swift */,
 			);
 			path = Router;
+			sourceTree = "<group>";
+		};
+		17C256472B33D037EA0401FD /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				C24CA4D33D82DBF8942AAA95 /* CardsModuleInput.swift */,
+				79D16EDE48BD95E08EAC2081 /* CardsPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 		1B4B7536F54CAD3309F383C5 /* Settings */ = {
@@ -569,6 +604,15 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		45D37F24F77741F38C4B94E5 /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				94BEC169853F069A4E371CD4 /* CardsRouterInput.swift */,
+				9D5CEB0CED427BA28E0447D2 /* CardsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		49F0023AF908FCB1B1353E79 /* Interactor */ = {
 			isa = PBXGroup;
 			children = (
@@ -652,6 +696,27 @@
 				E3E57EDF02EAE73530C1D5B1 /* Configurator */,
 			);
 			path = MyAds;
+			sourceTree = "<group>";
+		};
+		639B9A5B7BCCC937A55D78AF /* Cards */ = {
+			isa = PBXGroup;
+			children = (
+				AA6373D40529F9D86878BF65 /* View */,
+				17C256472B33D037EA0401FD /* Presenter */,
+				AB6BDC86FBB1C16759490EFA /* Interactor */,
+				45D37F24F77741F38C4B94E5 /* Router */,
+				DD163F25A84852B54DA229B1 /* Configurator */,
+			);
+			path = Cards;
+			sourceTree = "<group>";
+		};
+		63DEE19B263AE40600369446 /* CardView */ = {
+			isa = PBXGroup;
+			children = (
+				63DEE19C263AE42800369446 /* CardView.swift */,
+				63DEE1A2263AE4AA00369446 /* CardViewBottomInfoView.swift */,
+			);
+			path = CardView;
 			sourceTree = "<group>";
 		};
 		64C4B84256AF28E07F815EEE /* Adoption */ = {
@@ -1210,6 +1275,7 @@
 				A7CE931C25F670E30058255D /* AnimalSubtypes.swift */,
 				A7B1DFA2261760E400679833 /* AnimalAdModel.swift */,
 				A7B1DFA7261762AC00679833 /* AnimalAdRequestModel.swift */,
+				6332107B263C3B88006F4047 /* AnimalModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -1217,6 +1283,7 @@
 		A7FFBAA524532AD400CD7B5F /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				63DEE19B263AE40600369446 /* CardView */,
 				A71D29B82615F53000AE1269 /* AnimalGenderView */,
 				A71595A025FD0C9A0051612C /* Items */,
 				A71DB5F825DD40BB006DE50D /* CreateAdSteps */,
@@ -1240,20 +1307,11 @@
 				A7FFBAAC24532D0C00CD7B5F /* MatchView */,
 				A7FFBAAA24532C5900CD7B5F /* TableViewCells */,
 				A7FFBAA924532C4300CD7B5F /* CustomTextField */,
-				A7FFBAA824532BF000CD7B5F /* CardView */,
 				A7D2328524A0BBBC00C88077 /* CustomSignInButton.swift */,
 				A74E6D2224DEB37B00654699 /* ControllerWithSideMenu.swift */,
 				A75684822577FD63001419A0 /* PopUpView */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		A7FFBAA824532BF000CD7B5F /* CardView */ = {
-			isa = PBXGroup;
-			children = (
-				A742529124055C86002FB8C6 /* CardView.swift */,
-			);
-			path = CardView;
 			sourceTree = "<group>";
 		};
 		A7FFBAA924532C4300CD7B5F /* CustomTextField */ = {
@@ -1340,6 +1398,26 @@
 				CC251D2D76DEBEDB3E8B463B /* SettingsInteractorInput.swift */,
 				127D18F9A0CE57361652E3F2 /* SettingsInteractorOutput.swift */,
 				C6F45E514D65A5C6968EC5C6 /* SettingsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		AA6373D40529F9D86878BF65 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				437C1C578FF24C86B29735D4 /* CardsViewInput.swift */,
+				963D4E9AF7AC4B41E1C8CAA7 /* CardsViewOutput.swift */,
+				27CF3B7A5A8CE918F1BA56AE /* CardsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		AB6BDC86FBB1C16759490EFA /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				887A5B5F730C48C38B5C2DA8 /* CardsInteractorInput.swift */,
+				D2DC13B13B49C3E8CCDEFC0D /* CardsInteractorOutput.swift */,
+				4DF93CDFBC4973681EACE669 /* CardsInteractor.swift */,
 			);
 			path = Interactor;
 			sourceTree = "<group>";
@@ -1441,6 +1519,14 @@
 			path = Presenter;
 			sourceTree = "<group>";
 		};
+		DD163F25A84852B54DA229B1 /* Configurator */ = {
+			isa = PBXGroup;
+			children = (
+				976399B6B5CEE76623BB4BFD /* CardsConfigurator.swift */,
+			);
+			path = Configurator;
+			sourceTree = "<group>";
+		};
 		E3E57EDF02EAE73530C1D5B1 /* Configurator */ = {
 			isa = PBXGroup;
 			children = (
@@ -1461,6 +1547,7 @@
 				62417A2D1E3FF8265185E4F0 /* MyAds */,
 				3CA0E3B0821088D7F0683168 /* CreateAd */,
 				EE4684AD29F64A63403BF496 /* ImageAndName */,
+				639B9A5B7BCCC937A55D78AF /* Cards */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -1779,7 +1866,6 @@
 				A7D23281249E578600C88077 /* LoginView.swift in Sources */,
 				A7E0467323C4D7E400A4C5B5 /* SceneDelegate.swift in Sources */,
 				A76C9ED724C5F04E005828F8 /* NavigationFlowController.swift in Sources */,
-				A742529224055C86002FB8C6 /* CardView.swift in Sources */,
 				A7D6F25C24D6F55F00624197 /* SideMenu.swift in Sources */,
 				A7BA327F24E5A72C00DC485E /* GenderTypeCollectionView.swift in Sources */,
 				A70A8828249CFCED0094F231 /* RegistrationTextField.swift in Sources */,
@@ -1801,6 +1887,7 @@
 				A41232788C585BD3C31C250D /* SettingsViewController.swift in Sources */,
 				A78C6B09254C64AA0020BCDA /* Configurations.swift in Sources */,
 				A86E9B192C18A19B212B3BAD /* SettingsModuleInput.swift in Sources */,
+				63DEE1A3263AE4AA00369446 /* CardViewBottomInfoView.swift in Sources */,
 				97A31DD8C63C5DF1E80DBB07 /* SettingsPresenter.swift in Sources */,
 				1EA32F7C73B314BFC6A75862 /* SettingsInteractorInput.swift in Sources */,
 				066ED0C8722BBC40D8D9E00D /* SettingsInteractorOutput.swift in Sources */,
@@ -1877,6 +1964,7 @@
 				452279345F1202F653C7E93C /* AdoptionInteractorInput.swift in Sources */,
 				0212FC0A43A6638AFAC6EB1F /* AdoptionInteractorOutput.swift in Sources */,
 				9F0ABAF3AE7C0A36F2DA2BAA /* AdoptionInteractor.swift in Sources */,
+				63DEE19D263AE42800369446 /* CardView.swift in Sources */,
 				FFA45B2800F64AFFD873AF6D /* AdoptionRouterInput.swift in Sources */,
 				35B4CCB5D8855A58A4B7C9BE /* AdoptionRouter.swift in Sources */,
 				5DC91A79D356DDC91B253D8D /* AdoptionConfigurator.swift in Sources */,
@@ -1930,11 +2018,23 @@
 				47E047BADA207AC7D05A5F6D /* ImageAndNamePresenter.swift in Sources */,
 				546DFE55BA62EE5EFB637DF8 /* ImageAndNameInteractorInput.swift in Sources */,
 				28B58087199A5E378C7C9123 /* ImageAndNameInteractorOutput.swift in Sources */,
+				6332107C263C3B88006F4047 /* AnimalModel.swift in Sources */,
 				179BC7C4EC882586BACE48AB /* ImageAndNameInteractor.swift in Sources */,
 				BFFF8BCFE048CDA02784E582 /* ImageAndNameRouterInput.swift in Sources */,
 				E8B6A75AFE12B6ECE8EC53B5 /* ImageAndNameRouter.swift in Sources */,
 				634CD8D82639A7CB00B922ED /* Animation.swift in Sources */,
 				5DFA1247B13F9F61DF429CBC /* ImageAndNameConfigurator.swift in Sources */,
+				6FED0F6FC1B4EEBD6BC84E35 /* CardsViewInput.swift in Sources */,
+				12A3868108041AE070850C1B /* CardsViewOutput.swift in Sources */,
+				5DA0E525473F141A1F40D23F /* CardsViewController.swift in Sources */,
+				C05F6265BD6976F439880365 /* CardsModuleInput.swift in Sources */,
+				BF22ABB60750EF8AFA90CA06 /* CardsPresenter.swift in Sources */,
+				5A51603F66F4AF46E3FE813E /* CardsInteractorInput.swift in Sources */,
+				22608239D0B5EE13FC737C64 /* CardsInteractorOutput.swift in Sources */,
+				4A25779183D52D388204004B /* CardsInteractor.swift in Sources */,
+				9316111AC2B9B3AAA51BDBF1 /* CardsRouterInput.swift in Sources */,
+				F553B08F8F28EFDD45901AE9 /* CardsRouter.swift in Sources */,
+				F294BB526A6A18D21E28EF9F /* CardsConfigurator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

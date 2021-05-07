@@ -71,6 +71,15 @@ enum Containers {
 //            return controller
 //        }
         
+        container.register(UIViewController.self, name: CardsModuleConfigurator.tag) { (_, flow: FlowController?) in
+            let cardConfigurator = CardsModuleConfigurator()
+            let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
+            cardConfigurator.appRouter = appRouter
+            cardConfigurator.provider = managersContainer.resolve(MoyaProvider.self)
+            let viewController = cardConfigurator.configure()
+            return viewController
+        }
+        
         container.register(UIViewController.self, name: SettingsModuleConfigurator.tag) { (_, flow: FlowController?) in
             let settingsConfigurator = SettingsModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)

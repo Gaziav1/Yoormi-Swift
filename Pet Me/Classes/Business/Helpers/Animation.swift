@@ -18,9 +18,11 @@ struct Animation {
 extension Animation {
     
     static func fadeAnimation(time: Double, show: Bool) -> Animation {
-        return Animation(time: time) { (view) in
-            view.alpha = show ? 1 : 0
-        }
+        return Animation(time: time) { $0.alpha = show ? 1 : 0 }
+    }
+    
+    static func initialTransformAnimation(time: Double) -> Animation {
+        return Animation(time: time) { $0.transform = .identity }
     }
 }
 
@@ -30,10 +32,11 @@ extension UIView {
         var animations = animations
         guard let animation = animations.first else { return }
         
-        
         UIView.animate(withDuration: animation.time, animations: { animation.start(self) }, completion: { [weak self] _ in
             animations.removeFirst()
             self?.animate(animations)
         })
     }
 }
+
+

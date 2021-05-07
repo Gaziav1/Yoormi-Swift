@@ -8,11 +8,9 @@
 
 import Foundation
 
-struct AnimalAd {
-    let animalId: String
-    let ownerId: String
-    let address: String
+struct AnimalAd: Codable {
+    
+    let address: Coordinates
     let text: String
     let price: Int
-    let isReadyForSale: Bool
 }

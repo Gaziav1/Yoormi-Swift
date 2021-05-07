@@ -16,6 +16,7 @@ enum YoormiTarget {
     case phoneCodeCofirmation(code: String, phone: String)
     case saveImageAndName(image: Data?, name: Data)
     case animalSubtypes(_ type: AnimalTypes)
+    case getAds
     
     //MARK: - AD creation
     case createAd(_ adRequestModel: AnimalAdRequestModel)
@@ -28,6 +29,7 @@ extension YoormiTarget: TargetType {
     
     var path: String {
         switch self {
+        
         case .phoneSignUp:
             return "auth/phoneauth"
         case .phoneCodeCofirmation:
@@ -38,6 +40,8 @@ extension YoormiTarget: TargetType {
             return "animalInfo/animalSubtypes"
         case .createAd:
             return "ads/createAd"
+        case .getAds:
+            return "ads"
         }
     }
     
@@ -45,7 +49,7 @@ extension YoormiTarget: TargetType {
         switch self {
         case .phoneSignUp, .phoneCodeCofirmation, .saveImageAndName, .createAd:
             return .post
-        case .animalSubtypes:
+        case .animalSubtypes, .getAds:
             return .get
         }
     }
@@ -97,6 +101,8 @@ extension YoormiTarget: TargetType {
             return .uploadMultipart(data)
         case .animalSubtypes(let animalTypes):
             return .requestParameters(parameters: ["type": animalTypes.requestString], encoding: URLEncoding.queryString)
+        case .getAds:
+            return .requestPlain
         }
     }
    

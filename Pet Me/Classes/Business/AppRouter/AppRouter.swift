@@ -15,7 +15,7 @@ import Swinject
 //MARK: RouterDestination
 
 enum RouterDestination {
-   // case cards(AppUser?)
+    case cards
     case sideMenu
     case imageAndName
     case settings
@@ -32,8 +32,8 @@ enum RouterDestination {
             return factory.resolve(UIViewController.self, name: ImageAndNameModuleConfigurator.tag, argument: flow)
         case .sideMenu:
             return factory.resolve(UIViewController.self, name: SideMenuModuleConfigurator.tag, argument: flow)
-//        case .cards(let user):
-//            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag, arguments: user, flow)
+       case .cards:
+            return factory.resolve(UIViewController.self, name: CardsModuleConfigurator.tag, argument: flow)
         case .settings:
             return factory.resolve(UIViewController.self, name: SettingsModuleConfigurator.tag, argument: flow)
         case .messages:

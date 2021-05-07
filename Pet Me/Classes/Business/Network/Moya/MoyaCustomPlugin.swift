@@ -25,7 +25,6 @@ struct MoyaCustomPlugin: PluginType {
             }
             #endif
             return request
-        
     }
 
     func didReceive(_ result: Result<Response, MoyaError>, target: TargetType) {

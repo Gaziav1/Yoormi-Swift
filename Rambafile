@@ -7,7 +7,7 @@ xcodeproj_path: Pet Me.xcodeproj
 
 ### Code generation settings section
 # The main project target name
-project_target: Pet Me
+project_target: Yoormi
 
 # The file path for new modules
 project_file_path: Pet Me/Classes/Modules
