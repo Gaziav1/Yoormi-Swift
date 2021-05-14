@@ -9,8 +9,8 @@
 import Foundation
 
 struct User: Codable {
-    var _id: String
+    var _id: String?
     var name: String?
-    var phone: String
+    var phone: String?
     var image: String?
 }

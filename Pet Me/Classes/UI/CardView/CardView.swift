@@ -28,6 +28,11 @@ class CardView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
+    func setupFromItems(_ items: [CardViewItem]) {
+        print(items)
+        let url = URL(fileURLWithPath: items[0].imageURLs[0])
+        animalImages.sd_setImage(with: url, completed: nil)
+    }
     
     private func setupCardViewBottomView() {
         addSubview(bottomView)

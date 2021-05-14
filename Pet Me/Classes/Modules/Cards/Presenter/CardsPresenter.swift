@@ -24,5 +24,8 @@ extension CardsPresenter: CardsInteractorOutput {
     
     func adsFetchDidSuccess(_ animalAd: [AnimalAd]) {
         //Convert animalAds to items
+        let cardViewItems = animalAd.map({ CardViewItem(adModel: $0) })
+        
+        view.getAdCardViewItems(cardViewItems)
     }
 }

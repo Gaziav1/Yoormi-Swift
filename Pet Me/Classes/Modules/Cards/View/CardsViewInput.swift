@@ -15,4 +15,5 @@ protocol CardsViewInput: class {
 
     func setupInitialState()
     func showError(_ title: String, _ subTitle: String)
+    func getAdCardViewItems(_ items: [CardViewItem])
 }

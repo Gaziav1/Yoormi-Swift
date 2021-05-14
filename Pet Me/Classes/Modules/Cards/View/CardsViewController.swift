@@ -43,6 +43,10 @@ class CardsViewController: ControllerWithSideMenu {
 
 
 extension CardsViewController: CardsViewInput {
+    func getAdCardViewItems(_ items: [CardViewItem]) {
+        cardView.setupFromItems(items)
+    }
+    
     func showError(_ title: String, _ subTitle: String) {
         let alert = UIAlertController.prepareErrorController(header: title, body: subTitle)
         navigationController?.present(alert, animated: true, completion: nil)

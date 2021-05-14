@@ -23,6 +23,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
+    func applicationWillResignActive(_ application: UIApplication) {
+        print("bye :(")
+    }
+    
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        print("Foreground")
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        print("background")
+        
+    }
+    
     func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url)
     }
