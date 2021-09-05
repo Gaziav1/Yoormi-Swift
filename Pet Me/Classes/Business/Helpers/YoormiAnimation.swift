@@ -9,26 +9,26 @@
 import UIKit
 
 
-struct Animation {
+struct YoormiAnimation {
     let time: Double
     let start: (UIView) -> ()
 }
 
 
-extension Animation {
+extension YoormiAnimation {
     
-    static func fadeAnimation(time: Double, show: Bool) -> Animation {
-        return Animation(time: time) { $0.alpha = show ? 1 : 0 }
+    static func fadeAnimation(time: Double, show: Bool) -> YoormiAnimation {
+        return YoormiAnimation(time: time) { $0.alpha = show ? 1 : 0 }
     }
     
-    static func initialTransformAnimation(time: Double) -> Animation {
-        return Animation(time: time) { $0.transform = .identity }
+    static func initialTransformAnimation(time: Double) -> YoormiAnimation {
+        return YoormiAnimation(time: time) { $0.transform = .identity }
     }
 }
 
 
 extension UIView {
-    func animate(_ animations: [Animation]) {
+    func animate(_ animations: [YoormiAnimation]) {
         var animations = animations
         guard let animation = animations.first else { return }
         

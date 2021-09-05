@@ -14,4 +14,6 @@ protocol AdoptionViewInput: class {
     */
 
     func setupInitialState()
+    func showAds(_ ads: [AnimalAd])
+    func showError(_ title: String, _ message: String)
 }

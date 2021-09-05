@@ -8,6 +8,7 @@
 
 import Foundation
 
-protocol AdoptionInteractorOutput: class {
-
+protocol AdoptionInteractorOutput: AnyObject {
+    func animalAdsFetchSuccess(_ animalAds: [AnimalAd])
+    func showError(_ message: String, _ description: String)
 }

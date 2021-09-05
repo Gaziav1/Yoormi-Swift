@@ -21,6 +21,7 @@
 "add-pet-photos" = "Add photos of your pet";
 "add-pet-description" = "Describe your pet";
 
+"loading-state" = "Loading";
 
 "your_address" = "Your address";
 "address_note" = "Your address will be used for sorting and will not be publicly available";

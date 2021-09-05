@@ -9,7 +9,7 @@
 import UIKit
 import RxSwift
 
-class AdoptionViewController: ControllerWithSideMenu {
+class AdoptionViewController: ParentViewController {
     
     var output: AdoptionViewOutput!
     private let disposeBag = DisposeBag()
@@ -19,7 +19,8 @@ class AdoptionViewController: ControllerWithSideMenu {
     private let cat = AnimalChoosingControl(animalType: .cat)
    
     private let animalsCollectionView: UICollectionView = {
-        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
+        let cvCustomLayout = AdoptionCustomCollectionViewLayout()
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: cvCustomLayout)
         collectionView.register(AnimalsForAdoptionCollectionViewCell.self)
         return collectionView
     }()
@@ -28,11 +29,7 @@ class AdoptionViewController: ControllerWithSideMenu {
     override func viewDidLoad() {
         super.viewDidLoad()
         output.viewIsReady()
-        
-    }
-    
-    override func sideMenuAction() {
-        output.presentSideMenu()
+        showIndicator(withConfiguration: .loadingCat)
     }
     
     
@@ -67,21 +64,38 @@ class AdoptionViewController: ControllerWithSideMenu {
             $0.top.equalTo(dogChoosingView.snp.bottom).offset(10)
             $0.leading.trailing.bottom.equalToSuperview()
         })
+        
+        if let customLayout = animalsCollectionView.collectionViewLayout as? AdoptionCustomCollectionViewLayout {
+            customLayout.delegate = self
+        }
     }
 }
 
 // MARK: - AdoptionViewInput
 extension AdoptionViewController: AdoptionViewInput {
+    func showAds(_ ads: [AnimalAd]) {
+        hideIndication(true)
+    }
+    
+    func showError(_ title: String, _ message: String) {
+        hideIndication(true)
+    }
+    
     
     func setupInitialState() {
         view.backgroundColor = .white
         setupAnimalChoosingViews()
         setupCollectionView()
+        
     }
 }
 
-// MARK: - UICollectionView
-extension AdoptionViewController: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+// MARK: - UICollectionViewDataSource & Delegate
+extension AdoptionViewController: UICollectionViewDataSource, UICollectionViewDelegate {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return 1
+    }
+    
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return 10
     }
@@ -92,18 +106,20 @@ extension AdoptionViewController: UICollectionViewDataSource, UICollectionViewDe
         cell.genderImage.image = indexPath.row % 2 == 0 ? R.image.icons.girl() : R.image.icons.boy()
         return cell
     }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return .init(width: 170, height: 220)
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        return .init(top: 0, left: 10, bottom: 0, right: 10)
-    }
-    
-    
+        
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         output.didSelectItem(atIndex: indexPath.row)
     }
     
+}
+
+
+//MARK: - AdoptionCustomCollectionViewLayoutDelegate
+extension AdoptionViewController: AdoptionCustomCollectionViewLayoutDelegate {
+    func collectionView(_ collectionView: UICollectionView, heightForItemAtIndexPath indexPath: IndexPath) -> CGFloat {
+        #warning("PLACEHOLDER")
+        let image = indexPath.item % 2 == 0 ? R.image.images.doggoTest2() : R.image.images.doggoTest()
+        
+        return indexPath.item % 2 == 0 ? 180 : 200
+    }
 }

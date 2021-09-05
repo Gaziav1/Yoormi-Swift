@@ -98,7 +98,7 @@ class AnimalAdRequestModelBuilder: AnimalAdRequestModelBuildable {
     }
     
     func done() {
-        print("Use this to dispose from annoying warning")
+        //Using this to dispose from annoying warning
     }
     
     func build() throws -> AnimalAdRequestModel {

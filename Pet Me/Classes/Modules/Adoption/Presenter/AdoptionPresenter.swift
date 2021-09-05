@@ -21,6 +21,7 @@ extension AdoptionPresenter: AdoptionViewOutput {
     
     func viewIsReady() {
         view.setupInitialState()
+        interactor.fetchAds()
     }
     
     func presentSideMenu() {
@@ -34,5 +35,11 @@ extension AdoptionPresenter: AdoptionViewOutput {
 
 //MARK: -AdoptionInteractorOutput
 extension AdoptionPresenter: AdoptionInteractorOutput {
+    func animalAdsFetchSuccess(_ animalAds: [AnimalAd]) {
+        view.showAds(animalAds)
+    }
     
+    func showError(_ message: String, _ description: String) {
+        view.showError(message, description)
+    }
 }

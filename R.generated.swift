@@ -209,78 +209,6 @@ struct R: Rswift.Validatable {
       }
       #endif
 
-      #if os(watchOS)
-      /// `UIColor(named: "AppMainColor", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func appMainColor(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.appMainColor.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "Background", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func background(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.background.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "Border", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func border(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.border.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "Button", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func button(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.button.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "ControlSelection", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func controlSelection(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.controlSelection.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "DarkLabel", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func darkLabel(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.darkLabel.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "Label", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func label(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.label.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "SideMenuLabel", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func sideMenuLabel(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.sideMenuLabel.name)
-      }
-      #endif
-
-      #if os(watchOS)
-      /// `UIColor(named: "lightBackground", bundle: ..., traitCollection: ...)`
-      @available(watchOSApplicationExtension 4.0, *)
-      static func lightBackground(_: Void = ()) -> UIKit.UIColor? {
-        return UIKit.UIColor(named: R.color.appColors.lightBackground.name)
-      }
-      #endif
-
       fileprivate init() {}
     }
 
@@ -298,12 +226,16 @@ struct R: Rswift.Validatable {
     fileprivate init() {}
   }
 
-  /// This `R.file` struct is generated, and contains static references to 2 files.
+  /// This `R.file` struct is generated, and contains static references to 4 files.
   struct file {
     /// Resource file `CatWaiting.json`.
     static let catWaitingJson = Rswift.FileResource(bundle: R.hostingBundle, name: "CatWaiting", pathExtension: "json")
     /// Resource file `GoogleService-Info.plist`.
     static let googleServiceInfoPlist = Rswift.FileResource(bundle: R.hostingBundle, name: "GoogleService-Info", pathExtension: "plist")
+    /// Resource file `loading_indicator.json`.
+    static let loading_indicatorJson = Rswift.FileResource(bundle: R.hostingBundle, name: "loading_indicator", pathExtension: "json")
+    /// Resource file `rolling_cat_indicator.json`.
+    static let rolling_cat_indicatorJson = Rswift.FileResource(bundle: R.hostingBundle, name: "rolling_cat_indicator", pathExtension: "json")
 
     /// `bundle.url(forResource: "CatWaiting", withExtension: "json")`
     static func catWaitingJson(_: Void = ()) -> Foundation.URL? {
@@ -317,6 +249,18 @@ struct R: Rswift.Validatable {
       return fileResource.bundle.url(forResource: fileResource)
     }
 
+    /// `bundle.url(forResource: "loading_indicator", withExtension: "json")`
+    static func loading_indicatorJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.loading_indicatorJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
+    /// `bundle.url(forResource: "rolling_cat_indicator", withExtension: "json")`
+    static func rolling_cat_indicatorJson(_: Void = ()) -> Foundation.URL? {
+      let fileResource = R.file.rolling_cat_indicatorJson
+      return fileResource.bundle.url(forResource: fileResource)
+    }
+
     fileprivate init() {}
   }
 
@@ -324,8 +268,6 @@ struct R: Rswift.Validatable {
   struct image {
     /// This `R.image.icons` struct is generated, and contains static references to 26 images.
     struct icons {
-      /// Image `Email`.
-      static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/Email")
       /// Image `adoption`.
       static let adoption = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/adoption")
       /// Image `boy`.
@@ -344,6 +286,8 @@ struct R: Rswift.Validatable {
       static let dogChoice = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/dogChoice")
       /// Image `dog`.
       static let dog = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/dog")
+      /// Image `email`.
+      static let email = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/email")
       /// Image `girl`.
       static let girl = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/girl")
       /// Image `google`.
@@ -376,13 +320,6 @@ struct R: Rswift.Validatable {
       static let top_left_profile = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/top_left_profile")
       /// Image `top_right_messages`.
       static let top_right_messages = Rswift.ImageResource(bundle: R.hostingBundle, name: "icons/top_right_messages")
-
-      #if os(iOS) || os(tvOS)
-      /// `UIImage(named: "Email", bundle: ..., traitCollection: ...)`
-      static func email(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
-        return UIKit.UIImage(resource: R.image.icons.email, compatibleWith: traitCollection)
-      }
-      #endif
 
       #if os(iOS) || os(tvOS)
       /// `UIImage(named: "adoption", bundle: ..., traitCollection: ...)`
@@ -444,6 +381,13 @@ struct R: Rswift.Validatable {
       /// `UIImage(named: "dogChoice", bundle: ..., traitCollection: ...)`
       static func dogChoice(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
         return UIKit.UIImage(resource: R.image.icons.dogChoice, compatibleWith: traitCollection)
+      }
+      #endif
+
+      #if os(iOS) || os(tvOS)
+      /// `UIImage(named: "email", bundle: ..., traitCollection: ...)`
+      static func email(compatibleWith traitCollection: UIKit.UITraitCollection? = nil) -> UIKit.UIImage? {
+        return UIKit.UIImage(resource: R.image.icons.email, compatibleWith: traitCollection)
       }
       #endif
 
@@ -660,7 +604,7 @@ struct R: Rswift.Validatable {
       fileprivate init() {}
     }
 
-    /// This `R.string.localizable` struct is generated, and contains static references to 16 localization keys.
+    /// This `R.string.localizable` struct is generated, and contains static references to 17 localization keys.
     struct localizable {
       /// en translation: Add photos of your pet
       ///
@@ -686,6 +630,10 @@ struct R: Rswift.Validatable {
       ///
       /// Locales: ru, en
       static let female = Rswift.StringResource(key: "female", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
+      /// en translation: Loading
+      ///
+      /// Locales: ru, en
+      static let loadingState = Rswift.StringResource(key: "loading-state", tableName: "Localizable", bundle: R.hostingBundle, locales: ["ru", "en"], comment: nil)
       /// en translation: Male
       ///
       /// Locales: ru, en
@@ -815,6 +763,21 @@ struct R: Rswift.Validatable {
         }
 
         return NSLocalizedString("female", bundle: bundle, comment: "")
+      }
+
+      /// en translation: Loading
+      ///
+      /// Locales: ru, en
+      static func loadingState(preferredLanguages: [String]? = nil) -> String {
+        guard let preferredLanguages = preferredLanguages else {
+          return NSLocalizedString("loading-state", bundle: hostingBundle, comment: "")
+        }
+
+        guard let (_, bundle) = localeBundle(tableName: "Localizable", preferredLanguages: preferredLanguages) else {
+          return "loading-state"
+        }
+
+        return NSLocalizedString("loading-state", bundle: bundle, comment: "")
       }
 
       /// en translation: Male

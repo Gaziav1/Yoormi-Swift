@@ -58,6 +58,7 @@ enum Containers {
             let configurator = AdoptionDetailModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument: flow)
             configurator.appRouter = appRouter
+            
             let controller = configurator.configure()
             return controller
         }
@@ -112,6 +113,7 @@ enum Containers {
             let configurator = AdoptionModuleConfigurator()
             let appRouter = managersContainer.resolve(AppRouterProtocol.self, argument:  flow)
             configurator.appRouter = appRouter
+            configurator.provider = managersContainer.resolve(MoyaProvider.self)
             let controller = configurator.configure()
             return controller
         }

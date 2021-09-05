@@ -8,11 +8,6 @@
 
 protocol AdoptionViewOutput {
 
-    /**
-        @author Gaziav
-        Notify presenter that view is ready
-    */
-
     func viewIsReady()
     func presentSideMenu()
     func didSelectItem(atIndex: Int)

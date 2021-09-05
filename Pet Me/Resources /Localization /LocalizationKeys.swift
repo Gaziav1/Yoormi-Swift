@@ -22,11 +22,13 @@ enum LocalizationKeys: String {
     case addPetDescription = "add-pet-description"
     case yourAddress = "your_address"
     case addressNote = "address_note"
+    case loadingState = "loading-state"
     case phone
     case male
     case female
     case name
     case next
+    case emptyString
     
     
     var localized: String {
