@@ -5,7 +5,7 @@
 //  Created by Газияв Исхаков on 05.09.2021.
 //  Copyright © 2021 Газияв Исхаков. All rights reserved.
 //
-
+//AAAAAAAAAAAA
 import UIKit
 import Lottie
 
@@ -24,6 +24,7 @@ extension IndicationConfiguration {
 }
 
 class IndicationView: UIView {
+  
     private let indicationImage: UIImageView = {
        let iv = UIImageView()
         return iv

@@ -189,6 +189,7 @@
 		B05ED44B796D425E88DC1E15 /* RegistrationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF8DFA9EEBCFDE18F22E4554 /* RegistrationPresenter.swift */; };
 		B28CC714710411A9482C385E /* MessagesViewInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = C275E2C7D360448E540E4BE1 /* MessagesViewInput.swift */; };
 		B311DD8E3DE68CF71F873CCF /* RegistrationRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */; };
+		B37C53391E4B3308E83ADBC5 /* Pods_Yoormi.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C271E8D945974DE27229CF5 /* Pods_Yoormi.framework */; };
 		B3E21487F15526B3E6072F07 /* CreateAdRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4FAA9378DDAF45224C6D95F /* CreateAdRouter.swift */; };
 		B8AE9535E512ABD88B6D304B /* CreateAdInteractorInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4606BED6387DF39D4FEC000 /* CreateAdInteractorInput.swift */; };
 		B8BAF5BB767DB1F0C0200339 /* SettingsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CF1873B6FA17441114CE9D /* SettingsConfigurator.swift */; };
@@ -211,7 +212,6 @@
 		E049CE6A7521E11B4126C1B8 /* SideMenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF85EACF4D2739A2B200421 /* SideMenuInteractor.swift */; };
 		E6CE30C666C46557D15B59D1 /* MyAdsInteractorOutput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C359890351B8264E8C5A7F8 /* MyAdsInteractorOutput.swift */; };
 		E8B6A75AFE12B6ECE8EC53B5 /* ImageAndNameRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 25A6DEB03DD7D49B3FB0174B /* ImageAndNameRouter.swift */; };
-		EAB05DC5BECB0C1F72BB0322 /* Pods_Pet_Me.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1F381E6B906A6AC1DAD40584 /* Pods_Pet_Me.framework */; };
 		EEA454753AE711FBABC04390 /* SideMenuRouterInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF19CA6AB4DE3A075BB21FAD /* SideMenuRouterInput.swift */; };
 		F294BB526A6A18D21E28EF9F /* CardsConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 976399B6B5CEE76623BB4BFD /* CardsConfigurator.swift */; };
 		F3E2FB15B94B95FCD6F1D0A5 /* CreateAdModuleInput.swift in Sources */ = {isa = PBXBuildFile; fileRef = 389D396C88FA6B81CDC35816 /* CreateAdModuleInput.swift */; };
@@ -246,7 +246,6 @@
 		1C359890351B8264E8C5A7F8 /* MyAdsInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsInteractorOutput.swift; sourceTree = "<group>"; };
 		1CB1D9B8E1A8E8295CC39AA2 /* MessagesInteractorInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesInteractorInput.swift; sourceTree = "<group>"; };
 		1EF5330397DF16EF9AE90C31 /* RegistrationRouterInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationRouterInput.swift; sourceTree = "<group>"; };
-		1F381E6B906A6AC1DAD40584 /* Pods_Pet_Me.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pet_Me.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		224A2516A27F92F90528D80E /* SideMenuViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewController.swift; sourceTree = "<group>"; };
 		2556DEDBAC4081618B3B46E5 /* SettingsViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		25A6DEB03DD7D49B3FB0174B /* ImageAndNameRouter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageAndNameRouter.swift; sourceTree = "<group>"; };
@@ -254,6 +253,7 @@
 		283DB6FD77969F3E4FD38B54 /* SideMenuConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuConfigurator.swift; sourceTree = "<group>"; };
 		28E8E402F55FFE5BDAD7056A /* SideMenuViewInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuViewInput.swift; sourceTree = "<group>"; };
 		28F65F80C5BA7E77A7CB1850 /* MyAdsConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MyAdsConfigurator.swift; sourceTree = "<group>"; };
+		2A375B3A2199A8DE74F44143 /* Pods-Yoormi.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yoormi.release.xcconfig"; path = "Target Support Files/Pods-Yoormi/Pods-Yoormi.release.xcconfig"; sourceTree = "<group>"; };
 		2A9D2F8A1765918BE7CB03BF /* AdoptionViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionViewController.swift; sourceTree = "<group>"; };
 		2DB97695F23855C805D9E9FF /* MessagesModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = MessagesModuleInput.swift; sourceTree = "<group>"; };
 		31C5F700DB4301ACB5B65C90 /* RegistrationInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationInteractorOutput.swift; sourceTree = "<group>"; };
@@ -276,6 +276,8 @@
 		56C948515FE521118933B161 /* RegistrationViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		56CF91A6FE7ED406718A1334 /* ImageAndNameModuleInput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ImageAndNameModuleInput.swift; sourceTree = "<group>"; };
 		57A693787C0B4D794715266B /* AdoptionConfigurator.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = AdoptionConfigurator.swift; sourceTree = "<group>"; };
+		591CC48592292F13B0C167E4 /* Pods-Yoormi.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Yoormi.debug.xcconfig"; path = "Target Support Files/Pods-Yoormi/Pods-Yoormi.debug.xcconfig"; sourceTree = "<group>"; };
+		5C271E8D945974DE27229CF5 /* Pods_Yoormi.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Yoormi.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		62E01C664BD43BE23BB0E8BC /* SideMenuInteractorOutput.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SideMenuInteractorOutput.swift; sourceTree = "<group>"; };
 		6308E9352631B2E50052D6E1 /* Location.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
 		6308E93E2631B6B50052D6E1 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
@@ -465,7 +467,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EAB05DC5BECB0C1F72BB0322 /* Pods_Pet_Me.framework in Frameworks */,
+				B37C53391E4B3308E83ADBC5 /* Pods_Yoormi.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -600,8 +602,8 @@
 		42EF097D48628E4B093FB82A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				1F381E6B906A6AC1DAD40584 /* Pods_Pet_Me.framework */,
 				C72F8F44FC9DE8B606A2F510 /* Pods_Pet_MeTests.framework */,
+				5C271E8D945974DE27229CF5 /* Pods_Yoormi.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -1620,6 +1622,8 @@
 				DCAEC9C8DB79627795862369 /* Pods-Pet Me.release.xcconfig */,
 				E11E24657E289E8749B768BD /* Pods-Pet MeTests.debug.xcconfig */,
 				33918627F72CC32774B5DF17 /* Pods-Pet MeTests.release.xcconfig */,
+				591CC48592292F13B0C167E4 /* Pods-Yoormi.debug.xcconfig */,
+				2A375B3A2199A8DE74F44143 /* Pods-Yoormi.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -1792,7 +1796,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-Pet Me-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-Yoormi-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1805,15 +1809,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pet Me/Pods-Pet Me-resources-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yoormi/Pods-Yoormi-resources-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Copy Pods Resources";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pet Me/Pods-Pet Me-resources-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yoormi/Pods-Yoormi-resources-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pet Me/Pods-Pet Me-resources.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yoormi/Pods-Yoormi-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		83C531FCC939D7ED9F33C3EC /* [CP] Check Pods Manifest.lock */ = {
@@ -1851,7 +1855,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				$SRCROOT/R.generated.swift,
+				"$SRCROOT/R.generated.swift",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1863,15 +1867,15 @@
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pet Me/Pods-Pet Me-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yoormi/Pods-Yoormi-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-Pet Me/Pods-Pet Me-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-Yoormi/Pods-Yoormi-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Pet Me/Pods-Pet Me-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Yoormi/Pods-Yoormi-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2255,7 +2259,7 @@
 		};
 		A7E0469023C4D7E700A4C5B5 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FE0404A9B8F8C8004F4494F4 /* Pods-Pet Me.debug.xcconfig */;
+			baseConfigurationReference = 591CC48592292F13B0C167E4 /* Pods-Yoormi.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Pet Me/Pet Me.entitlements";
@@ -2276,7 +2280,7 @@
 		};
 		A7E0469123C4D7E700A4C5B5 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DCAEC9C8DB79627795862369 /* Pods-Pet Me.release.xcconfig */;
+			baseConfigurationReference = 2A375B3A2199A8DE74F44143 /* Pods-Yoormi.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = "Pet Me/Pet Me.entitlements";

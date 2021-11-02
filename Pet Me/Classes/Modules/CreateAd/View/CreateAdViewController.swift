@@ -27,14 +27,18 @@ class CreateAdViewController: UIViewController {
     private let steps = CreateAdStep.allCases
     
     
+    
     //MARK: - Life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        imagePickerController.imageLimit = 5
+
         output.viewIsReady()
     }
     
     //MARK: - UI Properties
+    
+    
+    
     private let stepsCollectionView: UICollectionView = {
         let fl = UICollectionViewFlowLayout()
         let cv = UICollectionView(frame: .zero, collectionViewLayout: fl)
@@ -51,6 +55,7 @@ class CreateAdViewController: UIViewController {
     
     
     //MARK: - UI Setup
+    
     
     private func setupStepsCollectionView() {
         view.addSubview(stepsCollectionView)
@@ -78,9 +83,9 @@ class CreateAdViewController: UIViewController {
     }
     
     private func setupPhotoAndDescriptionCellSubscriptions(_ cell: PhotosAndDescriptionCollectionViewCell) {
-        cell.didSelectAddPhoto.subscribe(onNext: { _ in
-            self.present(self.imagePickerController, animated: true, completion: nil)
-        }).disposed(by: disposeBag)
+//        cell.didSelectAddPhoto.subscribe(onNext: { _ in
+//            self.present(self.imagePickerController, animated: true, completion: nil)
+//        }).disposed(by: disposeBag)
         
         imagePickerController.choosenImagesObservable.subscribe(onNext: { images in
             cell.setImages(images)

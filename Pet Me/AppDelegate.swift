@@ -22,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         GIDSignIn.sharedInstance()?.clientID = FirebaseApp.app()?.options.clientID
         return true
     }
+   
     
     func applicationWillResignActive(_ application: UIApplication) {
         print("bye :(")
